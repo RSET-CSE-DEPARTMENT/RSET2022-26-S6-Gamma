@@ -7,7 +7,6 @@ import {
   signInWithPopup 
 } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import apple from '../assets/Login/apple.svg';
 import google from '../assets/Login/google.svg';
 
 const Signup: React.FC = () => {
@@ -35,7 +34,7 @@ const Signup: React.FC = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/AdditionalInfo');
+      navigate('/additionalinfo');
     } catch (error) {
       console.error('Error signing up with email:', error);
     }
@@ -45,7 +44,7 @@ const Signup: React.FC = () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      navigate('/AdditionalInfo');
+      navigate('/additionalinfo');
     } catch (error) {
       console.error('Error signing up with Google:', error);
     }
@@ -73,9 +72,7 @@ const Signup: React.FC = () => {
         >
           <img src={google} alt="Sign in with Google" />
         </button>
-        <button className="bg-transparent flex items-center justify-center p-2">
-          <img src={apple} alt="Sign in with Apple" />
-        </button>
+        
         <div className="w-[295px] flex items-center relative">
           <div className="w-full h-px bg-[#111112]/20" />
           <div className="w-[22.03px] h-[19px] bg-[#f6fcf7] absolute left-[136.09px]" />
