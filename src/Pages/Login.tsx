@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Handle successful login (e.g., redirect to another page)
+      navigate('/additionalinfo');
     } catch (error) {
       console.error('Error signing in with email:', error);
       // Handle errors (e.g., show a notification)
@@ -25,7 +25,7 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      // Handle successful login (e.g., redirect to another page)
+      navigate('/additionalinfo');
     } catch (error) {
       console.error('Error signing in with Google:', error);
       // Handle errors (e.g., show a notification)
