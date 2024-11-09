@@ -90,7 +90,6 @@ const EventSection: React.FC = () => {
         </button>
         <button onClick={() => navigate("/profile")} className="flex flex-col items-center" aria-label="Profile">
            <UserIcon className="h-6 w-6 text-black rounded-full" />
-        <span className="text-sm text-black">Profile</span>
         </button>
       </div>
 
