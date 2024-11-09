@@ -66,7 +66,7 @@ const EventSection: React.FC = () => {
 
       {/* Fixed Bottom Navigation Bar */}
       <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
-        <button onClick={() => navigate('/home')} className="flex flex-col items-center">
+        <button onClick={() => navigate('/OrganiserHomePage')} className="flex flex-col items-center">
           <HomeIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Home</span>
         </button>
