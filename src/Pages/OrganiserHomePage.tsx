@@ -35,7 +35,7 @@ const EventSection: React.FC = () => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate("/EventDetails");
+    navigate("/OrganiserEventDetail");
   };
 
   return (
