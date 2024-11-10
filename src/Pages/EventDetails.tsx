@@ -1,62 +1,75 @@
-const ResumeWorkshop = () => {
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+
+const db = getFirestore();
+
+const EventDetails: React.FC = () => {
+  const { id } = useParams<{ id: string }>();  // Get the document ID from the URL
+  const [eventData, setEventData] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (id) {
+      console.log('Fetching event details for ID:', id);  // Debugging line to check the ID
+
+      const fetchEventDetails = async () => {
+        try {
+          const docRef = doc(db, 'event', id);  // Fetch the specific event document by its ID
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+            setEventData(docSnap.data());  // Store the event data
+          } else {
+            setError('Event not found.');
+          }
+        } catch (error) {
+          console.error('Error fetching event details:', error);
+          setError('Failed to load event details.');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchEventDetails();
+    } else {
+      setError('Event ID is missing.');
+      setLoading(false);
+    }
+  }, [id]);
+
+  if (loading) {
+    return <p>Loading event details...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
-    <div className="w-screen h-screen bg-[#f6fcf7] flex items-center justify-center relative">
-      <div className="w-full max-w-md p-4 bg-white shadow-lg rounded-lg relative">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-xl font-semibold text-[#246d8c]">RSET IEDC</h1>
-          <span className="text-sm text-gray-500">9:41</span>
-        </div>
-
-        {/* Event Image */}
-        <div className="w-full h-44 rounded-md overflow-hidden mb-4">
-          <img
-            className="object-cover w-full h-full"
-            src="https://via.placeholder.com/286x149"
-            alt="Event"
+    <div className="p-4">
+      {eventData ? (
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <img 
+            src={eventData.Poster} 
+            alt={eventData.Name} 
+            className="w-full h-80 object-cover rounded-md mb-4" 
           />
+          <h1 className="text-2xl font-bold mb-2">{eventData.Name}</h1>
+          <p className="text-lg"><strong>Organiser:</strong> {eventData.Organiser}</p>
+          <p className="text-lg"><strong>Category:</strong> {eventData.Category}</p>
+          <p className="text-lg"><strong>Venue:</strong> {eventData.Venue}</p>
+          <p className="text-lg"><strong>Event Date:</strong> {eventData.Event_date}</p>
+          <p className="text-lg"><strong>Description:</strong> {eventData.Description}</p>
+          <p className="text-lg"><strong>Number of Participants:</strong> {eventData.Num_of_participants}</p>
+          <p className="text-lg"><strong>Coordinator 2:</strong> {eventData.Coordinator2.join(', ')}</p>
         </div>
-
-        {/* Event Details */}
-        <h2 className="text-2xl font-semibold mb-2">Resume Building</h2>
-        <p className="text-[#246d8c] font-medium mb-4">
-          Friday, 4th October • 11:35am-12:00pm
-        </p>
-
-        {/* Description */}
-        <p className="text-gray-600 text-base leading-relaxed mb-4">
-          Want to create a standout resume? Join our workshop to craft a professional resume that highlights your strengths, skills, and achievements. Whether you're applying for internships, jobs, or academic opportunities, this session will cover key elements of structuring and refining your resume.
-        </p>
-
-        <ul className="list-disc pl-5 text-gray-600 mb-4">
-          <li>Essential components of an impactful resume</li>
-          <li>How to showcase your unique skills and experiences</li>
-          <li>Tailoring your resume for different industries or roles</li>
-          <li>Common mistakes and best formatting practices</li>
-        </ul>
-
-        {/* Coordinators */}
-        <h3 className="text-xl font-medium mb-2">Coordinators</h3>
-        <div className="flex gap-4 mb-6">
-          <img
-            className="w-16 h-16 rounded-full"
-            src="https://via.placeholder.com/65x65"
-            alt="Ryan"
-          />
-          <img
-            className="w-16 h-16 rounded-full"
-            src="https://via.placeholder.com/65x65"
-            alt="Evelin"
-          />
-        </div>
-
-        {/* Register Button */}
-        <button className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium">
-          Register Now
-        </button>
-      </div>
+      ) : (
+        <p>No event details available</p>
+      )}
     </div>
   );
 };
 
-export default ResumeWorkshop;
+export default EventDetails;

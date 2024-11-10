@@ -1,24 +1,79 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 import hi from '../assets/Home/hi.svg';
-import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/24/outline'; // Example icons
+import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/24/outline';
+import { format } from 'date-fns';
 
-interface ImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
+const db = getFirestore();
 
-const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
-  <img src={src} alt={alt} className={className} />
-);
+const HomePage: React.FC = () => {
+  const [userName, setUserName] = useState<string | null>(null);
+  const [events, setEvents] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-const EventSection: React.FC = () => {
-  const navigate = useNavigate();
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserName(user.displayName);
+      } else {
+        setUserName('Guest');
+      }
+    });
 
-  const handleCardClick = () => {
-    navigate('/EventDetails');
-  };
+    // Fetch events from Firestore
+    const fetchEvents = async () => {
+      try {
+        console.log('Fetching events from Firestore...');
+        const querySnapshot = await getDocs(collection(db, 'event'));
+
+        // Log raw Firestore data for debugging
+        console.log('Raw Firestore data:', querySnapshot.docs.map(doc => doc.data()));
+
+        // Check if there are any documents
+        if (querySnapshot.empty) {
+          console.log('No events found in Firestore.');
+          setError('No events available');
+          setLoading(false);
+          return;
+        }
+
+        // Map the data and include the document ID
+        const eventsData = querySnapshot.docs.map(doc => {
+          const data = doc.data();
+          const eventId = doc.id;  // Firestore document ID
+
+          // Log each event's raw data
+          console.log('Fetched event data:', data);
+
+          // Format event date if it exists
+          const eventDate = data['Event Date'] ? format(new Date(data['Event Date']), 'dd-MM-yyyy') : 'N/A';
+          
+          return {
+            id: eventId,  // Add the event ID to the data
+            ...data,
+            Event_Date: eventDate, // Use formatted event date
+          };
+        });
+
+        // Set the fetched and formatted events data
+        setEvents(eventsData);
+
+      } catch (error) {
+        console.error("Error fetching events: ", error);
+        setError('Failed to load events. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="w-full h-screen bg-[#f6fcf7] p-4 flex flex-col items-center">
@@ -27,19 +82,17 @@ const EventSection: React.FC = () => {
         <img src={hi} alt="App logo" className="mb-8" />
         <div className="absolute top-0 left-4 mt-4 text-white">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">Welcome back</h1>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug">Gavin!</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug">
+            {userName ? userName : 'Loading...'}
+          </h2>
         </div>
       </div>
 
       {/* Event Filters */}
       <div className="flex items-center gap-4 mb-6 w-full max-w-2xl">
         <div className="bg-[#246d8c] text-white text-base font-medium px-4 py-2 rounded-md">All</div>
-        <div className="border border-[#246d8c] text-[#246d8c] text-base font-medium px-4 py-2 rounded-md">
-          Workshop
-        </div>
-        <div className="border border-[#246d8c] text-[#246d8c] text-base font-medium px-4 py-2 rounded-md">
-          Cultural
-        </div>
+        <div className="border border-[#246d8c] text-[#246d8c] text-base font-medium px-4 py-2 rounded-md">Workshop</div>
+        <div className="border border-[#246d8c] text-[#246d8c] text-base font-medium px-4 py-2 rounded-md">Cultural</div>
       </div>
 
       {/* Upcoming Events Header */}
@@ -49,42 +102,58 @@ const EventSection: React.FC = () => {
       </div>
 
       {/* Upcoming Events List */}
-      <div className="flex flex-col gap-4 mb-6 w-full max-w-2xl">
-        <div
-          className="bg-[#246d8c]/70 p-4 rounded-md border border-[#111113]/20 cursor-pointer"
-          onClick={handleCardClick}
-        >
-          <Image
-            className="w-full h-[149px] rounded-md mb-3"
-            src="https://via.placeholder.com/286x149"
-            alt="RSET IEDC - Resume building event"
-          />
-          <h4 className="text-[#f6fcf7] text-base font-medium mb-1">RSET IEDC-Resume building</h4>
-          <p className="text-[#f6fcf7] text-base font-bold">Friday, 4th October<br />11:35am-12:30pm</p>
-        </div>
+      <div className="w-full max-w-2xl">
+        {loading ? (
+          <p>Loading events...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : events.length === 0 ? (
+          <p>No events available</p>
+        ) : (
+          events.map((event, index) => (
+            <Link 
+              key={index} 
+              to={`/event/${event.id}`}  // Use Link for navigation instead of onClick
+            >
+              <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
+                {/* Event Card */}
+                <img src={event.Poster} alt={event.Name} className="w-full h-70 object-cover rounded-md mb-4" />
+                <h4 className="text-xl font-semibold">{event.Name}</h4>
+                <p className="text-gray-600">{event.Organiser}</p>
+                <p className="text-gray-600">{event.Category}</p>
+                <p className="text-gray-600">{event.Venue}</p>
+                <p className="text-gray-600">{event.Event_Date}</p> {/* Use the formatted Event_Date */}
+              </div>
+            </Link>
+          ))
+        )}
       </div>
 
       {/* Fixed Bottom Navigation Bar */}
       <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
+
         <button onClick={() => navigate('/OrganiserHomePage')} className="flex flex-col items-center">
+
+        <Link to="/home" className="flex flex-col items-center">
+ main
           <HomeIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Home</span>
-        </button>
-        <button onClick={() => navigate('/tickets')} className="flex flex-col items-center">
+        </Link>
+        <Link to="/tickets" className="flex flex-col items-center">
           <TicketIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Tickets</span>
-        </button>
-        <button onClick={() => navigate('/events')} className="flex flex-col items-center">
+        </Link>
+        <Link to="/events" className="flex flex-col items-center">
           <CalendarIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Events</span>
-        </button>
-        <button onClick={() => navigate('/profile')} className="flex flex-col items-center">
+        </Link>
+        <Link to="/profile" className="flex flex-col items-center">
           <UserIcon className="h-6 w-6 text-black rounded-full" />
           <span className="text-sm text-black">Profile</span>
-        </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default EventSection;
+export default HomePage;

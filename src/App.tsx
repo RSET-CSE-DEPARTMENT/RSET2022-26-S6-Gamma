@@ -20,11 +20,16 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/additionalinfo" element={<AdditionalInfo/>} />
         <Route path="/HomePage" element={<HomePage/>} />
+
         <Route path="/EventDetails" element={<EventDetails/>} />
         <Route path="/OrganiserHomePage" element={<OrganiserHomePage/>} />
         <Route path="/EventCreation" element={<EventCreation/>} />
         <Route path="/EventCreateSuccess" element={<EventCreateSuccess/>} />
         <Route path="/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
+
+        <Route path="/event/:id" element={<EventDetails />} />
+
+ main
       </Routes>
     </Router>
   );
