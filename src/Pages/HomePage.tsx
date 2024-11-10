@@ -141,7 +141,7 @@ const HomePage: React.FC = () => {
           <HomeIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Home</span>
         </Link>
-        <Link to="/TicketView" className="flex flex-col items-center" onClick={()=>navigate("/TicketView")}>
+        <Link to="/HomePage/TicketView" className="flex flex-col items-center">
           <TicketIcon  className="h-6 w-6 text-black" />
           <span className="text-sm text-black" >Tickets</span>
         </Link>
