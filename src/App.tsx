@@ -6,6 +6,10 @@ import Signup from './Pages/Signup';
 import AdditionalInfo from './Pages/AdditionalInfo';
 import HomePage from './Pages/HomePage';
 import EventDetails from './Pages/EventDetails';
+import OrganiserHomePage from './Pages/OrganiserHomePage'
+import EventCreation from './Pages/EventCreation'
+import EventCreateSuccess from './Pages/EventCreateSuccess'
+import OrganiserEventDetail from './Pages/OrganiserEventDetail'
 
 function App() {
   return (
@@ -16,8 +20,16 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/additionalinfo" element={<AdditionalInfo/>} />
         <Route path="/HomePage" element={<HomePage/>} />
+
+        <Route path="/EventDetails" element={<EventDetails/>} />
+        <Route path="/OrganiserHomePage" element={<OrganiserHomePage/>} />
+        <Route path="/EventCreation" element={<EventCreation/>} />
+        <Route path="/EventCreateSuccess" element={<EventCreateSuccess/>} />
+        <Route path="/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
+
         <Route path="/event/:id" element={<EventDetails />} />
 
+ main
       </Routes>
     </Router>
   );
