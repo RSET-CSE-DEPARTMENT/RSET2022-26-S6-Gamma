@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Link } from 'react-router-dom';  // Import Link for navigation
+import { useNavigate } from 'react-router-dom';  // Import Link for navigation
 import hi from '../assets/Home/hi.svg';
 import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/24/outline';
 import { format } from 'date-fns';
+import { Icon } from 'lucide-react';
 
 const db = getFirestore();
 
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState<string | null>(null);
   const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -138,9 +141,9 @@ const HomePage: React.FC = () => {
           <HomeIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Home</span>
         </Link>
-        <Link to="/tickets" className="flex flex-col items-center">
-          <TicketIcon className="h-6 w-6 text-black" />
-          <span className="text-sm text-black">Tickets</span>
+        <Link to="/TicketView" className="flex flex-col items-center" onClick={()=>navigate("/TicketView")}>
+          <TicketIcon  className="h-6 w-6 text-black" />
+          <span className="text-sm text-black" >Tickets</span>
         </Link>
         <Link to="/events" className="flex flex-col items-center">
           <CalendarIcon className="h-6 w-6 text-black" />

@@ -125,7 +125,7 @@ const EventDetails: React.FC = () => {
           {/* Register Button */}
           <button
             className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium mb-4"
-            onClick={() => navigate("/TicketView")}
+            onClick={handleRegister}
           >
             Register
           </button>
