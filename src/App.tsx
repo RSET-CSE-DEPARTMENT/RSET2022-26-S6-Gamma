@@ -23,9 +23,9 @@ function App() {
 
         <Route path="/EventDetails" element={<EventDetails/>} />
         <Route path="/OrganiserHomePage" element={<OrganiserHomePage/>} />
-        <Route path="/EventCreation" element={<EventCreation/>} />
-        <Route path="/EventCreateSuccess" element={<EventCreateSuccess/>} />
-        <Route path="/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
+        <Route path="/OrganiserHomePage/EventCreation" element={<EventCreation/>} />
+        <Route path="/OrganiserHomePage/EventCreateSuccess" element={<EventCreateSuccess/>} />
+        <Route path="/OrganiserHomePage/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
 
         <Route path="/event/:id" element={<EventDetails />} />
 
