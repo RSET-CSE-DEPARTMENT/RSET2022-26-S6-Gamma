@@ -1,53 +1,126 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Navigation for redirection
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { doc, setDoc } from 'firebase/firestore';
+// @ts-ignore
+import { auth, db } from '../firebaseConfig'; // Ensure this is correctly configured
 
 const ProfileCompletion: React.FC = () => {
-  const [batch, setBatch] = useState('');
-  const [branch, setBranch] = useState('');
-  const [gender, setGender] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate for navigation
+  const [batch, setBatch] = useState<string>('');  // Initialize batch as string
+  const [branch, setBranch] = useState<string>(''); // Initialize branch as string
+  const [division, setDivision] = useState<string>(''); // Initialize division as string
+  const [gender, setGender] = useState<string>(''); // Initialize gender as string
+  const [phoneNumber, setPhoneNumber] = useState<string>(''); // Initialize phone number as string
+  const [uid, setUID] = useState<string>(''); // Initialize UID as string
+  const [year, setYear] = useState<number | string>(1); // Initialize year as number | string
+  const [name, setName] = useState<string>(''); // Initialize name as string
 
-  const handleContinue = (e: React.FormEvent) => {
+  const navigate = useNavigate();
+
+  // Auto-fetch name from Google Auth
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (user) {
+      setName(user.displayName || ''); // Set the user's display name from Google Auth
+    } else {
+      console.log('No user signed in');
+    }
+  }, []);
+
+  const handleContinue = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ batch, branch, gender });
 
-    if (!batch || !branch || !gender) {
-      alert("Please fill all the fields.");
+    // Validate fields
+    if (!batch || !branch || !division || !gender || !name || !phoneNumber || !uid || !year) {
+      alert('Please fill all the fields.');
       return;
     }
 
-    // Perform validation or other logic here
-    navigate('/HomePage'); // Example navigation on form submission
+    // Get current user's UID
+    const user = auth.currentUser;
+    if (!user) {
+      alert('No user is signed in!');
+      return;
+    }
+
+    // Firestore: Save user profile data to the 'users' collection
+    try {
+      await setDoc(doc(db, 'users', user.uid), {
+        batch,
+        branch,
+        division,
+        gender,
+        name, // Already set from Google Auth
+        phoneNumber,
+        uid,
+        year,
+        email: user.email // Use email from Firebase Auth
+      });
+      console.log('Profile data saved successfully!');
+
+      // Redirect to homepage after successful submission
+      navigate('/HomePage');
+    } catch (error) {
+      console.error('Error saving profile data: ', error);
+    }
   };
 
   return (
     <div className="h-[100vh] bg-gradient-to-br from-[#f6fcf7] to-[#f6fcf7] flex flex-col justify-center items-center">
-      <form 
-        className="flex flex-col items-center gap-6 bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md" 
+      <form
+        className="flex flex-col items-center gap-6 bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md"
         onSubmit={handleContinue}
       >
         <h2 className="text-2xl font-semibold text-center text-[#246d8c]">Complete your profile</h2>
 
-        <Dropdown 
-          label="Batch" 
-          options={['2025', '2026', '2027', '2028', '2029', '2030']} 
-          value={batch} 
-          setValue={setBatch} 
+        <input
+          type="text"
+          placeholder="Phone number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          className="w-[295px] h-12 px-4 py-[13px] rounded-md border text-base font-normal"
         />
-        <Dropdown 
-          label="Branch" 
-          options={[
-            'CSE', 'ECE', 'EEE', 'Mech', 'Civil', 
-            'AEI', 'AIDS', 'IT', 'CU'
-          ]}
-          value={branch} 
-          setValue={setBranch} 
+
+        <Dropdown
+          label="Batch"
+          options={['2025', '2026', '2027', '2028', '2029', '2030']}
+          value={batch}
+          // @ts-ignore
+          setValue={setBatch}
         />
-        <Dropdown 
-          label="Gender" 
-          options={['Male', 'Female', 'Rather not say']} 
-          value={gender} 
-          setValue={setGender} 
+        <Dropdown
+          label="Branch"
+          options={['CSE', 'ECE', 'EEE', 'Mech', 'Civil', 'AEI', 'AIDS', 'IT', 'CU']}
+          value={branch}
+          // @ts-ignore
+          setValue={setBranch}
+        />
+        <Dropdown
+          label="Division"
+          options={['A', 'B', 'C', 'D', 'None']}
+          value={division}
+          // @ts-ignore
+          setValue={setDivision}
+        />
+        <Dropdown
+          label="Year"
+          options={[1, 2, 3, 4]}
+          value={year}
+          setValue={setYear}
+        />
+        <Dropdown
+          label="Gender"
+          options={['Male', 'Female', 'Rather not say']}
+          value={gender}
+          // @ts-ignore
+          setValue={setGender}
+        />
+
+        <input
+          type="text"
+          placeholder="UID"
+          value={uid}
+          onChange={(e) => setUID(e.target.value)}
+          className="w-[295px] h-12 px-4 py-[13px] rounded-md border text-base font-normal"
         />
 
         <button
@@ -64,33 +137,40 @@ const ProfileCompletion: React.FC = () => {
 // Dropdown Component
 type DropdownProps = {
   label: string;
-  options: string[];
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  options: (string | number)[];  // Options can be either string or number
+  value: string | number;        // The value can also be string or number
+  setValue: React.Dispatch<React.SetStateAction<string | number>>;  // setValue should handle both types
 };
 
 const Dropdown: React.FC<DropdownProps> = ({ label, options, value, setValue }) => (
-    <div className="w-full">
-      <label 
-        htmlFor={label} // Associate label with select using htmlFor
-        className="block text-sm font-medium text-gray-700 mb-1"
-      >
-        {label}
-      </label>
-      <select
-        id={label} // Use matching id for accessibility
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="w-full h-12 px-3 border rounded-md border-gray-300 bg-white text-[#111112]/60 focus:outline-none focus:border-[#246d8c]"
-      >
-        <option value="" disabled>Select {label}</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  <div className="w-full">
+    <label
+      htmlFor={label}
+      className="block text-sm font-medium text-gray-700 mb-1"
+    >
+      {label}
+    </label>
+    <select
+      id={label}
+      value={value}
+      onChange={(e) => {
+        // If the label is 'Year', convert the value to a number
+        if (label === 'Year') {
+          setValue(Number(e.target.value)); // Ensure it's treated as a number for 'Year'
+        } else {
+          setValue(e.target.value); // Otherwise, treat the value as a string
+        }
+      }}
+      className="w-full h-12 px-3 border rounded-md border-gray-300 bg-white text-[#111112]/60 focus:outline-none focus:border-[#246d8c]"
+    >
+      <option value="" disabled>Select {label}</option>
+      {options.map((option) => (
+        <option key={option} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  </div>
+);
 
 export default ProfileCompletion;

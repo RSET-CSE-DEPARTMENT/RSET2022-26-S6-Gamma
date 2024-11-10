@@ -33,8 +33,9 @@ const Signup: React.FC = () => {
     if (!validateFields()) return; // Stop if validation fails
 
     try {
+      // Create user with email and password
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/additionalinfo');
+      navigate('/additionalinfo');  // Navigate to additional info page after successful sign-up
     } catch (error) {
       console.error('Error signing up with email:', error);
     }
@@ -44,14 +45,10 @@ const Signup: React.FC = () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      navigate('/additionalinfo');
+      navigate('/additionalinfo');  // Navigate to additional info page after successful Google sign-in
     } catch (error) {
       console.error('Error signing up with Google:', error);
     }
-  };
-
-  const navigateToAdditionalInfo = () => {
-    navigate('/AdditionalInfo');
   };
 
   const handleNavigateToLogin = () => {
@@ -126,7 +123,6 @@ const Signup: React.FC = () => {
           <button
             type="submit"
             className="w-[295px] pl-6 pr-5 py-[13px] bg-[#246d8c] rounded-md flex justify-center items-center"
-            onClick={navigateToAdditionalInfo}
           >
             <div className="text-white text-base font-medium">Join us</div>
           </button>
