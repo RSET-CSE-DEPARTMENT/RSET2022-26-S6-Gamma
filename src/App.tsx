@@ -10,6 +10,7 @@ import OrganiserHomePage from './Pages/OrganiserHomePage'
 import EventCreation from './Pages/EventCreation'
 import EventCreateSuccess from './Pages/EventCreateSuccess'
 import OrganiserEventDetail from './Pages/OrganiserEventDetail'
+import TicketView from './Pages/TicketView'
 
 function App() {
   return (
@@ -22,10 +23,12 @@ function App() {
         <Route path="/HomePage" element={<HomePage/>} />
 
         <Route path="/EventDetails" element={<EventDetails/>} />
+        <Route path="/TicketView" element={<TicketView/>} />
         <Route path="/OrganiserHomePage" element={<OrganiserHomePage/>} />
         <Route path="/OrganiserHomePage/EventCreation" element={<EventCreation/>} />
         <Route path="/OrganiserHomePage/EventCreateSuccess" element={<EventCreateSuccess/>} />
         <Route path="/OrganiserHomePage/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
+        
 
         <Route path="/event/:id" element={<EventDetails />} />
 
