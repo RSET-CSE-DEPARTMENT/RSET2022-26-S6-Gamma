@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Link } from 'react-router-dom';  // Import Link for navigation
-import { useNavigate } from 'react-router-dom';  // Import Link for navigation
 import hi from '../assets/Home/hi.svg';
 import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/24/outline';
 import { format } from 'date-fns';
-import { Icon } from 'lucide-react';
+
 
 const db = getFirestore();
 
 const HomePage: React.FC = () => {
-  const navigate = useNavigate();
+
   const [userName, setUserName] = useState<string | null>(null);
   const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

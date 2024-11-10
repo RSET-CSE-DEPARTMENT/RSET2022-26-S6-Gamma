@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFirestore, doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'; // Import for authentication
-import {useNavigate } from "react-router-dom";
+
 
 const db = getFirestore();
 const auth = getAuth(); // Initialize Firebase Auth
 
 const EventDetails: React.FC = () => {
-  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();  // Get the document ID from the URL
   const [eventData, setEventData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
