@@ -85,37 +85,42 @@ const EventDetails: React.FC = () => {
       {eventData ? (
         <div className="bg-white max-w-md w-full p-6 rounded-lg">
           {/* Header */}
-          <h1 className="text-3xl font-semibold text-black mb-2 text-center">{eventData.Organiser}</h1>
+          <h1 className="text-3xl font-semibold text-black mb-2 text-center">{eventData.organiser}</h1>
 
           {/* Event Image */}
           <div className="w-full h-70 rounded-lg overflow-hidden mb-4">
             <img 
-              src={eventData.Poster} 
-              alt={eventData.Name} 
+              src={eventData.poster} 
+              alt={eventData.name} 
               className="object-cover w-full h-full" 
             />
           </div>
 
           {/* Event Title and Status */}
           <div className="flex justify-between items-center mb-2">
-            <h2 className="text-2xl font-semibold">{eventData.Name}</h2>
+            <h2 className="text-2xl font-semibold">{eventData.name}</h2>
           </div>
 
           {/* Date, Time, and Venue */}
-          <p className="text-[#246d8c] font-medium mb-4"><strong>Date:</strong> {eventData.Event_date}</p>
-          <p className="text-[#246d8c] font-medium mb-4"><strong>Venue:</strong> {eventData.Venue}</p>
-          <p className="text-[#246d8c] font-medium mb-4"><strong>Time:</strong> {eventData.Event_time}</p>
-          <p className="text-[#246d8c] font-medium mb-4"><strong>Participants:</strong> {eventData.Num_of_participants}</p>
+          <p className="text-[#246d8c] font-medium mb-4"><strong>Date:</strong> {eventData.event_date}</p>
+          <p className="text-[#246d8c] font-medium mb-4"><strong>Venue:</strong> {eventData.venue}</p>
+          <p className="text-[#246d8c] font-medium mb-4"><strong>Time:</strong> {eventData.event_time}</p>
+          <p className="text-[#246d8c] font-medium mb-4"><strong>Participants:</strong> {eventData.num_of_participants}</p>
 
           {/* Description */}
           <p className="text-[#246d8c] font-medium mb-4"><strong>Description:</strong> </p>
-          <p className="text-gray-700 leading-relaxed mb-4">{eventData.Description}</p>
+          <p className="text-gray-700 leading-relaxed mb-4">{eventData.description}</p>
 
           {/* Coordinators */}
           <h3 className="text-xl font-medium mb-2">Coordinators</h3>
           <div className="flex flex-col gap-2">
-            <p className="text-gray-700"><strong>Coordinator 1:</strong> {eventData.Coordinator1[0]} - {eventData.Coordinator1[1]}</p>
-            <p className="text-gray-700"><strong>Coordinator 2:</strong> {eventData.Coordinator2[0]} - {eventData.Coordinator2[1]}</p>
+          <p className="text-gray-700">
+            <strong>Coordinator 1:</strong> {eventData.coordinator1 ? `${eventData.coordinator1.name} - ${eventData.coordinator1.phone}` : 'N/A'}
+          </p>
+          <p className="text-gray-700">
+            <strong>Coordinator 2:</strong> {eventData.coordinator2 ? `${eventData.coordinator2.name} - ${eventData.coordinator2.phone}` : 'N/A'}
+          </p>
+
           </div>
 
           <br/>

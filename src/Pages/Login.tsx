@@ -1,23 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // @ts-ignore
 import { auth } from '../firebaseConfig'; // Import the auth object from firebaseConfig
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import google from '../assets/Login/google.svg';
+import { getFirestore, doc, getDoc } from 'firebase/firestore'; // Import Firestore functions
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
+  const db = getFirestore(); // Initialize Firestore
 
-  const handleEmailSignIn = async (e:any) => {
+  // Function to handle email sign in
+  const handleEmailSignIn = async (e: any) => {
     e.preventDefault();
+    setError(''); // Clear any previous errors
+
     try {
+      // Use Firebase Authentication to sign in the user
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/additionalinfo');
+
+      // Fetch organizer-specific data from Firestore if needed
+      const docRef = doc(db, 'organizers', email); // Use email as document ID
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        // After successful sign-in, navigate to the organiser's home page
+        navigate('/OrganiserHomePage');
+      } else {
+        console.error('No such user found in organizers');
+        setError('No such organizer found.');
+      }
     } catch (error) {
       console.error('Error signing in with email:', error);
-      // Handle errors (e.g., show a notification)
+      setError('Failed to log in. Please check your credentials.');
     }
   };
 
@@ -28,7 +46,7 @@ const Login = () => {
       navigate('/additionalinfo');
     } catch (error) {
       console.error('Error signing in with Google:', error);
-      // Handle errors (e.g., show a notification)
+      setError('Google sign-in failed.');
     }
   };
 
@@ -67,6 +85,9 @@ const Login = () => {
                   className="w-full text-[#111112]/60 text-base font-normal focus:outline-none bg-transparent"
                 />
               </div>
+              {error && (
+                <div className="text-red-500 text-sm">{error}</div>
+              )}
               <button
                 type="submit"
                 className="w-[295px] pl-6 pr-5 py-[13px] bg-[#246d8c] text-white rounded-md flex items-center justify-center"
@@ -76,8 +97,8 @@ const Login = () => {
             </form>
             <div className="text-center">
               <span>Not a member? </span>
-              <span 
-                className="text-[#246d8c] cursor-pointer" 
+              <span
+                className="text-[#246d8c] cursor-pointer"
                 onClick={handleNavigateToSignup} // Call the navigate function
               >
                 Create an account.

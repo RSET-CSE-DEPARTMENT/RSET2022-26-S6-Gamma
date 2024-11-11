@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { Link } from 'react-router-dom';  // Import Link for navigation
+import { Link } from 'react-router-dom';
 import hi from '../assets/Home/hi.svg';
 import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/24/outline';
 import { format } from 'date-fns';
@@ -24,16 +24,11 @@ const HomePage: React.FC = () => {
       }
     });
 
-    // Fetch events from Firestore
     const fetchEvents = async () => {
       try {
         console.log('Fetching events from Firestore...');
         const querySnapshot = await getDocs(collection(db, 'event'));
 
-        // Log raw Firestore data for debugging
-        console.log('Raw Firestore data:', querySnapshot.docs.map(doc => doc.data()));
-
-        // Check if there are any documents
         if (querySnapshot.empty) {
           console.log('No events found in Firestore.');
           setError('No events available');
@@ -41,29 +36,25 @@ const HomePage: React.FC = () => {
           return;
         }
 
-        // Map the data and include the document ID
         const eventsData = querySnapshot.docs.map(doc => {
           const data = doc.data();
-          const eventId = doc.id;  // Firestore document ID
+          const eventId = doc.id;
 
-          // Log each event's raw data
-          console.log('Fetched event data:', data);
-
-          // Format event date if it exists
           const eventDate = data['Event Date'] ? format(new Date(data['Event Date']), 'dd-MM-yyyy') : 'N/A';
-          
+
           return {
-            id: eventId,  // Add the event ID to the data
+            id: eventId,
             ...data,
-            Event_Date: eventDate, // Use formatted event date
+            Event_Date: eventDate,
           };
         });
 
-        // Set the fetched and formatted events data
+        console.log('Fetched events:', eventsData); // Log fetched events
+
         setEvents(eventsData);
 
       } catch (error) {
-        console.error("Error fetching events: ", error);
+        console.error('Error fetching events:', error);
         setError('Failed to load events. Please try again later.');
       } finally {
         setLoading(false);
@@ -110,19 +101,15 @@ const HomePage: React.FC = () => {
         ) : events.length === 0 ? (
           <p>No events available</p>
         ) : (
-          events.map((event, index) => (
-            <Link 
-              key={index} 
-              to={`/event/${event.id}`}  // Use Link for navigation instead of onClick
-            >
+          events.map((event) => (
+            <Link key={event.id} to={`/event/${event.id}`}>
               <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
-                {/* Event Card */}
-                <img src={event.Poster} alt={event.Name} className="w-full h-70 object-cover rounded-md mb-4" />
-                <h4 className="text-xl font-semibold">{event.Name}</h4>
-                <p className="text-gray-600">{event.Organiser}</p>
-                <p className="text-gray-600">{event.Category}</p>
-                <p className="text-gray-600">{event.Venue}</p>
-                <p className="text-gray-600">{event.Event_Date}</p> {/* Use the formatted Event_Date */}
+                <img src={event.poster ?? 'fallback-image-url'} alt={event.name ?? 'Event Image'} className="w-full h-70 object-cover rounded-md mb-4" />
+                <h4 className="text-xl font-semibold">{event.name ?? 'Event Name'}</h4>
+                <p className="text-gray-600">{event.organiser ?? 'Unknown Organiser'}</p>
+                <p className="text-gray-600">{event.category ?? 'Unknown Category'}</p>
+                <p className="text-gray-600">{event.venue ?? 'Unknown Venue'}</p>
+                <p className="text-gray-600">{event.event_Date ?? 'Date Unavailable'}</p>
               </div>
             </Link>
           ))
@@ -131,10 +118,7 @@ const HomePage: React.FC = () => {
 
       {/* Fixed Bottom Navigation Bar */}
       <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
-
-
         <Link to="/home" className="flex flex-col items-center">
- 
           <HomeIcon className="h-6 w-6 text-black" />
           <span className="text-sm text-black">Home</span>
         </Link>
