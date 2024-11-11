@@ -10,7 +10,11 @@ import OrganiserHomePage from './Pages/OrganiserHomePage'
 import EventCreation from './Pages/EventCreation'
 import EventCreateSuccess from './Pages/EventCreateSuccess'
 import OrganiserEventDetail from './Pages/OrganiserEventDetail'
+
 import TicketView from './Pages/TicketView'
+
+import Test from './Pages/Test'
+
 
 function App() {
   return (
@@ -33,9 +37,11 @@ function App() {
         <Route path="/OrganiserHomePage/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
         
 
+        <Route path="/test" element={<Test/>} />
+
         <Route path="/event/:id" element={<EventDetails />} />
 
- main
+ 
       </Routes>
     </Router>
   );
