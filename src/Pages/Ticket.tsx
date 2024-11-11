@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const Ticket: React.FC = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
-  const [eventData, setEventData] = useState<any>(null);
+  
 
   // Fetch user email if logged in
   useEffect(() => {
@@ -17,10 +17,14 @@ const Ticket: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
+ 
+
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#246d8c]">
       {/* TICKET heading */}
-      <h2 className="text-xl font-semibold text-white mb-4">TICKET</h2>
+      <h2 className="text-xl font-semibold text-white mb-4">PASS</h2>
 
       {/* Ticket container */}
       <div className="max-w-xs mx-auto bg-white rounded-lg shadow-lg justify-center items-center">
@@ -30,28 +34,7 @@ const Ticket: React.FC = () => {
           {/* Add your image here if available */}
         </div>
 
-        {/* Event Title */}
-        <div className="p-4 text-center">
-          {eventData ? (
-            <>
-              <h2 className="text-lg font-semibold text-gray-800">RSET IEDC - Resume Building</h2>
-
-              {/* Event Date */}
-              <div className="mt-2 text-sm text-gray-600 flex items-center justify-center gap-1">
-                <span>📅</span>
-                <span>Friday, 4th October</span>
-              </div>
-
-              {/* Event Time */}
-              <div className="mt-1 text-sm text-gray-600 flex items-center justify-center gap-1">
-                <span>⏰</span>
-                <span>11:35am - 12:00pm</span>
-              </div>
-            </>
-          ) : (
-            <p>No event details available</p>
-          )}
-        </div>
+        
 
         {/* Separator with a cutout effect */}
         <div className="relative border-t border-dashed border-gray-300 my-4">
@@ -61,9 +44,10 @@ const Ticket: React.FC = () => {
 
         {/* QR Code Section */}
         <div className="flex justify-center p-8">
+          {/* Generate the QR code with a value related to the event or user */}
           <QRCode 
             size={150}
-            value={userEmail ? userEmail : 'No user logged in'} // Set QR code to user email
+            value={userEmail ? `User: ${userEmail}` : 'No user logged in'} 
           />
         </div>
       </div>

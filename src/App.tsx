@@ -10,8 +10,8 @@ import OrganiserHomePage from './Pages/OrganiserHomePage'
 import EventCreation from './Pages/EventCreation'
 import EventCreateSuccess from './Pages/EventCreateSuccess'
 import OrganiserEventDetail from './Pages/OrganiserEventDetail'
-
-import TicketView from './Pages/TicketView'
+import Profile from './Pages/Profile'
+import Ticket from './Pages/Ticket'
 
 import Test from './Pages/Test'
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/additionalinfo" element={<AdditionalInfo/>} />
         <Route path="/HomePage" element={<HomePage/>} />
-        <Route path="/HomePage/TicketView" element={<TicketView/>} />
+        <Route path="/HomePage/TicketView" element={<Ticket/>} />
         
        
 
@@ -38,6 +38,7 @@ function App() {
         
 
         <Route path="/test" element={<Test/>} />
+        <Route path="/HomePage/Profile" element={<Profile/>} />
 
         <Route path="/event/:id" element={<EventDetails />} />
 
