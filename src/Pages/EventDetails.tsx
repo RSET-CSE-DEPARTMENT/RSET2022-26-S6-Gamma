@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getFirestore, doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth'; // Import for authentication
 
+
 const db = getFirestore();
 const auth = getAuth(); // Initialize Firebase Auth
 
