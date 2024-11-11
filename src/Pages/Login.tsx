@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 // @ts-ignore
 import { auth } from '../firebaseConfig'; // Import the auth object from firebaseConfig
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
