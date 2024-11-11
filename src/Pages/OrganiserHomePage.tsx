@@ -2,76 +2,57 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HomeIcon, TicketIcon, PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline"; // Import icons
 import hi from "../assets/Home/hi.svg"; // Import logo
-import { getDoc, doc } from "firebase/firestore";
+import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 // @ts-ignore
 import { auth, db } from "../firebaseConfig"; // Adjust to match Firebase config
+import { Link } from 'react-router-dom';
 
-interface ImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-}
-
-const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
-  <img src={src} alt={alt} className={className} onError={(e) => (e.currentTarget.src = "https://via.placeholder.com/286x149")} />
-);
-
-const EventCard: React.FC<{
-  title: string;
-  date: string;
-  time: string;
-  imageSrc: string;
-  onClick: () => void;
-}> = ({ title, date, time, imageSrc, onClick }) => (
-  <div
-    className="bg-[#246D8C]/70 p-4 rounded-md border border-[#111113]/20 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105"
-    onClick={onClick}
-  >
-    <Image className="w-full h-[149px] rounded-md mb-3" src={imageSrc} alt={title} />
-    <h4 className="text-[#F6FCF7] text-base font-medium mb-1">{title}</h4>
-    <p className="text-[#F6FCF7] text-base font-bold">
-      {date}
-      <br />
-      {time}
-    </p>
-  </div>
-);
 
 const EventSection: React.FC = () => {
   const navigate = useNavigate();
   const [organizerName, setOrganizerName] = useState<string>(""); // State for organizer name
   const [loading, setLoading] = useState<boolean>(true); // Loading state
+  const [events, setEvents] = useState<any[]>([]); // State for events
+  // @ts-ignore
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchOrganizerName = async () => {
+    const fetchOrganizerData = async () => {
       const user = auth.currentUser;
 
       if (user) {
-        console.log("Logged in user's email:", user.email); // Log email to check
         const docRef = doc(db, "organizers", user.email);
         const docSnap = await getDoc(docRef);
-
+        
         if (docSnap.exists()) {
           const data = docSnap.data();
-          console.log("Organizer data found:", data);
-          setOrganizerName(data.name); // Set name if found
+          setOrganizerName(data.name);
         } else {
-          console.log("No document found, using default name.");
-          setOrganizerName("Default Organizer Name"); // Set a default if not found
+          setOrganizerName("Default Organizer Name");
         }
+
+        const eventsCollection = collection(db, "event");
+        const querySnapshot = await getDocs(eventsCollection);
+
+        const userEvents = querySnapshot.docs
+          .map((doc) => ({ ...doc.data(), id: doc.id })) // Add ID here
+          // @ts-ignore
+          .filter((event) => event.organiser === user.email);
+
+        setEvents(userEvents); // Set the events with the ID
+
       } else {
-        console.log("No user is logged in");
-        setOrganizerName("Guest"); // In case no user is logged in
+        setOrganizerName("Guest");
+        setEvents([]);
       }
-      setLoading(false); // Stop loading once data is fetched
+
+      setLoading(false);
     };
 
-    fetchOrganizerName();
+    fetchOrganizerData();
   }, []);
 
-  const handleCardClick = () => {
-    navigate("/OrganiserEventDetail");
-  };
+ 
 
   return (
     <div className="w-full min-h-screen bg-[#F6FCF7] p-4 flex flex-col items-center">
@@ -107,14 +88,31 @@ const EventSection: React.FC = () => {
       </div>
 
       {/* Upcoming Events List */}
-      <div className="flex flex-col gap-4 mb-6 w-full max-w-2xl">
-        <EventCard
-          title="RSET IEDC-Resume building"
-          date="Friday, 4th October"
-          time="11:35am - 12:30pm"
-          imageSrc="https://via.placeholder.com/286x149"
-          onClick={handleCardClick}
-        />
+      <div className="w-full max-w-2xl">
+        {loading ? (
+          <p>Loading events...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : events.length === 0 ? (
+          <p>No events available</p>
+        ) : (
+          events.map((event, index) => (
+            <Link 
+              key={index} 
+              to={`/OrganiserHomePage/${event.id}`}  // Use Link for navigation instead of onClick
+            >
+              <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
+                {/* Event Card */}
+                <img src={event.poster} alt={event.name} className="w-full h-70 object-cover rounded-md mb-4" />
+                <h4 className="text-xl font-semibold">{event.name}</h4>
+                <p className="text-gray-600">{event.organiser}</p>
+                <p className="text-gray-600">{event.category}</p>
+                <p className="text-gray-600">{event.venue}</p>
+                <p className="text-gray-600">{event.event_Date}</p> {/* Use the formatted Event_Date */}
+              </div>
+            </Link>
+          ))
+        )}
       </div>
 
       {/* Fixed Bottom Navigation Bar */}

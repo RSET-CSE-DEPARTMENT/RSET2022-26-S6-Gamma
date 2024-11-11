@@ -6,6 +6,7 @@ import hi from '../assets/Home/hi.svg';
 import Ticket from './Ticket';
 import Profile from './Profile';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const db = getFirestore();
 
@@ -95,20 +96,21 @@ const HomePage: React.FC = () => {
               ) : events.length === 0 ? (
                 <p>No events available</p>
               ) : (
-                events.map((event) => (
-                  <div key={event.id} className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
-                    <img
-                      src={event.poster ?? 'fallback-image-url'}
-                      alt={event.name ?? 'Event Image'}
-                      className="w-full h-70 object-cover rounded-md mb-4"
-                    />
-                    <h4 className="text-xl font-semibold">{event.name ?? 'Event Name'}</h4>
-                    <p className="text-gray-600">{event.organiser ?? 'Unknown Organiser'}</p>
-                    <p className="text-gray-600">{event.category ?? 'Unknown Category'}</p>
-                    <p className="text-gray-600">{event.venue ?? 'Unknown Venue'}</p>
-                    <br/>
-                    <br/>
-                  </div>
+                events.map((event, index) => (
+                  <Link 
+                    key={index} 
+                    to={`/event/${event.id}`}  // Use Link for navigation instead of onClick
+                  >
+                    <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
+                      {/* Event Card */}
+                      <img src={event.poster} alt={event.name} className="w-full h-70 object-cover rounded-md mb-4" />
+                      <h4 className="text-xl font-semibold">{event.name}</h4>
+                      <p className="text-gray-600">{event.organiser}</p>
+                      <p className="text-gray-600">{event.category}</p>
+                      <p className="text-gray-600">{event.venue}</p>
+                      <p className="text-gray-600">{event.event_Date}</p> {/* Use the formatted Event_Date */}
+                    </div>
+                  </Link>
                 ))
               )}
             </div>

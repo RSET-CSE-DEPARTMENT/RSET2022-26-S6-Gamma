@@ -1,65 +1,97 @@
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { QrCodeIcon } from '@heroicons/react/24/outline';
+import { doc, getDoc } from 'firebase/firestore';
+// @ts-ignore
+import { db } from '../firebaseConfig'; // Make sure to import your Firestore config
 
-const ResumeWorkshop = () => {
+// Define the event data interface to type the fetched event data
+interface EventData {
+  id: string;
+  name: string;
+  organiser: string;
+  category: string;
+  venue: string;
+  event_Date: string;
+  poster: string;
+}
+
+const OrganiserEventDetail = () => {
+  const { id } = useParams<{ id: string }>(); // Extract the event ID from the URL
+  const [eventData, setEventData] = useState<EventData | null>(null); // Type state with EventData or null
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    if (id) {
+      console.log('Fetching event details for ID:', id);
+
+      const fetchEventDetails = async () => {
+        try {
+          const docRef = doc(db, 'event', id); // Fetch event data by its ID
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+            // Cast the Firestore document data to EventData type
+            setEventData(docSnap.data() as EventData);
+          } else {
+            setError('Event not found.');
+          }
+        } catch (error) {
+          console.error('Error fetching event details:', error);
+          setError('Failed to load event details.');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchEventDetails();
+    } else {
+      setError('Event ID is missing.');
+      setLoading(false);
+    }
+  }, [id]);
+
+  // Loading or error states
+  if (loading) {
+    return <p>Loading event details...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  // Ensure eventData is not null before rendering its properties
   return (
-    <div className="w-screen h-screen bg-[#f6fcf7] flex items-center justify-center relative">
-      <div className="w-full max-w-md p-4 bg-white shadow-lg rounded-lg relative">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-xl font-semibold text-[#246d8c]">RSET IEDC</h1>
-          <span className="text-sm text-gray-500">9:41</span>
-        </div>
-
-        {/* Event Image */}
-        <div className="w-full h-44 rounded-md overflow-hidden mb-4">
-          <img
-            className="object-cover w-full h-full"
-            src="https://via.placeholder.com/286x149"
-            alt="Event"
-          />
-        </div>
-
-        {/* Event Details */}
-        <h2 className="text-2xl font-semibold mb-2">Resume Building</h2>
-        <p className="text-[#246d8c] font-medium mb-4">
-          Friday, 4th October • 11:35am-12:00pm
-        </p>
-
-        {/* Description */}
-        <p className="text-gray-600 text-base leading-relaxed mb-4">
-          Want to create a standout resume? Join our workshop to craft a professional resume that highlights your strengths, skills, and achievements. Whether you're applying for internships, jobs, or academic opportunities, this session will cover key elements of structuring and refining your resume.
-        </p>
-
-        <ul className="list-disc pl-5 text-gray-600 mb-4">
-          <li>Essential components of an impactful resume</li>
-          <li>How to showcase your unique skills and experiences</li>
-          <li>Tailoring your resume for different industries or roles</li>
-          <li>Common mistakes and best formatting practices</li>
-        </ul>
-
-        {/* Coordinators */}
-        <h3 className="text-xl font-medium mb-2">Coordinators</h3>
-        <div className="flex gap-4 mb-6">
-          <img
-            className="w-16 h-16 rounded-full"
-            src="https://via.placeholder.com/65x65"
-            alt="Ryan"
-          />
-          <img
-            className="w-16 h-16 rounded-full"
-            src="https://via.placeholder.com/65x65"
-            alt="Evelin"
-          />
-        </div>
-
-        {/* Register Button */}
-        <button className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium flex items-center justify-center gap-x-2">
-          <QrCodeIcon className="h-6 w-6 text-white" />
-          Scan Ticket
-        </button>
+    <div>
+      <div className="w-full max-w-2xl">
+        {eventData ? (
+          <Link to={`/OrganiserHomePage/${eventData.id}`}>
+            <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
+              {/* Event Card */}
+              <img
+                src={eventData.poster}
+                alt={eventData.name}
+                className="w-full h-70 object-cover rounded-md mb-4"
+              />
+              <h4 className="text-xl font-semibold">{eventData.name}</h4>
+              <p className="text-gray-600">{eventData.organiser}</p>
+              <p className="text-gray-600">{eventData.category}</p>
+              <p className="text-gray-600">{eventData.venue}</p>
+              <p className="text-gray-600">{eventData.event_Date}</p>
+            </div>
+          </Link>
+        ) : (
+          <p>No event found for this ID.</p>
+        )}
       </div>
+
+      <button className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium flex items-center justify-center gap-x-2">
+        <QrCodeIcon className="h-6 w-6 text-white" />
+        Scan Ticket
+      </button>
     </div>
   );
 };
 
-export default ResumeWorkshop;
+export default OrganiserEventDetail;

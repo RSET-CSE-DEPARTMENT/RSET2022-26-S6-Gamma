@@ -41,6 +41,7 @@ function App() {
         <Route path="/HomePage/Profile" element={<Profile/>} />
 
         <Route path="/event/:id" element={<EventDetails />} />
+        <Route path="/OrganiserHomePage/:id" element={<OrganiserEventDetail />} />
 
  
       </Routes>
