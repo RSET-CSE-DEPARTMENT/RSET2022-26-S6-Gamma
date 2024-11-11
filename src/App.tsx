@@ -22,6 +22,9 @@ function App() {
         <Route path="/additionalinfo" element={<AdditionalInfo/>} />
         <Route path="/HomePage" element={<HomePage/>} />
         <Route path="/HomePage/TicketView" element={<TicketView/>} />
+        
+       
+
 
         <Route path="/EventDetails" element={<EventDetails/>} />
         <Route path="/OrganiserHomePage" element={<OrganiserHomePage/>} />

@@ -1,16 +1,13 @@
 import React from 'react';
+import QRCode from 'react-qr-code';
 
-const Ticket: React.FC = () => {
+const Ticket: React.FC = () => { // Get the event ID from the URL
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-xs mx-auto bg-white rounded-lg shadow-lg justify-center items-center">
         {/* Top section with event image */}
         <div className="bg-[#246D8C] rounded-t-lg p-4 flex justify-center items-center">
-          <img
-            src="https://example.com/event-image.png" // Replace with your image URL
-            alt="Event"
-            className="w-full rounded-lg"
-          />
+          
         </div>
 
         {/* Event Title */}
@@ -38,13 +35,15 @@ const Ticket: React.FC = () => {
 
         {/* Placeholder for QR Code */}
         <div className="flex justify-center p-4">
-          <div className="w-32 h-32 bg-gray-200 flex items-center justify-center text-gray-500">
-            QR Code Here
-          </div>
+         <QRCode 
+           size={150}
+           value='text'
+          />
+
         </div>
       </div>
     </div>
   );
 };
 
-export default Ticket;
+export default Ticket
