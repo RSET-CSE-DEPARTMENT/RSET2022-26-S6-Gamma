@@ -13,7 +13,7 @@ import OrganiserEventDetail from './Pages/OrganiserEventDetail'
 import Profile from './Pages/Profile'
 import Ticket from './Pages/Ticket'
 
-import Test from './Pages/Test'
+import Scan from './Pages/Scan'
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
         <Route path="/OrganiserHomePage/OrganiserEventDetail" element={<OrganiserEventDetail/>} />
         
 
-        <Route path="/test" element={<Test/>} />
+        <Route path="/OrganiserHomePage/OrganiserEventDetail/Scan" element={<Scan/>} />
         <Route path="/HomePage/Profile" element={<Profile/>} />
 
         <Route path="/event/:id" element={<EventDetails />} />

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { QrCodeIcon } from '@heroicons/react/24/outline';
 import { doc, getDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 // @ts-ignore
 import { db } from '../firebaseConfig'; // Make sure to import your Firestore config
 
@@ -21,6 +22,11 @@ const OrganiserEventDetail = () => {
   const [eventData, setEventData] = useState<EventData | null>(null); // Type state with EventData or null
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
+  const navigate = useNavigate(); // Initialize useNavigate inside the component
+
+  const handleScan = () => {
+    navigate('/OrganiserHomePage/OrganiserEventDetail/Scan');
+  };
 
   useEffect(() => {
     if (id) {
@@ -86,7 +92,7 @@ const OrganiserEventDetail = () => {
         )}
       </div>
 
-      <button className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium flex items-center justify-center gap-x-2">
+      <button onClick={handleScan} className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium flex items-center justify-center gap-x-2">
         <QrCodeIcon className="h-6 w-6 text-white" />
         Scan Ticket
       </button>

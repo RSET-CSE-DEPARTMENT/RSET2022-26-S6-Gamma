@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faEnvelope, faPhone, faIdBadge, faCalendar, faBook, faUserGraduate, faMapPin } from '@fortawesome/free-solid-svg-icons';
 
 // Initialize Firestore
 const firestore = getFirestore();
@@ -61,21 +63,37 @@ const Profile: React.FC = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-6 shadow-lg rounded-lg mt-10">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800 text-center">User Profile</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <p className="text-lg"><strong className="font-medium text-gray-700">Batch:</strong> {userProfile.batch}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Branch:</strong> {userProfile.branch}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Division:</strong> {userProfile.division}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Gender:</strong> {userProfile.gender}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Name:</strong> {userProfile.name}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Phone Number:</strong> {userProfile.phoneNumber}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">UID:</strong> {userProfile.uid}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Year:</strong> {userProfile.year}</p>
-        <p className="text-lg"><strong className="font-medium text-gray-700">Email:</strong> {userProfile.email}</p>
+    <div className="max-w-2xl mx-auto bg-white p-8 shadow-xl rounded-xl mt-10 transition-all duration-300 hover:shadow-2xl">
+      <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">User Profile</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ProfileItem icon={faUser} label="Name" value={userProfile.name} />
+        <ProfileItem icon={faEnvelope} label="Email" value={userProfile.email} />
+        <ProfileItem icon={faPhone} label="Phone Number" value={userProfile.phoneNumber} />
+        <ProfileItem icon={faIdBadge} label="UID" value={userProfile.uid} />
+        <ProfileItem icon={faCalendar} label="Batch" value={userProfile.batch} />
+        <ProfileItem icon={faUserGraduate} label="Year" value={userProfile.year} />
+        <ProfileItem icon={faBook} label="Branch" value={userProfile.branch} />
+        <ProfileItem icon={faMapPin} label="Division" value={userProfile.division} />
+        <ProfileItem icon={faUser} label="Gender" value={userProfile.gender} />
       </div>
     </div>
   );
 };
+
+interface ProfileItemProps {
+  icon: any;
+  label: string;
+  value: string | number;
+}
+
+const ProfileItem: React.FC<ProfileItemProps> = ({ icon, label, value }) => (
+  <div className="flex items-center text-lg text-gray-700">
+    <FontAwesomeIcon icon={icon} className="text-indigo-500 mr-4 w-6 h-6" />
+    <div>
+      <p className="font-semibold">{label}:</p>
+      <p className="text-gray-800">{value}</p>
+    </div>
+  </div>
+);
 
 export default Profile;
