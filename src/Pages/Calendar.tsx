@@ -1,96 +1,121 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import search from "../assets/Calendar/search.svg";
-import arrow from "../assets/Calendar/arrow.svg";
+import React, { useState, useEffect } from "react";
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  startOfWeek,
+  endOfWeek,
+  add,
+  sub,
+  isSameMonth,
+  isToday,
+  parseISO,
+} from "date-fns";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-//@ts-ignore
-const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
+const months = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 const Calendar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { state } = location;
-  const currentYear = 2025;
-  
-  const [selectedMonth, setSelectedMonth] = useState(2); // Default to March
-  const [selectedDay, setSelectedDay] = useState(null);
-  const [eventDetails, setEventDetails] = useState("");
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [showMonths, setShowMonths] = useState(false);
+  const [showYearView, setShowYearView] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [events, setEvents] = useState({});
 
+  // Set initial selected date to today when component mounts
   useEffect(() => {
-    if (state?.monthIndex !== undefined) {
-      setSelectedMonth(state.monthIndex);
-    }
-  }, [state]);
-//@ts-ignore
-  const handleDateClick = (day) => {
-    if (day <= daysInMonth(selectedMonth, currentYear)) {
-      setSelectedDay(day);
-      setEventDetails(`Placeholder event details for ${day}`); // Replace with backend data
-    }
-  };
+    setSelectedDate(format(new Date(), "yyyy-MM-dd"));
+  }, []);
+
+  const startMonth = startOfMonth(currentDate);
+  const endMonth = endOfMonth(currentDate);
+  const startWeek = startOfWeek(startMonth);
+  const endWeek = endOfWeek(endMonth);
+  
+  const days = [];
+  let day = startWeek;
+  
+  while (day <= endWeek) {
+    days.push(day);
+    day = add(day, { days: 1 });
+  }
 
   return (
-    <div className="flex flex-col items-center bg-[#F6F6F6]">
-      {/* Header Section */}
-      <div className="w-full bg-[#f6f6f6]">
-        <div className="flex items-center gap-2 px-4 py-3">
-          <img
-            src={arrow}
-            alt="Back"
-            className="h-5 cursor-pointer"
-            onClick={() => navigate("/HomePage/Months")}
-          />
-          <div className="text-[#246d8c] text-[17px] leading-none">{months[selectedMonth]} {currentYear}</div>
-          <div className="flex-grow" />
-          <img src={search} alt="Search icon" className="mb-1" />
-        </div>
-      </div>
-
-      {/* Weekday Headers */}
-      <div className="w-full grid grid-cols-7 border-b border-[#aeaeb2]">
-        {["S", "M", "T", "W", "T", "F", "S"].map((day) => (
-          <div key={day} className="flex justify-center items-center py-2 text-black text-[17px] font-semibold">
-            {day}
-          </div>
-        ))}
-      </div>
-
-      {/* Calendar Section */}
-      <div className="w-full bg-[#f6f6f6] border-b border-[#aeaeb2] grid grid-cols-7">
-        {[...Array(35)].map((_, index) => {
-          const day = index + 1;
-          const isDisabled = day > daysInMonth(selectedMonth, currentYear);
-          const isSelected = day === selectedDay;
-
-          return (
-            <div
-              key={index}
-              className="flex justify-center items-center h-[70px] border-t border-[#aeaeb2]"
-              onClick={() => !isDisabled && handleDateClick(day)}
-            >
-              <div
-                className={`flex items-center justify-center w-10 h-10 cursor-pointer ${
-                  isDisabled
-                    ? "text-[#8e8e93]"
-                    : isSelected
-                    ? "bg-[#246d8c] text-white rounded-full"
-                    : "text-black"
-                } text-lg font-normal`}
-              >
-                {day <= daysInMonth(selectedMonth, currentYear) ? day : ""}
+    <div className="p-6 w-full max-w-md mx-auto bg-white shadow-lg rounded-xl">
+      {showYearView || showMonths ? (
+        <div>
+          <h2 className="text-3xl font-bold text-center mb-4 cursor-pointer" onClick={() => { setShowYearView(false); setShowMonths(false); }}>
+            {format(currentDate, "yyyy")}
+          </h2>
+          <div className="grid grid-cols-3 gap-2">
+            {months.map((month, index) => (
+              <div key={month} className="p-3 text-center rounded-lg bg-gray-100 cursor-pointer hover:bg-gray-200"
+                onClick={() => {
+                  setCurrentDate(new Date(currentDate.getFullYear(), index, 1));
+                  setShowYearView(false);
+                  setShowMonths(false);
+                }}>
+                <div className="font-semibold">{month}</div>
+                <div className="grid grid-cols-7 text-xs gap-1 mt-1">
+                  {[...Array(31)].map((_, i) => (
+                    <span key={i} className="text-gray-600">{i + 1}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Event Details Section */}
-      {selectedDay && (
-        <div className="mt-4 p-4 bg-white shadow-md rounded-lg w-[90%] text-center">
-          <p className="text-[#246d8c] font-semibold">Event Details</p>
-          <p className="text-gray-700 text-sm mt-2">{eventDetails}</p>
+            ))}
+          </div>
         </div>
+      ) : (
+        <>
+          <div className="flex justify-between items-center mb-4">
+            <button onClick={() => setCurrentDate(sub(currentDate, { months: 1 }))}>
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <h2 
+              className="text-lg font-semibold cursor-pointer"
+              onClick={() => { setShowMonths(true); setShowYearView(true); }}
+            >
+              {format(currentDate, "MMMM yyyy")}
+            </h2>
+            <button onClick={() => setCurrentDate(add(currentDate, { months: 1 }))}>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+          
+          <div className="grid grid-cols-7 text-center text-gray-600 text-sm mb-2">
+            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
+              <div key={day} className="font-medium">{day}</div>
+            ))}
+          </div>
+          
+          <div className="grid grid-cols-7 gap-1">
+            {days.map((day, index) => {
+              const formattedDate = format(day, "yyyy-MM-dd");
+              const isSelected = selectedDate === formattedDate;
+              return (
+                <div
+                  key={index}
+                  className={`p-2 text-center rounded-full text-sm cursor-pointer
+                    ${isSameMonth(day, currentDate) ? "text-gray-800" : "text-gray-400"}
+                    ${selectedDate === format(day, "yyyy-MM-dd") ? "bg-[#2B8D9C] text-white rounded-full" : ""}`}
+                  onClick={() => setSelectedDate(formattedDate)}
+                >
+                  {format(day, "d")}
+                </div>
+              );
+            })}
+          </div>
+          
+          <div className="mt-4 p-2 bg-gray-100 rounded-lg text-center">
+            <h3 className="text-sm font-medium">Events</h3>
+            <p className="text-xs text-gray-600">
+              {selectedDate && events[selectedDate] ? events[selectedDate] : "No events today"}
+            </p>
+          </div>
+        </>
       )}
     </div>
   );
