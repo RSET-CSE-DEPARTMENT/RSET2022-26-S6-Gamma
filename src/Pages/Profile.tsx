@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faPhone, faIdBadge, faCalendar, faBook, faUserGraduate, faMapPin } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faEnvelope,
+  faPhone,
+  faIdBadge,
+  faCalendar,
+  faBook,
+  faUserGraduate,
+  faMapPin,
+} from "@fortawesome/free-solid-svg-icons";
 
 // Initialize Firestore
 const firestore = getFirestore();
@@ -20,6 +30,7 @@ const Profile: React.FC = () => {
     email: "",
   });
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // For navigation
 
   // Fetch authenticated user's profile data from Firestore
   useEffect(() => {
@@ -58,6 +69,16 @@ const Profile: React.FC = () => {
     fetchProfileData();
   }, []);
 
+  const handleLogout = async () => {
+    const auth = getAuth();
+    try {
+      await signOut(auth); // Sign out the user
+      navigate("/"); // Redirect to login page
+    } catch (error) {
+      console.error("Error during logout: ", error);
+    }
+  };
+
   if (loading) {
     return <p className="text-center text-gray-600">Loading profile...</p>;
   }
@@ -76,6 +97,12 @@ const Profile: React.FC = () => {
         <ProfileItem icon={faMapPin} label="Division" value={userProfile.division} />
         <ProfileItem icon={faUser} label="Gender" value={userProfile.gender} />
       </div>
+      <button
+        onClick={handleLogout}
+        className="mt-6 w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-all"
+      >
+        Log out
+      </button>
     </div>
   );
 };

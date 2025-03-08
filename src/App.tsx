@@ -18,7 +18,6 @@ import OrganiserEventDetail from './Pages/OrganiserEventDetail';
 import Profile from './Pages/Profile';
 import Ticket from './Pages/Ticket';
 import Scan from './Pages/Scan';
-import Calendar from './Pages/Calendar';
 import Months from './Pages/Months';
 
 function App() {
@@ -83,7 +82,6 @@ function App() {
           <Route path="/HomePage/Profile" element={user ? <Profile /> : <Navigate to="/login" />} />
           <Route path="/event/:id" element={user ? <EventDetails /> : <Navigate to="/login" />} />
           <Route path="/OrganiserHomePage/:id" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
-          <Route path="/HomePage/Calendar" element={user ? <Calendar /> : <Navigate to="/calendar" />} />
           <Route path="/HomePage/Months" element={user ? <Months /> : <Navigate to="/months " />} />
         </Routes>
       )}
