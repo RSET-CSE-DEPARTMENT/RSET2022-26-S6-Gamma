@@ -12,6 +12,8 @@ import {
   faBook,
   faUserGraduate,
   faMapPin,
+  faSignOutAlt,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Initialize Firestore
@@ -30,9 +32,8 @@ const Profile: React.FC = () => {
     email: "",
   });
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); // For navigation
+  const navigate = useNavigate();
 
-  // Fetch authenticated user's profile data from Firestore
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -71,12 +72,18 @@ const Profile: React.FC = () => {
 
   const handleLogout = async () => {
     const auth = getAuth();
-    try {
-      await signOut(auth); // Sign out the user
-      navigate("/"); // Redirect to login page
-    } catch (error) {
-      console.error("Error during logout: ", error);
+    if (window.confirm("Are you sure you want to log out?")) {
+      try {
+        await signOut(auth);
+        navigate("/");
+      } catch (error) {
+        console.error("Error during logout: ", error);
+      }
     }
+  };
+
+  const handleEditProfile = () => {
+    navigate("/HomePage/Profile/EditProfile"); // Navigate to edit profile page
   };
 
   if (loading) {
@@ -97,12 +104,24 @@ const Profile: React.FC = () => {
         <ProfileItem icon={faMapPin} label="Division" value={userProfile.division} />
         <ProfileItem icon={faUser} label="Gender" value={userProfile.gender} />
       </div>
-      <button
-        onClick={handleLogout}
-        className="mt-6 w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-all"
-      >
-        Log out
-      </button>
+
+      {/* Buttons */}
+      <div className="flex flex-col md:flex-row gap-4 mt-6">
+        <button
+          onClick={handleEditProfile}
+          className="w-full md:w-1/2 bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-600 transition-all"
+        >
+          <FontAwesomeIcon icon={faEdit} />
+          Edit Profile
+        </button>
+        <button
+          onClick={handleLogout}
+          className="w-full md:w-1/2 bg-red-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-red-600 transition-all"
+        >
+          <FontAwesomeIcon icon={faSignOutAlt} />
+          Log out
+        </button>
+      </div>
     </div>
   );
 };
