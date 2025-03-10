@@ -5,6 +5,7 @@ import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/2
 import hi from '../assets/Home/hi.svg';
 import Ticket from './Ticket';
 import Profile from './Profile';
+import Months from './Months';
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ const HomePage: React.FC = () => {
   const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<string>('home'); // Add state to track active tab
+  const [activeTab, setActiveTab] = useState<string>('home');
 
   useEffect(() => {
     const auth = getAuth();
@@ -51,7 +52,7 @@ const HomePage: React.FC = () => {
           };
         });
 
-        console.log('Fetched events:', eventsData); // Log fetched events
+        console.log('Fetched events:', eventsData);
         setEvents(eventsData);
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -69,7 +70,7 @@ const HomePage: React.FC = () => {
     switch (activeTab) {
       case 'home':
         return (
-          <>
+          <div className="p-4 flex flex-col items-center">
             {/* Welcome Section */}
             <div className="relative mb-6 w-full max-w-2xl">
               <img src={hi} alt="App logo" className="mb-8" />
@@ -99,7 +100,7 @@ const HomePage: React.FC = () => {
                 events.map((event, index) => (
                   <Link 
                     key={index} 
-                    to={`/event/${event.id}`}  // Use Link for navigation instead of onClick
+                    to={`/event/${event.id}`}
                   >
                     <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
                       {/* Event Card */}
@@ -108,33 +109,31 @@ const HomePage: React.FC = () => {
                       <p className="text-gray-600">{event.organiser}</p>
                       <p className="text-gray-600">{event.category}</p>
                       <p className="text-gray-600">{event.venue}</p>
-                      <p className="text-gray-600">{event.event_Date}</p> {/* Use the formatted Event_Date */}
+                      <p className="text-gray-600">{event.Event_Date}</p>
                     </div>
                   </Link>
                 ))
               )}
             </div>
-          </>
+          </div>
         );
       case 'tickets':
-        return <div>
-          <Ticket/>
-        </div>;
-      case 'events':
-        return <div>Event Listings</div>;
+        return <Ticket />;
+      case 'months':
+        return <Months />;
       case 'profile':
-        return <div>
-          <Profile/>
-        </div>;
+        return <Profile />;
       default:
         return null;
     }
   };
 
   return (
-    <div className="w-full h-screen bg-[#f6fcf7] p-4 flex flex-col items-center">
-      {/* Render Tab Content */}
-      {renderTabContent()}
+    <div className="w-full h-screen flex flex-col bg-[#f6fcf7]">
+      {/* Main content area - takes all available height minus navbar */}
+      <div className="flex-1 w-full overflow-y-auto">
+        {renderTabContent()}
+      </div>
 
       {/* Fixed Bottom Navigation Bar */}
       <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
@@ -146,9 +145,9 @@ const HomePage: React.FC = () => {
           <TicketIcon className="h-6 w-6 text-black" />
           <span className={`text-sm ${activeTab === 'tickets' ? 'text-blue-500' : 'text-black'}`}>Pass</span>
         </button>
-        <button onClick={() => setActiveTab('events')} className="flex flex-col items-center">
+        <button onClick={() => setActiveTab('months')} className="flex flex-col items-center">
           <CalendarIcon className="h-6 w-6 text-black" />
-          <span className={`text-sm ${activeTab === 'events' ? 'text-blue-500' : 'text-black'}`}>Events</span>
+          <span className={`text-sm ${activeTab === 'months' ? 'text-blue-500' : 'text-black'}`}>Events</span>
         </button>
         <button onClick={() => setActiveTab('profile')} className="flex flex-col items-center">
           <UserIcon className="h-6 w-6 text-black rounded-full" />
