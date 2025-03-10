@@ -20,7 +20,6 @@ import Profile from './Pages/Profile';
 import EditProfile from './Pages/EditProfile';
 import Ticket from './Pages/Ticket';
 import Scan from './Pages/Scan';
-import Months from './Pages/Months';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -86,7 +85,6 @@ function App() {
           <Route path="/HomePage/Profile/EditProfile" element={user ? <EditProfile /> : <Navigate to="/login" />} />
           <Route path="/event/:id" element={user ? <EventDetails /> : <Navigate to="/login" />} />
           <Route path="/OrganiserHomePage/:id" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
-          <Route path="/HomePage/Months" element={user ? <Months /> : <Navigate to="/months " />} />
         </Routes>
       )}
     </Router>
