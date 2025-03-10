@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HomeIcon, TicketIcon, PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline"; // Import icons
-import hi from "../assets/Home/hi.svg"; // Import logo
+import { HomeIcon, TicketIcon, PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline";
+import hi from "../assets/Home/hi.svg";
 import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 // @ts-ignore
-import { auth, db } from "../firebaseConfig"; // Adjust to match Firebase config
-import { Link } from 'react-router-dom';
-
+import { auth, db } from "../firebaseConfig";
+import { Link } from "react-router-dom";
 
 const EventSection: React.FC = () => {
   const navigate = useNavigate();
-  const [organizerName, setOrganizerName] = useState<string>(""); // State for organizer name
-  const [loading, setLoading] = useState<boolean>(true); // Loading state
-  const [events, setEvents] = useState<any[]>([]); // State for events
+  const [organizerName, setOrganizerName] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
+  const [events, setEvents] = useState<any[]>([]);
   // @ts-ignore
   const [error, setError] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>(""); // Search state
 
   useEffect(() => {
     const fetchOrganizerData = async () => {
@@ -23,7 +23,7 @@ const EventSection: React.FC = () => {
       if (user) {
         const docRef = doc(db, "organizers", user.email);
         const docSnap = await getDoc(docRef);
-        
+
         if (docSnap.exists()) {
           const data = docSnap.data();
           setOrganizerName(data.name);
@@ -35,12 +35,11 @@ const EventSection: React.FC = () => {
         const querySnapshot = await getDocs(eventsCollection);
 
         const userEvents = querySnapshot.docs
-          .map((doc) => ({ ...doc.data(), id: doc.id })) // Add ID here
+          .map((doc) => ({ ...doc.data(), id: doc.id }))
           // @ts-ignore
           .filter((event) => event.organiser === user.email);
 
-        setEvents(userEvents); // Set the events with the ID
-
+        setEvents(userEvents);
       } else {
         setOrganizerName("Guest");
         setEvents([]);
@@ -52,7 +51,10 @@ const EventSection: React.FC = () => {
     fetchOrganizerData();
   }, []);
 
- 
+  // Filter events based on search query
+  const filteredEvents = events.filter((event) =>
+    event.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="w-full min-h-screen bg-[#F6FCF7] p-4 flex flex-col items-center">
@@ -61,12 +63,20 @@ const EventSection: React.FC = () => {
         <img src={hi} alt="App logo" className="mb-8" />
         <div className="absolute top-0 left-4 mt-4 text-white">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">Welcome back</h1>
-          {/* Conditionally render loading or name */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug">
             {loading ? "Loading..." : organizerName}!
           </h2>
         </div>
       </div>
+
+      {/* Search Bar */}
+      <input
+        type="text"
+        placeholder="Search events..."
+        className="w-full max-w-2xl px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#246D8C]"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
 
       {/* Event Filters */}
       <div className="flex items-center gap-4 mb-6 w-full max-w-2xl justify-center">
@@ -93,29 +103,25 @@ const EventSection: React.FC = () => {
           <p>Loading events...</p>
         ) : error ? (
           <p>{error}</p>
-        ) : events.length === 0 ? (
-          <p>No events available</p>
+        ) : filteredEvents.length === 0 ? (
+          <p>No matching events found</p>
         ) : (
-          events.map((event, index) => (
-            <Link 
-              key={index} 
-              to={`/OrganiserHomePage/${event.id}`}  // Use Link for navigation instead of onClick
-            >
+          filteredEvents.map((event) => (
+            <Link key={event.id} to={`/OrganiserHomePage/${event.id}`}>
               <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
-                {/* Event Card */}
                 <img src={event.poster} alt={event.name} className="w-full h-70 object-cover rounded-md mb-4" />
                 <h4 className="text-xl font-semibold">{event.name}</h4>
                 <p className="text-gray-600">{event.organiser}</p>
                 <p className="text-gray-600">{event.category}</p>
                 <p className="text-gray-600">{event.venue}</p>
-                <p className="text-gray-600">{event.event_Date}</p> {/* Use the formatted Event_Date */}
+                <p className="text-gray-600">{event.event_Date}</p>
               </div>
             </Link>
           ))
         )}
       </div>
 
-      {/* Fixed Bottom Navigation Bar */}
+      {/* Bottom Navigation */}
       <div className="fixed bottom-0 w-full bg-[#F6FCF7] flex justify-around items-center h-16 border-t border-gray-200">
         <button onClick={() => navigate("/Home")} className="flex flex-col items-center" aria-label="Home">
           <HomeIcon className="h-6 w-6 text-black" />

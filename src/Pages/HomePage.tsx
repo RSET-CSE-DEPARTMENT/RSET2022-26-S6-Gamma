@@ -13,9 +13,11 @@ const db = getFirestore();
 const HomePage: React.FC = () => {
   const [userName, setUserName] = useState<string | null>(null);
   const [events, setEvents] = useState<any[]>([]);
+  const [filteredEvents, setFilteredEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<string>('home'); // Add state to track active tab
+  const [activeTab, setActiveTab] = useState<string>('home');
+  const [searchQuery, setSearchQuery] = useState<string>(''); // 🔍 Search state
 
   useEffect(() => {
     const auth = getAuth();
@@ -51,8 +53,9 @@ const HomePage: React.FC = () => {
           };
         });
 
-        console.log('Fetched events:', eventsData); // Log fetched events
+        console.log('Fetched events:', eventsData);
         setEvents(eventsData);
+        setFilteredEvents(eventsData); // Initialize filtered list
       } catch (error) {
         console.error('Error fetching events:', error);
         setError('Failed to load events. Please try again later.');
@@ -64,6 +67,16 @@ const HomePage: React.FC = () => {
     fetchEvents();
     return () => unsubscribe();
   }, []);
+
+  // 🔍 Search Logic: Filters events based on user input
+  useEffect(() => {
+    const filtered = events.filter((event) =>
+      event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.organiser.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredEvents(filtered);
+  }, [searchQuery, events]);
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -81,6 +94,17 @@ const HomePage: React.FC = () => {
               </div>
             </div>
 
+            {/* 🔍 Search Input Field */}
+            <div className="w-full max-w-2xl mb-6">
+              <input
+                type="text"
+                placeholder="Search events..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
             {/* Upcoming Events Header */}
             <div className="flex justify-between items-center mb-4 w-full max-w-2xl">
               <h3 className="text-xl font-medium">Upcoming events</h3>
@@ -93,22 +117,18 @@ const HomePage: React.FC = () => {
                 <p>Loading events...</p>
               ) : error ? (
                 <p>{error}</p>
-              ) : events.length === 0 ? (
-                <p>No events available</p>
+              ) : filteredEvents.length === 0 ? (
+                <p>No events found</p>
               ) : (
-                events.map((event, index) => (
-                  <Link 
-                    key={index} 
-                    to={`/event/${event.id}`}  // Use Link for navigation instead of onClick
-                  >
+                filteredEvents.map((event, index) => (
+                  <Link key={index} to={`/event/${event.id}`}>
                     <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
-                      {/* Event Card */}
                       <img src={event.poster} alt={event.name} className="w-full h-70 object-cover rounded-md mb-4" />
                       <h4 className="text-xl font-semibold">{event.name}</h4>
                       <p className="text-gray-600">{event.organiser}</p>
                       <p className="text-gray-600">{event.category}</p>
                       <p className="text-gray-600">{event.venue}</p>
-                      <p className="text-gray-600">{event.event_Date}</p> {/* Use the formatted Event_Date */}
+                      <p className="text-gray-600">{event.Event_Date}</p>
                     </div>
                   </Link>
                 ))
@@ -117,15 +137,11 @@ const HomePage: React.FC = () => {
           </>
         );
       case 'tickets':
-        return <div>
-          <Ticket/>
-        </div>;
+        return <Ticket />;
       case 'events':
         return <div>Event Listings</div>;
       case 'profile':
-        return <div>
-          <Profile/>
-        </div>;
+        return <Profile />;
       default:
         return null;
     }
