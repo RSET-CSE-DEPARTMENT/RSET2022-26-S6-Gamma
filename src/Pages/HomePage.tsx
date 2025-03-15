@@ -5,6 +5,7 @@ import { HomeIcon, TicketIcon, CalendarIcon, UserIcon } from '@heroicons/react/2
 import hi from '../assets/Home/hi.svg';
 import Ticket from './Ticket';
 import Profile from './Profile';
+import Months from './Months';
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
 
@@ -13,11 +14,11 @@ const db = getFirestore();
 const HomePage: React.FC = () => {
   const [userName, setUserName] = useState<string | null>(null);
   const [events, setEvents] = useState<any[]>([]);
-  const [filteredEvents, setFilteredEvents] = useState<any[]>([]);
+  const [filteredEvents, setFilteredEvents] = useState<any[]>([]); // New state for filtered events
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<string>('home');
-  const [searchQuery, setSearchQuery] = useState<string>(''); // 🔍 Search state
+  const [searchQuery, setSearchQuery] = useState<string>(''); // New state for search query
 
   useEffect(() => {
     const auth = getAuth();
@@ -55,7 +56,7 @@ const HomePage: React.FC = () => {
 
         console.log('Fetched events:', eventsData);
         setEvents(eventsData);
-        setFilteredEvents(eventsData); // Initialize filtered list
+        setFilteredEvents(eventsData); // Initialize filtered events with all events
       } catch (error) {
         console.error('Error fetching events:', error);
         setError('Failed to load events. Please try again later.');
@@ -68,12 +69,12 @@ const HomePage: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
-  // 🔍 Search Logic: Filters events based on user input
+  // Search filtering logic
   useEffect(() => {
     const filtered = events.filter((event) =>
-      event.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      event.organiser.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      event.category.toLowerCase().includes(searchQuery.toLowerCase())
+      event.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.organiser?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.category?.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredEvents(filtered);
   }, [searchQuery, events]);
@@ -82,7 +83,7 @@ const HomePage: React.FC = () => {
     switch (activeTab) {
       case 'home':
         return (
-          <>
+          <div className="p-4 flex flex-col items-center">
             {/* Welcome Section */}
             <div className="relative mb-6 w-full max-w-2xl">
               <img src={hi} alt="App logo" className="mb-8" />
@@ -94,7 +95,7 @@ const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* 🔍 Search Input Field */}
+            {/* Search Input Field */}
             <div className="w-full max-w-2xl mb-6">
               <input
                 type="text"
@@ -121,8 +122,12 @@ const HomePage: React.FC = () => {
                 <p>No events found</p>
               ) : (
                 filteredEvents.map((event, index) => (
-                  <Link key={index} to={`/event/${event.id}`}>
+                  <Link 
+                    key={index} 
+                    to={`/event/${event.id}`}
+                  >
                     <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
+                      {/* Event Card */}
                       <img src={event.poster} alt={event.name} className="w-full h-70 object-cover rounded-md mb-4" />
                       <h4 className="text-xl font-semibold">{event.name}</h4>
                       <p className="text-gray-600">{event.organiser}</p>
@@ -134,12 +139,12 @@ const HomePage: React.FC = () => {
                 ))
               )}
             </div>
-          </>
+          </div>
         );
       case 'tickets':
         return <Ticket />;
-      case 'events':
-        return <div>Event Listings</div>;
+      case 'months':
+        return <Months />;
       case 'profile':
         return <Profile />;
       default:
@@ -148,9 +153,11 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-[#f6fcf7] p-4 flex flex-col items-center">
-      {/* Render Tab Content */}
-      {renderTabContent()}
+    <div className="w-full h-screen flex flex-col bg-[#f6fcf7]">
+      {/* Main content area - takes all available height minus navbar */}
+      <div className="flex-1 w-full overflow-y-auto">
+        {renderTabContent()}
+      </div>
 
       {/* Fixed Bottom Navigation Bar */}
       <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
@@ -162,9 +169,9 @@ const HomePage: React.FC = () => {
           <TicketIcon className="h-6 w-6 text-black" />
           <span className={`text-sm ${activeTab === 'tickets' ? 'text-blue-500' : 'text-black'}`}>Pass</span>
         </button>
-        <button onClick={() => setActiveTab('events')} className="flex flex-col items-center">
+        <button onClick={() => setActiveTab('months')} className="flex flex-col items-center">
           <CalendarIcon className="h-6 w-6 text-black" />
-          <span className={`text-sm ${activeTab === 'events' ? 'text-blue-500' : 'text-black'}`}>Events</span>
+          <span className={`text-sm ${activeTab === 'months' ? 'text-blue-500' : 'text-black'}`}>Events</span>
         </button>
         <button onClick={() => setActiveTab('profile')} className="flex flex-col items-center">
           <UserIcon className="h-6 w-6 text-black rounded-full" />

@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // @ts-ignore
-import { db, collection, addDoc, auth, storage } from '../firebaseConfig'; // Import storage
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { getDoc, doc, Timestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import Firebase Storage functions
+import { db, collection, addDoc, auth, storage } from "../firebaseConfig"; // Import storage
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getDoc, doc, Timestamp } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Import Firebase Storage functions
 
 const CreateEvent: React.FC = () => {
   const navigate = useNavigate();
   const auth = getAuth();
-  const [organizerName, setOrganizerName] = useState<string>('');
+  const [organizerName, setOrganizerName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [file, setFile] = useState<File | null>(null);
 
   const [eventData, setEventData] = useState({
-    category: '',
-    coordinator1: { name: '', phone: '' },
-    coordinator2: { name: '', phone: '' },
-    date: '',
-    description: '',
-    duration: '',
-    event_date: '',
-    event_time: '',
-    name: '',
+    category: "",
+    coordinator1: { name: "", phone: "" },
+    coordinator2: { name: "", phone: "" },
+    date: "",
+    description: "",
+    duration: "",
+    event_date: "",
+    event_time: "",
+    name: "",
     num_of_participants: 0,
-    organiser: '',
-    participants: [''],
+    organiser: "",
+    participants: [""],
     poster: null, // Set poster as null initially
-    venue: '',
+    venue: "",
   });
 
   useEffect(() => {
@@ -36,17 +36,17 @@ const CreateEvent: React.FC = () => {
 
       if (user) {
         // @ts-ignore
-        const docRef = doc(db, 'organizers', user.email);
+        const docRef = doc(db, "organizers", user.email);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
           const data = docSnap.data();
-          setOrganizerName(data.name || 'Default Organizer Name');
+          setOrganizerName(data.name || "Default Organizer Name");
         } else {
-          setOrganizerName('Default Organizer Name');
+          setOrganizerName("Default Organizer Name");
         }
       } else {
-        setOrganizerName('Guest');
+        setOrganizerName("Guest");
       }
       setLoading(false);
     };
@@ -59,7 +59,7 @@ const CreateEvent: React.FC = () => {
       if (user) {
         setEventData((prevData) => ({
           ...prevData,
-          organiser: user.displayName || user.email || 'Unknown Organizer',
+          organiser: user.displayName || user.email || "Unknown Organizer",
         }));
       }
     });
@@ -67,12 +67,17 @@ const CreateEvent: React.FC = () => {
     return () => unsubscribe();
   }, [auth]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setEventData({ ...eventData, [name]: value });
   };
 
-  const handleCoordinatorChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleCoordinatorChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const { name, value } = e.target;
     const key = `coordinator${index + 1}`;
     setEventData({
@@ -91,8 +96,6 @@ const CreateEvent: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    
-
     setLoading(true);
 
     try {
@@ -104,17 +107,19 @@ const CreateEvent: React.FC = () => {
       const posterURL = await getDownloadURL(snapshot.ref); // Step 2: Get the download URL
 
       // Step 3: Save the event data, including the poster URL, to Firestore
-      await addDoc(collection(db, 'event'), {
+      await addDoc(collection(db, "event"), {
         ...eventData,
-        date: Timestamp.fromDate(new Date(eventData.event_date + 'T' + eventData.event_time)),
+        date: Timestamp.fromDate(
+          new Date(eventData.event_date + "T" + eventData.event_time)
+        ),
         poster: posterURL, // Save the poster URL in Firestore
       });
 
-      alert('Event created successfully!');
-      navigate('/OrganiserHomePage/EventCreateSuccess');
+      alert("Event created successfully!");
+      navigate("/OrganiserHomePage/EventCreateSuccess");
     } catch (error) {
-      console.error('Error adding event: ', error);
-      alert('An error occurred while creating the event.');
+      console.error("Error adding event: ", error);
+      alert("An error occurred while creating the event.");
     } finally {
       setLoading(false);
     }
@@ -129,9 +134,21 @@ const CreateEvent: React.FC = () => {
         </div>
 
         <div className="w-full h-36 mb-4 bg-[#d9d9d9] rounded-md opacity-80 flex flex-col justify-center items-center">
-          <div className="text-2xl text-black">+</div>
-          <div className="text-base text-black">Add event poster</div>
-          <input type="file" onChange={handleFileChange} />
+          <label
+            htmlFor="event-poster"
+            className="flex flex-col items-center cursor-pointer w-full h-full"
+          >
+            <div className="text-2xl text-black">+</div>
+            <div className="text-base text-black">Add event poster</div>
+            <input
+              id="event-poster"
+              type="file"
+              onChange={handleFileChange}
+              className="hidden"
+              title="Upload event poster"
+              aria-label="Upload event poster"
+            />
+          </label>
         </div>
 
         <div className="text-xl font-medium text-black mb-2">Event Details</div>
@@ -156,7 +173,7 @@ const CreateEvent: React.FC = () => {
             type="text"
             name="organiser"
             placeholder="Organizer"
-            value={loading ? 'Loading...' : organizerName}
+            value={loading ? "Loading..." : organizerName}
             className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500"
             disabled
           />
@@ -253,7 +270,7 @@ const CreateEvent: React.FC = () => {
             disabled={loading}
             className="w-full py-3 bg-blue-500 text-white rounded-md"
           >
-            {loading ? 'Submitting...' : 'Create Event'}
+            {loading ? "Submitting..." : "Create Event"}
           </button>
         </form>
       </div>
