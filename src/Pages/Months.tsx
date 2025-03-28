@@ -17,6 +17,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 const db = getFirestore();
 const auth = getAuth();
 
+const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -30,6 +31,7 @@ const Calendar = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   type EventType = Record<string, { name: string; details: string }>;
   const [events, setEvents] = useState<EventType>({});
+  //const [selectedEvent, setSelectedEvent] = useState<{ name: string; details: string } | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -139,9 +141,9 @@ const Calendar = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-7 text-center text-gray-600 text-sm mb-2">
-            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
-              <div key={day} className="font-medium">{day}</div>
+          <div className="grid grid-cols-7 gap-1 text-center font-medium">
+            {weekdays.map((day, index) => (
+              <div key={index} className="p-2">{day}</div>
             ))}
           </div>
 
@@ -149,22 +151,22 @@ const Calendar = () => {
             {days.map((day, index) => {
               const formattedDate = format(day, "yyyy-MM-dd");
               return (
-                <div
-                  key={index}
-                  className={`p-2 text-center rounded-full text-sm cursor-pointer
-                    ${isSameMonth(day, currentDate) ? "text-gray-800" : "text-gray-400"}
-                    ${selectedDate === formattedDate ? "bg-[#2B8D9C] text-white rounded-full" : ""}`}
-                  onClick={() => setSelectedDate(formattedDate)}
-                >
+                <div key={index} className={`p-2 text-center rounded-full text-sm cursor-pointer
+                  ${isSameMonth(day, currentDate) ? "text-gray-800" : "text-gray-400"}
+                  ${selectedDate === formattedDate ? "bg-[#2B8D9C] text-white rounded-full" : ""}`}
+                  onClick={() => {
+                    setSelectedDate(formattedDate);
+                  }}>
                   {format(day, "d")}
+                  {events[formattedDate] && <div className="w-1.5 h-1.5 bg-[#FFB94B] rounded-full mx-auto mt-1"></div>}
                 </div>
               );
             })}
           </div>
 
           <div className="mt-4 p-2 bg-gray-100 rounded-lg text-center">
-            <h3 className="text-lg font-bold">Events</h3>
-            <p className="text-sm text-gray-600">
+            <h3 className="text-xl font-bold">Events</h3>
+            <p className="text-lg text-gray-700">
               {selectedDate && events[selectedDate] 
                 ? `${events[selectedDate].name}${events[selectedDate].details ? `: ${events[selectedDate].details}` : ''}`
                 : "No events today"}
