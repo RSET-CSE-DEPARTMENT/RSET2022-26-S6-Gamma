@@ -68,7 +68,7 @@ const EditProfile: React.FC = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-6 shadow-lg rounded-lg mt-10">
+    <div className="max-w-2xl mx-auto bg-[#F6FCF7] p-6 shadow-lg rounded-lg mt-10">
       <h2 className="text-2xl font-bold mb-4 text-center">Edit Profile</h2>
       <div className="grid grid-cols-1 gap-4">
         <InputField label="Name" name="name" value={userProfile.name} onChange={handleChange} />
@@ -83,7 +83,7 @@ const EditProfile: React.FC = () => {
             name="gender"
             value={userProfile.gender}
             onChange={handleChange}
-            className="w-full border-gray-300 rounded-md p-2 mt-1"
+            className="w-full border-gray-300 rounded-md border p-2 mt-1 "
           >
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
@@ -98,7 +98,7 @@ const EditProfile: React.FC = () => {
       <div className="flex justify-center mt-6">
         <button
           onClick={handleSave}
-          className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-all"
+          className="bg-[#246D8C] text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-all"
         >
           Save Changes
         </button>
@@ -122,7 +122,7 @@ const InputField: React.FC<InputFieldProps> = ({ label, name, value, onChange })
       name={name}
       value={value}
       onChange={onChange}
-      className="w-full border-gray-300 rounded-md p-2 mt-1"
+      className="w-full border-gray-300 rounded-md border p-2 mt-1"
     />
   </div>
 );
