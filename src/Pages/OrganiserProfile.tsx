@@ -15,7 +15,7 @@ const OrganiserProfile: React.FC = () => {
   });
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -24,6 +24,7 @@ const OrganiserProfile: React.FC = () => {
   
         if (user) {
           const email = user.email; // Fetch organizer's email
+          // @ts-ignore
           const organiserDocRef = doc(firestore, "organizers", email); // Use email as document ID
           const organiserDoc = await getDoc(organiserDocRef);
   
