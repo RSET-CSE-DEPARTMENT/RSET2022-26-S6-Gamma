@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // @ts-ignore
-import { db, collection, addDoc, auth, storage } from "../firebaseConfig"; // Import storage
+import { db, collection, addDoc, auth, storage } from "../firebaseConfig";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDoc, doc, Timestamp } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Import Firebase Storage functions
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const CreateEvent: React.FC = () => {
   const navigate = useNavigate();
@@ -12,6 +12,9 @@ const CreateEvent: React.FC = () => {
   const [organizerName, setOrganizerName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [file, setFile] = useState<File | null>(null);
+  const [logoFiles, setLogoFiles] = useState<File[]>([]);
+  const [logoPreviews, setLogoPreviews] = useState<string[]>([]);
+  const [posterPreview, setPosterPreview] = useState<string | null>(null);
 
   const [eventData, setEventData] = useState({
     category: "",
@@ -26,7 +29,8 @@ const CreateEvent: React.FC = () => {
     num_of_participants: 0,
     organiser: "",
     participants: [""],
-    poster: null, // Set poster as null initially
+    poster: null,
+    logos: [],  // Changed to array for multiple logos
     venue: "",
   });
 
@@ -87,10 +91,45 @@ const CreateEvent: React.FC = () => {
     });
   };
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setFile(event.target.files[0]);
+  const handlePosterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      const selectedFile = event.target.files[0];
+      setFile(selectedFile);
+      
+      // Create preview URL for the poster
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setPosterPreview(e.target?.result as string);
+      };
+      reader.readAsDataURL(selectedFile);
     }
+  };
+
+  // Handle multiple logo uploads
+  const handleLogoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      const selectedFile = event.target.files[0];
+      const newLogoFiles = [...logoFiles, selectedFile];
+      setLogoFiles(newLogoFiles);
+      
+      // Create preview URL for the logo
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setLogoPreviews(prevPreviews => [...prevPreviews, e.target?.result as string]);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  };
+
+  const removeLogoAt = (index: number) => {
+    const newLogoFiles = [...logoFiles];
+    const newLogoPreviews = [...logoPreviews];
+    
+    newLogoFiles.splice(index, 1);
+    newLogoPreviews.splice(index, 1);
+    
+    setLogoFiles(newLogoFiles);
+    setLogoPreviews(newLogoPreviews);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -99,20 +138,37 @@ const CreateEvent: React.FC = () => {
     setLoading(true);
 
     try {
-      // Step 1: Upload the poster to Firebase Storage
-      // @ts-ignore
-      const posterRef = ref(storage, `eventPosters/${file.name}`);
-      // @ts-ignore
-      const snapshot = await uploadBytes(posterRef, file);
-      const posterURL = await getDownloadURL(snapshot.ref); // Step 2: Get the download URL
+      let posterURL = null;
+      let logoURLs: string[] = [];
+      
+      // Upload poster if file exists
+      if (file) {
+        // @ts-ignore
+        const posterRef = ref(storage, `eventPosters/${file.name}`);
+        // @ts-ignore
+        const posterSnapshot = await uploadBytes(posterRef, file);
+        posterURL = await getDownloadURL(posterSnapshot.ref);
+      }
+      
+      // Upload all logos if files exist
+      for (let i = 0; i < logoFiles.length; i++) {
+        const logoFile = logoFiles[i];
+        // @ts-ignore
+        const logoRef = ref(storage, `eventLogos/${Date.now()}_${logoFile.name}`);
+        // @ts-ignore
+        const logoSnapshot = await uploadBytes(logoRef, logoFile);
+        const logoURL = await getDownloadURL(logoSnapshot.ref);
+        logoURLs.push(logoURL);
+      }
 
-      // Step 3: Save the event data, including the poster URL, to Firestore
+      // Save the event data, including the poster URL and logo URLs, to Firestore
       await addDoc(collection(db, "event"), {
         ...eventData,
         date: Timestamp.fromDate(
           new Date(eventData.event_date + "T" + eventData.event_time)
         ),
-        poster: posterURL, // Save the poster URL in Firestore
+        poster: posterURL,
+        logos: logoURLs, // Add the logo URLs array to the saved event data
       });
 
       alert("Event created successfully!");
@@ -133,22 +189,92 @@ const CreateEvent: React.FC = () => {
           <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
         </div>
 
-        <div className="w-full h-36 mb-4 bg-[#d9d9d9] rounded-md opacity-80 flex flex-col justify-center items-center">
-          <label
-            htmlFor="event-poster"
-            className="flex flex-col items-center cursor-pointer w-full h-full"
-          >
-            <div className="text-2xl text-black">+</div>
-            <div className="text-base text-black">Add event poster</div>
+        <div className="mb-8">
+          <div className="text-lg font-medium text-black mb-2">Event Media</div>
+          
+          {/* Event Poster Upload Section */}
+          <div className="w-full h-36 mb-4 bg-[#d9d9d9] rounded-md overflow-hidden relative">
+            {posterPreview ? (
+              <div className="relative w-full h-full">
+                <img 
+                  src={posterPreview} 
+                  alt="Event poster preview" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                  <label 
+                    htmlFor="event-poster" 
+                    className="bg-white text-black px-3 py-1 rounded-md text-sm cursor-pointer hover:bg-gray-100"
+                  >
+                    Change Poster
+                  </label>
+                </div>
+              </div>
+            ) : (
+              <label
+                htmlFor="event-poster"
+                className="flex flex-col items-center justify-center cursor-pointer w-full h-full"
+              >
+                <div className="text-2xl text-black">+</div>
+                <div className="text-base text-black">Add event poster</div>
+              </label>
+            )}
             <input
               id="event-poster"
               type="file"
-              onChange={handleFileChange}
+              accept="image/*"
+              onChange={handlePosterChange}
               className="hidden"
               title="Upload event poster"
               aria-label="Upload event poster"
             />
-          </label>
+          </div>
+          
+          {/* Multiple Logos Section */}
+          <div className="w-full mb-4">
+            <div className="text-base text-black mb-2">Organization Logos (Add up to 3)</div>
+            
+            {/* Display Added Logos */}
+            {logoPreviews.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-3">
+                {logoPreviews.map((preview, index) => (
+                  <div key={index} className="relative w-20 h-20 bg-white rounded-md overflow-hidden border border-gray-200">
+                    <img src={preview} alt={`Logo ${index + 1}`} className="w-full h-full object-contain p-1" />
+                    <button
+                      type="button"
+                      onClick={() => removeLogoAt(index)}
+                      className="absolute top-0 right-0 bg-red-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Add Logo Button */}
+            {logoFiles.length < 3 && (
+              <div className="w-full h-20 bg-[#d9d9d9] rounded-md overflow-hidden relative">
+                <label
+                  htmlFor="event-logo"
+                  className="flex flex-col items-center justify-center cursor-pointer w-full h-full"
+                >
+                  <div className="text-2xl text-black">+</div>
+                  <div className="text-base text-black">Add organization logo</div>
+                </label>
+                <input
+                  id="event-logo"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleLogoChange}
+                  className="hidden"
+                  title="Upload organization logo"
+                  aria-label="Upload organization logo"
+                />
+              </div>
+            )}
+            <div className="text-xs text-gray-500 mt-1">These logos will appear on certificates</div>
+          </div>
         </div>
 
         <div className="text-xl font-medium text-black mb-2">Event Details</div>
@@ -190,7 +316,7 @@ const CreateEvent: React.FC = () => {
             placeholder="Description"
             value={eventData.description}
             onChange={handleInputChange}
-            className="w-full h-24 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500"
+            className="w-full h-24 px-4 py-2 bg-white border border-gray-200 rounded-md placeholder-gray-500"
           />
           <input
             type="date"
@@ -268,7 +394,7 @@ const CreateEvent: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-blue-500 text-white rounded-md"
+            className="w-full py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
           >
             {loading ? "Submitting..." : "Create Event"}
           </button>
