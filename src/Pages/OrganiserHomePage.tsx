@@ -135,7 +135,7 @@ const EventSection: React.FC = () => {
         <button onClick={() => navigate("/events")} className="flex flex-col items-center" aria-label="Events">
           <CalendarIcon className="h-6 w-6 text-black" />
         </button>
-        <button onClick={() => navigate("/profile")} className="flex flex-col items-center" aria-label="Profile">
+        <button onClick={() => navigate("/OrganiserHomePage/Profile")} className="flex flex-col items-center" aria-label="Profile">
           <UserIcon className="h-6 w-6 text-black rounded-full" />
         </button>
       </div>

@@ -12,6 +12,7 @@ import AdditionalInfo from './Pages/AdditionalInfo';
 import HomePage from './Pages/HomePage';
 import EventDetails from './Pages/EventDetails';
 import OrganiserHomePage from './Pages/OrganiserHomePage';
+import OrganiserProfile from './Pages/OrganiserProfile';
 import EventCreation from './Pages/EventCreation';
 import EventCreateSuccess from './Pages/EventCreateSuccess';
 import OrganiserEventDetail from './Pages/OrganiserEventDetail';
@@ -83,6 +84,7 @@ function App() {
           <Route path="/OrganiserHomePage/OrganiserEventDetail" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
           <Route path="/OrganiserHomePage/OrganiserEventDetail/Scan" element={user ? <Scan /> : <Navigate to="/login" />} />
           <Route path="/OrganiserHomePage/EditEvent/:id" element={user ? <OrganiserEditEvent /> : <Navigate to="/login" />} />
+          <Route path="/OrganiserHomePage/Profile" element={user ? <OrganiserProfile /> : <Navigate to="/login" />} />
           <Route path="/HomePage/Profile" element={user ? <Profile /> : <Navigate to="/login" />} />
           <Route path="/HomePage/Profile/EditProfile" element={user ? <EditProfile /> : <Navigate to="/login" />} />
           <Route path="/event/:id" element={user ? <EventDetails /> : <Navigate to="/login" />} />
