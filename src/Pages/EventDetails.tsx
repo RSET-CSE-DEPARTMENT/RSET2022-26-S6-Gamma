@@ -192,9 +192,34 @@ const EventDetails: React.FC = () => {
   const generateCertificate = async () => {
     if (!isPresent) return; // Don't allow certificate generation if not present
     
-    const certificate = document.getElementById("certificate");
-    if (certificate) {
-      const canvas = await html2canvas(certificate);
+    // Create a hidden container with fixed proportions for the certificate
+    const hiddenContainer = document.createElement('div');
+    hiddenContainer.style.position = 'absolute';
+    hiddenContainer.style.left = '-9999px';
+    hiddenContainer.style.width = '842px'; // A4 landscape width in pixels (approximately)
+    hiddenContainer.style.height = '595px'; // A4 landscape height in pixels (approximately)
+    
+    // Clone the certificate
+    const certificateElement = document.getElementById("certificate");
+    if (!certificateElement) return;
+    
+    const certificateClone = certificateElement.cloneNode(true) as HTMLElement;
+    // Remove responsive classes and apply fixed sizing for PDF generation
+    certificateClone.className = `${getBackgroundStyle()} p-8 rounded-lg overflow-hidden font-serif`;
+    certificateClone.style.width = '842px';
+    certificateClone.style.height = '595px';
+    
+    hiddenContainer.appendChild(certificateClone);
+    document.body.appendChild(hiddenContainer);
+    
+    try {
+      const canvas = await html2canvas(certificateClone, {
+        scale: 2, // Higher resolution
+        useCORS: true,
+        logging: false,
+        backgroundColor: null
+      });
+      
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
       const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -204,6 +229,9 @@ const EventDetails: React.FC = () => {
       // Use certificate name for the filename
       const displayName = certificateName.trim() ? certificateName : userProfile.name;
       pdf.save(`certificate_${displayName}_${eventData.name}.pdf`);
+    } finally {
+      // Clean up
+      document.body.removeChild(hiddenContainer);
     }
   };
 
@@ -379,77 +407,76 @@ const EventDetails: React.FC = () => {
             <div className="w-full max-w-5xl mx-auto">
               <h3 className="text-lg font-medium text-gray-700 mb-4 text-center">Certificate Preview</h3>
               
-              {/* Certificate Container */}
+              {/* Responsive Certificate Container */}
               <div 
                 id="certificate" 
-                className={`w-full max-w-full h-auto aspect-[842/595] mx-auto relative ${getBackgroundStyle()} p-8 shadow-2xl rounded-lg overflow-hidden font-serif`}
+                className={`w-full aspect-[842/595] mx-auto relative ${getBackgroundStyle()} p-4 md:p-8 shadow-2xl rounded-lg overflow-hidden font-serif`}
               >
                 {/* Certificate Border */}
                 <div className={`absolute inset-2 ${getBorderStyle()} rounded-lg`}></div>
                 
-                {/* Ornamental Corner Elements */}
-                <div className="absolute top-6 left-6 w-16 h-16 border-t-4 border-l-4 border-indigo-400 rounded-tl-lg"></div>
-                <div className="absolute top-6 right-6 w-16 h-16 border-t-4 border-r-4 border-indigo-400 rounded-tr-lg"></div>
-                <div className="absolute bottom-6 left-6 w-16 h-16 border-b-4 border-l-4 border-indigo-400 rounded-bl-lg"></div>
-                <div className="absolute bottom-6 right-6 w-16 h-16 border-b-4 border-r-4 border-indigo-400 rounded-br-lg"></div>
-                
-                {/* Logo Section - Using logos from event data */}
-                {eventData && eventData.logos && eventData.logos.length > 0 ? (
-                  <div className="absolute top-10 left-0 right-0 flex justify-center gap-8">
-                    {eventData.logos.map((logo: string, index: number) => (
-                      <img 
-                        key={index} 
-                        src={logo} 
-                        alt={`Organization logo ${index + 1}`} 
-                        className="h-16 w-auto object-contain" 
-                      />
-                    ))}
+                {/* Responsive Certificate Content */}
+                <div className="flex flex-col items-center justify-center h-full w-full text-center px-2 sm:px-4 md:px-16 relative">
+                  {/* Logo Section */}
+                  <div className="mt-2 md:mt-4 mb-2 md:mb-4 flex justify-center gap-4 md:gap-8">
+                    {eventData && eventData.logos && eventData.logos.length > 0 ? (
+                      <>
+                        {eventData.logos.map((logo: string, index: number) => (
+                          <img 
+                            key={index} 
+                            src={logo} 
+                            alt={`Organization logo ${index + 1}`} 
+                            className="h-8 md:h-16 w-auto object-contain" 
+                          />
+                        ))}
+                      </>
+                    ) : (
+                      <div className="h-8 md:h-16 w-8 md:w-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-xs md:text-base">
+                        LOGO
+                      </div>
+                    )}
                   </div>
-                ) : (
-                  <div className="absolute top-10 left-0 right-0 flex justify-center">
-                    <div className="h-16 w-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-                      LOGO
-                    </div>
-                  </div>
-                )}
-                
-                {/* Certificate Content */}
-                <div className="flex flex-col items-center justify-center h-full text-center px-16">
-                  <div className="mb-2 text-gray-500 uppercase tracking-wider text-sm font-semibold">Official Certificate</div>
-                  <h1 className="text-4xl font-bold text-indigo-800 mb-4 font-serif tracking-wide">Certificate of Participation</h1>
                   
-                  <div className="w-40 h-1 bg-gradient-to-r from-indigo-300 to-blue-300 rounded-full mb-6"></div>
+                  {/* Certificate Title */}
+                  <div className="mb-1 md:mb-2 text-gray-500 uppercase tracking-wider text-xs md:text-sm font-semibold">Official Certificate</div>
+                  <h1 className="text-2xl md:text-4xl font-bold text-indigo-800 mb-2 md:mb-4 font-serif tracking-wide">Certificate of Participation</h1>
                   
-                  <p className="text-lg text-gray-600 mb-2">This is to certify that</p>
-                  <h2 className="text-3xl text-indigo-600 font-bold my-2 font-serif">
+                  <div className="w-20 md:w-40 h-0.5 md:h-1 bg-gradient-to-r from-indigo-300 to-blue-300 rounded-full mb-3 md:mb-6"></div>
+                  
+                  {/* Certificate Body */}
+                  <p className="text-sm md:text-lg text-gray-600 mb-1 md:mb-2">This is to certify that</p>
+                  <h2 className="text-xl md:text-3xl text-indigo-600 font-bold my-1 md:my-2 font-serif">
                     {certificateName.trim() ? certificateName : userProfile.name}
                   </h2>
                   
-                  <p className="text-lg text-gray-600 max-w-lg my-4">
+                  <p className="text-xs md:text-lg text-gray-600 max-w-lg my-2 md:my-4">
                     of {userProfile.batch} batch, {userProfile.branch} branch, has successfully
                     participated in {eventData.name} organized by {organizerName}.
                   </p>
                   
-                  <div className="w-32 h-0.5 bg-gray-200 my-4"></div>
+                  <div className="w-16 md:w-32 h-0.5 bg-gray-200 my-2 md:my-4"></div>
                   
-                  <p className="text-gray-600 mb-4">Issued on: {currentDate}</p>
+                  {/* Issue Date */}
+                  <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4">Issued on: {currentDate}</p>
                   
-                  {/* Certificate Number & Verification */}
-                  <p className="text-xs text-gray-400 mt-2">Certificate ID: {Math.random().toString(36).substring(2, 12).toUpperCase()}</p>
-                </div>
-                
-                {/* Signature Section */}
-                <div className="absolute bottom-16 right-20 flex flex-col items-center">
-                  <img src={signatureImage} alt="Signature" className="w-40 mb-2" />
-                  <p className="text-sm text-gray-600 font-semibold">Authorized Signature</p>
-                </div>
-                
-                {/* Watermark */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5">
-                  <div className="w-96 h-96 border-8 border-indigo-800 rounded-full flex items-center justify-center">
-                    <div className="w-80 h-80 border-4 border-indigo-700 rounded-full flex items-center justify-center">
-                      <div className="text-8xl font-bold text-indigo-900">
-                        {eventData.name ? eventData.name.substring(0, 3).toUpperCase() : "CERT"}
+                  {/* Certificate Signature */}
+                  <div className="mt-2 md:mt-4 flex flex-col items-center">
+                    <img src={signatureImage} alt="Signature" className="w-20 md:w-40 mb-1 md:mb-2" />
+                    <p className="text-xs md:text-sm text-gray-600 font-semibold">Authorized Signature</p>
+                  </div>
+                  
+                  {/* Certificate Number */}
+                  <p className="text-xxs md:text-xs text-gray-400 mt-2 absolute bottom-2 md:bottom-4 left-0 right-0">
+                    Certificate ID: {Math.random().toString(36).substring(2, 12).toUpperCase()}
+                  </p>
+                  
+                  {/* Watermark - Made more subtle and responsive */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+                    <div className="w-48 h-48 md:w-96 md:h-96 border-4 md:border-8 border-indigo-800 rounded-full flex items-center justify-center">
+                      <div className="w-40 h-40 md:w-80 md:h-80 border-2 md:border-4 border-indigo-700 rounded-full flex items-center justify-center">
+                        <div className="text-4xl md:text-8xl font-bold text-indigo-900">
+                          {eventData.name ? eventData.name.substring(0, 3).toUpperCase() : "CERT"}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -457,7 +484,7 @@ const EventDetails: React.FC = () => {
               </div>
               
               <div className="text-center text-gray-500 text-sm mt-4 mb-8">
-                <p>Preview scales automatically. Download for correct proportions.</p>
+                <p>Certificate will display correctly on all devices when downloaded.</p>
               </div>
             </div>
           )}
