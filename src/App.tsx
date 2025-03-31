@@ -22,6 +22,7 @@ import EditProfile from './Pages/EditProfile';
 import Ticket from './Pages/Ticket';
 import Scan from './Pages/Scan';
 import Months from './Pages/Months';
+import OrganiserCalendar from './Pages/OrganiserCalendar';
 
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
           <Route path="/event/:id" element={user ? <EventDetails /> : <Navigate to="/login" />} />
           <Route path="/OrganiserHomePage/:id" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
           <Route path="/HomePage/Months" element={user ? <Months /> : <Navigate to="/months " />} />
+          <Route path="/OrganiserCalendar" element={user ? <OrganiserCalendar /> : <Navigate to="/OrganiserCalendar " />} />
           
         </Routes>
       )}

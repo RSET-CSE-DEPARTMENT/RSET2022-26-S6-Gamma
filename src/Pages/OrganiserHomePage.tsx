@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HomeIcon, TicketIcon, PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline";
+import { HomeIcon,PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline";
 import hi from "../assets/Home/hi.svg";
 import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 // @ts-ignore
@@ -91,7 +91,7 @@ const EventSection: React.FC = () => {
 
       {/* Upcoming Events Header */}
       <div className="flex justify-between items-center mb-4 w-full max-w-2xl">
-        <h3 className="text-xl font-medium text-[#246D8C]">Upcoming events</h3>
+        <h3 className="text-xl font-medium">Upcoming events</h3>
         <div className="text-[#111113]/60 text-base cursor-pointer" onClick={() => navigate("/events")}>
           See all
         </div>
@@ -122,17 +122,17 @@ const EventSection: React.FC = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 w-full bg-[#F6FCF7] flex justify-around items-center h-16 border-t border-gray-200">
+      <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
         <button onClick={() => navigate("/Home")} className="flex flex-col items-center" aria-label="Home">
           <HomeIcon className="h-6 w-6 text-black" />
         </button>
-        <button onClick={() => navigate("/tickets")} className="flex flex-col items-center" aria-label="Tickets">
+        {/*<button onClick={() => navigate("/tickets")} className="flex flex-col items-center" aria-label="Tickets">
           <TicketIcon className="h-6 w-6 text-black" />
-        </button>
+        </button>*/}
         <button onClick={() => navigate("/OrganiserHomePage/EventCreation")} className="flex flex-col items-center" aria-label="Add Event">
           <PlusIcon className="h-6 w-6 text-black" />
         </button>
-        <button onClick={() => navigate("/events")} className="flex flex-col items-center" aria-label="Events">
+        <button onClick={() => navigate("/OrganiserCalendar")} className="flex flex-col items-center" aria-label="Events">
           <CalendarIcon className="h-6 w-6 text-black" />
         </button>
         <button onClick={() => navigate("/OrganiserHomePage/Profile")} className="flex flex-col items-center" aria-label="Profile">
