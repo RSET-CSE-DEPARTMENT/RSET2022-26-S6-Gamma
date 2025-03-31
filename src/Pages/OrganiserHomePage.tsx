@@ -15,6 +15,7 @@ const EventSection: React.FC = () => {
   // @ts-ignore
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>(""); // Search state
+  const [activeTab] = useState<string>('home');
 
   useEffect(() => {
     const fetchOrganizerData = async () => {
@@ -125,18 +126,22 @@ const EventSection: React.FC = () => {
       <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
         <button onClick={() => navigate("/Home")} className="flex flex-col items-center" aria-label="Home">
           <HomeIcon className="h-6 w-6 text-black" />
+          <span className={`text-sm ${activeTab === 'home' ? 'text-blue-500' : 'text-black'}`}>Home</span>
         </button>
         {/*<button onClick={() => navigate("/tickets")} className="flex flex-col items-center" aria-label="Tickets">
           <TicketIcon className="h-6 w-6 text-black" />
         </button>*/}
         <button onClick={() => navigate("/OrganiserHomePage/EventCreation")} className="flex flex-col items-center" aria-label="Add Event">
           <PlusIcon className="h-6 w-6 text-black" />
+          <span className={`text-sm ${activeTab === 'create' ? 'text-blue-500' : 'text-black'}`}>Create Event</span>
         </button>
         <button onClick={() => navigate("/OrganiserCalendar")} className="flex flex-col items-center" aria-label="Events">
           <CalendarIcon className="h-6 w-6 text-black" />
+          <span className={`text-sm ${activeTab === 'events' ? 'text-blue-500' : 'text-black'}`}>Events</span>
         </button>
         <button onClick={() => navigate("/OrganiserHomePage/Profile")} className="flex flex-col items-center" aria-label="Profile">
           <UserIcon className="h-6 w-6 text-black rounded-full" />
+          <span className={`text-sm ${activeTab === 'profile' ? 'text-blue-500' : 'text-black'}`}>Profile</span>
         </button>
       </div>
     </div>
