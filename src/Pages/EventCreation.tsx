@@ -184,9 +184,8 @@ const CreateEvent: React.FC = () => {
   return (
     <div className="w-full min-h-screen bg-[#f6fcf7] flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-md">
-        <div className="flex items-center justify-between mb-8">
-          <div className="text-xl font-medium text-black">Create Event</div>
-          <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+        <div className="flex items-center justify-center mb-8">
+          <div className="text-2xl font-medium text-black">Create Event</div>
         </div>
 
         <div className="mb-8">
@@ -232,7 +231,7 @@ const CreateEvent: React.FC = () => {
           
           {/* Multiple Logos Section */}
           <div className="w-full mb-4">
-            <div className="text-base text-black mb-2">Organization Logos (Add up to 3)</div>
+            <div className="text-lg font-medium text-black mb-2">Organization Logos (Add up to 3)</div>
             
             {/* Display Added Logos */}
             {logoPreviews.length > 0 && (
@@ -352,34 +351,34 @@ const CreateEvent: React.FC = () => {
           />
 
           <div>
-            <div className="text-lg font-medium text-black">Coordinator 1</div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Coordinator 1 Name"
-              value={eventData.coordinator1.name}
-              onChange={(e) => handleCoordinatorChange(e, 0)}
-              className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Coordinator 1 Phone"
-              value={eventData.coordinator1.phone}
-              onChange={(e) => handleCoordinatorChange(e, 0)}
-              className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500"
-            />
-          </div>
+            <div className="text-lg font-medium text-black mb-2">Coordinator 1</div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Coordinator Name"
+                  value={eventData.coordinator1.name}
+                  onChange={(e) => handleCoordinatorChange(e, 0)}
+                  className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500 mb-2"
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Coordinator Phone"
+                  value={eventData.coordinator1.phone}
+                  onChange={(e) => handleCoordinatorChange(e, 0)}
+                  className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500 mt-2"
+                />
+            </div>
 
           <div>
-            <div className="text-lg font-medium text-black">Coordinator 2</div>
+            <div className="text-lg font-medium text-black mb-2">Coordinator 2</div>
             <input
               type="text"
               name="name"
               placeholder="Coordinator 2 Name"
               value={eventData.coordinator2.name}
               onChange={(e) => handleCoordinatorChange(e, 1)}
-              className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500"
+              className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500 mb-2"
             />
             <input
               type="tel"
@@ -387,14 +386,14 @@ const CreateEvent: React.FC = () => {
               placeholder="Coordinator 2 Phone"
               value={eventData.coordinator2.phone}
               onChange={(e) => handleCoordinatorChange(e, 1)}
-              className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500"
+              className="w-full h-12 px-4 bg-white border border-gray-200 rounded-md placeholder-gray-500 mt-2 mb-2"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+            className="w-full py-3 bg-[#246D8C] text-white rounded-md hover:bg-[#1E5A77] transition-colors"
           >
             {loading ? "Submitting..." : "Create Event"}
           </button>

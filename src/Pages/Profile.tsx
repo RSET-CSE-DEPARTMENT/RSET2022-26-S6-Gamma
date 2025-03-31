@@ -91,7 +91,7 @@ const Profile: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F6FCF7] flex flex-col items-center py-8 overflow-auto">
+    <div className="min-h-screen bg-[#F6FCF7] flex flex-col items-center py-10 overflow-auto">
       <div className="max-w-2xl w-full bg-white p-6 shadow-xl rounded-xl transition-all duration-300 hover:shadow-2xl overflow-auto">
         <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">User Profile</h2>
         
