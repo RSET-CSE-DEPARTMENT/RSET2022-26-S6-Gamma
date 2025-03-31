@@ -91,39 +91,42 @@ const Profile: React.FC = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-8 shadow-xl rounded-xl mt-10 transition-all duration-300 hover:shadow-2xl">
-      <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">User Profile</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ProfileItem icon={faUser} label="Name" value={userProfile.name} />
-        <ProfileItem icon={faEnvelope} label="Email" value={userProfile.email} />
-        <ProfileItem icon={faPhone} label="Phone Number" value={userProfile.phoneNumber} />
-        <ProfileItem icon={faIdBadge} label="UID" value={userProfile.uid} />
-        <ProfileItem icon={faCalendar} label="Batch" value={userProfile.batch} />
-        <ProfileItem icon={faUserGraduate} label="Year" value={userProfile.year} />
-        <ProfileItem icon={faBook} label="Branch" value={userProfile.branch} />
-        <ProfileItem icon={faMapPin} label="Division" value={userProfile.division} />
-        <ProfileItem icon={faUser} label="Gender" value={userProfile.gender} />
-      </div>
-
-      {/* Buttons */}
-      <div className="flex flex-col md:flex-row gap-4 mt-6">
-        <button
-          onClick={handleEditProfile}
-          className="w-full md:w-1/2 bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-600 transition-all"
-        >
-          <FontAwesomeIcon icon={faEdit} />
-          Edit Profile
-        </button>
-        <button
-          onClick={handleLogout}
-          className="w-full md:w-1/2 bg-red-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-red-600 transition-all"
-        >
-          <FontAwesomeIcon icon={faSignOutAlt} />
-          Log out
-        </button>
+    <div className="min-h-screen bg-[#F6FCF7] flex flex-col items-center py-8 overflow-auto">
+      <div className="max-w-2xl w-full bg-white p-6 shadow-xl rounded-xl transition-all duration-300 hover:shadow-2xl overflow-auto">
+        <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">User Profile</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ProfileItem icon={faUser} label="Name" value={userProfile.name} />
+          <ProfileItem icon={faEnvelope} label="Email" value={userProfile.email} />
+          <ProfileItem icon={faPhone} label="Phone Number" value={userProfile.phoneNumber} />
+          <ProfileItem icon={faIdBadge} label="UID" value={userProfile.uid} />
+          <ProfileItem icon={faCalendar} label="Batch" value={userProfile.batch} />
+          <ProfileItem icon={faUserGraduate} label="Year" value={userProfile.year} />
+          <ProfileItem icon={faBook} label="Branch" value={userProfile.branch} />
+          <ProfileItem icon={faMapPin} label="Division" value={userProfile.division} />
+          <ProfileItem icon={faUser} label="Gender" value={userProfile.gender} />
+        </div>
+  
+        {/* Buttons - Ensuring logout is visible */}
+        <div className="flex flex-col md:flex-row gap-4 mt-6 pb-10">
+          <button
+            onClick={handleEditProfile}
+            className="w-full md:w-1/2 bg-[#246D8C] text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-[#2B8D9C] transition-all"
+          >
+            <FontAwesomeIcon icon={faEdit} />
+            Edit Profile
+          </button>
+          <button
+            onClick={handleLogout}
+            className="w-full md:w-1/2 bg-red-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-red-600 transition-all"
+          >
+            <FontAwesomeIcon icon={faSignOutAlt} />
+            Log out
+          </button>
+        </div>
       </div>
     </div>
-  );
+  );  
 };
 
 interface ProfileItemProps {
