@@ -10,9 +10,10 @@ const ProfileCompletion: React.FC = () => {
   const [division, setDivision] = useState<string>(''); // Initialize division as string
   const [gender, setGender] = useState<string>(''); // Initialize gender as string
   const [phoneNumber, setPhoneNumber] = useState<string>(''); // Initialize phone number as string
-  const [uid, setUID] = useState<string>(''); // Initialize UID as string
+  const [universityID, setUniversityID] = useState<string>(''); // University ID field
   const [year, setYear] = useState<number | string>(1); // Initialize year as number | string
   const [name, setName] = useState<string>(''); // Initialize name as string
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // Track submission state
 
   const navigate = useNavigate();
 
@@ -28,10 +29,12 @@ const ProfileCompletion: React.FC = () => {
 
   const handleContinue = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true); // Prevent multiple submissions
 
-    // Validate fields
-    if (!batch || !branch || !division || !gender || !name || !phoneNumber || !uid || !year) {
+    // Validate fields (including University ID)
+    if (!batch || !branch || !division || !gender || !name || !phoneNumber || !universityID || !year) {
       alert('Please fill all the fields.');
+      setIsSubmitting(false);
       return;
     }
 
@@ -39,6 +42,7 @@ const ProfileCompletion: React.FC = () => {
     const user = auth.currentUser;
     if (!user) {
       alert('No user is signed in!');
+      setIsSubmitting(false);
       return;
     }
 
@@ -49,11 +53,13 @@ const ProfileCompletion: React.FC = () => {
         branch,
         division,
         gender,
-        name, // Already set from Google Auth
+        name: name || user.displayName || '',
         phoneNumber,
-        uid,
+        uid: universityID, // Store the university ID in the uid field
         year,
-        email: user.email // Use email from Firebase Auth
+        email: user.email, // Use email from Firebase Auth
+        profileCompleted: true, // Add this flag to easily check profile completion
+        firebaseUID: user.uid // Store Firebase UID separately for reference
       });
       console.log('Profile data saved successfully!');
 
@@ -61,6 +67,8 @@ const ProfileCompletion: React.FC = () => {
       navigate('/HomePage');
     } catch (error) {
       console.error('Error saving profile data: ', error);
+      alert('There was an error saving your profile. Please try again.');
+      setIsSubmitting(false);
     }
   };
 
@@ -117,17 +125,18 @@ const ProfileCompletion: React.FC = () => {
 
         <input
           type="text"
-          placeholder="UID"
-          value={uid}
-          onChange={(e) => setUID(e.target.value)}
+          placeholder="University ID"
+          value={universityID}
+          onChange={(e) => setUniversityID(e.target.value)}
           className="w-[295px] h-12 px-4 py-[13px] rounded-md border text-base font-normal"
         />
 
         <button
           type="submit"
           className="w-full py-3 bg-[#246d8c] text-white rounded-md text-lg font-medium hover:bg-[#1d5b73] transition-all"
+          disabled={isSubmitting}
         >
-          Continue
+          {isSubmitting ? 'Submitting...' : 'Continue'}
         </button>
       </form>
     </div>

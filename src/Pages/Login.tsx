@@ -22,16 +22,16 @@ const Login = () => {
       // Use Firebase Authentication to sign in the user
       await signInWithEmailAndPassword(auth, email, password);
 
-      // Fetch organizer-specific data from Firestore if needed
-      const docRef = doc(db, 'organizers', email); // Use email as document ID
+      // Fetch user data from Firestore
+      const docRef = doc(db, 'users', email); // Use email as document ID
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        // After successful sign-in, navigate to the organiser's home page
-        navigate('/OrganiserHomePage');
+        // User found in 'users' collection, navigate to the home page
+        navigate('/HomePage');
       } else {
-        console.error('No such user found in organizers');
-        setError('No such organizer found.');
+        // User not found in 'users' collection, show alert
+        setError('User not found. Please sign up.');
       }
     } catch (error) {
       console.error('Error signing in with email:', error);
@@ -43,7 +43,23 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      navigate('/additionalinfo');
+
+      // After Google sign-in, check if the user exists in the 'users' collection
+      const user = auth.currentUser;
+      if (user) {
+        const docRef = doc(db, 'users', user?.email!); // Assuming email is used as user document ID
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          // User found, navigate to the home page
+          navigate('/HomePage');
+        } else {
+          // User not found in 'users' collection
+          alert('User not found. Please sign up.');
+        }
+      } else {
+        alert('Google sign-in failed.');
+      }
     } catch (error) {
       console.error('Error signing in with Google:', error);
       setError('Google sign-in failed.');
