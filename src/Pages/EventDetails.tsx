@@ -3,7 +3,7 @@ import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { useParams } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 // @ts-ignore
 import { storage } from "../firebaseConfig";
@@ -214,6 +214,21 @@ const EventDetails: React.FC = () => {
     }
   };
 
+  const handleUnregister = async () => {
+    if (!userEmail || !id) return;
+
+    try {
+      const docRef = doc(db, 'event', id);
+      await updateDoc(docRef, {
+        Participants: arrayRemove(userEmail),
+      });
+      setRegisterMessage('Successfully unregistered from the event.');
+      setIsRegistered(false);
+    } catch (error) {
+      console.error('Error unregistering from event:', error);
+      setRegisterMessage('Failed to unregister. Please try again later.');
+    }
+  };
 
   const generateCertificate = async () => {
     if (!isPresent || !isEventClosed) return;
@@ -345,10 +360,20 @@ const EventDetails: React.FC = () => {
                   <p className="text-green-600 font-medium">
                     You are registered for this event!
                   </p>
-                 
+                  
+                  {/* Show unregister button only for unpaid events */}
+                  {!eventData.paymentEnabled && !isEventClosed && (
+                    <button
+                      onClick={handleUnregister}
+                      className="w-full mt-2 bg-red-500 text-white py-2 rounded-md text-sm font-medium"
+                    >
+                      Unregister
+                    </button>
+                  )}
+                  
                   {eventData.paymentEnabled && !paymentScreenshotPreview && (
                     <p className="text-sm text-gray-600 mt-2">
-                      As you have already paid for the event, talk the event coordinators to unregister.
+                      As you have already paid for the event, talk to the event coordinators to unregister.
                     </p>
                   )}
                 </div>
