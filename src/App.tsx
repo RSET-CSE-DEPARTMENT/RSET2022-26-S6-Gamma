@@ -50,7 +50,7 @@ function App() {
         <Route path="/OrganiserHomePage/EventCreation" element={user ? <EventCreation /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/EventCreateSuccess" element={user ? <EventCreateSuccess /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/OrganiserEventDetail" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
-        <Route path="/OrganiserHomePage/OrganiserEventDetail/Scan" element={user ? <Scan /> : <Navigate to="/login" />} />
+        <Route path="/OrganiserHomePage/OrganiserEventDetail/Scan/:id" element={user ? <Scan /> : <Navigate to="/login" />} />
         <Route path="/OrganiserExtraDetails/:id" element={user ? <OrganiserExtraDetails /> : <Navigate to="/login" />} />
         <Route path="/OrganiserProfile" element={user ? <OrganiserProfile /> : <Navigate to="/login" />} />
         <Route path="/HomePage/Profile" element={user ? <Profile /> : <Navigate to="/login" />} />
