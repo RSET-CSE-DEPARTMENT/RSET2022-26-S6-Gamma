@@ -32,7 +32,7 @@ const EventSection: React.FC = () => {
           setOrganizerName("Default Organizer Name");
         }
 
-        const eventsCollection = collection(db, "events");
+        const eventsCollection = collection(db, "event");
         const querySnapshot = await getDocs(eventsCollection);
 
         const userEvents = querySnapshot.docs
