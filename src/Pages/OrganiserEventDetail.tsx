@@ -529,8 +529,18 @@ The event concluded successfully with participation from attendees.
                 </button>
               )}
 
+              {eventData.status === 'closed' && (
+                <Link
+                  to={`/OrganiserFeedbackDetails/${id}`}
+                  className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                  <DocumentTextIcon className="h-5 w-5" />
+                  View Feedback
+                </Link>
+              )}
+
               <button 
-                onClick={() => navigate(`/OrganiserHomePage/OrganiserEventDetail/Scan/${id}`)}
+                onClick={() => navigate(`/OrganiserHomePage/OrganiserEventDetail/Scan${id}`)}
                 className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
               >
                 <QrCodeIcon className="h-5 w-5" />

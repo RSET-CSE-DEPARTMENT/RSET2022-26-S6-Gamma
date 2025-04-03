@@ -45,6 +45,11 @@ const EventDetails: React.FC = () => {
     division: "",
     year: 0
   });
+  const [rating, setRating] = useState<number | null>(null);
+  const [comment, setComment] = useState<string>("");
+  const [isSubmittingFeedback, setIsSubmittingFeedback] = useState(false);
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+  const [userFeedback, setUserFeedback] = useState<any>(null);
 
   // Signature image placeholder  
   const signatureImage = "/images/signature.png";
@@ -151,6 +156,34 @@ const EventDetails: React.FC = () => {
     }
   }, [id, userEmail]);
 
+  const submitFeedback = async () => {
+    if (!userEmail || !id || rating === null || isSubmittingFeedback) return;
+  
+    setIsSubmittingFeedback(true);
+    try {
+      const feedbackData = {
+        email: userEmail,
+        rating,
+        comment,
+        timestamp: new Date(),
+        userName: userProfile.name
+      };
+  
+      const eventRef = doc(db, 'event', id);
+      await updateDoc(eventRef, {
+        feedback: arrayUnion(feedbackData)
+      });
+  
+      setFeedbackSubmitted(true);
+      setUserFeedback(feedbackData);
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      setRegisterMessage('Failed to submit feedback. Please try again.');
+    } finally {
+      setIsSubmittingFeedback(false);
+    }
+  };
+
   const handlePaymentScreenshotChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       const selectedFile = event.target.files[0];
@@ -255,6 +288,65 @@ const EventDetails: React.FC = () => {
       document.body.removeChild(hiddenContainer);
     }
   };
+
+  useEffect(() => {
+    if (id) {
+      const fetchEventDetails = async () => {
+        try {
+          const docRef = doc(db, 'event', id);
+          const docSnap = await getDoc(docRef);
+  
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            setEventData(data);
+            setIsEventClosed(data.status === 'closed');
+  
+            if (data.organiser) {
+              fetchOrganizerData(data.organiser);
+            }
+  
+            if (userEmail && data.Participants?.includes(userEmail)) {
+              setIsRegistered(true);
+            }
+            
+            // Check for existing feedback
+            if (userEmail && data.feedback) {
+              const userFeedback = data.feedback.find((f: any) => f.email === userEmail);
+              if (userFeedback) {
+                setFeedbackSubmitted(true);
+                setUserFeedback(userFeedback);
+                setRating(userFeedback.rating);
+                setComment(userFeedback.comment);
+              }
+            }
+            
+            // Only check attendance if event is closed
+            if (userEmail && data.attendees && data.status === 'closed') {
+              const userAttendance = data.attendees.find((attendee: any) => 
+                attendee.email === userEmail || attendee.email === `"${userEmail}"`
+              );
+              
+              if (userAttendance) {
+                setIsPresent(true);
+              }
+            }
+          } else {
+            setError('Event not found.');
+          }
+        } catch (error) {
+          console.error('Error fetching event details:', error);
+          setError('Failed to load event details.');
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchEventDetails();
+    } else {
+      setError('Event ID is missing.');
+      setLoading(false);
+    }
+  }, [id, userEmail]);
 
   const getBackgroundStyle = () => {
     switch (certificateStyle) {
@@ -429,6 +521,76 @@ const EventDetails: React.FC = () => {
             </div>
 
             {registerMessage && <p className="text-center text-green-600 mb-4">{registerMessage}</p>}
+
+    
+ 
+
+{isEventClosed && isPresent && (
+  <div className="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-md">
+    <h3 className="text-lg font-medium text-gray-700 mb-3 text-center">
+      {feedbackSubmitted ? 'Thank you for your feedback!' : 'How was the event?'}
+    </h3>
+    
+    {feedbackSubmitted ? (
+      <div className="text-center">
+        <div className="flex justify-center mb-2">
+          {[...Array(5)].map((_, i) => (
+            <svg
+              key={i}
+              className={`w-6 h-6 ${i < userFeedback.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+        </div>
+        {userFeedback.comment && (
+          <p className="text-gray-600 italic">"{userFeedback.comment}"</p>
+        )}
+      </div>
+    ) : (
+      <>
+        <div className="flex justify-center mb-4">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              onClick={() => setRating(star)}
+              className="focus:outline-none"
+            >
+              <svg
+                className={`w-8 h-8 mx-1 ${rating && star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </button>
+          ))}
+        </div>
+        
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="Share your experience (optional)"
+          className="w-full border border-gray-300 rounded-md p-2 text-sm mb-3 min-h-[80px]"
+        />
+        
+        <button
+          onClick={submitFeedback}
+          disabled={rating === null || isSubmittingFeedback}
+          className={`w-full py-2 rounded-md text-sm font-medium ${
+            rating === null || isSubmittingFeedback
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-blue-600 hover:bg-blue-700 text-white'
+          }`}
+        >
+          {isSubmittingFeedback ? 'Submitting...' : 'Submit Feedback'}
+        </button>
+      </>
+    )}
+  </div>
+)}
 
             {/* Certificate Section - Only show if event is closed */}
             {isEventClosed && (
