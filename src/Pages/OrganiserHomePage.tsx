@@ -139,7 +139,7 @@ const EventSection: React.FC = () => {
           <CalendarIcon className="h-6 w-6 text-black" />
           <span className={`text-sm ${activeTab === 'events' ? 'text-blue-500' : 'text-black'}`}>Events</span>
         </button>
-        <button onClick={() => navigate("/OrganiserHomePage/Profile")} className="flex flex-col items-center" aria-label="Profile">
+        <button onClick={() => navigate("/OrganiserProfile")} className="flex flex-col items-center" aria-label="Profile">
           <UserIcon className="h-6 w-6 text-black rounded-full" />
           <span className={`text-sm ${activeTab === 'profile' ? 'text-blue-500' : 'text-black'}`}>Profile</span>
         </button>
