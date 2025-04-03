@@ -53,8 +53,7 @@ const Login = () => {
           // User found, navigate to the home page
           navigate('/HomePage');
         } else {
-          // User not found in 'users' collection
-          alert('User not found. Please sign up.');
+          
         }
       } else {
         alert('Google sign-in failed.');
