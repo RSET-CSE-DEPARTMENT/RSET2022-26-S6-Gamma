@@ -173,7 +173,7 @@ const CreateEvent: React.FC = () => {
         logoURLs.push(logoURL);
       }
 
-      await addDoc(collection(db, "event"), {
+      await addDoc(collection(db, "events"), {
         ...eventData,
         date: Timestamp.fromDate(
           new Date(eventData.event_date + "T" + eventData.event_time)
