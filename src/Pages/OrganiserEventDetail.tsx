@@ -536,6 +536,15 @@ The event concluded successfully with participation from attendees.
                 <QrCodeIcon className="h-5 w-5" />
                 Scan Tickets
               </button>
+
+              {/* New Event Details Button */}
+              <button 
+                onClick={() => navigate(`/OrganiserExtraDetails/${id}`)}
+                className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors"
+              >
+                <DocumentTextIcon className="h-5 w-5" />
+                Event Details
+              </button>
             </div>
 
             {/* Report Generation Form */}

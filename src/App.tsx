@@ -14,6 +14,7 @@ import OrganiserHomePage from './Pages/OrganiserHomePage';
 import EventCreation from './Pages/EventCreation';
 import EventCreateSuccess from './Pages/EventCreateSuccess';
 import OrganiserEventDetail from './Pages/OrganiserEventDetail';
+import OrganiserExtraDetails from './Pages/OrganiserExtraDetails';
 import OrganiserProfile from './Pages/OrganiserProfile';
 import Profile from './Pages/Profile';
 import Ticket from './Pages/Ticket';
@@ -50,6 +51,7 @@ function App() {
         <Route path="/OrganiserHomePage/EventCreateSuccess" element={user ? <EventCreateSuccess /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/OrganiserEventDetail" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/OrganiserEventDetail/Scan" element={user ? <Scan /> : <Navigate to="/login" />} />
+        <Route path="/OrganiserExtraDetails/:id" element={user ? <OrganiserExtraDetails /> : <Navigate to="/login" />} />
         <Route path="/OrganiserProfile" element={user ? <OrganiserProfile /> : <Navigate to="/login" />} />
         <Route path="/HomePage/Profile" element={user ? <Profile /> : <Navigate to="/login" />} />
         <Route path="/event/:id" element={user ? <EventDetails /> : <Navigate to="/login" />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface ConfirmationCardProps {
   onClose: () => void;
@@ -25,8 +26,11 @@ const ConfirmationCard: React.FC<ConfirmationCardProps> = ({ onClose }) => {
   );
 };
 
-const conformCard: React.FC = () => {
+const ConformCard: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleClose = () => {
+    navigate('/OrganiserHomePage'); // Adjust the route as needed
   };
 
   return (
@@ -36,4 +40,4 @@ const conformCard: React.FC = () => {
   );
 };
 
-export default conformCard;
+export default ConformCard;
