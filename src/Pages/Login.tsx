@@ -13,7 +13,6 @@ const Login = () => {
   const navigate = useNavigate(); // Initialize useNavigate
   const db = getFirestore(); // Initialize Firestore
 
-  // Function to handle email sign in
   const handleEmailSignIn = async (e: any) => {
     e.preventDefault();
     setError(''); // Clear any previous errors
@@ -22,16 +21,16 @@ const Login = () => {
       // Use Firebase Authentication to sign in the user
       await signInWithEmailAndPassword(auth, email, password);
 
-      // Fetch user data from Firestore
-      const docRef = doc(db, 'users', email); // Use email as document ID
+      // Fetch organizer-specific data from Firestore if needed
+      const docRef = doc(db, 'organizers', email); // Use email as document ID
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        // User found in 'users' collection, navigate to the home page
-        navigate('/HomePage');
+        // After successful sign-in, navigate to the organiser's home page
+        navigate('/OrganiserHomePage');
       } else {
-        // User not found in 'users' collection, show alert
-        setError('User not found. Please sign up.');
+        console.error('No such user found in organizers');
+        setError('No such organizer found.');
       }
     } catch (error) {
       console.error('Error signing in with email:', error);
