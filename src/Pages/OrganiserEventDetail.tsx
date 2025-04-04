@@ -542,7 +542,7 @@ The event concluded successfully with participation from attendees.
               )}
 
               <button 
-                onClick={() => navigate(`/OrganiserHomePage/OrganiserEventDetail/Scan${id}`)}
+                onClick={() => navigate(`/OrganiserHomePage/OrganiserEventDetail/Scan/${id}`)}
                 className="flex items-center gap-2 bg-[#246d8c] hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
               >
                 <QrCodeIcon className="h-5 w-5" />

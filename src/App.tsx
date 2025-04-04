@@ -14,10 +14,12 @@ import OrganiserHomePage from './Pages/OrganiserHomePage';
 import EventCreation from './Pages/EventCreation';
 import EventCreateSuccess from './Pages/EventCreateSuccess';
 import OrganiserEventDetail from './Pages/OrganiserEventDetail';
+import OrganiserEditEvent from './Pages/OrganiserEditEvent';
 import OrganiserExtraDetails from './Pages/OrganiserExtraDetails';
 import OrganiserFeedbackDetails from './Pages/OrganiserFeedbackDetails';
 import OrganiserProfile from './Pages/OrganiserProfile';
 import Profile from './Pages/Profile';
+import EditProfile from './Pages/EditProfile';
 import Ticket from './Pages/Ticket';
 import Scan from './Pages/Scan';
 import Months from './Pages/Months';
@@ -51,11 +53,13 @@ function App() {
         <Route path="/OrganiserHomePage/EventCreation" element={user ? <EventCreation /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/EventCreateSuccess" element={user ? <EventCreateSuccess /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/OrganiserEventDetail" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
+        <Route path="/OrganiserHomePage/EditEvent/:id" element={user ? <OrganiserEditEvent /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/OrganiserEventDetail/Scan/:id" element={user ? <Scan /> : <Navigate to="/login" />} />
         <Route path="/OrganiserExtraDetails/:id" element={user ? <OrganiserExtraDetails /> : <Navigate to="/login" />} />
         <Route path="/OrganiserFeedbackDetails/:id" element={user ? <OrganiserFeedbackDetails /> : <Navigate to="/login" />} />
         <Route path="/OrganiserProfile" element={user ? <OrganiserProfile /> : <Navigate to="/login" />} />
         <Route path="/HomePage/Profile" element={user ? <Profile /> : <Navigate to="/login" />} />
+        <Route path="/HomePage/Profile/EditProfile" element={user ? <EditProfile /> : <Navigate to="/login" />} />
         <Route path="/event/:id" element={user ? <EventDetails /> : <Navigate to="/login" />} />
         <Route path="/OrganiserHomePage/:id" element={user ? <OrganiserEventDetail /> : <Navigate to="/login" />} />
         <Route path="/HomePage/Months" element={user ? <Months /> : <Navigate to="/login" />} />
