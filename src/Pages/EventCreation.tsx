@@ -27,14 +27,14 @@ const CreateEvent: React.FC = () => {
     event_date: "",
     event_time: "",
     name: "",
-    num_of_participants: 0,
+    num_of_participants: "",
     organiser: "",
     participants: [""],
     poster: null,
     logos: [],
     venue: "",
     paymentEnabled: false,
-    price: 0,
+    price: "",
   });
 
   useEffect(() => {
@@ -134,6 +134,7 @@ const CreateEvent: React.FC = () => {
 
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(e.target.value) || 0;
+    // @ts-ignore
     setEventData({ ...eventData, price: value });
   };
 
@@ -143,6 +144,7 @@ const CreateEvent: React.FC = () => {
     setEventData({
       ...eventData,
       paymentEnabled: newPaymentState,
+      // @ts-ignore
       price: newPaymentState ? eventData.price : 0,
     });
   };
