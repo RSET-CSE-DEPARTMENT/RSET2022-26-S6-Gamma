@@ -3,7 +3,7 @@ import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { useParams } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 // @ts-ignore
 import { storage } from "../firebaseConfig";
@@ -348,6 +348,46 @@ const EventDetails: React.FC = () => {
     }
   }, [id, userEmail]);
 
+  const handleUnregister = async () => {
+    try {
+      // Show confirmation dialog before unregistering
+      const confirmUnregister = window.confirm(
+        'Are you sure you want to unregister from this event?'
+      );
+      
+      if (!confirmUnregister) return;
+  
+      if (!userEmail || !id) {
+        setRegisterMessage('Error: Missing user information');
+        return;
+      }
+  
+      // Call Firestore to remove the user from Participants array
+      const eventRef = doc(db, 'event', id);
+      await updateDoc(eventRef, {
+        Participants: arrayRemove(userEmail),
+        // Also remove payment proof if exists
+        paymentProofs: arrayRemove({
+          userEmail: userEmail
+        })
+      });
+  
+      // Update local state
+      setIsRegistered(false);
+      setRegisterMessage('Successfully unregistered from the event');
+      
+      // If there was a payment screenshot, clear it
+      if (paymentScreenshotPreview) {
+        setPaymentScreenshot(null);
+        setPaymentScreenshotPreview(null);
+      }
+  
+    } catch (error) {
+      console.error('Error unregistering from event:', error);
+      setRegisterMessage('Failed to unregister. Please try again.');
+    }
+  };
+
   const getBackgroundStyle = () => {
     switch (certificateStyle) {
       case "classic": return "bg-gradient-to-r from-amber-50 to-yellow-50";
@@ -431,94 +471,107 @@ const EventDetails: React.FC = () => {
             </div>
 
             {/* Registration Status Section */}
-            <div className="mb-6 border-t pt-4">
-              {isRegistered ? (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-md text-center">
-                  <p className="text-green-600 font-medium">
-                    You are registered for this event!
-                  </p>
-                 
-                  {eventData.paymentEnabled && !paymentScreenshotPreview && (
-                    <p className="text-sm text-gray-600 mt-2">
-                      As you have already paid for the event, talk the event coordinators to unregister.
-                    </p>
-                  )}
-                </div>
-              ) : !isEventClosed ? (
-                eventData.paymentEnabled ? (
-                  <>
-                    <h3 className="text-lg font-medium mb-3">Payment Information</h3>
-                    <p className="text-gray-700 mb-3">
-                      This event requires payment of ₹{eventData.price}
-                    </p>
-                    
-                    <div className="mb-3">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Upload Payment Screenshot
-                      </label>
-                      {paymentScreenshotPreview ? (
-                        <div className="relative mb-2">
-                          <img 
-                            src={paymentScreenshotPreview} 
-                            alt="Payment screenshot preview" 
-                            className="w-full h-auto max-h-48 object-contain border border-gray-200 rounded"
-                          />
-                          <button
-                            onClick={() => {
-                              setPaymentScreenshot(null);
-                              setPaymentScreenshotPreview(null);
-                            }}
-                            className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
-                          >
-                            ×
-                          </button>
-                        </div>
-                      ) : (
-                        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg className="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                            </svg>
-                            <p className="mb-2 text-sm text-gray-500"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p className="text-xs text-gray-500">PNG, JPG (MAX. 5MB)</p>
-                          </div>
-                          <input 
-                            id="payment-screenshot" 
-                            type="file" 
-                            className="hidden" 
-                            accept="image/*"
-                            onChange={handlePaymentScreenshotChange}
-                          />
-                        </label>
-                      )}
-                    </div>
-
-                    <button
-                      onClick={uploadPaymentProof}
-                      disabled={!paymentScreenshot || isUploadingPayment}
-                      className={`w-full py-3 rounded-md text-lg font-medium mb-4 ${
-                        !paymentScreenshot || isUploadingPayment
-                          ? 'bg-gray-400 cursor-not-allowed'
-                          : 'bg-green-600 hover:bg-green-700 text-white'
-                      }`}
-                    >
-                      {isUploadingPayment ? 'Processing...' : 'Submit Payment & Register'}
-                    </button>
-                  </>
-                ) : (
-                  <button
-                    className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium mb-4"
-                    onClick={handleRegister}
-                  >
-                    Register
-                  </button>
-                )
-              ) : (
-                <div className="w-full bg-gray-400 text-white py-3 rounded-md text-lg font-medium mb-4 text-center cursor-not-allowed">
-                  Registration Closed
-                </div>
-              )}
+<div className="mb-6 border-t pt-4">
+  {isRegistered ? (
+    <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+      <div className="text-center">
+        <p className="text-green-600 font-medium">
+          You are registered for this event!
+        </p>
+      </div>
+      
+      {eventData.paymentEnabled ? (
+        !paymentScreenshotPreview && (
+          <p className="text-sm text-gray-600 mt-2 text-center">
+            As you have already paid for the event, talk to the event coordinators to unregister.
+          </p>
+        )
+      ) : (
+        <div className="mt-3 flex justify-center">
+          <button
+            className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md text-sm font-medium"
+            onClick={handleUnregister}
+          >
+            Unregister from Event
+          </button>
+        </div>
+      )}
+    </div>
+  ) : !isEventClosed ? (
+    eventData.paymentEnabled ? (
+      <>
+        <h3 className="text-lg font-medium mb-3">Payment Information</h3>
+        <p className="text-gray-700 mb-3">
+          This event requires payment of ₹{eventData.price}
+        </p>
+        
+        <div className="mb-3">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Upload Payment Screenshot
+          </label>
+          {paymentScreenshotPreview ? (
+            <div className="relative mb-2">
+              <img 
+                src={paymentScreenshotPreview} 
+                alt="Payment screenshot preview" 
+                className="w-full h-auto max-h-48 object-contain border border-gray-200 rounded"
+              />
+              <button
+                onClick={() => {
+                  setPaymentScreenshot(null);
+                  setPaymentScreenshotPreview(null);
+                }}
+                className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+              >
+                ×
+              </button>
             </div>
+          ) : (
+            <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg className="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                </svg>
+                <p className="mb-2 text-sm text-gray-500"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                <p className="text-xs text-gray-500">PNG, JPG (MAX. 5MB)</p>
+              </div>
+              <input 
+                id="payment-screenshot" 
+                type="file" 
+                className="hidden" 
+                accept="image/*"
+                onChange={handlePaymentScreenshotChange}
+              />
+            </label>
+          )}
+        </div>
+
+        <button
+          onClick={uploadPaymentProof}
+          disabled={!paymentScreenshot || isUploadingPayment}
+          className={`w-full py-3 rounded-md text-lg font-medium mb-4 ${
+            !paymentScreenshot || isUploadingPayment
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-green-600 hover:bg-green-700 text-white'
+          }`}
+        >
+          {isUploadingPayment ? 'Processing...' : 'Submit Payment & Register'}
+        </button>
+      </>
+    ) : (
+      <button
+        className="w-full bg-[#246d8c] text-white py-3 rounded-md text-lg font-medium mb-4"
+        onClick={handleRegister}
+      >
+        Register
+      </button>
+    )
+  ) : (
+    <div className="w-full bg-gray-400 text-white py-3 rounded-md text-lg font-medium mb-4 text-center cursor-not-allowed">
+      Registration Closed
+    </div>
+  )}
+</div>
 
             {registerMessage && <p className="text-center text-green-600 mb-4">{registerMessage}</p>}
 
