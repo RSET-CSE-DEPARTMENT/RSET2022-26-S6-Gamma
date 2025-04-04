@@ -172,8 +172,11 @@ const OrganiserExtraDetails = () => {
           <button 
             onClick={() => navigate(-1)}
             className="mr-4 p-2 rounded-full hover:bg-gray-100"
+            aria-label="Go back to previous page"
+            title="Go back"
           >
-            <ArrowLeftIcon className="h-5 w-5 text-gray-600" />
+            <ArrowLeftIcon className="h-5 w-5 text-gray-600" aria-hidden="true" />
+            <span className="sr-only">Go back</span>
           </button>
           <h1 className="text-2xl font-bold text-gray-800">
             {eventName} - Participant Details ({participants.length})
@@ -183,9 +186,11 @@ const OrganiserExtraDetails = () => {
           onClick={downloadPDF}
           disabled={participants.length === 0}
           className={`flex items-center gap-2 px-4 py-2 rounded-lg ${participants.length === 0 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+          aria-label="Export participant list to PDF"
+          title="Export PDF"
         >
-          <ArrowDownTrayIcon className="h-5 w-5" />
-          Export PDF
+          <ArrowDownTrayIcon className="h-5 w-5" aria-hidden="true" />
+          <span>Export PDF</span>
         </button>
       </div>
 

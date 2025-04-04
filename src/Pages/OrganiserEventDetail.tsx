@@ -255,6 +255,7 @@ The event concluded successfully with participation from attendees.
     navigator.clipboard.writeText(generatedReport);
     alert('Report copied to clipboard!');
   };
+
   const downloadPDF = async () => {
     if (!eventData) return;
   
@@ -385,6 +386,7 @@ The event concluded successfully with participation from attendees.
     
     pdf.save(`${eventData.name.replace(/[^a-z0-9]/gi, '_')}_report.pdf`);
   };
+
   // Helper function to convert image URL to base64
   const getBase64ImageFromUrl = async (url: string): Promise<string> => {
     const response = await fetch(url);
@@ -398,23 +400,23 @@ The event concluded successfully with participation from attendees.
   };
 
   if (loading) return (
-    <div className="flex justify-center items-center h-40">
+    <div className="flex justify-center items-center h-40 bg-[#e9f7f1]">
       <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
     </div>
   );
   
   if (error) return (
-    <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-4">
+    <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-4 bg-[#e9f7f1]">
       <p className="text-red-700">{error}</p>
     </div>
   );
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <div className="w-full max-w-4xl mx-auto p-4 bg-[#e9f7f1] min-h-screen">
       {eventData ? (
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           {/* Event Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+          <div className="bg-[#246d8c] p-6 text-white">
             <h1 className="text-2xl font-bold">{eventData.name}</h1>
             <p className="opacity-90">Organized by {eventData.organiser}</p>
           </div>
@@ -494,7 +496,7 @@ The event concluded successfully with participation from attendees.
               {eventData.status !== 'closed' && (
                 <Link 
                   to={`/OrganiserHomePage/EditEvent/${id}`}
-                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+                  className="flex items-center gap-2 bg-[#246d8c] hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
                 >
                   <PencilIcon className="h-5 w-5" />
                   Edit Event
@@ -512,7 +514,7 @@ The event concluded successfully with participation from attendees.
               {eventData.status !== 'closed' && (
                 <button 
                   onClick={handleCloseEvent}
-                  className="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-lg transition-colors"
+                  className="flex items-center gap-2 bg-[#246d8c] hover:bg-yellow-700 text-white px-4 py-2 rounded-lg transition-colors"
                 >
                   <LockClosedIcon className="h-5 w-5" />
                   Close Event
@@ -522,7 +524,7 @@ The event concluded successfully with participation from attendees.
               {eventData.status === 'closed' && (
                 <button 
                   onClick={() => setShowReportForm(true)}
-                  className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                  className="flex items-center gap-2 bg-[#246d8c] hover:bg-[#246d8c] text-white px-4 py-2 rounded-lg transition-colors"
                 >
                   <DocumentTextIcon className="h-5 w-5" />
                   Generate Report
@@ -541,7 +543,7 @@ The event concluded successfully with participation from attendees.
 
               <button 
                 onClick={() => navigate(`/OrganiserHomePage/OrganiserEventDetail/Scan${id}`)}
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+                className="flex items-center gap-2 bg-[#246d8c] hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
               >
                 <QrCodeIcon className="h-5 w-5" />
                 Scan Tickets
@@ -550,7 +552,7 @@ The event concluded successfully with participation from attendees.
               {/* New Event Details Button */}
               <button 
                 onClick={() => navigate(`/OrganiserExtraDetails/${id}`)}
-                className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors"
+                className="flex items-center gap-2 bg-[#246d8c] hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors"
               >
                 <DocumentTextIcon className="h-5 w-5" />
                 Event Details
@@ -620,6 +622,7 @@ The event concluded successfully with participation from attendees.
                         <button
                           onClick={() => setReportDetails({...reportDetails, photo: null, photoPreview: ''})}
                           className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+                          aria-label="Remove photo"
                         >
                           ×
                         </button>
@@ -638,6 +641,7 @@ The event concluded successfully with participation from attendees.
                           className="hidden" 
                           accept="image/*"
                           onChange={handlePhotoChange}
+                          aria-label="Upload event photo"
                         />
                       </label>
                     )}
@@ -669,6 +673,7 @@ The event concluded successfully with participation from attendees.
                     <button
                       onClick={() => setShowReportForm(false)}
                       className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+                      aria-label="Cancel report generation"
                     >
                       Cancel
                     </button>
@@ -678,6 +683,7 @@ The event concluded successfully with participation from attendees.
                       className={`px-4 py-2 rounded-md text-white flex items-center gap-2 ${
                         isGeneratingReport ? 'bg-purple-500' : 'bg-purple-600 hover:bg-purple-700'
                       } transition-colors`}
+                      aria-label={isGeneratingReport ? "Generating report" : "Generate report"}
                     >
                       {isGeneratingReport ? (
                         <>
@@ -708,6 +714,7 @@ The event concluded successfully with participation from attendees.
                     <button
                       onClick={copyToClipboard}
                       className="flex items-center gap-1 text-blue-600 hover:text-blue-800"
+                      aria-label="Copy report to clipboard"
                     >
                       <ClipboardDocumentIcon className="h-5 w-5" />
                       Copy
@@ -715,6 +722,7 @@ The event concluded successfully with participation from attendees.
                     <button
                       onClick={downloadPDF}
                       className="flex items-center gap-1 text-green-600 hover:text-green-800"
+                      aria-label="Download report as PDF"
                     >
                       <ArrowDownTrayIcon className="h-5 w-5" />
                       PDF

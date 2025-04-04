@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HomeIcon,PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline";
+import { HomeIcon, PlusIcon, CalendarIcon, UserIcon } from "@heroicons/react/24/outline";
 import hi from "../assets/Home/hi.svg";
 import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 // @ts-ignore
@@ -11,11 +11,11 @@ const EventSection: React.FC = () => {
   const navigate = useNavigate();
   const [organizerName, setOrganizerName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
-  const [events, setEvents] = useState<any[]>([]);
-  // @ts-ignore
-  const [error, setError] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState<string>(""); // Search state
+  const [activeEvents, setActiveEvents] = useState<any[]>([]);
+  const [closedEvents, setClosedEvents] = useState<any[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeTab] = useState<string>('home');
+  const [eventFilter, setEventFilter] = useState<'active' | 'closed'>('active');
 
   useEffect(() => {
     const fetchOrganizerData = async () => {
@@ -36,14 +36,29 @@ const EventSection: React.FC = () => {
         const querySnapshot = await getDocs(eventsCollection);
 
         const userEvents = querySnapshot.docs
-          .map((doc) => ({ ...doc.data(), id: doc.id }))
+          .map((doc) => {
+            const data = doc.data();
+            const isClosed = data.status === 'closed';
+            return {
+              id: doc.id,
+              ...data,
+              isClosed,
+              event_date: data.event_date || data.event_Date,
+              event_time: data.event_time || data.eventTime
+            };
+          })
           // @ts-ignore
           .filter((event) => event.organiser === user.email);
 
-        setEvents(userEvents);
+        const active = userEvents.filter(event => !event.isClosed);
+        const closed = userEvents.filter(event => event.isClosed);
+
+        setActiveEvents(active);
+        setClosedEvents(closed);
       } else {
         setOrganizerName("Guest");
-        setEvents([]);
+        setActiveEvents([]);
+        setClosedEvents([]);
       }
 
       setLoading(false);
@@ -52,96 +67,119 @@ const EventSection: React.FC = () => {
     fetchOrganizerData();
   }, []);
 
-  // Filter events based on search query
-  const filteredEvents = events.filter((event) =>
-    event.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Filter events based on search query and active/closed filter
+  const filteredEvents = (eventFilter === 'active' ? activeEvents : closedEvents)
+    .filter((event) => event.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
-    <div className="w-full min-h-screen bg-[#F6FCF7] p-4 flex flex-col items-center">
+    <div className="w-full min-h-screen bg-[#F6FCF7] p-4 flex flex-col items-center pb-20">
       {/* Welcome Section */}
-      <div className="relative mb-6 w-full max-w-2xl">
-        <img src={hi} alt="App logo" className="mb-8" />
+      <div className="relative mb-6 w-full max-w-3xl">
+        <div className="w-full">
+          <img src={hi} alt="App logo" className="w-full h-auto mb-8" />
+        </div>
         <div className="absolute top-0 left-4 mt-4 text-white">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">Welcome back</h1>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">Welcome back</h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug truncate max-w-xs sm:max-w-sm md:max-w-md">
             {loading ? "Loading..." : organizerName}!
           </h2>
         </div>
       </div>
 
       {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search events..."
-        className="w-full max-w-2xl px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#246D8C]"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+      <div className="w-full max-w-3xl mb-4">
+        <input
+          type="text"
+          placeholder="Search events..."
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#246D8C]"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
 
-      {/* Event Filters */}
-      <div className="flex items-center gap-4 mb-6 w-full max-w-2xl justify-center">
-        <div className="bg-[#246D8C] text-white text-base font-medium px-4 py-2 rounded-md cursor-pointer">All</div>
-        <div className="border border-[#246D8C] text-[#246D8C] text-base font-medium px-4 py-2 rounded-md cursor-pointer">
-          Workshop
-        </div>
-        <div className="border border-[#246D8C] text-[#246D8C] text-base font-medium px-4 py-2 rounded-md cursor-pointer">
-          Cultural
+      {/* Event Tabs */}
+      <div className="w-full max-w-3xl mb-6">
+        <div className="flex border-b border-gray-200">
+          <button
+            className={`py-2 px-6 font-medium ${eventFilter === 'active' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-500 hover:text-gray-700'}`}
+            onClick={() => setEventFilter('active')}
+          >
+            Active Events
+          </button>
+          <button
+            className={`py-2 px-6 font-medium ${eventFilter === 'closed' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-500 hover:text-gray-700'}`}
+            onClick={() => setEventFilter('closed')}
+          >
+            Closed Events
+          </button>
         </div>
       </div>
 
-      {/* Upcoming Events Header */}
-      <div className="flex justify-between items-center mb-4 w-full max-w-2xl">
-        <h3 className="text-xl font-medium">Upcoming events</h3>
-        <div className="text-[#111113]/60 text-base cursor-pointer" onClick={() => navigate("/events")}>
-          See all
-        </div>
-      </div>
-
-      {/* Upcoming Events List */}
-      <div className="w-full max-w-2xl">
+      {/* Events List */}
+      <div className="w-full max-w-3xl">
         {loading ? (
-          <p>Loading events...</p>
-        ) : error ? (
-          <p>{error}</p>
+          <div className="flex justify-center p-4">
+            <p>Loading events...</p>
+          </div>
         ) : filteredEvents.length === 0 ? (
-          <p>No matching events found</p>
+          <div className="flex justify-center p-4">
+            <p>No {eventFilter === 'active' ? 'active' : 'closed'} events found</p>
+          </div>
         ) : (
-          filteredEvents.map((event) => (
-            <Link key={event.id} to={`/OrganiserHomePage/${event.id}`}>
-              <div className="bg-white rounded-md p-4 mb-4 shadow-lg flex flex-col items-center">
-                <img src={event.poster} alt={event.name} className="w-full h-70 object-cover rounded-md mb-4" />
-                <h4 className="text-xl font-semibold">{event.name}</h4>
-                <p className="text-gray-600">{event.organiser}</p>
-                <p className="text-gray-600">{event.category}</p>
-                <p className="text-gray-600">{event.venue}</p>
-                <p className="text-gray-600">{event.event_Date}</p>
-              </div>
-            </Link>
-          ))
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredEvents.map((event) => (
+              <Link key={event.id} to={`/OrganiserHomePage/${event.id}`} className="flex">
+                <div className={`bg-white rounded-md p-4 shadow-lg flex flex-col items-center w-full h-full ${
+                  event.isClosed ? 'opacity-80' : ''
+                }`}>
+                  {/* Square Poster Image */}
+                  <div className="w-full aspect-square mb-3 relative">
+                    <img 
+                      src={event.poster} 
+                      alt={event.name} 
+                      className="w-full h-full object-cover rounded-md"
+                      onError={(e) => {
+                        // @ts-ignore
+                        e.target.onerror = null;
+                        // @ts-ignore
+                        e.target.src = "https://via.placeholder.com/300?text=Event+Image";
+                      }}
+                    />
+                    {event.isClosed && (
+                      <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md">
+                        Closed
+                      </div>
+                    )}
+                  </div>
+                  <h4 className="text-lg font-semibold text-center line-clamp-1">{event.name}</h4>
+                  <p className="text-gray-600 text-sm text-center line-clamp-1">{event.organiser}</p>
+                  <p className="text-gray-600 text-sm text-center">{event.category}</p>
+                  <p className="text-gray-600 text-sm text-center line-clamp-1">{event.venue}</p>
+                  <p className="text-gray-600 text-sm text-center">{event.event_date}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         )}
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 w-full bg-white flex justify-around items-center h-16 border-t border-gray-200">
-        <button onClick={() => navigate("/Home")} className="flex flex-col items-center" aria-label="Home">
-          <HomeIcon className="h-6 w-6 text-black" />
-          <span className={`text-sm ${activeTab === 'home' ? 'text-blue-500' : 'text-black'}`}>Home</span>
+      <div className="fixed bottom-0 left-0 right-0 bg-white flex justify-around items-center h-16 border-t border-gray-200 z-10">
+        <button onClick={() => navigate("/Home")} className="flex flex-col items-center w-1/4" aria-label="Home">
+          <HomeIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
+          <span className={`text-xs sm:text-sm ${activeTab === 'home' ? 'text-blue-500' : 'text-black'}`}>Home</span>
         </button>
-        {/*<button onClick={() => navigate("/tickets")} className="flex flex-col items-center" aria-label="Tickets">
-          <TicketIcon className="h-6 w-6 text-black" />
-        </button>*/}
-        <button onClick={() => navigate("/OrganiserHomePage/EventCreation")} className="flex flex-col items-center" aria-label="Add Event">
-          <PlusIcon className="h-6 w-6 text-black" />
-          <span className={`text-sm ${activeTab === 'create' ? 'text-blue-500' : 'text-black'}`}>Create Event</span>
+        <button onClick={() => navigate("/OrganiserHomePage/EventCreation")} className="flex flex-col items-center w-1/4" aria-label="Add Event">
+          <PlusIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
+          <span className={`text-xs sm:text-sm ${activeTab === 'create' ? 'text-blue-500' : 'text-black'}`}>Create</span>
         </button>
-        <button onClick={() => navigate("/OrganiserCalendar")} className="flex flex-col items-center" aria-label="Events">
-          <CalendarIcon className="h-6 w-6 text-black" />
-          <span className={`text-sm ${activeTab === 'events' ? 'text-blue-500' : 'text-black'}`}>Events</span>
+        <button onClick={() => navigate("/OrganiserCalendar")} className="flex flex-col items-center w-1/4" aria-label="Events">
+          <CalendarIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
+          <span className={`text-xs sm:text-sm ${activeTab === 'events' ? 'text-blue-500' : 'text-black'}`}>Events</span>
         </button>
-        <button onClick={() => navigate("/OrganiserProfile")} className="flex flex-col items-center" aria-label="Profile">
-          <UserIcon className="h-6 w-6 text-black rounded-full" />
-          <span className={`text-sm ${activeTab === 'profile' ? 'text-blue-500' : 'text-black'}`}>Profile</span>
+        <button onClick={() => navigate("/OrganiserProfile")} className="flex flex-col items-center w-1/4" aria-label="Profile">
+          <UserIcon className="h-5 w-5 sm:h-6 sm:w-6 text-black" />
+          <span className={`text-xs sm:text-sm ${activeTab === 'profile' ? 'text-blue-500' : 'text-black'}`}>Profile</span>
         </button>
       </div>
     </div>
