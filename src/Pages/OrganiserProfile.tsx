@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faLock, faSignOutAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faLock, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 // Initialize Firestore
 const firestore = getFirestore();
@@ -61,34 +61,55 @@ const OrganiserProfile: React.FC = () => {
     }
   };
 
-  const handleEditProfile = () => {
-    navigate("/HomePage/OrganiserProfile/EditProfile"); // Navigate to edit profile page
-  };
-
   if (loading) {
-    return <p className="text-center text-gray-600">Loading profile...</p>;
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-xl mx-auto bg-white p-6 shadow-xl rounded-xl mt-10 transition-all duration-300 hover:shadow-2xl">
-      <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">Organiser Profile</h2>
-      <div className="grid grid-cols-1 gap-6">
-        <ProfileItem icon={faUser} label="Name" value={organiserProfile.name} />
-        <ProfileItem icon={faLock} label="Password" value={organiserProfile.password} />
+    <div className="max-w-2xl mx-auto bg-white p-8 shadow-lg rounded-2xl mt-10 transition-all duration-300 hover:shadow-xl">
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-800">Organiser Profile</h2>
+        <p className="text-gray-600 mt-2">View your account details</p>
       </div>
 
-      {/* Buttons */}
-      <div className="flex flex-col md:flex-row gap-4 mt-6">
-        <button
-          onClick={handleEditProfile}
-          className="w-full md:w-1/2 bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-600 transition-all"
-        >
-          <FontAwesomeIcon icon={faEdit} />
-          Edit Profile
-        </button>
+      {/* Profile Card */}
+      <div className="bg-gray-50 p-6 rounded-xl mb-8">
+        {/* Profile Picture Placeholder */}
+        <div className="flex justify-center mb-6">
+          <div className="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center">
+            <span className="text-3xl text-indigo-600 font-bold">
+              {organiserProfile.name.charAt(0).toUpperCase()}
+            </span>
+          </div>
+        </div>
+
+        {/* Profile Details */}
+        <div className="space-y-6">
+          <ProfileItem 
+            icon={faUser} 
+            label="Name" 
+            value={organiserProfile.name || "Not provided"} 
+          />
+          
+          <ProfileItem 
+            icon={faLock} 
+            label="Password" 
+            value={organiserProfile.password || "Not set"} 
+          />
+        </div>
+      </div>
+
+      {/* Action Button */}
+      <div className="flex justify-center">
         <button
           onClick={handleLogout}
-          className="w-full md:w-1/2 bg-red-500 text-white py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-red-600 transition-all"
+          className="w-full sm:w-1/2 bg-red-500 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-2 hover:bg-red-600 transition-all"
+          aria-label="Log out"
         >
           <FontAwesomeIcon icon={faSignOutAlt} />
           Log out
