@@ -31,7 +31,6 @@ const Calendar = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   type EventType = Record<string, { name: string; details: string }>;
   const [events, setEvents] = useState<EventType>({});
-  //const [selectedEvent, setSelectedEvent] = useState<{ name: string; details: string } | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -90,13 +89,21 @@ const Calendar = () => {
       {showYearView || showMonths ? (
         <div>
           <div className="flex justify-between items-center mb-4">
-            <button onClick={() => setCurrentDate(sub(currentDate, { years: 1 }))}>
+            <button 
+              onClick={() => setCurrentDate(sub(currentDate, { years: 1 }))}
+              aria-label="Previous year"
+              title="Previous year"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <h2 className="text-xl font-bold text-center cursor-pointer" onClick={() => { setShowYearView(false); setShowMonths(false); }}>
               {format(currentDate, "yyyy")}
             </h2>
-            <button onClick={() => setCurrentDate(add(currentDate, { years: 1 }))}>
+            <button 
+              onClick={() => setCurrentDate(add(currentDate, { years: 1 }))}
+              aria-label="Next year"
+              title="Next year"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
@@ -112,7 +119,11 @@ const Calendar = () => {
                     setCurrentDate(monthStart);
                     setShowYearView(false);
                     setShowMonths(false);
-                  }}>
+                  }}
+                  role="button"
+                  aria-label={`Select ${month}`}
+                  tabIndex={0}
+                >
                   <div className="font-semibold">{month}</div>
                   <div className="grid grid-cols-7 text-xs gap-1 mt-1">
                     {monthDays.map((day) => (
@@ -127,16 +138,27 @@ const Calendar = () => {
       ) : (
         <>
           <div className="flex justify-between items-center mb-4">
-            <button onClick={() => handleMonthChange(false)}>
+            <button 
+              onClick={() => handleMonthChange(false)}
+              aria-label="Previous month"
+              title="Previous month"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <h2 
               className="text-lg font-semibold cursor-pointer"
               onClick={() => { setShowMonths(true); setShowYearView(true); }}
+              role="button"
+              aria-label="Select month and year"
+              tabIndex={0}
             >
               {format(currentDate, "MMMM yyyy")}
             </h2>
-            <button onClick={() => handleMonthChange(true)}>
+            <button 
+              onClick={() => handleMonthChange(true)}
+              aria-label="Next month"
+              title="Next month"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
@@ -151,12 +173,18 @@ const Calendar = () => {
             {days.map((day, index) => {
               const formattedDate = format(day, "yyyy-MM-dd");
               return (
-                <div key={index} className={`p-2 text-center rounded-full text-sm cursor-pointer
-                  ${isSameMonth(day, currentDate) ? "text-gray-800" : "text-gray-400"}
-                  ${selectedDate === formattedDate ? "bg-[#2B8D9C] text-white rounded-full" : ""}`}
+                <div 
+                  key={index} 
+                  className={`p-2 text-center rounded-full text-sm cursor-pointer
+                    ${isSameMonth(day, currentDate) ? "text-gray-800" : "text-gray-400"}
+                    ${selectedDate === formattedDate ? "bg-[#2B8D9C] text-white rounded-full" : ""}`}
                   onClick={() => {
                     setSelectedDate(formattedDate);
-                  }}>
+                  }}
+                  role="button"
+                  aria-label={`Select date ${format(day, "MMMM d, yyyy")}`}
+                  tabIndex={0}
+                >
                   {format(day, "d")}
                   {events[formattedDate] && <div className="w-1.5 h-1.5 bg-[#FFB94B] rounded-full mx-auto mt-1"></div>}
                 </div>

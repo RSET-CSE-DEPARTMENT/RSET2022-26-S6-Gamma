@@ -90,13 +90,19 @@ const OrganiserCalendar = () => {
       {showYearView || showMonths ? (
         <div>
           <div className="flex justify-between items-center mb-4">
-            <button onClick={() => setCurrentDate(sub(currentDate, { years: 1 }))}>
+            <button 
+              onClick={() => setCurrentDate(sub(currentDate, { years: 1 }))}
+              aria-label="Previous year"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <h2 className="text-xl font-bold text-center cursor-pointer" onClick={() => { setShowYearView(false); setShowMonths(false); }}>
               {format(currentDate, "yyyy")}
             </h2>
-            <button onClick={() => setCurrentDate(add(currentDate, { years: 1 }))}>
+            <button 
+              onClick={() => setCurrentDate(add(currentDate, { years: 1 }))}
+              aria-label="Next year"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
@@ -126,7 +132,10 @@ const OrganiserCalendar = () => {
       ) : (
         <>
           <div className="flex justify-between items-center mb-4">
-            <button onClick={() => handleMonthChange(false)}>
+            <button 
+              onClick={() => handleMonthChange(false)}
+              aria-label="Previous month"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <h2 
@@ -135,7 +144,10 @@ const OrganiserCalendar = () => {
             >
               {format(currentDate, "MMMM yyyy")}
             </h2>
-            <button onClick={() => handleMonthChange(true)}>
+            <button 
+              onClick={() => handleMonthChange(true)}
+              aria-label="Next month"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
@@ -178,7 +190,6 @@ const OrganiserCalendar = () => {
                 <p className="text-lg text-gray-700">No events today</p>
             )}
           </div>
-
         </>
       )}
     </div>
