@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan & Prep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kurale', sans-serif;
+        }
+
+        body {
+            background-color: #FFECEA;
+            overflow-x: hidden;
+        }
+
+        .header-bar {
+            height: 60px;
+            background-color: #C2CDFF;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFECEA;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Image with Blur */
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('bg1.jpg') no-repeat center center/cover;
+            filter: blur(8px);
+            opacity: 0.5; /* Adjust for desired effect */
+        }
+
+        /* Ensure text and buttons are above the blurred background */
+        .header-text {
+            position: relative;
+            z-index: 2;
+            max-width: 50%;
+            text-align: center;
+        }
+
+        .header-text img {
+            width: 600px;
+            max-width: 100%;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            max-width: 500px;
+            margin: 10px auto;
+        }
+
+        /* Style for LOGIN button */
+        .login-btn {
+            background: linear-gradient(to right, #44498B, #163461);
+            color: white;
+            border: 2px solid #30356D;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .login-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Wavy bar with straight top and wavy bottom */
+        .wavy-bar {
+            height: 100px;
+            background-color: #FF9874;
+            position: relative;
+        }
+
+        .wavy-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%2040%22%3E%3Cpath%20d%3D%22M0%200%20L%20200%200%20C%20150%2020%20150%2040%200%2040%20Z%22%20fill%3D%22%23FF9874%22%3E%3C/path%3E%3C/svg%3E') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .blue-section {
+            background-color: #7695FF;
+            padding: 80px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        /* Blue boxes with shadow and hover effect */
+        .icon-box {
+            background-color: #C2CDFF;
+            width: 250px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .icon-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Make Calendar Icon Bigger */
+        .icon-box img {
+            width: 120px;
+            margin-top: -15px;
+        }
+
+        /* Specifically increase size of calendar image */
+        .icon-box img[src="cal.png"] {
+            width: 180px;
+        }
+
+        /* Text below the images */
+        .icon-box p {
+            font-family: 'Cooper Black', sans-serif;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Footer adjustments */
+        .footer {
+            background-color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 1rem;
+            color: #30356D;
+        }
+
+        .footer p {
+            font-family: 'Bahnschrift SemiBold', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 10px auto;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar"></div>
+
+    <div class="header">
+        <div class="header-text">
+            <img src="title1.png" alt="Plan & Prep Logo">
+            <p>Plan smarter, achieve more! <br>Your journey to organized success starts here</p>
+            <button class="login-btn" onclick="location.href='login.html'">LOGIN</button>
+        </div>
+    </div>
+
+    <div class="wavy-bar"></div>
+
+    <div class="blue-section">
+        <div class="icon-container">
+            <div class="icon-box" onclick="location.href='login.html'">
+                <img src="cal.png" alt="Calendar">
+                <p>Schedule Management</p> 
+            </div>
+            <div class="icon-box" onclick="location.href='login.html'">
+                <img src="notes.png" alt="Notes">
+                <p>Question & Answer Generator</p> 
+            </div>
+            <div class="icon-box" onclick="location.href='login.html'">
+                <img src="todo.png" alt="Checklist">
+                <p>Task Management</p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>CONTACT US</strong></p>
+        <p>Need assistance or have inquiries?</p>
+        <p>Our team is ready to assist you!</p>
+        <p>Email: planandprep@gmail.com</p>
+    </div>
+</body>
+</html>

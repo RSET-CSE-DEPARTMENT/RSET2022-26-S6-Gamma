@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAN & PREP - Login & Register</title>
+
+    <!-- Firebase SDK (Module-based) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const firebaseConfig = {
+                apiKey: "AIzaSyCQb9t3Jo-GI0laq4cJ7Z1u0ItFPo7WPH8",
+                authDomain: "planprep-26eeb.firebaseapp.com",
+                projectId: "planprep-26eeb",
+                storageBucket: "planprep-26eeb.appspot.com"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
+
+            // Toggle between Login & Signup
+            document.getElementById('signup-link').addEventListener('click', function () {
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('register-page').style.display = 'flex';
+            });
+
+            document.getElementById('login-link').addEventListener('click', function () {
+                document.getElementById('register-page').style.display = 'none';
+                document.getElementById('login-page').style.display = 'flex';
+            });
+
+            // Signup Function
+            document.getElementById('register-form').addEventListener('submit', async function (event) {
+                event.preventDefault();
+                const fullName = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+
+                try {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    await setDoc(doc(db, "users", userCredential.user.uid), {
+                        fullName: fullName,
+                        email: email
+                    });
+
+                    alert("Registration successful! You can now log in.");
+                    document.getElementById('register-form').reset();
+                    document.getElementById('register-page').style.display = 'none';
+                    document.getElementById('login-page').style.display = 'flex';
+                } catch (error) {
+                    alert(error.message);
+                }
+            });
+
+            // Login Function
+            document.getElementById('login-form').addEventListener('submit', async function (event) {
+                event.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+
+                try {
+                    await signInWithEmailAndPassword(auth, email, password);
+                    //alert("Login successful!");
+                    window.location.href = 'dash.html';
+                } catch (error) {
+                    alert(error.message);
+                }
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FFECEA, #C2CDFF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #30356D;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .form-page {
+            display: none;
+            flex-direction: column;
+        }
+
+        input, button {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #C2CDFF;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #7695FF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #30356D;
+        }
+
+        #login-page {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PLAN & PREP</h1>
+            <p>Plan smarter</p>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login-page" class="form-page">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="javascript:void(0);" id="signup-link">Sign up</a></p>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register-page" class="form-page">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="register-name" placeholder="Full Name" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="javascript:void(0);" id="login-link">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
