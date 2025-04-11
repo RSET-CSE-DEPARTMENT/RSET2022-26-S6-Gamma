@@ -1,0 +1,9 @@
+# Creating a virtual env
+sudo apt install python3.12-venv
+python3 -m venv venv
+
+Hugging Face token:
+token: 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
+
+Embedding models loc:
+ls ~/.cache/huggingface/hub/

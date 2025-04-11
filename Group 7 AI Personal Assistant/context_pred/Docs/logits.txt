@@ -1,0 +1,15 @@
+logits are the probability distribution of what needs to be predicted.
+
+Consider the bigrams ab, ac and ad,
+
+[ 2, 4, 6 ]
+
+total is 12, after Normalizing:
+[ 0.16, 0.33, 0.50 ]
+
+now, arranging the bigrams as per the given order,
+
+[ 0.16, 0.33, 0.50 ]
+   ab,   ac,   ad
+
+it is clear from the above arrangement that ad has the highest chance of appearnace

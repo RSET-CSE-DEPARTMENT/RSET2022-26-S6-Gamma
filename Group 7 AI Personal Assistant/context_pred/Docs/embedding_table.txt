@@ -1,0 +1,4 @@
+for an embedding table of size vocabulary size,
+each row of embeddings is normalized and marked against for its appearnace in the entire corpus to determine how important that token is.
+
+Normalizing simply is checking the contribution of a token against the sum of all the others

@@ -1,0 +1,8 @@
+wheel
+psutils
+setuptools
+pymongo
+ctransformers
+huggingface_hub
+bitsandbytes
+jupyter 

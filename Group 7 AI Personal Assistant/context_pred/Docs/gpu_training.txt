@@ -1,0 +1,9 @@
+block[.........]
+block[.........]
+block[.........]
+block[.........]
+
+imagine 4 blocks stacked one on top of each other.
+A hyperparameter called batch size can indicate how many of these blocks can be processed in parallel at the same time
+and another hyperparameter block size indicates length of each block
+

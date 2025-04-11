@@ -1,0 +1,13 @@
+Hello
+
+H -> e
+e -> l
+l -> l 
+l -> o 
+
+basically the model just considers the previous character only to predict the next and hence, the term bigram
+
+To implement this, we consider a tiny portion of the tensors or the so called context and predict the next
+
+block[:5]
+block[1:block + 1]

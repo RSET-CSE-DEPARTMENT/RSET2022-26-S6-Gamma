@@ -1,0 +1,15 @@
+Flask==3.0.0
+Flask-Cors==4.0.0
+pymongo==4.6.1
+gunicorn==21.2.0
+requests==2.31.0
+python-dotenv==1.0.1
+spacy==3.7.2
+torch==2.1.2
+transformers==4.37.2
+google-cloud-dialogflow==2.33.0
+firebase-admin==6.4.0
+nltk==3.8.1
+numpy==1.26.4
+scipy==1.12.0
+scikit-learn==1.0.2

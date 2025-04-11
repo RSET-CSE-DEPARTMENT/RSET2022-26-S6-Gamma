@@ -1,0 +1,10 @@
+For a vocabulary size of 80
+and let's say that we have provided no training followed by assigning random weights and so on
+Then the chance of predicting the right ch in the sequence is 1/80.
+
+To find the loss, we consider -ln(1/80), i.e., around 4.382, which is terrible :(
+
+The aim is to minimize the loss and increase the prediction accuracy !!
+
+one of the optimizer is gradient_descent
+it is important to have an ideal learning rate too

@@ -1,0 +1,12 @@
+# installation-server
+sudo dpkg -i < mongodb-org-server_8.0.6_amd64.deb >
+
+# on system startup:
+sudo systemctl enable mongod.service
+
+# if dead, then
+sudo systemctl daemon-reload
+sudo systemctl start mongod.service
+
+# check status
+sudo systemctl status mongod.service
