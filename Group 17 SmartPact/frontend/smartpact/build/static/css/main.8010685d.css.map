@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.8010685d.css","mappings":"gGAAA,cAAc,CACd,oBAAoB,CACpB,mBAAmB","sources":["index.css"],"sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');"],"names":[],"sourceRoot":""}
