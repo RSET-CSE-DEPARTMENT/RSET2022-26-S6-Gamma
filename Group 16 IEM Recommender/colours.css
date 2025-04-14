@@ -1,0 +1,41 @@
+/* colors.css - Shared color palette for all pages */
+
+:root {
+    /* Color Variables - HEX */
+    --jet: #353535;
+    --white: #ffffff;
+    --french-gray: #d2d7df;
+    --silver: #bdbbb0;
+    
+    /* Additional useful variables - slightly lighter/darker variants */
+    --jet-light: #484848;
+    --jet-dark: #252525;
+    --french-gray-light: #e2e6ec;
+    --french-gray-dark: #b5bcc8;
+    --silver-light: #cac8be;
+    --silver-dark: #a09e8f;
+    
+    /* Common Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--jet), var(--jet-light));
+    --gradient-secondary: linear-gradient(135deg, var(--french-gray), var(--silver));
+    --gradient-accent: linear-gradient(45deg, var(--jet), var(--silver));
+    
+    /* Common Background Overlays */
+    --overlay-dark: rgba(53, 53, 53, 0.8);
+    --overlay-light: rgba(210, 215, 223, 0.8);
+    
+    /* Common Shadow */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+body {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.container {
+    background: var(--overlay-dark);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--french-gray-dark);
+}
