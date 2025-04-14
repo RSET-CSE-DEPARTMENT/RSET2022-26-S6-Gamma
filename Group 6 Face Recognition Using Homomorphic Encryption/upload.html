@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload - Cryptovision</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif; /* Better font */
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff; /* White background */
+        }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 5%;
+            background-color: #00538C; /* Blue background */
+            color: #ffffff; /* White text */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+        header .logo img {
+            height: 90px; /* Adjust logo height */
+        }
+        header nav a {
+            text-decoration: none;
+            color: #ffffff; /* White text for link */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        header nav a:hover {
+            color: #A0BACC; /* Light blue on hover */
+        }
+        /* Main Section */
+        .upload-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px; /* Consistent padding with homepage */
+        }
+        .upload-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .upload-box {
+            background: linear-gradient(135deg, #f5f7fa, #e0e7ff); /* Gradient background */
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .upload-box:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        .upload-box i {
+            font-size: 48px; /* Larger icon */
+            color: #007BFF; /* Blue icon */
+            margin-bottom: 10px;
+        }
+        .upload-box p {
+            font-size: 16px; /* Larger font size */
+            color: #555; /* Dark gray text */
+            margin-bottom: 15px;
+        }
+        .upload-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007BFF; /* Blue button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 20px;
+        }
+        .upload-box button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        .image-preview {
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+            text-align: center;
+        }
+        .image-preview img {
+            max-width: 200px; /* Larger image preview */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .status-indicator {
+            margin-top: 20px;
+            font-size: 16px; /* Larger font size */
+            color: #555; /* Dark gray text */
+            display: none; /* Hidden by default */
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #f0f0f0; /* Light gray background */
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            height: 100%;
+            width: 0;
+            background-color: #007BFF; /* Blue progress bar */
+            transition: width 0.5s ease;
+        }
+        .error-message {
+            color: #ff0000; /* Red text for errors */
+            margin-top: 10px;
+            font-weight: 500;
+            text-align: center;
+            padding: 10px;
+        }
+        .success-message {
+            color: #28a745; /* Green text for success */
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0; /* Light gray background */
+            border-top: 1px solid #ddd; /* Subtle border */
+        }
+        footer a {
+            color: #007BFF; /* Blue text for links */
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #00538C; /* Darker blue on hover */
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+            }
+            header .logo img {
+                height: 50px; /* Smaller logo for mobile */
+            }
+            .upload-box i {
+                font-size: 36px; /* Smaller icon for mobile */
+            }
+            .upload-box p {
+                font-size: 14px; /* Smaller font size for mobile */
+            }
+            .upload-box button {
+                font-size: 14px; /* Smaller button for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/downloadlogo.png') }}" alt="Cryptovision Logo">
+        </div>
+        <nav>
+            <a href="{{ url_for('about') }}">About</a>
+        </nav>
+    </header>
+    
+    <!-- Main Section -->
+    <section class="upload-section">
+        <div class="upload-container">
+            {% if error %}
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i> {{ error }}
+            </div>
+            {% endif %}
+            
+            <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+                <div class="upload-box" id="uploadBox">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your image here or</p>
+                    <button type="button" id="browseButton">
+                        📤 Browse Image
+                    </button>
+                    <input type="file" name="file" id="fileInput" style="display:none" accept="image/jpeg, image/png">
+                    <p>Supported Formats: JPEG, PNG (Max: 5MB)</p>
+                </div>
+                
+                <!-- Image Preview -->
+                <div class="image-preview" id="imagePreview">
+                    <img src="#" alt="Image Preview">
+                </div>
+                
+                <!-- Status Indicator -->
+                <div class="status-indicator" id="statusIndicator">
+                    <span id="statusText">Processing Image...</span>
+                    <div class="progress-bar">
+                        <div id="progressBar"></div>
+                    </div>
+                </div>
+                
+                <!-- Success Message -->
+                <div class="success-message" id="successMessage">
+                    <span id="successText"></span>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/support">Contact Support</a>
+        <span>System Version 1.0</span>
+    </footer>
+    
+    <script>
+        // JavaScript for Image Upload Functionality
+        const uploadBox = document.getElementById('uploadBox');
+        const browseButton = document.getElementById('browseButton');
+        const fileInput = document.getElementById('fileInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const statusIndicator = document.getElementById('statusIndicator');
+        const progressBar = document.getElementById('progressBar');
+        const successMessage = document.getElementById('successMessage');
+        const statusText = document.getElementById('statusText');
+        const uploadForm = document.getElementById('uploadForm');
+        
+        // Browse Button Functionality
+        browseButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // File Input Change Handler
+        fileInput.addEventListener('change', handleFileInputChange);
+        
+        // Drag & Drop Functionality
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.style.transform = "translateY(-5px)";
+        });
+        
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.style.transform = "translateY(0)";
+        });
+        
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.style.transform = "translateY(0)";
+            
+            if (e.dataTransfer.files.length > 0) {
+                fileInput.files = e.dataTransfer.files;
+                handleFileInputChange();
+            }
+        });
+        
+        function handleFileInputChange() {
+            const file = fileInput.files[0];
+            
+            if (!file) return;
+            
+            // Validate file type
+            const validTypes = ['image/jpeg', 'image/png'];
+            if (!validTypes.includes(file.type)) {
+                alert('Please select a valid image file (JPEG or PNG)');
+                return;
+            }
+            
+            // Validate file size (5MB max)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size exceeds 5MB limit');
+                return;
+            }
+            
+            // Show image preview
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                imagePreview.querySelector('img').src = e.target.result;
+                imagePreview.style.display = 'block';
+                statusIndicator.style.display = 'block';
+                simulateProgress();
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        function simulateProgress() {
+            let progress = 0;
+            progressBar.style.width = '0%';
+            
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    statusText.textContent = 'Processing Complete!';
+                    // Submit the form after progress completes
+                    setTimeout(() => {
+                        uploadForm.submit();
+                    }, 500);
+                }
+            }, 200);
+        }
+    </script>
+</body>
+</html>
