@@ -18,3 +18,10 @@ __pycache__/
 # Build / temp
 dist/
 build/
+
+*.ttl
+dataset/
+build/
+node_modules/
+*.apk
+*.zip
