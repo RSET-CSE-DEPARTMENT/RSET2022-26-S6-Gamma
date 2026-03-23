@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Incident</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; margin: 10px 0; }
+        button:hover { background-color: #45a049; }
+        .secondary-btn { background-color: #2196F3; }
+        .secondary-btn:hover { background-color: #0b7dda; }
+        #suggestions { border: 1px solid #ccc; background: white; max-height: 200px; overflow-y: auto; }
+        .suggestion-item { padding: 8px; cursor: pointer; border-bottom: 1px solid #eee; }
+        .suggestion-item:hover { background-color: #f0f0f0; }
+        .location-options { display: flex; gap: 10px; flex-wrap: wrap; }
+        .manual-coords { display: none; margin-top: 10px; padding: 15px; background: #f5f5f5; border-radius: 5px; }
+        .coord-input { width: 48%; display: inline-block; }
+        .info-text { color: #666; font-size: 0.9em; margin: 5px 0; }
+        .selected-location { background: #e8f5e9; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Report Incident</h1>
+
+    <form id="incidentForm">
+        <label for="description">Description:</label>
+        <textarea id="description" rows="4" placeholder="Describe the incident..."></textarea>
+
+        <label for="locationInput">Location (India):</label>
+        <input type="text" id="locationInput" placeholder="Type city, area, landmark, or postal code" autocomplete="off">
+        <div id="suggestions" style="display:none;"></div>
+        
+        <div class="location-options">
+            <button type="button" class="secondary-btn" id="useGpsBtn">📍 Use My Current Location</button>
+            <button type="button" class="secondary-btn" id="manualCoordsBtn">🗺️ Enter Coordinates Manually</button>
+        </div>
+
+        <div id="manualCoordsDiv" class="manual-coords">
+            <p class="info-text">Enter latitude and longitude (e.g., Kochi: 9.9312, 76.2673)</p>
+            <div class="coord-input">
+                <label>Latitude:</label>
+                <input type="number" id="manualLat" step="any" placeholder="e.g., 9.9312">
+            </div>
+            <div class="coord-input" style="float: right;">
+                <label>Longitude:</label>
+                <input type="number" id="manualLon" step="any" placeholder="e.g., 76.2673">
+            </div>
+            <div style="clear: both;"></div>
+            <button type="button" class="secondary-btn" id="setManualCoords" style="margin-top: 10px;">Set Location</button>
+        </div>
+
+        <div id="selectedLocationDiv" style="display:none;" class="selected-location">
+            <strong>Selected Location:</strong>
+            <div id="selectedLocationText"></div>
+            <div class="info-text" id="selectedLocationCoords"></div>
+        </div>
+
+        <button type="submit">Submit Incident</button>
+    </form>
+
+    <script>
+        const contractAddress = "0xd6bBec75708b1dE8C5714ca0890Fd3955E212C97";
+
+        const contractABI = [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {"indexed": false, "internalType": "uint256", "name": "id", "type": "uint256"},
+                    {"indexed": false, "internalType": "string", "name": "lat", "type": "string"},
+                    {"indexed": false, "internalType": "string", "name": "lon", "type": "string"},
+                    {"indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256"}
+                ],
+                "name": "IncidentReported",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {"internalType": "string", "name": "_lat", "type": "string"},
+                    {"internalType": "string", "name": "_lon", "type": "string"}
+                ],
+                "name": "reportIncident",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ];
+
+        const locationInput = document.getElementById('locationInput');
+        const suggestionsDiv = document.getElementById('suggestions');
+        const selectedLocationDiv = document.getElementById('selectedLocationDiv');
+        const selectedLocationText = document.getElementById('selectedLocationText');
+        const selectedLocationCoords = document.getElementById('selectedLocationCoords');
+        let selectedLocation = null;
+
+        function updateSelectedLocation(name, lat, lon) {
+            selectedLocation = { name, lat, lon };
+            selectedLocationDiv.style.display = 'block';
+            selectedLocationText.textContent = name;
+            selectedLocationCoords.textContent = `Coordinates: ${lat}, ${lon}`;
+        }
+
+        function clearSelectedLocation() {
+            selectedLocation = null;
+            selectedLocationDiv.style.display = 'none';
+        }
+
+        // Location autocomplete with multiple fallbacks
+        let debounceTimer;
+        locationInput.addEventListener('input', async () => {
+            clearTimeout(debounceTimer);
+            clearSelectedLocation();
+            
+            const query = locationInput.value.trim();
+            
+            if (!query || query.length < 2) {
+                suggestionsDiv.style.display = 'none';
+                return;
+            }
+
+            debounceTimer = setTimeout(async () => {
+                suggestionsDiv.innerHTML = '<div class="suggestion-item" style="color: #999;">Searching...</div>';
+                suggestionsDiv.style.display = 'block';
+
+                try {
+                    // Try Nominatim first (OpenStreetMap)
+                    const response = await fetch(
+                        `https://nominatim.openstreetmap.org/search?` +
+                        `format=json&` +
+                        `q=${encodeURIComponent(query)}&` +
+                        `countrycodes=in&` +
+                        `limit=10&` +
+                        `addressdetails=1`,
+                        {
+                            headers: {
+                                'User-Agent': 'IncidentReportApp/1.0'
+                            }
+                        }
+                    );
+
+                    if (!response.ok) {
+                        throw new Error('Primary search failed');
+                    }
+
+                    let data = await response.json();
+
+                    // If no results, try without country restriction
+                    if (data.length === 0) {
+                        const fallbackResponse = await fetch(
+                            `https://nominatim.openstreetmap.org/search?` +
+                            `format=json&` +
+                            `q=${encodeURIComponent(query + " India")}&` +
+                            `limit=10&` +
+                            `addressdetails=1`,
+                            {
+                                headers: {
+                                    'User-Agent': 'IncidentReportApp/1.0'
+                                }
+                            }
+                        );
+                        data = await fallbackResponse.json();
+                    }
+
+                    suggestionsDiv.innerHTML = '';
+                    
+                    if (data.length === 0) {
+                        const div = document.createElement('div');
+                        div.className = 'suggestion-item';
+                        div.innerHTML = 'No locations found. Try:<br>• Different spelling<br>• Nearby city/landmark<br>• Use GPS or manual coordinates';
+                        div.style.color = '#999';
+                        div.style.cursor = 'default';
+                        suggestionsDiv.appendChild(div);
+                        suggestionsDiv.style.display = 'block';
+                        return;
+                    }
+
+                    data.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'suggestion-item';
+                        div.textContent = item.display_name;
+                        div.addEventListener('click', () => {
+                            locationInput.value = item.display_name;
+                            updateSelectedLocation(item.display_name, item.lat, item.lon);
+                            suggestionsDiv.style.display = 'none';
+                        });
+                        suggestionsDiv.appendChild(div);
+                    });
+
+                    suggestionsDiv.style.display = 'block';
+                } catch (error) {
+                    console.error('Location search error:', error);
+                    suggestionsDiv.innerHTML = '<div class="suggestion-item" style="color: #999;">Search temporarily unavailable. Use GPS or manual coordinates.</div>';
+                    suggestionsDiv.style.display = 'block';
+                }
+            }, 400);
+        });
+
+        // Use GPS location
+        document.getElementById('useGpsBtn').addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                alert('GPS not supported by your browser');
+                return;
+            }
+
+            const btn = document.getElementById('useGpsBtn');
+            btn.textContent = '📍 Getting location...';
+            btn.disabled = true;
+
+            navigator.geolocation.getCurrentPosition(
+                async (position) => {
+                    const lat = position.coords.latitude.toFixed(6);
+                    const lon = position.coords.longitude.toFixed(6);
+
+                    // Reverse geocode to get address
+                    try {
+                        const response = await fetch(
+                            `https://nominatim.openstreetmap.org/reverse?` +
+                            `format=json&lat=${lat}&lon=${lon}`,
+                            {
+                                headers: {
+                                    'User-Agent': 'IncidentReportApp/1.0'
+                                }
+                            }
+                        );
+                        const data = await response.json();
+                        const locationName = data.display_name || `GPS Location (${lat}, ${lon})`;
+                        locationInput.value = locationName;
+                        updateSelectedLocation(locationName, lat, lon);
+                    } catch (error) {
+                        locationInput.value = `GPS Location (${lat}, ${lon})`;
+                        updateSelectedLocation(`GPS Location`, lat, lon);
+                    }
+
+                    btn.textContent = '📍 Use My Current Location';
+                    btn.disabled = false;
+                },
+                (error) => {
+                    alert(`GPS Error: ${error.message}\nPlease enable location access or use manual coordinates.`);
+                    btn.textContent = '📍 Use My Current Location';
+                    btn.disabled = false;
+                },
+                { enableHighAccuracy: true, timeout: 10000 }
+            );
+        });
+
+        // Manual coordinates toggle
+        document.getElementById('manualCoordsBtn').addEventListener('click', () => {
+            const div = document.getElementById('manualCoordsDiv');
+            div.style.display = div.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Set manual coordinates
+        document.getElementById('setManualCoords').addEventListener('click', () => {
+            const lat = document.getElementById('manualLat').value.trim();
+            const lon = document.getElementById('manualLon').value.trim();
+
+            if (!lat || !lon) {
+                alert('Please enter both latitude and longitude');
+                return;
+            }
+
+            const latNum = parseFloat(lat);
+            const lonNum = parseFloat(lon);
+
+            // Validate India coordinates roughly (6-36°N, 68-97°E)
+            if (latNum < 6 || latNum > 36 || lonNum < 68 || lonNum > 97) {
+                if (!confirm('Coordinates seem outside India. Continue anyway?')) {
+                    return;
+                }
+            }
+
+            locationInput.value = `Manual Location (${lat}, ${lon})`;
+            updateSelectedLocation(`Manual Location`, lat, lon);
+            document.getElementById('manualCoordsDiv').style.display = 'none';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target !== locationInput) {
+                suggestionsDiv.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        document.getElementById('incidentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const description = document.getElementById('description').value.trim();
+            if (!description) {
+                alert('Please enter a description');
+                return;
+            }
+
+            if (!selectedLocation) {
+                alert('Please select a location (search, GPS, or manual coordinates)');
+                return;
+            }
+
+            if (!window.ethereum) {
+                alert('MetaMask not found');
+                return;
+            }
+
+            try {
+                const web3 = new Web3(window.ethereum);
+                await ethereum.request({ method: 'eth_requestAccounts' });
+                const accounts = await web3.eth.getAccounts();
+                const account = accounts[0];
+
+                const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+                contract.methods.reportIncident(selectedLocation.lat, selectedLocation.lon)
+                    .send({ from: account, gas: 300000 })
+                    .on('receipt', receipt => {
+                        const incidentId = receipt.events.IncidentReported.returnValues.id;
+                        alert(`✓ Incident reported successfully!\nID: ${incidentId}\nBlock: ${receipt.blockNumber}`);
+
+                        // Clear form
+                        document.getElementById('description').value = '';
+                        document.getElementById('locationInput').value = '';
+                        document.getElementById('manualLat').value = '';
+                        document.getElementById('manualLon').value = '';
+                        clearSelectedLocation();
+                    })
+                    .on('error', (error) => {
+                        alert(`Transaction failed: ${error.message}`);
+                    });
+
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Incident Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #eef3f7;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: #f5f5f5;
+        }
+
+        .label {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .time {
+            color: #666;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #1B3C53;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Incident Details</h2>
+
+<div class="card" id="details">
+    Loading incident...
+</div>
+
+<script>
+    const contractABI = [
+    {
+        "anonymous": false,
+        "inputs": [
+            { "indexed": false, "internalType": "uint256", "name": "id", "type": "uint256" },
+            { "indexed": false, "internalType": "string", "name": "lat", "type": "string" },
+            { "indexed": false, "internalType": "string", "name": "lon", "type": "string" },
+            { "indexed": false, "internalType": "string", "name": "ipfsHash", "type": "string" },
+            { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+        ],
+        "name": "IncidentReported",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            { "indexed": false, "internalType": "uint256", "name": "id", "type": "uint256" },
+            { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+        ],
+        "name": "IncidentVerified",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "incidentCount",
+        "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "incidents",
+        "outputs": [
+            { "internalType": "uint256", "name": "id", "type": "uint256" },
+            { "internalType": "string", "name": "lat", "type": "string" },
+            { "internalType": "string", "name": "lon", "type": "string" },
+            { "internalType": "string", "name": "ipfsHash", "type": "string" },
+            { "internalType": "uint256", "name": "timestamp", "type": "uint256" },
+            { "internalType": "bool", "name": "verified", "type": "bool" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "string", "name": "_lat", "type": "string" },
+            { "internalType": "string", "name": "_lon", "type": "string" },
+            { "internalType": "string", "name": "_ipfsHash", "type": "string" }
+        ],
+        "name": "reportIncident",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "uint256", "name": "_id", "type": "uint256" }
+        ],
+        "name": "verifyIncident",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "uint256", "name": "_id", "type": "uint256" }
+        ],
+        "name": "getIncident",
+        "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "string", "name": "", "type": "string" },
+            { "internalType": "string", "name": "", "type": "string" },
+            { "internalType": "string", "name": "", "type": "string" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bool", "name": "", "type": "bool" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+];
+
+
+    const contractAddress = "0x25Ef3FE515C6B0a9D2282A5D6e8A1ec99c1cFfDC";
+
+    const txHash = new URLSearchParams(window.location.search).get("tx");
+
+    async function getDescriptionByTx(txHash) {
+        try {
+            const res = await fetch(`http://localhost:8000/incident/by-tx/${txHash}`);
+            const data = await res.json();
+            return data.description || "No description available";
+        } catch {
+            return "No description available";
+        }
+    }
+
+    async function getLocationName(lat, lon) {
+        try {
+            const res = await fetch(
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+            );
+            const data = await res.json();
+            return data.display_name || "Location not available";
+        } catch {
+            return "Location not available";
+        }
+    }
+
+    async function loadIncident() {
+        if (!txHash) {
+            document.getElementById("details").innerHTML = "Invalid incident.";
+            return;
+        }
+
+        const web3 = new Web3(window.ethereum);
+        await ethereum.request({ method: "eth_requestAccounts" });
+
+        const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+        const events = await contract.getPastEvents("IncidentReported", {
+            fromBlock: 0,
+            toBlock: "latest"
+        });
+
+        const ev = events.find(e => e.transactionHash === txHash);
+
+        if (!ev) {
+            document.getElementById("details").innerHTML = "Incident not found.";
+            return;
+        }
+
+        const { id, lat, lon, timestamp, ipfsHash } = ev.returnValues;
+
+        const imageURL = ipfsHash
+            ? `https://gateway.pinata.cloud/ipfs/${ipfsHash}`
+            : "";
+
+        const date = new Date(timestamp * 1000).toLocaleString();
+        const description = await getDescriptionByTx(txHash);
+        const locationName = await getLocationName(lat, lon);
+
+        document.getElementById("details").innerHTML = `
+            <img src="${imageURL}" onerror="this.style.display='none'">
+
+            <div class="label">Incident ID</div>
+            ${id}
+
+            <div class="label">Description</div>
+            ${description}
+
+            <div class="label">Location</div>
+            ${locationName}
+
+            <div class="time">Reported: ${date}</div>
+
+            <button onclick="history.back()">Back</button>
+        `;
+    }
+
+    loadIncident();
+</script>
+
+</body>
+</html>

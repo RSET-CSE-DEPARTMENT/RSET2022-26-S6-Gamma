@@ -1,0 +1,769 @@
+﻿disease,diseaseLabel,symptom,symptomLabel,symptom_local_name
+http://www.wikidata.org/entity/Q1010522,gymnophobia,http://www.wikidata.org/entity/Q11460,clothing,clothing
+http://www.wikidata.org/entity/Q101896,gonorrhea,http://www.wikidata.org/entity/Q1269399,dysuria,dysuria
+http://www.wikidata.org/entity/Q101896,gonorrhea,http://www.wikidata.org/entity/Q185557,excretion,excretion
+http://www.wikidata.org/entity/Q101896,gonorrhea,http://www.wikidata.org/entity/Q424318,testicular pain,testicular_pain
+http://www.wikidata.org/entity/Q101896,gonorrhea,http://www.wikidata.org/entity/Q7161805,pelvic pain,pelvic_pain
+http://www.wikidata.org/entity/Q101896,gonorrhea,http://www.wikidata.org/entity/Q778502,vaginal discharge,vaginal_discharge
+http://www.wikidata.org/entity/Q101896,gonorrhea,http://www.wikidata.org/entity/Q81938,pain,pain
+http://www.wikidata.org/entity/Q1022718,CADASIL,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1022718,CADASIL,http://www.wikidata.org/entity/Q83030,dementia,dementia
+http://www.wikidata.org/entity/Q1022718,CADASIL,http://www.wikidata.org/entity/Q12202,stroke,stroke
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q105688,hypoxia,hypoxia
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q188008,dyspnea,dyspnea
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q192120,cyanosis,cyanosis
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q2633267,atypical pneumonia,atypical_pneumonia
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q327988,occupational burnout,occupational_burnout
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q103177,severe acute respiratory syndrome,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q10355322,psoriatic erythroderma,http://www.wikidata.org/entity/Q1363741,erythroderma,erythroderma
+http://www.wikidata.org/entity/Q1036696,hypothermia,http://www.wikidata.org/entity/Q130741,hallucination,hallucination
+http://www.wikidata.org/entity/Q1046055,depressive syndrome,http://www.wikidata.org/entity/Q1997867,hypothymia,hypothymia
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q102186748,right upper quadrant abdominal rigidity,right_upper_quadrant_abdominal_rigidity
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q131742,hepatitis,hepatitis
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q1527888,pancreatitis,pancreatitis
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q178436,constipation,constipation
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q2028354,biliary dyskinesia,biliary_dyskinesia
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q376666,cholecystitis,cholecystitis
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q505142,eosinophilia,eosinophilia
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q653971,indigestion,indigestion
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1048084,opisthorchiasis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q1515219,macula,macula
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q189206,vesicle,vesicle
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q189956,aphthous stomatitis,aphthous_stomatitis
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q24084959,primary affect,primary_affect
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q997862,papule,papule
+http://www.wikidata.org/entity/Q1048101,rickettsialpox,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1052687,Charcotâ€“Marieâ€“Tooth disease,http://www.wikidata.org/entity/Q1419356,hyporeflexia,hyporeflexia
+http://www.wikidata.org/entity/Q1052687,Charcotâ€“Marieâ€“Tooth disease,http://www.wikidata.org/entity/Q1557686,muscle atrophy,muscle_atrophy
+http://www.wikidata.org/entity/Q1052687,Charcotâ€“Marieâ€“Tooth disease,http://www.wikidata.org/entity/Q1624054,pes cavus,pes_cavus
+http://www.wikidata.org/entity/Q1052687,Charcotâ€“Marieâ€“Tooth disease,http://www.wikidata.org/entity/Q174857,scoliosis,scoliosis
+http://www.wikidata.org/entity/Q1052687,Charcotâ€“Marieâ€“Tooth disease,http://www.wikidata.org/entity/Q2289481,sensory loss,sensory_loss
+http://www.wikidata.org/entity/Q1052687,Charcotâ€“Marieâ€“Tooth disease,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q108598184,visual hallucination,visual_hallucination
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q1531343,limb pain,limb_pain
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q21120069,behavioral changes,behavioral_changes
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q3540864,balance disorder,balance_disorder
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q4930803,blurred vision,blurred_vision
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q574360,spasm,spasm
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q718113,weight loss,weight_loss
+http://www.wikidata.org/entity/Q106590153,New Brunswick suspected neurological disease,http://www.wikidata.org/entity/Q989365,memory loss,memory_loss
+http://www.wikidata.org/entity/Q1066011,cowpox,http://www.wikidata.org/entity/Q189206,vesicle,vesicle
+http://www.wikidata.org/entity/Q1066011,cowpox,http://www.wikidata.org/entity/Q480971,low-grade fever,low_grade_fever
+http://www.wikidata.org/entity/Q107008921,massive perivillous fibrin deposition,http://www.wikidata.org/entity/Q1707292,Asymptomatic,asymptomatic
+http://www.wikidata.org/entity/Q10701324,trance disorder,http://www.wikidata.org/entity/Q466475,trance,trance
+http://www.wikidata.org/entity/Q1076060,chondrodysplasia punctata,http://www.wikidata.org/entity/Q18385599,stippled epiphyses,stippled_epiphyses
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q1162276,xerostomia,xerostomia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q1412657,petechia,petechia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q160184,flatulence,flatulence
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q192120,cyanosis,cyanosis
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q209583,tachycardia,tachycardia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q217111,bradycardia,bradycardia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q275419,hypotension,hypotension
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q373597,hematuria,hematuria
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q468787,hematoma,hematoma
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q5781808,back pain,back_pain
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q612681,anuria,anuria
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q948806,hyperaemia,hyperaemia
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q961326,oliguria,oliguria
+http://www.wikidata.org/entity/Q1077505,Crimean-Congo hemorrhagic fever,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1077603,mesothelioma,http://www.wikidata.org/entity/Q1334541,pleural effusion,pleural_effusion
+http://www.wikidata.org/entity/Q1077603,mesothelioma,http://www.wikidata.org/entity/Q188008,dyspnea,dyspnea
+http://www.wikidata.org/entity/Q1077603,mesothelioma,http://www.wikidata.org/entity/Q517104,wheeze,wheeze
+http://www.wikidata.org/entity/Q1077603,mesothelioma,http://www.wikidata.org/entity/Q693058,chest pain,chest_pain
+http://www.wikidata.org/entity/Q1077603,mesothelioma,http://www.wikidata.org/entity/Q718113,weight loss,weight_loss
+http://www.wikidata.org/entity/Q1077603,mesothelioma,http://www.wikidata.org/entity/Q97464125,dry cough,dry_cough
+http://www.wikidata.org/entity/Q1087632,idiopathic CD4+ lymphocytopenia,http://www.wikidata.org/entity/Q485831,lymphopenia,lymphopenia
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q1421356,hyperacusis,hyperacusis
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q159557,coma,coma
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q2006818,muscle cramp,muscle_cramp
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q281289,photophobia,photophobia
+http://www.wikidata.org/entity/Q109466005,purulent meningitis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1097490,cardiofaciocutaneous syndrome,http://www.wikidata.org/entity/Q181754,heart failure,heart_failure
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q131742,hepatitis,hepatitis
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q147778,liver cirrhosis,liver_cirrhosis
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q1996053,chronic pancreatitis,chronic_pancreatitis
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q376666,cholecystitis,cholecystitis
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q603644,ascending cholangitis,ascending_cholangitis
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q12078,cancer,cancer
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1102300,clonorchiasis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q110391577,Flurona,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q110391577,Flurona,http://www.wikidata.org/entity/Q10916362,dizziness,dizziness
+http://www.wikidata.org/entity/Q110391577,Flurona,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q114085,rhinitis,rhinitis
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q110624138,Jamestown Canyon encephalitis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1120682,metachromatic leukodystrophy,http://www.wikidata.org/entity/Q83030,dementia,dementia
+http://www.wikidata.org/entity/Q112156204,trance-like syndrom,http://www.wikidata.org/entity/Q1036662,hypokinesia,hypokinesia
+http://www.wikidata.org/entity/Q1125121,advanced sleep phase syndrome,http://www.wikidata.org/entity/Q1077823,somnolence,somnolence
+http://www.wikidata.org/entity/Q112672967,Hemoglobin M disease,http://www.wikidata.org/entity/Q76829973,hemoglobin M,hemoglobin_m
+http://www.wikidata.org/entity/Q113173062,Forbes-Albright syndrome,http://www.wikidata.org/entity/Q278515,galactorrhea,galactorrhea
+http://www.wikidata.org/entity/Q113173062,Forbes-Albright syndrome,http://www.wikidata.org/entity/Q334655,amenorrhea,amenorrhea
+http://www.wikidata.org/entity/Q1132536,persecutory delusion,http://www.wikidata.org/entity/Q1411912,rumination,rumination
+http://www.wikidata.org/entity/Q1132536,persecutory delusion,http://www.wikidata.org/entity/Q154430,anxiety,anxiety
+http://www.wikidata.org/entity/Q1132536,persecutory delusion,http://www.wikidata.org/entity/Q177190,sleep disorder,sleep_disorder
+http://www.wikidata.org/entity/Q1132536,persecutory delusion,http://www.wikidata.org/entity/Q814207,illness,illness
+http://www.wikidata.org/entity/Q1132536,persecutory delusion,http://www.wikidata.org/entity/Q42844,major depressive disorder,major_depressive_disorder
+http://www.wikidata.org/entity/Q113268139,beta blocker poisoning,http://www.wikidata.org/entity/Q275419,hypotension,hypotension
+http://www.wikidata.org/entity/Q1133289,Cornelia de Lange syndrome,http://www.wikidata.org/entity/Q183560,intellectual disability,intellectual_disability
+http://www.wikidata.org/entity/Q113484511,An Outbreak of E. Coli O157:H7 Colitis Among School Children in Sakai City,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q113484511,An Outbreak of E. Coli O157:H7 Colitis Among School Children in Sakai City,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q113484511,An Outbreak of E. Coli O157:H7 Colitis Among School Children in Sakai City,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1137321,onchocerciasis,http://www.wikidata.org/entity/Q1464121,lichenification,lichenification
+http://www.wikidata.org/entity/Q1137321,onchocerciasis,http://www.wikidata.org/entity/Q3269466,lymphadenitis,lymphadenitis
+http://www.wikidata.org/entity/Q1137321,onchocerciasis,http://www.wikidata.org/entity/Q3705665,depigmentation,depigmentation
+http://www.wikidata.org/entity/Q1137321,onchocerciasis,http://www.wikidata.org/entity/Q582484,nodule,nodule
+http://www.wikidata.org/entity/Q1137321,onchocerciasis,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q1137321,onchocerciasis,http://www.wikidata.org/entity/Q10874,blindness,blindness
+http://www.wikidata.org/entity/Q114085,rhinitis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q114085,rhinitis,http://www.wikidata.org/entity/Q1115038,runny nose,runny_nose
+http://www.wikidata.org/entity/Q114085,rhinitis,http://www.wikidata.org/entity/Q21118859,nasal irritation,nasal_irritation
+http://www.wikidata.org/entity/Q114085,rhinitis,http://www.wikidata.org/entity/Q3245488,nasal congestion,nasal_congestion
+http://www.wikidata.org/entity/Q114085,rhinitis,http://www.wikidata.org/entity/Q35830,sneeze,sneeze
+http://www.wikidata.org/entity/Q1141499,Ehlers-Danlos syndrome,http://www.wikidata.org/entity/Q29647501,joint hypermobility,joint_hypermobility
+http://www.wikidata.org/entity/Q1141499,Ehlers-Danlos syndrome,http://www.wikidata.org/entity/Q4138757,skin hyperelasticity,skin_hyperelasticity
+http://www.wikidata.org/entity/Q1144618,familial Mediterranean fever,http://www.wikidata.org/entity/Q101991,inflammation,inflammation
+http://www.wikidata.org/entity/Q1144618,familial Mediterranean fever,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1144618,familial Mediterranean fever,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q1144618,familial Mediterranean fever,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q1144618,familial Mediterranean fever,http://www.wikidata.org/entity/Q693058,chest pain,chest_pain
+http://www.wikidata.org/entity/Q1144618,familial Mediterranean fever,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q11491562,acute hemorrhagic conjunctivitis,http://www.wikidata.org/entity/Q281289,photophobia,photophobia
+http://www.wikidata.org/entity/Q11497176,Hand Yangming large intestine through disease,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q11497176,Hand Yangming large intestine through disease,http://www.wikidata.org/entity/Q143925,toothache,toothache
+http://www.wikidata.org/entity/Q1151300,autoimmune lymphoproliferative syndrome,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q1151300,autoimmune lymphoproliferative syndrome,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q1151300,autoimmune lymphoproliferative syndrome,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q1153419,interstitial lung disease,http://www.wikidata.org/entity/Q101991,inflammation,inflammation
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q505142,eosinophilia,eosinophilia
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q7901359,urticarial allergic eruption,urticarial_allergic_eruption
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q997862,papule,papule
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q11542703,metagonimiasis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q115743091,spinal leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q115743869,cranial nerve dysfunction,cranial_nerve_dysfunction
+http://www.wikidata.org/entity/Q115743091,spinal leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q115743908,radicular arm pain,radicular_arm_pain
+http://www.wikidata.org/entity/Q115743091,spinal leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q7104926,orthostatic headache,orthostatic_headache
+http://www.wikidata.org/entity/Q115743091,spinal leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q841878,neck stiffness,neck_stiffness
+http://www.wikidata.org/entity/Q115744557,cranial leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q1115038,runny nose,runny_nose
+http://www.wikidata.org/entity/Q115744557,cranial leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q3357695,discharging ear,discharging_ear
+http://www.wikidata.org/entity/Q115744557,cranial leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q3734963,saltiness,saltiness
+http://www.wikidata.org/entity/Q115744557,cranial leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q4291539,metallic taste,metallic_taste
+http://www.wikidata.org/entity/Q115744557,cranial leak of cerebrospinal fluid,http://www.wikidata.org/entity/Q468433,anosmia,anosmia
+http://www.wikidata.org/entity/Q1161568,granulomatosis with polyangiitis,http://www.wikidata.org/entity/Q3150763,granulomatous inflammation,granulomatous_inflammation
+http://www.wikidata.org/entity/Q1161568,granulomatosis with polyangiitis,http://www.wikidata.org/entity/Q644318,vasculitis,vasculitis
+http://www.wikidata.org/entity/Q116167729,feline obesity,http://www.wikidata.org/entity/Q1141745,sedentism,sedentism
+http://www.wikidata.org/entity/Q116167729,feline obesity,http://www.wikidata.org/entity/Q12174,obesity,obesity
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q114953,poisoning,poisoning
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q199615,encephalitis,encephalitis
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q2346415,meningoencephalitis,meningoencephalitis
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q11627066,West Nile fever,http://www.wikidata.org/entity/Q48143,meningitis,meningitis
+http://www.wikidata.org/entity/Q116585753,knee bursitis,http://www.wikidata.org/entity/Q101991,inflammation,inflammation
+http://www.wikidata.org/entity/Q116585753,knee bursitis,http://www.wikidata.org/entity/Q109186,swelling,swelling
+http://www.wikidata.org/entity/Q116585753,knee bursitis,http://www.wikidata.org/entity/Q193211,cyst,cyst
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q1054088,auditory hallucination,auditory_hallucination
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q108598184,visual hallucination,visual_hallucination
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q1200256,delusional parasitosis,delusional_parasitosis
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q1229994,paranoia,paranoia
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q1540168,neuroticism,neuroticism
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q154430,anxiety,anxiety
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q17030626,homicidal ideation,homicidal_ideation
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q17162704,tactile hallucination,tactile_hallucination
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q189643,delusion,delusion
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q3316140,emotional dysregulation,emotional_dysregulation
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q5470185,formication,formication
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q622527,self-injury,self_injury
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q67569586,self-mutilation,self_mutilation
+http://www.wikidata.org/entity/Q11659461,Hinamizawa Syndrome,http://www.wikidata.org/entity/Q944142,suicidal ideation,suicidal_ideation
+http://www.wikidata.org/entity/Q11679861,ancylostomiasis,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q11679861,ancylostomiasis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q11679861,ancylostomiasis,http://www.wikidata.org/entity/Q5445,anemia,anemia
+http://www.wikidata.org/entity/Q117121,Wilson disease,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q117121,Wilson disease,http://www.wikidata.org/entity/Q1423745,Kayserâ€“Fleischer ring,kayserâ€“fleischer_ring
+http://www.wikidata.org/entity/Q117121,Wilson disease,http://www.wikidata.org/entity/Q152234,edema,edema
+http://www.wikidata.org/entity/Q117121,Wilson disease,http://www.wikidata.org/entity/Q20706838,face of the giant panda sign,face_of_the_giant_panda_sign
+http://www.wikidata.org/entity/Q117121,Wilson disease,http://www.wikidata.org/entity/Q3525894,personality change,personality_change
+http://www.wikidata.org/entity/Q117121,Wilson disease,http://www.wikidata.org/entity/Q4930124,blue nails,blue_nails
+http://www.wikidata.org/entity/Q11781607,Native American myopathy,http://www.wikidata.org/entity/Q622427,ptosis,ptosis
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q1274464,polyarthritis,polyarthritis
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q1642170,hemophagocytic lymphohistiocytosis,hemophagocytic_lymphohistiocytosis
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q2085267,pharyngitis,pharyngitis
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q24869904,remittent fever,remittent_fever
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q29589522,salmon-colored rash,salmon_colored_rash
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q929737,liver disease,liver_disease
+http://www.wikidata.org/entity/Q1187697,adult-onset Still's disease,http://www.wikidata.org/entity/Q974869,leukocytosis,leukocytosis
+http://www.wikidata.org/entity/Q11883686,myoclonic epilepsy,http://www.wikidata.org/entity/Q116275,myoclonus,myoclonus
+http://www.wikidata.org/entity/Q11903425,virulent Newcastle disease,http://www.wikidata.org/entity/Q107231,paralysis,paralysis
+http://www.wikidata.org/entity/Q11903425,virulent Newcastle disease,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q11903425,virulent Newcastle disease,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q1515219,macula,macula
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q1869874,insomnia,insomnia
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q209583,tachycardia,tachycardia
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q217111,bradycardia,bradycardia
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q24084959,primary affect,primary_affect
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q275419,hypotension,hypotension
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q997862,papule,papule
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q1194496,scrub typhus,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q11997695,fox mange,http://www.wikidata.org/entity/Q199602,itch,itch
+http://www.wikidata.org/entity/Q1200256,delusional parasitosis,http://www.wikidata.org/entity/Q105434,hypochondriasis,hypochondriasis
+http://www.wikidata.org/entity/Q1200256,delusional parasitosis,http://www.wikidata.org/entity/Q189643,delusion,delusion
+http://www.wikidata.org/entity/Q1200256,delusional parasitosis,http://www.wikidata.org/entity/Q199602,itch,itch
+http://www.wikidata.org/entity/Q1200256,delusional parasitosis,http://www.wikidata.org/entity/Q939378,skin abrasion,skin_abrasion
+http://www.wikidata.org/entity/Q1208144,boreout,http://www.wikidata.org/entity/Q42844,major depressive disorder,major_depressive_disorder
+http://www.wikidata.org/entity/Q120973015,Beckâ€“Fahrner syndrome,http://www.wikidata.org/entity/Q1269290,dysmorphism,dysmorphism
+http://www.wikidata.org/entity/Q120973015,Beckâ€“Fahrner syndrome,http://www.wikidata.org/entity/Q1753547,hypotonia,hypotonia
+http://www.wikidata.org/entity/Q120973015,Beckâ€“Fahrner syndrome,http://www.wikidata.org/entity/Q25312637,global developmental delay,global_developmental_delay
+http://www.wikidata.org/entity/Q120973015,Beckâ€“Fahrner syndrome,http://www.wikidata.org/entity/Q3064951,Psychomotor retardation,psychomotor_retardation
+http://www.wikidata.org/entity/Q120973015,Beckâ€“Fahrner syndrome,http://www.wikidata.org/entity/Q3450985,neurodevelopmental disorder,neurodevelopmental_disorder
+http://www.wikidata.org/entity/Q120973015,Beckâ€“Fahrner syndrome,http://www.wikidata.org/entity/Q41571,epilepsy,epilepsy
+http://www.wikidata.org/entity/Q12099023,"attention deficit hyperactivity disorder, predominantly hyperactive-impulsive",http://www.wikidata.org/entity/Q1549918,impulsivity,impulsivity
+http://www.wikidata.org/entity/Q12099023,"attention deficit hyperactivity disorder, predominantly hyperactive-impulsive",http://www.wikidata.org/entity/Q1640850,hyperactivity,hyperactivity
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q10686316,vertigo,vertigo
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q1162276,xerostomia,xerostomia
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q164655,abscess,abscess
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q537297,heartburn,heartburn
+http://www.wikidata.org/entity/Q1210303,dicrocoeliasis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q121041,appendicitis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q121041,appendicitis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q121041,appendicitis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q121041,appendicitis,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q12167939,chronic rhinitis,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q121842380,lamb dysentery,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1227160,diphyllobothriasis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1227160,diphyllobothriasis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1227160,diphyllobothriasis,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q1227160,diphyllobothriasis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1227160,diphyllobothriasis,http://www.wikidata.org/entity/Q5445,anemia,anemia
+http://www.wikidata.org/entity/Q122751470,lumpy skin disease,http://www.wikidata.org/entity/Q582484,nodule,nodule
+http://www.wikidata.org/entity/Q122903799,"microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome",http://www.wikidata.org/entity/Q111693701,ambiguous genitalia,ambiguous_genitalia
+http://www.wikidata.org/entity/Q122903799,"microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome",http://www.wikidata.org/entity/Q431643,microcephaly,microcephaly
+http://www.wikidata.org/entity/Q122903799,"microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome",http://www.wikidata.org/entity/Q669435,renal agenesis,renal_agenesis
+http://www.wikidata.org/entity/Q1229994,paranoia,http://www.wikidata.org/entity/Q69901129,paranoid behavior,paranoid_behavior
+http://www.wikidata.org/entity/Q123754619,zoochosis,http://www.wikidata.org/entity/Q102186880,circling movement,circling_movement
+http://www.wikidata.org/entity/Q123754619,zoochosis,http://www.wikidata.org/entity/Q1198115,stereotypy,stereotypy
+http://www.wikidata.org/entity/Q123754619,zoochosis,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q123754619,zoochosis,http://www.wikidata.org/entity/Q622527,self-injury,self_injury
+http://www.wikidata.org/entity/Q123754619,zoochosis,http://www.wikidata.org/entity/Q12029,addiction,addiction
+http://www.wikidata.org/entity/Q1238645,Vogtâ€“Koyanagiâ€“Harada syndrome,http://www.wikidata.org/entity/Q48143,meningitis,meningitis
+http://www.wikidata.org/entity/Q12412172,central diabetes insipidus,http://www.wikidata.org/entity/Q1124286,polyuria,polyuria
+http://www.wikidata.org/entity/Q12412172,central diabetes insipidus,http://www.wikidata.org/entity/Q1426443,nocturia,nocturia
+http://www.wikidata.org/entity/Q12412172,central diabetes insipidus,http://www.wikidata.org/entity/Q1641429,hyposthenuria,hyposthenuria
+http://www.wikidata.org/entity/Q12412172,central diabetes insipidus,http://www.wikidata.org/entity/Q635195,polydipsia,polydipsia
+http://www.wikidata.org/entity/Q124407,type-1 diabetes,http://www.wikidata.org/entity/Q1124286,polyuria,polyuria
+http://www.wikidata.org/entity/Q124407,type-1 diabetes,http://www.wikidata.org/entity/Q635195,polydipsia,polydipsia
+http://www.wikidata.org/entity/Q124407,type-1 diabetes,http://www.wikidata.org/entity/Q653267,polyphagia,polyphagia
+http://www.wikidata.org/entity/Q126539679,kufungisisa,http://www.wikidata.org/entity/Q169251,sadness,sadness
+http://www.wikidata.org/entity/Q126539679,kufungisisa,http://www.wikidata.org/entity/Q309406,apathy,apathy
+http://www.wikidata.org/entity/Q126539679,kufungisisa,http://www.wikidata.org/entity/Q989365,memory loss,memory_loss
+http://www.wikidata.org/entity/Q126539679,kufungisisa,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q633403,asthenia,asthenia
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q718113,weight loss,weight_loss
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q12656487,hymenolepiasis,http://www.wikidata.org/entity/Q5445,anemia,anemia
+http://www.wikidata.org/entity/Q127417752,perennial canker,http://www.wikidata.org/entity/Q178069,necrosis,necrosis
+http://www.wikidata.org/entity/Q127417752,perennial canker,http://www.wikidata.org/entity/Q2299244,wilting,wilting
+http://www.wikidata.org/entity/Q127418595,Q127418595,http://www.wikidata.org/entity/Q811596,canker,canker
+http://www.wikidata.org/entity/Q127556,osteochondritis dissecans,http://www.wikidata.org/entity/Q178069,necrosis,necrosis
+http://www.wikidata.org/entity/Q1275814,konzo,http://www.wikidata.org/entity/Q213373,ataxia,ataxia
+http://www.wikidata.org/entity/Q1275814,konzo,http://www.wikidata.org/entity/Q3363589,paraparesis,paraparesis
+http://www.wikidata.org/entity/Q1275814,konzo,http://www.wikidata.org/entity/Q657516,hereditary spastic paraplegia,hereditary_spastic_paraplegia
+http://www.wikidata.org/entity/Q12829964,Pes,http://www.wikidata.org/entity/Q3705665,depigmentation,depigmentation
+http://www.wikidata.org/entity/Q128601314,RÃ¶nnskÃ¤r disease,http://www.wikidata.org/entity/Q3286546,respiratory disease,respiratory_disease
+http://www.wikidata.org/entity/Q1286320,neurilemmomatosis,http://www.wikidata.org/entity/Q369148,neurilemmoma,neurilemmoma
+http://www.wikidata.org/entity/Q1286499,dust mite allergy,http://www.wikidata.org/entity/Q3245488,nasal congestion,nasal_congestion
+http://www.wikidata.org/entity/Q1286499,dust mite allergy,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q1286499,dust mite allergy,http://www.wikidata.org/entity/Q35830,sneeze,sneeze
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q10916362,dizziness,dizziness
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q1412657,petechia,petechia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q1515219,macula,macula
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q160796,delirium,delirium
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q1638131,hyperesthesia,hyperesthesia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q185935,mania,mania
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q1869874,insomnia,insomnia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q189331,heart arrhythmia,heart_arrhythmia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q189643,delusion,delusion
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q203994,euphoria,euphoria
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q220989,nystagmus,nystagmus
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q223907,tremor,tremor
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q225957,dysarthria,dysarthria
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q261327,thrombosis,thrombosis
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q28540776,Chiari symptom,chiari_symptom
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q28966602,Godelier's symptom,godelier's_symptom
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q308978,pressure ulcer,pressure_ulcer
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q56027188,hood symptom,hood_symptom
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q622901,Korsakoff's syndrome,korsakoff's_syndrome
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q623289,dysphagia,dysphagia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q9150037,amimia,amimia
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q12133,deafness,deafness
+http://www.wikidata.org/entity/Q1290616,epidemic typhus,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q109186,swelling,swelling
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q1642049,hematochezia,hematochezia
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q3269466,lymphadenitis,lymphadenitis
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q3422583,rectorrhagia,rectorrhagia
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q6452285,ulcer,ulcer
+http://www.wikidata.org/entity/Q129104,anthrax,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q129279,dysentery,http://www.wikidata.org/entity/Q21513416,hemorrhagic diarrhea,hemorrhagic_diarrhea
+http://www.wikidata.org/entity/Q129279,dysentery,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q13046587,pulmonary tuberculosis,http://www.wikidata.org/entity/Q1334541,pleural effusion,pleural_effusion
+http://www.wikidata.org/entity/Q130565145,Q130565145,http://www.wikidata.org/entity/Q2299244,wilting,wilting
+http://www.wikidata.org/entity/Q131176481,white mold,http://www.wikidata.org/entity/Q2299244,wilting,wilting
+http://www.wikidata.org/entity/Q131176481,white mold,http://www.wikidata.org/entity/Q30916196,Q30916196,q30916196
+http://www.wikidata.org/entity/Q131749782,Werewolf syndrome,http://www.wikidata.org/entity/Q1895873,disorientation,disorientation
+http://www.wikidata.org/entity/Q131749782,Werewolf syndrome,http://www.wikidata.org/entity/Q191797,aggression,aggression
+http://www.wikidata.org/entity/Q131749782,Werewolf syndrome,http://www.wikidata.org/entity/Q6279182,seizure,seizure
+http://www.wikidata.org/entity/Q131749782,Werewolf syndrome,http://www.wikidata.org/entity/Q44619,fear,fear
+http://www.wikidata.org/entity/Q132971,dyslexia,http://www.wikidata.org/entity/Q17077617,reading disorder and Ã©crites disorder,reading_disorder_and_ã©crites_disorder
+http://www.wikidata.org/entity/Q1331116,Alport syndrome,http://www.wikidata.org/entity/Q16035842,hearing loss,hearing_loss
+http://www.wikidata.org/entity/Q1331116,Alport syndrome,http://www.wikidata.org/entity/Q373597,hematuria,hematuria
+http://www.wikidata.org/entity/Q1331116,Alport syndrome,http://www.wikidata.org/entity/Q476921,kidney failure,kidney_failure
+http://www.wikidata.org/entity/Q1331116,Alport syndrome,http://www.wikidata.org/entity/Q605006,glomerulonephritis,glomerulonephritis
+http://www.wikidata.org/entity/Q1335642,Emery-Dreifuss muscular dystrophy,http://www.wikidata.org/entity/Q189331,heart arrhythmia,heart_arrhythmia
+http://www.wikidata.org/entity/Q1335642,Emery-Dreifuss muscular dystrophy,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q1338684,tension headache,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1345792,Goodpasture syndrome,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q109186,swelling,swelling
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q1495301,pseudomembrane,pseudomembrane
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q181754,heart failure,heart_failure
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q186470,tonsillitis,tonsillitis
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q21513506,barking cough,barking_cough
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q945238,peripheral neuropathy,peripheral_neuropathy
+http://www.wikidata.org/entity/Q134649,diphtheria,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q134704545,WOREE syndrome,http://www.wikidata.org/entity/Q18975053,intractable epilepsy,intractable_epilepsy
+http://www.wikidata.org/entity/Q134704545,WOREE syndrome,http://www.wikidata.org/entity/Q213373,ataxia,ataxia
+http://www.wikidata.org/entity/Q134704545,WOREE syndrome,http://www.wikidata.org/entity/Q25312637,global developmental delay,global_developmental_delay
+http://www.wikidata.org/entity/Q134704545,WOREE syndrome,http://www.wikidata.org/entity/Q61559,child mortality,child_mortality
+http://www.wikidata.org/entity/Q135278407,grey leaf spot of tomato,http://www.wikidata.org/entity/Q6508875,Leaf spot,leaf_spot
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q193889,ascites,ascites
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q194290,dehydration,dehydration
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1359898,cryptosporidiosis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q136230165,Q136230165,http://www.wikidata.org/entity/Q117267738,discoloration,discoloration
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q10686316,vertigo,vertigo
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q152234,edema,edema
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q15729017,fatigue,fatigue
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q181754,heart failure,heart_failure
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q188008,dyspnea,dyspnea
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q209583,tachycardia,tachycardia
+http://www.wikidata.org/entity/Q1364270,hypertrophic cardiomyopathy,http://www.wikidata.org/entity/Q81938,pain,pain
+http://www.wikidata.org/entity/Q136524882,Diplocoria,http://www.wikidata.org/entity/Q281289,photophobia,photophobia
+http://www.wikidata.org/entity/Q136542288,gambling disorder,http://www.wikidata.org/entity/Q1425425,drug tolerance,drug_tolerance
+http://www.wikidata.org/entity/Q136542288,gambling disorder,http://www.wikidata.org/entity/Q1778765,social isolation,social_isolation
+http://www.wikidata.org/entity/Q136542288,gambling disorder,http://www.wikidata.org/entity/Q21050611,loss of control,loss_of_control
+http://www.wikidata.org/entity/Q136542288,gambling disorder,http://www.wikidata.org/entity/Q57859955,cognitive dysfunction,cognitive_dysfunction
+http://www.wikidata.org/entity/Q1393718,hemophilia C,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q1404470,Felty's syndrome,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q1404470,Felty's syndrome,http://www.wikidata.org/entity/Q187255,rheumatoid arthritis,rheumatoid_arthritis
+http://www.wikidata.org/entity/Q1404470,Felty's syndrome,http://www.wikidata.org/entity/Q3073147,intermittent fever,intermittent_fever
+http://www.wikidata.org/entity/Q1404470,Felty's syndrome,http://www.wikidata.org/entity/Q496812,leukopenia,leukopenia
+http://www.wikidata.org/entity/Q1410831,fibrodysplasia ossificans progressiva,http://www.wikidata.org/entity/Q1182746,deformity,deformity
+http://www.wikidata.org/entity/Q1410831,fibrodysplasia ossificans progressiva,http://www.wikidata.org/entity/Q3858675,myositis ossificans,myositis_ossificans
+http://www.wikidata.org/entity/Q1410831,fibrodysplasia ossificans progressiva,http://www.wikidata.org/entity/Q418418,ankylosis,ankylosis
+http://www.wikidata.org/entity/Q1417880,Non-Verbal Learning Disorder,http://www.wikidata.org/entity/Q1269351,developmental coordination disorder,developmental_coordination_disorder
+http://www.wikidata.org/entity/Q1417880,Non-Verbal Learning Disorder,http://www.wikidata.org/entity/Q4353073,social communication disorder,social_communication_disorder
+http://www.wikidata.org/entity/Q1417880,Non-Verbal Learning Disorder,http://www.wikidata.org/entity/Q5419936,executive disfunction,executive_disfunction
+http://www.wikidata.org/entity/Q1418152,Mobius syndrome,http://www.wikidata.org/entity/Q7562539,facial paralysis,facial_paralysis
+http://www.wikidata.org/entity/Q1424706,opsoclonus myoclonus syndrome,http://www.wikidata.org/entity/Q116275,myoclonus,myoclonus
+http://www.wikidata.org/entity/Q1424706,opsoclonus myoclonus syndrome,http://www.wikidata.org/entity/Q2027232,opsoclonus,opsoclonus
+http://www.wikidata.org/entity/Q1425018,Pallisterâ€“Killian syndrome,http://www.wikidata.org/entity/Q1753547,hypotonia,hypotonia
+http://www.wikidata.org/entity/Q1425018,Pallisterâ€“Killian syndrome,http://www.wikidata.org/entity/Q2119430,diaphragmatic hernia,diaphragmatic_hernia
+http://www.wikidata.org/entity/Q1425018,Pallisterâ€“Killian syndrome,http://www.wikidata.org/entity/Q2313089,developmental language disorder,developmental_language_disorder
+http://www.wikidata.org/entity/Q1425018,Pallisterâ€“Killian syndrome,http://www.wikidata.org/entity/Q371520,polydactyly,polydactyly
+http://www.wikidata.org/entity/Q1425018,Pallisterâ€“Killian syndrome,http://www.wikidata.org/entity/Q41571,epilepsy,epilepsy
+http://www.wikidata.org/entity/Q1431371,Frey syndrome,http://www.wikidata.org/entity/Q5621038,gustatory hyperhidrosis,gustatory_hyperhidrosis
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q1638131,hyperesthesia,hyperesthesia
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q194290,dehydration,dehydration
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q223907,tremor,tremor
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q2361887,internal bleeding,internal_bleeding
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q281289,photophobia,photophobia
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1432397,Kyasanur forest disease,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q1642611,negativism,negativism
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q4419847,Pavlov's symptom,pavlov's_symptom
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q4419854,psychological pillow,psychological_pillow
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q460263,waxy flexibility,waxy_flexibility
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q57769952,catatonic excitement,catatonic_excitement
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q671776,muteness,muteness
+http://www.wikidata.org/entity/Q1432717,catatonic schizophrenia,http://www.wikidata.org/entity/Q918193,catalepsy,catalepsy
+http://www.wikidata.org/entity/Q1435409,folie Ã  deux,http://www.wikidata.org/entity/Q189643,delusion,delusion
+http://www.wikidata.org/entity/Q1444550,arteriosclerotic heart disease,http://www.wikidata.org/entity/Q180762,angina pectoris,angina_pectoris
+http://www.wikidata.org/entity/Q1444550,arteriosclerotic heart disease,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q1444550,arteriosclerotic heart disease,http://www.wikidata.org/entity/Q188008,dyspnea,dyspnea
+http://www.wikidata.org/entity/Q1444550,arteriosclerotic heart disease,http://www.wikidata.org/entity/Q3567802,neck pain,neck_pain
+http://www.wikidata.org/entity/Q1444550,arteriosclerotic heart disease,http://www.wikidata.org/entity/Q57823162,lightheadedness,lightheadedness
+http://www.wikidata.org/entity/Q1444550,arteriosclerotic heart disease,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q1452604,multiple epiphyseal dysplasia,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q1462780,Paris syndrome,http://www.wikidata.org/entity/Q4340209,depression,depression
+http://www.wikidata.org/entity/Q1472818,common variable immunodeficiency,http://www.wikidata.org/entity/Q1047559,agammaglobulinemia,agammaglobulinemia
+http://www.wikidata.org/entity/Q1472818,common variable immunodeficiency,http://www.wikidata.org/entity/Q1483951,malignancy,malignancy
+http://www.wikidata.org/entity/Q1472818,common variable immunodeficiency,http://www.wikidata.org/entity/Q3144188,Nodular regenerative hyperplasia,nodular_regenerative_hyperplasia
+http://www.wikidata.org/entity/Q1472818,common variable immunodeficiency,http://www.wikidata.org/entity/Q835718,opportunistic infection,opportunistic_infection
+http://www.wikidata.org/entity/Q1472818,common variable immunodeficiency,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q1476361,HAM,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q1478321,spinal stenosis,http://www.wikidata.org/entity/Q2008738,obdormition,obdormition
+http://www.wikidata.org/entity/Q1478321,spinal stenosis,http://www.wikidata.org/entity/Q81938,pain,pain
+http://www.wikidata.org/entity/Q1484058,short QT syndrome,http://www.wikidata.org/entity/Q1123260,palpitation,palpitation
+http://www.wikidata.org/entity/Q1484058,short QT syndrome,http://www.wikidata.org/entity/Q188008,dyspnea,dyspnea
+http://www.wikidata.org/entity/Q1484058,short QT syndrome,http://www.wikidata.org/entity/Q189331,heart arrhythmia,heart_arrhythmia
+http://www.wikidata.org/entity/Q1484058,short QT syndrome,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q1495085,gas gangrene,http://www.wikidata.org/entity/Q168805,gangrene,gangrene
+http://www.wikidata.org/entity/Q1495085,gas gangrene,http://www.wikidata.org/entity/Q178069,necrosis,necrosis
+http://www.wikidata.org/entity/Q1519971,Eustachian catarrh,http://www.wikidata.org/entity/Q10686316,vertigo,vertigo
+http://www.wikidata.org/entity/Q1519971,Eustachian catarrh,http://www.wikidata.org/entity/Q1596398,otalgia,otalgia
+http://www.wikidata.org/entity/Q1519971,Eustachian catarrh,http://www.wikidata.org/entity/Q16035842,hearing loss,hearing_loss
+http://www.wikidata.org/entity/Q1519971,Eustachian catarrh,http://www.wikidata.org/entity/Q18658055,otorrhea,otorrhea
+http://www.wikidata.org/entity/Q1519971,Eustachian catarrh,http://www.wikidata.org/entity/Q192309,tinnitus,tinnitus
+http://www.wikidata.org/entity/Q152401,foot-and-mouth disease,http://www.wikidata.org/entity/Q114953,poisoning,poisoning
+http://www.wikidata.org/entity/Q152401,foot-and-mouth disease,http://www.wikidata.org/entity/Q189956,aphthous stomatitis,aphthous_stomatitis
+http://www.wikidata.org/entity/Q152401,foot-and-mouth disease,http://www.wikidata.org/entity/Q4424146,saliva secretion,saliva_secretion
+http://www.wikidata.org/entity/Q152401,foot-and-mouth disease,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q152401,foot-and-mouth disease,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q152401,foot-and-mouth disease,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q114953,poisoning,poisoning
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q1476027,lymphangitis,lymphangitis
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q173022,bronchitis,bronchitis
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q202013,nosebleed,nosebleed
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q2673323,malaise,malaise
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q2722991,bubo,bubo
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q3269466,lymphadenitis,lymphadenitis
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q599982,enanthem,enanthem
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q6452285,ulcer,ulcer
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q946278,tracheitis,tracheitis
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q12192,pneumonia,pneumonia
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q153861,tularemia,http://www.wikidata.org/entity/Q55998,pleurisy,pleurisy
+http://www.wikidata.org/entity/Q15401586,pneumocystis pneumonia,http://www.wikidata.org/entity/Q2633267,atypical pneumonia,atypical_pneumonia
+http://www.wikidata.org/entity/Q15401586,pneumocystis pneumonia,http://www.wikidata.org/entity/Q480971,low-grade fever,low_grade_fever
+http://www.wikidata.org/entity/Q15401586,pneumocystis pneumonia,http://www.wikidata.org/entity/Q767485,respiratory failure,respiratory_failure
+http://www.wikidata.org/entity/Q15401586,pneumocystis pneumonia,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q15401621,Trousseau's syndrome,http://www.wikidata.org/entity/Q2088392,thrombophlebitis migrans,thrombophlebitis_migrans
+http://www.wikidata.org/entity/Q1544408,Alagille syndrome,http://www.wikidata.org/entity/Q30315198,cholestasis facies,cholestasis_facies
+http://www.wikidata.org/entity/Q154666,bovine spongiform encephalopathy,http://www.wikidata.org/entity/Q1036653,highly sensitive person,highly_sensitive_person
+http://www.wikidata.org/entity/Q154666,bovine spongiform encephalopathy,http://www.wikidata.org/entity/Q154430,anxiety,anxiety
+http://www.wikidata.org/entity/Q154666,bovine spongiform encephalopathy,http://www.wikidata.org/entity/Q213373,ataxia,ataxia
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q1128283,mydriasis,mydriasis
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q1162276,xerostomia,xerostomia
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q1366695,urinary retention,urinary_retention
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q1413614,tympanites,tympanites
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q178436,constipation,constipation
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q21006662,acute respiratory insufficiency,acute_respiratory_insufficiency
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q225957,dysarthria,dysarthria
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q4930803,blurred vision,blurred_vision
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q620639,dysautonomia,dysautonomia
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q622427,ptosis,ptosis
+http://www.wikidata.org/entity/Q154865,botulism,http://www.wikidata.org/entity/Q775940,diplopia,diplopia
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q1035226,Caput medusae,caput_medusae
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q124604,portal hypertension,portal_hypertension
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q131742,hepatitis,hepatitis
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q147778,liver cirrhosis,liver_cirrhosis
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q193889,ascites,ascites
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q12078,cancer,cancer
+http://www.wikidata.org/entity/Q154869,hepatitis C,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q102187006,body ache,body_ache
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q109186,swelling,swelling
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q1163908,melena,melena
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q166019,bleeding,bleeding
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q178061,shock,shock
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q192120,cyanosis,cyanosis
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q199615,encephalitis,encephalitis
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q209583,tachycardia,tachycardia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q21110084,dark urine,dark_urine
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q217111,bradycardia,bradycardia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q275419,hypotension,hypotension
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q5429401,Faget sign,faget_sign
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q5781808,back pain,back_pain
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q612681,anuria,anuria
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q633403,asthenia,asthenia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q948806,hyperaemia,hyperaemia
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q961326,oliguria,oliguria
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q154874,yellow fever,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q154878,toxoplasmosis,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q154878,toxoplasmosis,http://www.wikidata.org/entity/Q1260186,hepatosplenomegaly,hepatosplenomegaly
+http://www.wikidata.org/entity/Q154878,toxoplasmosis,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q154878,toxoplasmosis,http://www.wikidata.org/entity/Q199615,encephalitis,encephalitis
+http://www.wikidata.org/entity/Q154878,toxoplasmosis,http://www.wikidata.org/entity/Q480971,low-grade fever,low_grade_fever
+http://www.wikidata.org/entity/Q154878,toxoplasmosis,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q154882,legionnaires' disease,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q154882,legionnaires' disease,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q154882,legionnaires' disease,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q154882,legionnaires' disease,http://www.wikidata.org/entity/Q12192,pneumonia,pneumonia
+http://www.wikidata.org/entity/Q154882,legionnaires' disease,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q154882,legionnaires' disease,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1550844,canine brucellosis,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q1550844,canine brucellosis,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q1550844,canine brucellosis,http://www.wikidata.org/entity/Q718113,weight loss,weight_loss
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q114953,poisoning,poisoning
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q186235,myocarditis,myocarditis
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q476921,kidney failure,kidney_failure
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q823027,disseminated intravascular coagulation,disseminated_intravascular_coagulation
+http://www.wikidata.org/entity/Q155098,leptospirosis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q155857,rubella,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q155857,rubella,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q155857,rubella,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q155857,rubella,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q1559250,Peters plus syndrome,http://www.wikidata.org/entity/Q3108583,anterior segment mesenchymal dysgenesis,anterior_segment_mesenchymal_dysgenesis
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q170990,arthritis,arthritis
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q2307256,neuritis,neuritis
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q29644032,continuous fever,continuous_fever
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q29644037,undulant fever,undulant_fever
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q540850,orchitis,orchitis
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q156050,brucellosis,http://www.wikidata.org/entity/Q9690,fatigue,fatigue
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q4,death,death
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q102187260,congestion,congestion
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q209583,tachycardia,tachycardia
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q223907,tremor,tremor
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q3537764,sweating,sweating
+http://www.wikidata.org/entity/Q15731364,Equine atypical myopathy,http://www.wikidata.org/entity/Q81938,pain,pain
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q131742,hepatitis,hepatitis
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q2673323,malaise,malaise
+http://www.wikidata.org/entity/Q157661,hepatitis A,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q1582992,Tanganyika laughter epidemic,http://www.wikidata.org/entity/Q170579,laughter,laughter
+http://www.wikidata.org/entity/Q1585081,malignant hyperthermia,http://www.wikidata.org/entity/Q185089,acidosis,acidosis
+http://www.wikidata.org/entity/Q1585081,malignant hyperthermia,http://www.wikidata.org/entity/Q1956682,myoglobinuria,myoglobinuria
+http://www.wikidata.org/entity/Q1585081,malignant hyperthermia,http://www.wikidata.org/entity/Q242165,hyperthermia,hyperthermia
+http://www.wikidata.org/entity/Q1585081,malignant hyperthermia,http://www.wikidata.org/entity/Q605259,hyperkalemia,hyperkalemia
+http://www.wikidata.org/entity/Q1585081,malignant hyperthermia,http://www.wikidata.org/entity/Q615759,hypercapnia,hypercapnia
+http://www.wikidata.org/entity/Q1585753,urethral stricture,http://www.wikidata.org/entity/Q1269399,dysuria,dysuria
+http://www.wikidata.org/entity/Q1585753,urethral stricture,http://www.wikidata.org/entity/Q1366695,urinary retention,urinary_retention
+http://www.wikidata.org/entity/Q1585753,urethral stricture,http://www.wikidata.org/entity/Q221668,urinary tract infection,urinary_tract_infection
+http://www.wikidata.org/entity/Q1585753,urethral stricture,http://www.wikidata.org/entity/Q352585,frequent urination,frequent_urination
+http://www.wikidata.org/entity/Q1585753,urethral stricture,http://www.wikidata.org/entity/Q372752,prostatitis,prostatitis
+http://www.wikidata.org/entity/Q1585753,urethral stricture,http://www.wikidata.org/entity/Q3858636,urinary urgency,urinary_urgency
+http://www.wikidata.org/entity/Q1587881,popliteal pterygium syndrome,http://www.wikidata.org/entity/Q17142318,pterygium,pterygium
+http://www.wikidata.org/entity/Q15974799,polyuric-polydipsic syndrome,http://www.wikidata.org/entity/Q1124286,polyuria,polyuria
+http://www.wikidata.org/entity/Q15974799,polyuric-polydipsic syndrome,http://www.wikidata.org/entity/Q1326943,electrolyte imbalance,electrolyte_imbalance
+http://www.wikidata.org/entity/Q15974799,polyuric-polydipsic syndrome,http://www.wikidata.org/entity/Q635195,polydipsia,polydipsia
+http://www.wikidata.org/entity/Q1598909,supraventricular tachycardia,http://www.wikidata.org/entity/Q188008,dyspnea,dyspnea
+http://www.wikidata.org/entity/Q1598909,supraventricular tachycardia,http://www.wikidata.org/entity/Q693058,chest pain,chest_pain
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q114953,poisoning,poisoning
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q1214063,blood in stool,blood_in_stool
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q179951,strabismus,strabismus
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q183134,sepsis,sepsis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q186470,tonsillitis,tonsillitis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q199615,encephalitis,encephalitis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q2346415,meningoencephalitis,meningoencephalitis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q2669284,arachnoiditis,arachnoiditis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q521953,anisocoria,anisocoria
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q622427,ptosis,ptosis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q48143,meningitis,meningitis
+http://www.wikidata.org/entity/Q160653,listeriosis,http://www.wikidata.org/entity/Q8452,abortion,abortion
+http://www.wikidata.org/entity/Q1607635,Feline hepatic lipidosis,http://www.wikidata.org/entity/Q133244,jaundice,jaundice
+http://www.wikidata.org/entity/Q1607635,Feline hepatic lipidosis,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q1607635,Feline hepatic lipidosis,http://www.wikidata.org/entity/Q1467339,hypertriglyceridemia,hypertriglyceridemia
+http://www.wikidata.org/entity/Q1607635,Feline hepatic lipidosis,http://www.wikidata.org/entity/Q194290,dehydration,dehydration
+http://www.wikidata.org/entity/Q1607635,Feline hepatic lipidosis,http://www.wikidata.org/entity/Q762713,hypercholesterolemia,hypercholesterolemia
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q1188698,thought disorder,thought_disorder
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q1282114,speech disorder,speech_disorder
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q170082,psychosis,psychosis
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q177190,sleep disorder,sleep_disorder
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q1895873,disorientation,disorientation
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q3030775,distraction,distraction
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q3072083,memory disorder,memory_disorder
+http://www.wikidata.org/entity/Q160796,delirium,http://www.wikidata.org/entity/Q382255,affect lability,affect_lability
+http://www.wikidata.org/entity/Q1607983,erysipelothrix rhusiopathiae infectious disease,http://www.wikidata.org/entity/Q1166142,erythema,erythema
+http://www.wikidata.org/entity/Q1607983,erysipelothrix rhusiopathiae infectious disease,http://www.wikidata.org/entity/Q1476027,lymphangitis,lymphangitis
+http://www.wikidata.org/entity/Q1607983,erysipelothrix rhusiopathiae infectious disease,http://www.wikidata.org/entity/Q480971,low-grade fever,low_grade_fever
+http://www.wikidata.org/entity/Q1607983,erysipelothrix rhusiopathiae infectious disease,http://www.wikidata.org/entity/Q847726,lymphadenopathy,lymphadenopathy
+http://www.wikidata.org/entity/Q1607983,erysipelothrix rhusiopathiae infectious disease,http://www.wikidata.org/entity/Q997862,papule,papule
+http://www.wikidata.org/entity/Q16333787,Wuchereria bancrofti filariasis,http://www.wikidata.org/entity/Q152234,edema,edema
+http://www.wikidata.org/entity/Q16333787,Wuchereria bancrofti filariasis,http://www.wikidata.org/entity/Q192100,filarial elephantiasis,filarial_elephantiasis
+http://www.wikidata.org/entity/Q16333787,Wuchereria bancrofti filariasis,http://www.wikidata.org/entity/Q916398,lymphedema,lymphedema
+http://www.wikidata.org/entity/Q163905,Lafora disease,http://www.wikidata.org/entity/Q130741,hallucination,hallucination
+http://www.wikidata.org/entity/Q1640868,hyperammonemia,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q1640868,hyperammonemia,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q1640868,hyperammonemia,http://www.wikidata.org/entity/Q15637420,lethargy,lethargy
+http://www.wikidata.org/entity/Q1640868,hyperammonemia,http://www.wikidata.org/entity/Q21117191,slurred speech,slurred_speech
+http://www.wikidata.org/entity/Q1640868,hyperammonemia,http://www.wikidata.org/entity/Q557945,mental confusion,mental_confusion
+http://www.wikidata.org/entity/Q164655,abscess,http://www.wikidata.org/entity/Q109186,swelling,swelling
+http://www.wikidata.org/entity/Q164655,abscess,http://www.wikidata.org/entity/Q1166142,erythema,erythema
+http://www.wikidata.org/entity/Q164655,abscess,http://www.wikidata.org/entity/Q24869904,remittent fever,remittent_fever
+http://www.wikidata.org/entity/Q164655,abscess,http://www.wikidata.org/entity/Q81938,pain,pain
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q12122651,meningism signs,meningism_signs
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q1292082,sore throat,sore_throat
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q1502312,polyneuropathy,polyneuropathy
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q167844,conjunctivitis,conjunctivitis
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q178436,constipation,constipation
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q1869874,insomnia,insomnia
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q217111,bradycardia,bradycardia
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q2673323,malaise,malaise
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q275419,hypotension,hypotension
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q3726949,episcleritis,episcleritis
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q474959,myalgia,myalgia
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q683498,arthralgia,arthralgia
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q7933601,mood swing,mood_swing
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q164727,ornithosis,http://www.wikidata.org/entity/Q48143,meningitis,meningitis
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q86,headache,headache
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q1129121,splenomegaly,splenomegaly
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q127076,vomiting,vomiting
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q1362864,hepatomegaly,hepatomegaly
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q183425,abdominal pain,abdominal_pain
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q186889,nausea,nausea
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q217111,bradycardia,bradycardia
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q2260058,chills,chills
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q254327,anorexia,anorexia
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q275419,hypotension,hypotension
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q58490917,chronic secondary musculoskeletal pain,chronic_secondary_musculoskeletal_pain
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q653197,rash,rash
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q693058,chest pain,chest_pain
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q35805,cough,cough
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q38933,fever,fever
+http://www.wikidata.org/entity/Q164818,Q fever,http://www.wikidata.org/entity/Q40878,diarrhea,diarrhea
+http://www.wikidata.org/entity/Q1648484,Duchenne muscular dystrophy,http://www.wikidata.org/entity/Q270421,muscle weakness,muscle_weakness
+http://www.wikidata.org/entity/Q1648484,Duchenne muscular dystrophy,http://www.wikidata.org/entity/Q2844600,muscular atrophy,muscular_atrophy
+http://www.wikidata.org/entity/Q1648484,Duchenne muscular dystrophy,http://www.wikidata.org/entity/Q847583,cardiomyopathy,cardiomyopathy
+http://www.wikidata.org/entity/Q1649897,catecholaminergic polymorphic ventricular tachycardia,http://www.wikidata.org/entity/Q56002,ventricular tachycardia,ventricular_tachycardia

@@ -1,0 +1,84 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:    <http://example.org/health#> .
+
+# Shape 1: Comprehensive Patient Validation
+ex:PatientShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Patient ;
+    sh:message "All Patients must have a valid age, gender, and at least one diagnosis." ;
+
+    # Rule 1.1: Validate Age
+    sh:property [
+        sh:path ex:hasAge ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+    ] ;
+
+    # Rule 1.2: Validate Gender
+    sh:property [
+        sh:path ex:hasGender ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "M" "F" ) ;  # Gender must be one of these values
+    ] ;
+
+    # Rule 1.3: Validate Diagnosis
+    sh:property [
+        sh:path ex:hasDiagnosis ;
+        sh:minCount 1 ;         # Every patient must have at least one diagnosis
+        sh:nodeKind sh:IRI ;    # The diagnosis must be a resource (like ex:COVID19), not a text literal
+    ] .
+
+# Shape 2: Disease Validation
+ex:DiseaseShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Disease ;
+    sh:message "All Diseases must be linked to at least one symptom." ;
+
+    sh:property [
+        sh:path ex:hasSymptom ;
+        sh:minCount 1 ;        # Ensures diseases aren't just empty entries
+        sh:nodeKind sh:IRI ;
+    ] .
+
+# Shape 3: Visit Validation
+ex:VisitShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Visit ;
+    sh:message "All Visits must link to a patient, a clinic, and have a date." ;
+
+    sh:property [
+        sh:path ex:hasPatient ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path ex:seenAt ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path ex:visitDate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+    ] .
+
+# Shape 4: Medication Validation
+ex:MedicationShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Medication ;
+    sh:message "All Medications must treat at least one symptom." ;
+
+    sh:property [
+        sh:path ex:treats ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] .

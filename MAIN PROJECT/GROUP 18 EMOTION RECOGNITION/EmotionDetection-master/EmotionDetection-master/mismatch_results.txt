@@ -1,0 +1,37 @@
+============================================================
+SYSTEMATIC INFERENCE VERIFICATION
+============================================================
+
+[1] Checking Model Configuration...
+  ✅ Model and processor loaded successfully.
+
+[2] Checking Preprocessing Parameters...
+  ✅ Audio params match training: sr=48000, n_fft=2048, hop=512, mels=128
+
+[3] Loading training features pickle file...
+  ✅ Pickle loaded: 2452 rows, 231 columns
+  ✅ Found 01-01-03-02-01-01-06.mp4 in Kaggle features.
+
+[5] Extracting live features via processor.py...
+
+[6] Feature Value Comparison (Pickle vs Live)
+
+  --- Blendshapes ---
+  Pickle mean: 0.1258, std: 0.2223
+  Live   mean: 0.1252, std: 0.2210
+  Max Diff: 0.1187
+
+  --- Prosody ---
+  Pickle mean: 4.1126, std: 20.7646
+  Live   mean: 4.1270, std: 22.0502
+  Max Diff: 0.6254
+
+[7] Inference Comparison
+  Prediction (Live A/V + Pickle Metadata): Emotion 4 (0.86)
+    Probs: [0.01  0.025 0.009 0.044 0.864 0.005 0.027 0.016]
+  Prediction (Fully Live): Emotion 4 (0.87)
+    Probs: [0.01  0.025 0.008 0.041 0.868 0.005 0.026 0.016]
+
+Done. If Pickle Metadata and Fully Live predictions differ massively,
+the issue is in extraction of Prosody/Blendshapes.
+============================================================

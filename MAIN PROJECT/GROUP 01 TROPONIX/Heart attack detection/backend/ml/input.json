@@ -1,0 +1,9 @@
+{
+  "risk_score": 0.82,
+  "label": "high_risk",
+  "reasons": {
+    "CRP": 9.2,
+    "LDL": 165,
+    "Myoglobin": 145
+  }
+}

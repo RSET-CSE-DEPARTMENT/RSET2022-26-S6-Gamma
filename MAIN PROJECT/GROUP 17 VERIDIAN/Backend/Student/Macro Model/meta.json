@@ -1,0 +1,12 @@
+{
+  "features": [
+    "gdp_growth",
+    "inflation",
+    "unemployment"
+  ],
+  "importances": {
+    "f0": 0.4546178877353668,
+    "f1": 0.529829740524292,
+    "f2": 0.6513291001319885
+  }
+}

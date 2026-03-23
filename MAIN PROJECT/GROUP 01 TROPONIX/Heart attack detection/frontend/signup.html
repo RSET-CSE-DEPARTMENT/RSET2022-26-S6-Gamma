@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Blood Biomarker ML Dashboard</title>
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #0b1220;
+            --accent: #06b6d4;
+            --accent-dark: #0894ad;
+            --muted: #9aa4b2;
+            --text: #e6eef6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #041025, #071428);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255,255,255,0.02);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .logo {
+            background: #06323a;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            color: var(--accent);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            margin-top: 4px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .role-selector {
+            display: flex;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 25px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .role-option {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .role-option.active {
+            background: var(--accent);
+            color: #022;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: var(--muted);
+            display: block;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            color: var(--text);
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(6,182,212,0.25);
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #022;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .msg {
+            margin-bottom: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .error {
+            background: rgba(255,50,50,0.1);
+            border: 1px solid rgba(255,50,50,0.25);
+            color: #ffb3b3;
+        }
+
+        .success {
+            background: rgba(50,200,120,0.1);
+            border: 1px solid rgba(50,200,120,0.25);
+            color: #b0ffd2;
+        }
+
+        .link {
+            display: block;
+            text-align: center;
+            color: var(--accent);
+            margin-top: 16px;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="brand">
+            <div class="logo">HB</div>
+            <h1>Create Your Account</h1>
+            <div class="subtitle">Join the Blood Biomarker Dashboard</div>
+        </div>
+
+        <div class="msg error" id="errorMsg"></div>
+        <div class="msg success" id="successMsg"></div>
+
+        <!-- Role Toggle -->
+        <div class="role-selector">
+            <div class="role-option active" data-role="patient">Patient</div>
+            <div class="role-option" data-role="clinician">Clinician</div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-group">
+            <label>Name</label>
+            <input id="name" class="input" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+            <label>Username</label>
+            <input id="username" class="input" placeholder="Choose a username">
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input id="password" type="password" class="input" placeholder="Create a password">
+        </div>
+
+        <button class="btn" id="signupBtn">Create Account</button>
+
+        <a class="link" href="index.html">Already have an account? Sign in</a>
+
+    </div>
+
+    <script>
+    const roleOptions = document.querySelectorAll(".role-option");
+    let selectedRole = "patient";
+
+    roleOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            roleOptions.forEach(o => o.classList.remove("active"));
+            option.classList.add("active");
+            selectedRole = option.dataset.role;
+        });
+    });
+
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+    const signupBtn = document.getElementById("signupBtn");
+
+    signupBtn.addEventListener("click", async () => {
+        errorMsg.style.display = "none";
+        successMsg.style.display = "none";
+
+        const name = document.getElementById("name").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (!name || !username || !password) {
+            errorMsg.innerText = "Please fill all fields.";
+            errorMsg.style.display = "block";
+            return;
+        }
+
+        try {
+            //  FIXED ✔✔✔
+            const res = await fetch("http://localhost:5000/auth/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name,
+                    username,
+                    password,
+                    role: selectedRole
+                })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                errorMsg.innerText = data.error || "Signup failed.";
+                errorMsg.style.display = "block";
+            } else {
+                successMsg.innerText = "Account created! Redirecting...";
+                successMsg.style.display = "block";
+
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 1500);
+            }
+
+        } catch (err) {
+            errorMsg.innerText = "Server error. Please try again.";
+            errorMsg.style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>

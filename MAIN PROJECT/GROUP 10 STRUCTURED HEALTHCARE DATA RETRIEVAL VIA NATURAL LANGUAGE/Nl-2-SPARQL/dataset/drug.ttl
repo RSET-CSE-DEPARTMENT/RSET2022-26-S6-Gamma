@@ -1,0 +1,1560 @@
+@prefix ex:   <http://example.org/health#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+ex:cefpodoxime_proxetil rdf:type ex:Medication ;
+        rdfs:label "cefpodoxime proxetil"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1052672> .
+
+ex:cefpodoxime_proxetil ex:treats ex:gonorrhea .
+
+ex:ceftizoxime rdf:type ex:Medication ;
+        rdfs:label "ceftizoxime"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1082945> .
+
+ex:ceftizoxime ex:treats ex:gonorrhea .
+
+ex:troleandomycin rdf:type ex:Medication ;
+        rdfs:label "troleandomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1087499> .
+
+ex:troleandomycin ex:treats ex:gonorrhea .
+
+ex:cefixime rdf:type ex:Medication ;
+        rdfs:label "cefixime"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q163901> .
+
+ex:cefixime ex:treats ex:gonorrhea .
+
+ex:enoxacin rdf:type ex:Medication ;
+        rdfs:label "enoxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1639616> .
+
+ex:enoxacin ex:treats ex:gonorrhea .
+
+ex:tetracycline rdf:type ex:Medication ;
+        rdfs:label "tetracycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q193045> .
+
+ex:tetracycline ex:treats ex:gonorrhea .
+
+ex:amoxicillin rdf:type ex:Medication ;
+        rdfs:label "amoxicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q201928> .
+
+ex:amoxicillin ex:treats ex:gonorrhea .
+
+ex:erythromycin rdf:type ex:Medication ;
+        rdfs:label "erythromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q213511> .
+
+ex:erythromycin ex:treats ex:gonorrhea .
+
+ex:gatifloxacin rdf:type ex:Medication ;
+        rdfs:label "gatifloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2365016> .
+
+ex:gatifloxacin ex:treats ex:gonorrhea .
+
+ex:ampicillin rdf:type ex:Medication ;
+        rdfs:label "ampicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q244150> .
+
+ex:ampicillin ex:treats ex:gonorrhea .
+
+ex:ciprofloxacin rdf:type ex:Medication ;
+        rdfs:label "ciprofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q256602> .
+
+ex:ciprofloxacin ex:treats ex:gonorrhea .
+
+ex:benzylpenicillin rdf:type ex:Medication ;
+        rdfs:label "benzylpenicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q258450> .
+
+ex:benzylpenicillin ex:treats ex:gonorrhea .
+
+ex:penicillin_g_potassium rdf:type ex:Medication ;
+        rdfs:label "penicillin g potassium"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q27089370> .
+
+ex:penicillin_g_potassium ex:treats ex:gonorrhea .
+
+ex:penicillin_g_sodium rdf:type ex:Medication ;
+        rdfs:label "penicillin g sodium"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q27122736> .
+
+ex:penicillin_g_sodium ex:treats ex:gonorrhea .
+
+ex:demeclocycline rdf:type ex:Medication ;
+        rdfs:label "demeclocycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2736402> .
+
+ex:demeclocycline ex:treats ex:gonorrhea .
+
+ex:bacampicillin rdf:type ex:Medication ;
+        rdfs:label "bacampicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2878140> .
+
+ex:bacampicillin ex:treats ex:gonorrhea .
+
+ex:dl_ofloxacin rdf:type ex:Medication ;
+        rdfs:label "DL-ofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411447> .
+
+ex:dl_ofloxacin ex:treats ex:gonorrhea .
+
+ex:cefuroxime rdf:type ex:Medication ;
+        rdfs:label "cefuroxime"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q413728> .
+
+ex:cefuroxime ex:treats ex:gonorrhea .
+
+ex:cefpodoxime rdf:type ex:Medication ;
+        rdfs:label "cefpodoxime"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415173> .
+
+ex:cefpodoxime ex:treats ex:gonorrhea .
+
+ex:spectinomycin rdf:type ex:Medication ;
+        rdfs:label "spectinomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q416154> .
+
+ex:spectinomycin ex:treats ex:gonorrhea .
+
+ex:norfloxacin rdf:type ex:Medication ;
+        rdfs:label "norfloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417897> .
+
+ex:norfloxacin ex:treats ex:gonorrhea .
+
+ex:cefotaxime rdf:type ex:Medication ;
+        rdfs:label "cefotaxime"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417968> .
+
+ex:cefotaxime ex:treats ex:gonorrhea .
+
+ex:ceftriaxone rdf:type ex:Medication ;
+        rdfs:label "ceftriaxone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421713> .
+
+ex:ceftriaxone ex:treats ex:gonorrhea .
+
+ex:moxifloxacin rdf:type ex:Medication ;
+        rdfs:label "moxifloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424940> .
+
+ex:moxifloxacin ex:treats ex:gonorrhea .
+
+ex:trovafloxacin rdf:type ex:Medication ;
+        rdfs:label "trovafloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q544393> .
+
+ex:trovafloxacin ex:treats ex:gonorrhea .
+
+ex:probenecid rdf:type ex:Medication ;
+        rdfs:label "probenecid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q900898> .
+
+ex:probenecid ex:treats ex:gonorrhea .
+
+ex:albendazol rdf:type ex:Medication ;
+        rdfs:label "albendazol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411629> .
+
+ex:albendazol ex:treats ex:opisthorchiasis .
+
+ex:praziquantel rdf:type ex:Medication ;
+        rdfs:label "praziquantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424145> .
+
+ex:praziquantel ex:treats ex:opisthorchiasis .
+
+ex:corticosteroid rdf:type ex:Medication ;
+        rdfs:label "corticosteroid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q210420> .
+
+ex:corticosteroid ex:treats ex:crimean-congo_hemorrhagic_fever .
+
+ex:ribavirin rdf:type ex:Medication ;
+        rdfs:label "ribavirin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421862> .
+
+ex:ribavirin ex:treats ex:crimean-congo_hemorrhagic_fever .
+
+ex:antibody rdf:type ex:Medication ;
+        rdfs:label "antibody"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q79460> .
+
+ex:antibody ex:treats ex:crimean-congo_hemorrhagic_fever .
+
+ex:albendazol rdf:type ex:Medication ;
+        rdfs:label "albendazol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411629> .
+
+ex:albendazol ex:treats ex:clonorchiasis .
+
+ex:praziquantel rdf:type ex:Medication ;
+        rdfs:label "praziquantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424145> .
+
+ex:praziquantel ex:treats ex:clonorchiasis .
+
+ex:extracorporeal_membrane_oxygenation rdf:type ex:Medication ;
+        rdfs:label "extracorporeal membrane oxygenation"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1385195> .
+
+ex:extracorporeal_membrane_oxygenation ex:treats ex:beta_blocker_poisoning .
+
+ex:whole_bowel_irrigation rdf:type ex:Medication ;
+        rdfs:label "whole bowel irrigation"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15474950> .
+
+ex:whole_bowel_irrigation ex:treats ex:beta_blocker_poisoning .
+
+ex:sodium_bicarbonate rdf:type ex:Medication ;
+        rdfs:label "sodium bicarbonate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q179731> .
+
+ex:sodium_bicarbonate ex:treats ex:beta_blocker_poisoning .
+
+ex:intravenous_fluid_replacement rdf:type ex:Medication ;
+        rdfs:label "intravenous fluid replacement"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q24885926> .
+
+ex:intravenous_fluid_replacement ex:treats ex:beta_blocker_poisoning .
+
+ex:glucagon rdf:type ex:Medication ;
+        rdfs:label "glucagon"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q28163629> .
+
+ex:glucagon ex:treats ex:beta_blocker_poisoning .
+
+ex:activated_charcoal rdf:type ex:Medication ;
+        rdfs:label "activated charcoal"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2957662> .
+
+ex:activated_charcoal ex:treats ex:beta_blocker_poisoning .
+
+ex:vasoconstrictor_agents rdf:type ex:Medication ;
+        rdfs:label "vasoconstrictor agents"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q3359124> .
+
+ex:vasoconstrictor_agents ex:treats ex:beta_blocker_poisoning .
+
+ex:insulin rdf:type ex:Medication ;
+        rdfs:label "insulin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q50265665> .
+
+ex:insulin ex:treats ex:beta_blocker_poisoning .
+
+ex:intralipid rdf:type ex:Medication ;
+        rdfs:label "intralipid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q6058432> .
+
+ex:intralipid ex:treats ex:beta_blocker_poisoning .
+
+ex:ivermectin rdf:type ex:Medication ;
+        rdfs:label "ivermectin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415178> .
+
+ex:ivermectin ex:treats ex:onchocerciasis .
+
+ex:fluticasone rdf:type ex:Medication ;
+        rdfs:label "fluticasone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1002165> .
+
+ex:fluticasone ex:treats ex:rhinitis .
+
+ex:ephedra rdf:type ex:Medication ;
+        rdfs:label "ephedra"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q13530468> .
+
+ex:ephedra ex:treats ex:rhinitis .
+
+ex:ephedrine rdf:type ex:Medication ;
+        rdfs:label "ephedrine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q219626> .
+
+ex:ephedrine ex:treats ex:rhinitis .
+
+ex:mometasone rdf:type ex:Medication ;
+        rdfs:label "mometasone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q28208887> .
+
+ex:mometasone ex:treats ex:rhinitis .
+
+ex:norephedrin rdf:type ex:Medication ;
+        rdfs:label "norephedrin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q413147> .
+
+ex:norephedrin ex:treats ex:rhinitis .
+
+ex:hyoscyamine rdf:type ex:Medication ;
+        rdfs:label "hyoscyamine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q413762> .
+
+ex:hyoscyamine ex:treats ex:rhinitis .
+
+ex:fexofenadine rdf:type ex:Medication ;
+        rdfs:label "fexofenadine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415122> .
+
+ex:fexofenadine ex:treats ex:rhinitis .
+
+ex:naphazoline rdf:type ex:Medication ;
+        rdfs:label "naphazoline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415433> .
+
+ex:naphazoline ex:treats ex:rhinitis .
+
+ex:montelukast rdf:type ex:Medication ;
+        rdfs:label "montelukast"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417767> .
+
+ex:montelukast ex:treats ex:rhinitis .
+
+ex:oxymetazoline rdf:type ex:Medication ;
+        rdfs:label "oxymetazoline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417813> .
+
+ex:oxymetazoline ex:treats ex:rhinitis .
+
+ex:azelastine_fluticasone rdf:type ex:Medication ;
+        rdfs:label "azelastine / fluticasone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q48566767> .
+
+ex:azelastine_fluticasone ex:treats ex:rhinitis .
+
+ex:colchicine rdf:type ex:Medication ;
+        rdfs:label "colchicine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q26998324> .
+
+ex:colchicine ex:treats ex:familial_mediterranean_fever .
+
+ex:emedastine rdf:type ex:Medication ;
+        rdfs:label "emedastine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q5370305> .
+
+ex:emedastine ex:treats ex:acute_hemorrhagic_conjunctivitis .
+
+ex:prednisolone rdf:type ex:Medication ;
+        rdfs:label "prednisolone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11426176> .
+
+ex:prednisolone ex:treats ex:interstitial_lung_disease .
+
+ex:nintedanib rdf:type ex:Medication ;
+        rdfs:label "nintedanib"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15149723> .
+
+ex:nintedanib ex:treats ex:interstitial_lung_disease .
+
+ex:pirfenidone rdf:type ex:Medication ;
+        rdfs:label "pirfenidone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2060696> .
+
+ex:pirfenidone ex:treats ex:interstitial_lung_disease .
+
+ex:cyclosporine rdf:type ex:Medication ;
+        rdfs:label "cyclosporine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q367700> .
+
+ex:cyclosporine ex:treats ex:interstitial_lung_disease .
+
+ex:tacrolimus rdf:type ex:Medication ;
+        rdfs:label "tacrolimus"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411648> .
+
+ex:tacrolimus ex:treats ex:interstitial_lung_disease .
+
+ex:rituximab rdf:type ex:Medication ;
+        rdfs:label "rituximab"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q412323> .
+
+ex:rituximab ex:treats ex:interstitial_lung_disease .
+
+ex:methylprednisolone rdf:type ex:Medication ;
+        rdfs:label "methylprednisolone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417222> .
+
+ex:methylprednisolone ex:treats ex:interstitial_lung_disease .
+
+ex:prednisone rdf:type ex:Medication ;
+        rdfs:label "prednisone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424972> .
+
+ex:prednisone ex:treats ex:interstitial_lung_disease .
+
+ex:mycophenolate_mofetil rdf:type ex:Medication ;
+        rdfs:label "mycophenolate mofetil"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q4567614> .
+
+ex:mycophenolate_mofetil ex:treats ex:interstitial_lung_disease .
+
+ex:praziquantel rdf:type ex:Medication ;
+        rdfs:label "praziquantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424145> .
+
+ex:praziquantel ex:treats ex:metagonimiasis .
+
+ex:lumbar_epidural_blood_patch rdf:type ex:Medication ;
+        rdfs:label "lumbar epidural blood patch"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q115743576> .
+
+ex:lumbar_epidural_blood_patch ex:treats ex:spinal_leak_of_cerebrospinal_fluid .
+
+ex:head_elevation rdf:type ex:Medication ;
+        rdfs:label "head elevation"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q115745925> .
+
+ex:head_elevation ex:treats ex:cranial_leak_of_cerebrospinal_fluid .
+
+ex:lumbar_puncture rdf:type ex:Medication ;
+        rdfs:label "lumbar puncture"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q719444> .
+
+ex:lumbar_puncture ex:treats ex:cranial_leak_of_cerebrospinal_fluid .
+
+ex:bed_rest rdf:type ex:Medication ;
+        rdfs:label "bed rest"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q850197> .
+
+ex:bed_rest ex:treats ex:cranial_leak_of_cerebrospinal_fluid .
+
+ex:rs_cyclophosphamide rdf:type ex:Medication ;
+        rdfs:label "(RS)-cyclophosphamide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q408524> .
+
+ex:rs_cyclophosphamide ex:treats ex:granulomatosis_with_polyangiitis .
+
+ex:exercise rdf:type ex:Medication ;
+        rdfs:label "exercise"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q29051769> .
+
+ex:exercise ex:treats ex:feline_obesity .
+
+ex:reducing_diet rdf:type ex:Medication ;
+        rdfs:label "reducing diet"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q861974> .
+
+ex:reducing_diet ex:treats ex:feline_obesity .
+
+ex:albendazol rdf:type ex:Medication ;
+        rdfs:label "albendazol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411629> .
+
+ex:albendazol ex:treats ex:ancylostomiasis .
+
+ex:mebendazole rdf:type ex:Medication ;
+        rdfs:label "mebendazole"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422194> .
+
+ex:mebendazole ex:treats ex:ancylostomiasis .
+
+ex:pyrantel rdf:type ex:Medication ;
+        rdfs:label "pyrantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q426897> .
+
+ex:pyrantel ex:treats ex:ancylostomiasis .
+
+ex:triethylenetetramine rdf:type ex:Medication ;
+        rdfs:label "triethylenetetramine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q418386> .
+
+ex:triethylenetetramine ex:treats ex:wilson_disease .
+
+ex:d_penicillamine rdf:type ex:Medication ;
+        rdfs:label "D-penicillamine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421239> .
+
+ex:d_penicillamine ex:treats ex:wilson_disease .
+
+ex:prednisolone rdf:type ex:Medication ;
+        rdfs:label "prednisolone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11426176> .
+
+ex:prednisolone ex:treats ex:adult-onset_still_s_disease .
+
+ex:steroid rdf:type ex:Medication ;
+        rdfs:label "steroid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q177911> .
+
+ex:steroid ex:treats ex:adult-onset_still_s_disease .
+
+ex:non_steroidal_anti_inflammatory_drug rdf:type ex:Medication ;
+        rdfs:label "non-steroidal anti-inflammatory drug"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q188724> .
+
+ex:non_steroidal_anti_inflammatory_drug ex:treats ex:adult-onset_still_s_disease .
+
+ex:canakinumab rdf:type ex:Medication ;
+        rdfs:label "canakinumab"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q3655009> .
+
+ex:canakinumab ex:treats ex:adult-onset_still_s_disease .
+
+ex:cyclosporine rdf:type ex:Medication ;
+        rdfs:label "cyclosporine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q367700> .
+
+ex:cyclosporine ex:treats ex:adult-onset_still_s_disease .
+
+ex:methotrexate rdf:type ex:Medication ;
+        rdfs:label "methotrexate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422232> .
+
+ex:methotrexate ex:treats ex:adult-onset_still_s_disease .
+
+ex:tocilizumab rdf:type ex:Medication ;
+        rdfs:label "tocilizumab"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q425154> .
+
+ex:tocilizumab ex:treats ex:adult-onset_still_s_disease .
+
+ex:clonazepam rdf:type ex:Medication ;
+        rdfs:label "clonazepam"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q407988> .
+
+ex:clonazepam ex:treats ex:myoclonic_epilepsy .
+
+ex:chloramphenicol rdf:type ex:Medication ;
+        rdfs:label "chloramphenicol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q274515> .
+
+ex:chloramphenicol ex:treats ex:scrub_typhus .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:scrub_typhus .
+
+ex:rifampicin rdf:type ex:Medication ;
+        rdfs:label "rifampicin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422652> .
+
+ex:rifampicin ex:treats ex:scrub_typhus .
+
+ex:triclabendazole rdf:type ex:Medication ;
+        rdfs:label "triclabendazole"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q419739> .
+
+ex:triclabendazole ex:treats ex:dicrocoeliasis .
+
+ex:praziquantel rdf:type ex:Medication ;
+        rdfs:label "praziquantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424145> .
+
+ex:praziquantel ex:treats ex:dicrocoeliasis .
+
+ex:meropenem rdf:type ex:Medication ;
+        rdfs:label "meropenem"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421670> .
+
+ex:meropenem ex:treats ex:appendicitis .
+
+ex:rhinaer rdf:type ex:Medication ;
+        rdfs:label "Rhinaer"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q127835401> .
+
+ex:rhinaer ex:treats ex:chronic_rhinitis .
+
+ex:folic_acid rdf:type ex:Medication ;
+        rdfs:label "folic acid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q127060> .
+
+ex:folic_acid ex:treats ex:diphyllobothriasis .
+
+ex:cyanocobalamin rdf:type ex:Medication ;
+        rdfs:label "cyanocobalamin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q252251> .
+
+ex:cyanocobalamin ex:treats ex:diphyllobothriasis .
+
+ex:praziquantel rdf:type ex:Medication ;
+        rdfs:label "praziquantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424145> .
+
+ex:praziquantel ex:treats ex:diphyllobothriasis .
+
+ex:arginine_vasopressin rdf:type ex:Medication ;
+        rdfs:label "arginine vasopressin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q183011> .
+
+ex:arginine_vasopressin ex:treats ex:central_diabetes_insipidus .
+
+ex:desmopressin rdf:type ex:Medication ;
+        rdfs:label "desmopressin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q241006> .
+
+ex:desmopressin ex:treats ex:central_diabetes_insipidus .
+
+ex:pramlintide rdf:type ex:Medication ;
+        rdfs:label "pramlintide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2062094> .
+
+ex:pramlintide ex:treats ex:type-1_diabetes .
+
+ex:dulaglutide rdf:type ex:Medication ;
+        rdfs:label "dulaglutide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q21011228> .
+
+ex:dulaglutide ex:treats ex:type-1_diabetes .
+
+ex:liraglutide rdf:type ex:Medication ;
+        rdfs:label "liraglutide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2526479> .
+
+ex:liraglutide ex:treats ex:type-1_diabetes .
+
+ex:insulin_aspart rdf:type ex:Medication ;
+        rdfs:label "insulin aspart"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2754775> .
+
+ex:insulin_aspart ex:treats ex:type-1_diabetes .
+
+ex:insulin_lispro rdf:type ex:Medication ;
+        rdfs:label "Insulin Lispro"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q3492616> .
+
+ex:insulin_lispro ex:treats ex:type-1_diabetes .
+
+ex:insulin_detemir rdf:type ex:Medication ;
+        rdfs:label "insulin detemir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q410965> .
+
+ex:insulin_detemir ex:treats ex:type-1_diabetes .
+
+ex:insulin_glargine rdf:type ex:Medication ;
+        rdfs:label "insulin glargine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417317> .
+
+ex:insulin_glargine ex:treats ex:type-1_diabetes .
+
+ex:exenatide rdf:type ex:Medication ;
+        rdfs:label "exenatide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417762> .
+
+ex:exenatide ex:treats ex:type-1_diabetes .
+
+ex:sitagliptin rdf:type ex:Medication ;
+        rdfs:label "sitagliptin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q419832> .
+
+ex:sitagliptin ex:treats ex:type-1_diabetes .
+
+ex:albiglutide rdf:type ex:Medication ;
+        rdfs:label "albiglutide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q4712362> .
+
+ex:albiglutide ex:treats ex:type-1_diabetes .
+
+ex:insulin_glulisine rdf:type ex:Medication ;
+        rdfs:label "insulin glulisine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q6042242> .
+
+ex:insulin_glulisine ex:treats ex:type-1_diabetes .
+
+ex:albendazol rdf:type ex:Medication ;
+        rdfs:label "albendazol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411629> .
+
+ex:albendazol ex:treats ex:hymenolepiasis .
+
+ex:praziquantel rdf:type ex:Medication ;
+        rdfs:label "praziquantel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424145> .
+
+ex:praziquantel ex:treats ex:hymenolepiasis .
+
+ex:chloramphenicol rdf:type ex:Medication ;
+        rdfs:label "chloramphenicol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q274515> .
+
+ex:chloramphenicol ex:treats ex:epidemic_typhus .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:epidemic_typhus .
+
+ex:penicillin_g_procaine_hydrate rdf:type ex:Medication ;
+        rdfs:label "penicillin G procaine hydrate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q13026783> .
+
+ex:penicillin_g_procaine_hydrate ex:treats ex:anthrax .
+
+ex:streptomycin rdf:type ex:Medication ;
+        rdfs:label "streptomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q192717> .
+
+ex:streptomycin ex:treats ex:anthrax .
+
+ex:erythromycin rdf:type ex:Medication ;
+        rdfs:label "erythromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q213511> .
+
+ex:erythromycin ex:treats ex:anthrax .
+
+ex:ciprofloxacin rdf:type ex:Medication ;
+        rdfs:label "ciprofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q256602> .
+
+ex:ciprofloxacin ex:treats ex:anthrax .
+
+ex:minocycline rdf:type ex:Medication ;
+        rdfs:label "minocycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415336> .
+
+ex:minocycline ex:treats ex:anthrax .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:anthrax .
+
+ex:ciprofloxacin rdf:type ex:Medication ;
+        rdfs:label "ciprofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q256602> .
+
+ex:ciprofloxacin ex:treats ex:dysentery .
+
+ex:l_scopolamine rdf:type ex:Medication ;
+        rdfs:label "L-scopolamine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q337188> .
+
+ex:l_scopolamine ex:treats ex:dysentery .
+
+ex:rifabutin rdf:type ex:Medication ;
+        rdfs:label "rifabutin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1135705> .
+
+ex:rifabutin ex:treats ex:pulmonary_tuberculosis .
+
+ex:bedaquiline rdf:type ex:Medication ;
+        rdfs:label "bedaquiline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1257318> .
+
+ex:bedaquiline ex:treats ex:pulmonary_tuberculosis .
+
+ex:rifapentine rdf:type ex:Medication ;
+        rdfs:label "rifapentine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q3935297> .
+
+ex:rifapentine ex:treats ex:pulmonary_tuberculosis .
+
+ex:linezolid rdf:type ex:Medication ;
+        rdfs:label "linezolid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411377> .
+
+ex:linezolid ex:treats ex:pulmonary_tuberculosis .
+
+ex:dl_ofloxacin rdf:type ex:Medication ;
+        rdfs:label "DL-ofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411447> .
+
+ex:dl_ofloxacin ex:treats ex:pulmonary_tuberculosis .
+
+ex:ethambutol rdf:type ex:Medication ;
+        rdfs:label "ethambutol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q412318> .
+
+ex:ethambutol ex:treats ex:pulmonary_tuberculosis .
+
+ex:rifampicin rdf:type ex:Medication ;
+        rdfs:label "rifampicin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422652> .
+
+ex:rifampicin ex:treats ex:pulmonary_tuberculosis .
+
+ex:isoniazid rdf:type ex:Medication ;
+        rdfs:label "isoniazid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q423169> .
+
+ex:isoniazid ex:treats ex:pulmonary_tuberculosis .
+
+ex:levofloxacin rdf:type ex:Medication ;
+        rdfs:label "levofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424193> .
+
+ex:levofloxacin ex:treats ex:pulmonary_tuberculosis .
+
+ex:levofloxacin_hemihydrate rdf:type ex:Medication ;
+        rdfs:label "levofloxacin hemihydrate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q47495791> .
+
+ex:levofloxacin_hemihydrate ex:treats ex:pulmonary_tuberculosis .
+
+ex:ibuprofen rdf:type ex:Medication ;
+        rdfs:label "ibuprofen"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q186969> .
+
+ex:ibuprofen ex:treats ex:tension_headache .
+
+ex:aspirin rdf:type ex:Medication ;
+        rdfs:label "aspirin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q18216> .
+
+ex:aspirin ex:treats ex:tension_headache .
+
+ex:paracetamol rdf:type ex:Medication ;
+        rdfs:label "paracetamol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q57055> .
+
+ex:paracetamol ex:treats ex:tension_headache .
+
+ex:amitriptyline rdf:type ex:Medication ;
+        rdfs:label "amitriptyline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q58397> .
+
+ex:amitriptyline ex:treats ex:tension_headache .
+
+ex:clarithromycin rdf:type ex:Medication ;
+        rdfs:label "clarithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q118551> .
+
+ex:clarithromycin ex:treats ex:diphtheria .
+
+ex:diphtheria_antitoxin rdf:type ex:Medication ;
+        rdfs:label "diphtheria antitoxin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15893399> .
+
+ex:diphtheria_antitoxin ex:treats ex:diphtheria .
+
+ex:azithromycin rdf:type ex:Medication ;
+        rdfs:label "azithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q165399> .
+
+ex:azithromycin ex:treats ex:diphtheria .
+
+ex:ampicillin rdf:type ex:Medication ;
+        rdfs:label "ampicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q244150> .
+
+ex:ampicillin ex:treats ex:diphtheria .
+
+ex:benzylpenicillin rdf:type ex:Medication ;
+        rdfs:label "benzylpenicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q258450> .
+
+ex:benzylpenicillin ex:treats ex:diphtheria .
+
+ex:tylosin rdf:type ex:Medication ;
+        rdfs:label "tylosin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411462> .
+
+ex:tylosin ex:treats ex:diphtheria .
+
+ex:penicillin rdf:type ex:Medication ;
+        rdfs:label "penicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12190> .
+
+ex:penicillin ex:treats ex:diphtheria .
+
+ex:azithromycin rdf:type ex:Medication ;
+        rdfs:label "azithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q165399> .
+
+ex:azithromycin ex:treats ex:cryptosporidiosis .
+
+ex:nitazoxanide rdf:type ex:Medication ;
+        rdfs:label "nitazoxanide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2943789> .
+
+ex:nitazoxanide ex:treats ex:cryptosporidiosis .
+
+ex:paromomycin rdf:type ex:Medication ;
+        rdfs:label "paromomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415625> .
+
+ex:paromomycin ex:treats ex:cryptosporidiosis .
+
+ex:isosorbide_dinitrate rdf:type ex:Medication ;
+        rdfs:label "isosorbide dinitrate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q179748> .
+
+ex:isosorbide_dinitrate ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:pharmaceutical_preparation_of_nitroglycerin rdf:type ex:Medication ;
+        rdfs:label "pharmaceutical preparation of nitroglycerin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q3221044> .
+
+ex:pharmaceutical_preparation_of_nitroglycerin ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:clopidogrel rdf:type ex:Medication ;
+        rdfs:label "clopidogrel"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q410237> .
+
+ex:clopidogrel ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:papaverine rdf:type ex:Medication ;
+        rdfs:label "papaverine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q410374> .
+
+ex:papaverine ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:tirofiban rdf:type ex:Medication ;
+        rdfs:label "tirofiban"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415366> .
+
+ex:tirofiban ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:calcium_channel_blocker rdf:type ex:Medication ;
+        rdfs:label "calcium channel blocker"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421700> .
+
+ex:calcium_channel_blocker ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:isosorbide_mononitrate rdf:type ex:Medication ;
+        rdfs:label "isosorbide mononitrate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q423401> .
+
+ex:isosorbide_mononitrate ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:lipid_regulating_agents rdf:type ex:Medication ;
+        rdfs:label "lipid regulating agents"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q50430353> .
+
+ex:lipid_regulating_agents ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:anti_diabetic_medication rdf:type ex:Medication ;
+        rdfs:label "anti-diabetic medication"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q575062> .
+
+ex:anti_diabetic_medication ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:beta_blocker rdf:type ex:Medication ;
+        rdfs:label "beta blocker"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q816759> .
+
+ex:beta_blocker ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:ranolazine rdf:type ex:Medication ;
+        rdfs:label "ranolazine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q907104> .
+
+ex:ranolazine ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:statin rdf:type ex:Medication ;
+        rdfs:label "statin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q954845> .
+
+ex:statin ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:aspirin rdf:type ex:Medication ;
+        rdfs:label "aspirin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q18216> .
+
+ex:aspirin ex:treats ex:arteriosclerotic_heart_disease .
+
+ex:pregabalin rdf:type ex:Medication ;
+        rdfs:label "pregabalin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q412174> .
+
+ex:pregabalin ex:treats ex:spinal_stenosis .
+
+ex:streptomycin rdf:type ex:Medication ;
+        rdfs:label "streptomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q192717> .
+
+ex:streptomycin ex:treats ex:tularemia .
+
+ex:tetracycline rdf:type ex:Medication ;
+        rdfs:label "tetracycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q193045> .
+
+ex:tetracycline ex:treats ex:tularemia .
+
+ex:ciprofloxacin rdf:type ex:Medication ;
+        rdfs:label "ciprofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q256602> .
+
+ex:ciprofloxacin ex:treats ex:tularemia .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:tularemia .
+
+ex:trimetrexate rdf:type ex:Medication ;
+        rdfs:label "trimetrexate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q126677485> .
+
+ex:trimetrexate ex:treats ex:pneumocystis_pneumonia .
+
+ex:pentamidine rdf:type ex:Medication ;
+        rdfs:label "pentamidine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q416206> .
+
+ex:pentamidine ex:treats ex:pneumocystis_pneumonia .
+
+ex:atovaquone rdf:type ex:Medication ;
+        rdfs:label "atovaquone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q418179> .
+
+ex:atovaquone ex:treats ex:pneumocystis_pneumonia .
+
+ex:sulfamethoxazole_trimethoprim rdf:type ex:Medication ;
+        rdfs:label "sulfamethoxazole/trimethoprim"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q898623> .
+
+ex:sulfamethoxazole_trimethoprim ex:treats ex:pneumocystis_pneumonia .
+
+ex:ipidacrine rdf:type ex:Medication ;
+        rdfs:label "ipidacrine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15409425> .
+
+ex:ipidacrine ex:treats ex:botulism .
+
+ex:metronidazole rdf:type ex:Medication ;
+        rdfs:label "metronidazole"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q169569> .
+
+ex:metronidazole ex:treats ex:botulism .
+
+ex:heptavalent_botulism_antitoxin rdf:type ex:Medication ;
+        rdfs:label "heptavalent botulism antitoxin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q17148719> .
+
+ex:heptavalent_botulism_antitoxin ex:treats ex:botulism .
+
+ex:clindamycin rdf:type ex:Medication ;
+        rdfs:label "clindamycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422273> .
+
+ex:clindamycin ex:treats ex:botulism .
+
+ex:ledipasvir rdf:type ex:Medication ;
+        rdfs:label "ledipasvir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15409409> .
+
+ex:ledipasvir ex:treats ex:hepatitis_c .
+
+ex:ledipasvir_sofosbuvir rdf:type ex:Medication ;
+        rdfs:label "ledipasvir/sofosbuvir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q19597688> .
+
+ex:ledipasvir_sofosbuvir ex:treats ex:hepatitis_c .
+
+ex:grazoprevir rdf:type ex:Medication ;
+        rdfs:label "grazoprevir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q19786991> .
+
+ex:grazoprevir ex:treats ex:hepatitis_c .
+
+ex:ombitasvir_paritaprevir_ritonavir rdf:type ex:Medication ;
+        rdfs:label "ombitasvir/paritaprevir/ritonavir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q19858657> .
+
+ex:ombitasvir_paritaprevir_ritonavir ex:treats ex:hepatitis_c .
+
+ex:elbasvir_grazoprevir rdf:type ex:Medication ;
+        rdfs:label "elbasvir/grazoprevir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q22673321> .
+
+ex:elbasvir_grazoprevir ex:treats ex:hepatitis_c .
+
+ex:sofosbuvir rdf:type ex:Medication ;
+        rdfs:label "sofosbuvir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2502747> .
+
+ex:sofosbuvir ex:treats ex:hepatitis_c .
+
+ex:sofosbuvir_velpatasvir rdf:type ex:Medication ;
+        rdfs:label "sofosbuvir/velpatasvir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q25110523> .
+
+ex:sofosbuvir_velpatasvir ex:treats ex:hepatitis_c .
+
+ex:bicyclol rdf:type ex:Medication ;
+        rdfs:label "bicyclol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q27271958> .
+
+ex:bicyclol ex:treats ex:hepatitis_c .
+
+ex:glecaprevir_pibrentasvir rdf:type ex:Medication ;
+        rdfs:label "glecaprevir/pibrentasvir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q39048038> .
+
+ex:glecaprevir_pibrentasvir ex:treats ex:hepatitis_c .
+
+ex:telaprevir rdf:type ex:Medication ;
+        rdfs:label "telaprevir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q408557> .
+
+ex:telaprevir ex:treats ex:hepatitis_c .
+
+ex:boceprevir rdf:type ex:Medication ;
+        rdfs:label "boceprevir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q410551> .
+
+ex:boceprevir ex:treats ex:hepatitis_c .
+
+ex:peginterferon_alfa_2a rdf:type ex:Medication ;
+        rdfs:label "peginterferon alfa-2a"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q420056> .
+
+ex:peginterferon_alfa_2a ex:treats ex:hepatitis_c .
+
+ex:ribavirin rdf:type ex:Medication ;
+        rdfs:label "ribavirin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421862> .
+
+ex:ribavirin ex:treats ex:hepatitis_c .
+
+ex:ritonavir rdf:type ex:Medication ;
+        rdfs:label "ritonavir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422618> .
+
+ex:ritonavir ex:treats ex:hepatitis_c .
+
+ex:daclatasvir rdf:type ex:Medication ;
+        rdfs:label "daclatasvir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q5207712> .
+
+ex:daclatasvir ex:treats ex:hepatitis_c .
+
+ex:peginterferon_alfa_2b rdf:type ex:Medication ;
+        rdfs:label "peginterferon alfa-2b"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q7160789> .
+
+ex:peginterferon_alfa_2b ex:treats ex:hepatitis_c .
+
+ex:simeprevir rdf:type ex:Medication ;
+        rdfs:label "simeprevir"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q7517689> .
+
+ex:simeprevir ex:treats ex:hepatitis_c .
+
+ex:sulfadiazine rdf:type ex:Medication ;
+        rdfs:label "sulfadiazine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2555060> .
+
+ex:sulfadiazine ex:treats ex:toxoplasmosis .
+
+ex:pyrimethamine rdf:type ex:Medication ;
+        rdfs:label "pyrimethamine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421072> .
+
+ex:pyrimethamine ex:treats ex:toxoplasmosis .
+
+ex:spiramycin rdf:type ex:Medication ;
+        rdfs:label "spiramycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422265> .
+
+ex:spiramycin ex:treats ex:toxoplasmosis .
+
+ex:clindamycin rdf:type ex:Medication ;
+        rdfs:label "clindamycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422273> .
+
+ex:clindamycin ex:treats ex:toxoplasmosis .
+
+ex:chloroquine rdf:type ex:Medication ;
+        rdfs:label "chloroquine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422438> .
+
+ex:chloroquine ex:treats ex:toxoplasmosis .
+
+ex:sulfamethoxazole_trimethoprim rdf:type ex:Medication ;
+        rdfs:label "sulfamethoxazole/trimethoprim"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q898623> .
+
+ex:sulfamethoxazole_trimethoprim ex:treats ex:toxoplasmosis .
+
+ex:troleandomycin rdf:type ex:Medication ;
+        rdfs:label "troleandomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1087499> .
+
+ex:troleandomycin ex:treats ex:legionnaires_disease .
+
+ex:azithromycin rdf:type ex:Medication ;
+        rdfs:label "azithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q165399> .
+
+ex:azithromycin ex:treats ex:legionnaires_disease .
+
+ex:erythromycin rdf:type ex:Medication ;
+        rdfs:label "erythromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q213511> .
+
+ex:erythromycin ex:treats ex:legionnaires_disease .
+
+ex:gatifloxacin rdf:type ex:Medication ;
+        rdfs:label "gatifloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2365016> .
+
+ex:gatifloxacin ex:treats ex:legionnaires_disease .
+
+ex:ciprofloxacin rdf:type ex:Medication ;
+        rdfs:label "ciprofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q256602> .
+
+ex:ciprofloxacin ex:treats ex:legionnaires_disease .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:legionnaires_disease .
+
+ex:levofloxacin rdf:type ex:Medication ;
+        rdfs:label "levofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424193> .
+
+ex:levofloxacin ex:treats ex:legionnaires_disease .
+
+ex:moxifloxacin rdf:type ex:Medication ;
+        rdfs:label "moxifloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424940> .
+
+ex:moxifloxacin ex:treats ex:legionnaires_disease .
+
+ex:levofloxacin_hemihydrate rdf:type ex:Medication ;
+        rdfs:label "levofloxacin hemihydrate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q47495791> .
+
+ex:levofloxacin_hemihydrate ex:treats ex:legionnaires_disease .
+
+ex:ethamsylate rdf:type ex:Medication ;
+        rdfs:label "ethamsylate"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2000876> .
+
+ex:ethamsylate ex:treats ex:leptospirosis .
+
+ex:amoxicillin rdf:type ex:Medication ;
+        rdfs:label "amoxicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q201928> .
+
+ex:amoxicillin ex:treats ex:leptospirosis .
+
+ex:benzylpenicillin rdf:type ex:Medication ;
+        rdfs:label "benzylpenicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q258450> .
+
+ex:benzylpenicillin ex:treats ex:leptospirosis .
+
+ex:pentoxifylline rdf:type ex:Medication ;
+        rdfs:label "pentoxifylline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q416331> .
+
+ex:pentoxifylline ex:treats ex:leptospirosis .
+
+ex:cefotaxime rdf:type ex:Medication ;
+        rdfs:label "cefotaxime"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417968> .
+
+ex:cefotaxime ex:treats ex:leptospirosis .
+
+ex:aprotinin rdf:type ex:Medication ;
+        rdfs:label "aprotinin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q418625> .
+
+ex:aprotinin ex:treats ex:leptospirosis .
+
+ex:ceftriaxone rdf:type ex:Medication ;
+        rdfs:label "ceftriaxone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421713> .
+
+ex:ceftriaxone ex:treats ex:leptospirosis .
+
+ex:streptomycin rdf:type ex:Medication ;
+        rdfs:label "streptomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q192717> .
+
+ex:streptomycin ex:treats ex:brucellosis .
+
+ex:minocycline rdf:type ex:Medication ;
+        rdfs:label "minocycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q415336> .
+
+ex:minocycline ex:treats ex:brucellosis .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:brucellosis .
+
+ex:rifampicin rdf:type ex:Medication ;
+        rdfs:label "rifampicin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422652> .
+
+ex:rifampicin ex:treats ex:brucellosis .
+
+ex:dantrolene rdf:type ex:Medication ;
+        rdfs:label "dantrolene"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421274> .
+
+ex:dantrolene ex:treats ex:malignant_hyperthermia .
+
+ex:rs_metoprolol rdf:type ex:Medication ;
+        rdfs:label "(RS)-metoprolol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q409468> .
+
+ex:rs_metoprolol ex:treats ex:supraventricular_tachycardia .
+
+ex:amiodarone rdf:type ex:Medication ;
+        rdfs:label "amiodarone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q410061> .
+
+ex:amiodarone ex:treats ex:supraventricular_tachycardia .
+
+ex:verapamil rdf:type ex:Medication ;
+        rdfs:label "verapamil"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q410291> .
+
+ex:verapamil ex:treats ex:supraventricular_tachycardia .
+
+ex:atenolol rdf:type ex:Medication ;
+        rdfs:label "atenolol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411325> .
+
+ex:atenolol ex:treats ex:supraventricular_tachycardia .
+
+ex:bisoprolol rdf:type ex:Medication ;
+        rdfs:label "bisoprolol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q412515> .
+
+ex:bisoprolol ex:treats ex:supraventricular_tachycardia .
+
+ex:sotalol rdf:type ex:Medication ;
+        rdfs:label "sotalol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q413591> .
+
+ex:sotalol ex:treats ex:supraventricular_tachycardia .
+
+ex:procainamide rdf:type ex:Medication ;
+        rdfs:label "procainamide"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q417597> .
+
+ex:procainamide ex:treats ex:supraventricular_tachycardia .
+
+ex:esmolol rdf:type ex:Medication ;
+        rdfs:label "esmolol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q418139> .
+
+ex:esmolol ex:treats ex:supraventricular_tachycardia .
+
+ex:phenylephrine rdf:type ex:Medication ;
+        rdfs:label "phenylephrine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421910> .
+
+ex:phenylephrine ex:treats ex:supraventricular_tachycardia .
+
+ex:digoxin rdf:type ex:Medication ;
+        rdfs:label "digoxin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422222> .
+
+ex:digoxin ex:treats ex:supraventricular_tachycardia .
+
+ex:diltiazem rdf:type ex:Medication ;
+        rdfs:label "diltiazem"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422229> .
+
+ex:diltiazem ex:treats ex:supraventricular_tachycardia .
+
+ex:propranolol rdf:type ex:Medication ;
+        rdfs:label "propranolol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q423364> .
+
+ex:propranolol ex:treats ex:supraventricular_tachycardia .
+
+ex:digitoxin rdf:type ex:Medication ;
+        rdfs:label "digitoxin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q423890> .
+
+ex:digitoxin ex:treats ex:supraventricular_tachycardia .
+
+ex:deslanoside rdf:type ex:Medication ;
+        rdfs:label "deslanoside"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q5264583> .
+
+ex:deslanoside ex:treats ex:supraventricular_tachycardia .
+
+ex:rs_propafenone rdf:type ex:Medication ;
+        rdfs:label "(RS)-propafenone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q662511> .
+
+ex:rs_propafenone ex:treats ex:supraventricular_tachycardia .
+
+ex:azithromycin rdf:type ex:Medication ;
+        rdfs:label "azithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q165399> .
+
+ex:azithromycin ex:treats ex:listeriosis .
+
+ex:amoxicillin rdf:type ex:Medication ;
+        rdfs:label "amoxicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q201928> .
+
+ex:amoxicillin ex:treats ex:listeriosis .
+
+ex:ampicillin rdf:type ex:Medication ;
+        rdfs:label "ampicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q244150> .
+
+ex:ampicillin ex:treats ex:listeriosis .
+
+ex:bacampicillin rdf:type ex:Medication ;
+        rdfs:label "bacampicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2878140> .
+
+ex:bacampicillin ex:treats ex:listeriosis .
+
+ex:meropenem rdf:type ex:Medication ;
+        rdfs:label "meropenem"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421670> .
+
+ex:meropenem ex:treats ex:listeriosis .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:listeriosis .
+
+ex:gentamicin rdf:type ex:Medication ;
+        rdfs:label "gentamicin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422482> .
+
+ex:gentamicin ex:treats ex:listeriosis .
+
+ex:vancomycin rdf:type ex:Medication ;
+        rdfs:label "vancomycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424027> .
+
+ex:vancomycin ex:treats ex:listeriosis .
+
+ex:sulfamethoxazole_trimethoprim rdf:type ex:Medication ;
+        rdfs:label "sulfamethoxazole/trimethoprim"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q898623> .
+
+ex:sulfamethoxazole_trimethoprim ex:treats ex:listeriosis .
+
+ex:haloperidol rdf:type ex:Medication ;
+        rdfs:label "haloperidol"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q251347> .
+
+ex:haloperidol ex:treats ex:delirium .
+
+ex:trazodone rdf:type ex:Medication ;
+        rdfs:label "trazodone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411457> .
+
+ex:trazodone ex:treats ex:delirium .
+
+ex:amoxicillin rdf:type ex:Medication ;
+        rdfs:label "amoxicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q201928> .
+
+ex:amoxicillin ex:treats ex:erysipelothrix_rhusiopathiae_infectious_disease .
+
+ex:benzylpenicillin rdf:type ex:Medication ;
+        rdfs:label "benzylpenicillin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q258450> .
+
+ex:benzylpenicillin ex:treats ex:erysipelothrix_rhusiopathiae_infectious_disease .
+
+ex:ceftriaxone rdf:type ex:Medication ;
+        rdfs:label "ceftriaxone"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421713> .
+
+ex:ceftriaxone ex:treats ex:erysipelothrix_rhusiopathiae_infectious_disease .
+
+ex:clindamycin rdf:type ex:Medication ;
+        rdfs:label "clindamycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422273> .
+
+ex:clindamycin ex:treats ex:erysipelothrix_rhusiopathiae_infectious_disease .
+
+ex:metronidazole rdf:type ex:Medication ;
+        rdfs:label "metronidazole"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q169569> .
+
+ex:metronidazole ex:treats ex:abscess .
+
+ex:cefoxitin rdf:type ex:Medication ;
+        rdfs:label "cefoxitin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2353907> .
+
+ex:cefoxitin ex:treats ex:abscess .
+
+ex:cefotetan rdf:type ex:Medication ;
+        rdfs:label "cefotetan"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2602246> .
+
+ex:cefotetan ex:treats ex:abscess .
+
+ex:azithromycin rdf:type ex:Medication ;
+        rdfs:label "azithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q165399> .
+
+ex:azithromycin ex:treats ex:ornithosis .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:ornithosis .
+
+ex:moxifloxacin rdf:type ex:Medication ;
+        rdfs:label "moxifloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q424940> .
+
+ex:moxifloxacin ex:treats ex:ornithosis .
+
+ex:azithromycin rdf:type ex:Medication ;
+        rdfs:label "azithromycin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q165399> .
+
+ex:azithromycin ex:treats ex:q_fever .
+
+ex:pefloxacin rdf:type ex:Medication ;
+        rdfs:label "pefloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q2601859> .
+
+ex:pefloxacin ex:treats ex:q_fever .
+
+ex:dl_ofloxacin rdf:type ex:Medication ;
+        rdfs:label "DL-ofloxacin"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q411447> .
+
+ex:dl_ofloxacin ex:treats ex:q_fever .
+
+ex:hydroxychloroquine rdf:type ex:Medication ;
+        rdfs:label "hydroxychloroquine"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q421094> .
+
+ex:hydroxychloroquine ex:treats ex:q_fever .
+
+ex:doxycycline rdf:type ex:Medication ;
+        rdfs:label "doxycycline"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q422442> .
+
+ex:doxycycline ex:treats ex:q_fever .
+
+ex:eteplirsen rdf:type ex:Medication ;
+        rdfs:label "eteplirsen"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q5402585> .
+
+ex:eteplirsen ex:treats ex:duchenne_muscular_dystrophy .
+
+ex:ataluren rdf:type ex:Medication ;
+        rdfs:label "ataluren"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q753330> .
+
+ex:ataluren ex:treats ex:duchenne_muscular_dystrophy .
+
+ex:deflazacort rdf:type ex:Medication ;
+        rdfs:label "deflazacort"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q779118> .
+
+ex:deflazacort ex:treats ex:duchenne_muscular_dystrophy .
+

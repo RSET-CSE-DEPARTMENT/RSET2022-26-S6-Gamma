@@ -1,0 +1,428 @@
+/* Login.css - Compact Version */
+.login-page-compact {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: var(--app-font-family);
+  padding: 2rem;
+}
+
+/* Back Link */
+.back-home {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  color: #4A70A9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #4A70A9;
+}
+
+/* Main Container */
+.login-container-compact {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* Brand */
+.brand-compact {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo-compact {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -1px;
+  color: #000000;
+}
+
+.logo-gradient {
+  background: #000000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline-compact {
+  color: #4A70A9;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Role Selection */
+.role-selection-compact {
+  margin-bottom: 2rem;
+}
+
+.role-tabs-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.role-tab-compact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border: 2px solid #4A70A9;
+  background: white;
+  border-radius: 12px;
+  color: #4A70A9;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.role-tab-compact:hover {
+  border-color: #4A70A9;
+  transform: translateY(-2px);
+}
+
+.role-tab-compact.active {
+  border-color: #4A70A9;
+  background: #4A70A9;
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 112, 169, 0.3);
+}
+
+.role-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.role-description-compact {
+  text-align: center;
+  color: #4A70A9;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #4A70A9;
+}
+
+/* Form Card */
+.form-card-compact {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #4A70A9;
+}
+
+.form-header-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form-header-compact h2 {
+  margin: 0;
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.toggle-form-btn {
+  background: none;
+  border: none;
+  color: #4A70A9;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle-form-btn:hover {
+  text-decoration: underline;
+}
+
+/* Form */
+.form-compact {
+  margin-bottom: 1.5rem;
+}
+
+.name-fields-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group-compact {
+  margin-bottom: 1.5rem;
+}
+
+.form-group-compact input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 1.5px solid #4A70A9;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.form-group-compact input:focus {
+  outline: none;
+  border-color: #4A70A9;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 112, 169, 0.1);
+}
+
+.form-group-compact input::placeholder {
+  color: #4A70A9;
+}
+
+.password-hint-compact {
+  margin: 0.5rem 0 0 0;
+  color: #4A70A9;
+  font-size: 0.8rem;
+}
+
+.forgot-password-compact {
+  text-align: right;
+  margin: -0.5rem 0 1.5rem 0;
+}
+
+.forgot-link-compact {
+  color: #4A70A9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.forgot-link-compact:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-btn-compact {
+  width: 100%;
+  padding: 1rem;
+  background: #4A70A9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submit-btn-compact:hover:not(:disabled) {
+  background: #4A70A9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 112, 169, 0.3);
+}
+
+.submit-btn-compact:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.database-admin-link-compact {
+  margin-top: 0.75rem;
+  width: 100%;
+  border: none;
+  background: none;
+  color: #4A70A9;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.database-admin-link-compact:hover {
+  color: #4A70A9;
+}
+
+.database-admin-link-compact.active {
+  font-weight: 600;
+}
+
+.spinner-compact {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Divider */
+.divider-compact {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: #4A70A9;
+  font-size: 0.85rem;
+}
+
+.divider-compact::before,
+.divider-compact::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #4A70A9;
+}
+
+.divider-compact span {
+  padding: 0 1rem;
+}
+
+/* Social Login */
+.social-login-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.social-btn-compact {
+  padding: 0.85rem;
+  border: 1.5px solid #4A70A9;
+  background: white;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.social-btn-compact:hover {
+  border-color: #4A70A9;
+  background: #FFFFFF;
+}
+
+.social-btn-compact.google {
+  color: #000000;
+}
+
+.social-btn-compact.github {
+  color: #000000;
+}
+
+/* Terms */
+.terms-compact {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #4A70A9;
+}
+
+.terms-compact p {
+  margin: 0;
+  color: #4A70A9;
+  font-size: 0.85rem;
+}
+
+.terms-compact a {
+  color: #4A70A9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terms-compact a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page-compact {
+    padding: 1.5rem;
+  }
+  
+  .form-card-compact {
+    padding: 2rem;
+  }
+  
+  .logo-compact {
+    font-size: 2.2rem;
+  }
+  
+  .role-tabs-compact {
+    gap: 0.5rem;
+  }
+  
+  .role-tab-compact {
+    font-size: 0.8rem;
+    padding: 0.75rem 0.25rem;
+  }
+  
+  .role-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .name-fields-compact {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .form-header-compact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .toggle-form-btn {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page-compact {
+    padding: 1rem;
+  }
+  
+  .form-card-compact {
+    padding: 1.5rem;
+  }
+  
+  .social-login-compact {
+    grid-template-columns: 1fr;
+  }
+  
+  .role-tabs-compact {
+    grid-template-columns: 1fr;
+  }
+  
+  .role-tab-compact {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  
+  .role-icon {
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+  }
+}
+

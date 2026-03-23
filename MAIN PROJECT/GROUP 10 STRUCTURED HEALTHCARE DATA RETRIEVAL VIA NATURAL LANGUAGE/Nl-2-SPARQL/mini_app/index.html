@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Forms with API Calls</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <h1>API Form Demo</h1>
+
+    <form id="getDatasetForm">
+        <h2>Get Dataset</h2>
+        <button type="submit">Get Database</button>
+		<pre></pre>
+    </form>
+
+	<form id="queryForm">
+		<h2>Run SPARQL Query</h2>
+		<textarea id="queryInput" rows="5" cols="50"></textarea>
+		<button type="submit">Run Query</button>
+		<pre></pre>
+	</form>
+
+    <form id="form3">
+		<h2>Drug Recommendation</h2>
+		<input type="text" id="input1" placeholder="Enter disease name" value="Chickenpox">
+		<button type="submit">Get Recommendation</button>
+		<table></table>
+	</form>
+
+    <script src="index.js"></script>
+</body>
+</html>

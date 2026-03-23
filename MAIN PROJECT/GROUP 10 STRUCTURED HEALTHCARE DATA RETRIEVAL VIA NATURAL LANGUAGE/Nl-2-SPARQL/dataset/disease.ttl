@@ -1,0 +1,794 @@
+@prefix ex:   <http://example.org/health#> .
+@prefix wd:   <http://www.wikidata.org/entity/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+ex:gymnophobia rdf:type ex:Disease ;
+        rdfs:label "gymnophobia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1010522> .
+
+ex:gonorrhea rdf:type ex:Disease ;
+        rdfs:label "gonorrhea"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q101896> .
+
+ex:cadasil rdf:type ex:Disease ;
+        rdfs:label "CADASIL"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1022718> .
+
+ex:cadasil rdf:type ex:Disease ;
+        rdfs:label "CADASIL"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1022718> .
+
+ex:severe_acute_respiratory_syndrome rdf:type ex:Disease ;
+        rdfs:label "severe acute respiratory syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q103177> .
+
+ex:severe_acute_respiratory_syndrome rdf:type ex:Disease ;
+        rdfs:label "severe acute respiratory syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q103177> .
+
+ex:psoriatic_erythroderma rdf:type ex:Disease ;
+        rdfs:label "psoriatic erythroderma"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q10355322> .
+
+ex:hypothermia rdf:type ex:Disease ;
+        rdfs:label "hypothermia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1036696> .
+
+ex:depressive_syndrome rdf:type ex:Disease ;
+        rdfs:label "depressive syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1046055> .
+
+ex:opisthorchiasis rdf:type ex:Disease ;
+        rdfs:label "opisthorchiasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1048084> .
+
+ex:rickettsialpox rdf:type ex:Disease ;
+        rdfs:label "rickettsialpox"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1048101> .
+
+ex:charcot_marie_tooth_disease rdf:type ex:Disease ;
+        rdfs:label "Charcot-Marie-Tooth disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1052687> .
+
+ex:charcot_marie_tooth_disease rdf:type ex:Disease ;
+        rdfs:label "Charcot-Marie-Tooth disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1052687> .
+
+ex:new_brunswick_suspected_neurological_disease rdf:type ex:Disease ;
+        rdfs:label "New Brunswick suspected neurological disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q106590153> .
+
+ex:cowpox rdf:type ex:Disease ;
+        rdfs:label "cowpox"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1066011> .
+
+ex:massive_perivillous_fibrin_deposition rdf:type ex:Disease ;
+        rdfs:label "massive perivillous fibrin deposition"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q107008921> .
+
+ex:trance_disorder rdf:type ex:Disease ;
+        rdfs:label "trance disorder"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q10701324> .
+
+ex:chondrodysplasia_punctata rdf:type ex:Disease ;
+        rdfs:label "chondrodysplasia punctata"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1076060> .
+
+ex:crimean_congo_hemorrhagic_fever rdf:type ex:Disease ;
+        rdfs:label "Crimean-Congo hemorrhagic fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1077505> .
+
+ex:mesothelioma rdf:type ex:Disease ;
+        rdfs:label "mesothelioma"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1077603> .
+
+ex:idiopathic_cd4_lymphocytopenia rdf:type ex:Disease ;
+        rdfs:label "idiopathic CD4+ lymphocytopenia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1087632> .
+
+ex:purulent_meningitis rdf:type ex:Disease ;
+        rdfs:label "purulent meningitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q109466005> .
+
+ex:cardiofaciocutaneous_syndrome rdf:type ex:Disease ;
+        rdfs:label "cardiofaciocutaneous syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1097490> .
+
+ex:cardiofaciocutaneous_syndrome rdf:type ex:Disease ;
+        rdfs:label "cardiofaciocutaneous syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1097490> .
+
+ex:clonorchiasis rdf:type ex:Disease ;
+        rdfs:label "clonorchiasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1102300> .
+
+ex:flurona rdf:type ex:Disease ;
+        rdfs:label "Flurona"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q110391577> .
+
+ex:jamestown_canyon_encephalitis rdf:type ex:Disease ;
+        rdfs:label "Jamestown Canyon encephalitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q110624138> .
+
+ex:metachromatic_leukodystrophy rdf:type ex:Disease ;
+        rdfs:label "metachromatic leukodystrophy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1120682> .
+
+ex:trance_like_syndrom rdf:type ex:Disease ;
+        rdfs:label "trance-like syndrom"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q112156204> .
+
+ex:advanced_sleep_phase_syndrome rdf:type ex:Disease ;
+        rdfs:label "advanced sleep phase syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1125121> .
+
+ex:hemoglobin_m_disease rdf:type ex:Disease ;
+        rdfs:label "Hemoglobin M disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q112672967> .
+
+ex:forbes_albright_syndrome rdf:type ex:Disease ;
+        rdfs:label "Forbes-Albright syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q113173062> .
+
+ex:persecutory_delusion rdf:type ex:Disease ;
+        rdfs:label "persecutory delusion"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1132536> .
+
+ex:beta_blocker_poisoning rdf:type ex:Disease ;
+        rdfs:label "beta blocker poisoning"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q113268139> .
+
+ex:cornelia_de_lange_syndrome rdf:type ex:Disease ;
+        rdfs:label "Cornelia de Lange syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1133289> .
+
+ex:an_outbreak_of_e_coli_o157_h7_colitis_among_school_children_in_sakai_city rdf:type ex:Disease ;
+        rdfs:label "An Outbreak of E. Coli O157:H7 Colitis Among School Children in Sakai City"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q113484511> .
+
+ex:an_outbreak_of_e_coli_o157_h7_colitis_among_school_children_in_sakai_city rdf:type ex:Disease ;
+        rdfs:label "An Outbreak of E. Coli O157:H7 Colitis Among School Children in Sakai City"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q113484511> .
+
+ex:onchocerciasis rdf:type ex:Disease ;
+        rdfs:label "onchocerciasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1137321> .
+
+ex:rhinitis rdf:type ex:Disease ;
+        rdfs:label "rhinitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q114085> .
+
+ex:ehlers_danlos_syndrome rdf:type ex:Disease ;
+        rdfs:label "Ehlers-Danlos syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1141499> .
+
+ex:familial_mediterranean_fever rdf:type ex:Disease ;
+        rdfs:label "familial Mediterranean fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1144618> .
+
+ex:familial_mediterranean_fever rdf:type ex:Disease ;
+        rdfs:label "familial Mediterranean fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1144618> .
+
+ex:acute_hemorrhagic_conjunctivitis rdf:type ex:Disease ;
+        rdfs:label "acute hemorrhagic conjunctivitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11491562> .
+
+ex:hand_yangming_large_intestine_through_disease rdf:type ex:Disease ;
+        rdfs:label "Hand Yangming large intestine through disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11497176> .
+
+ex:autoimmune_lymphoproliferative_syndrome rdf:type ex:Disease ;
+        rdfs:label "autoimmune lymphoproliferative syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1151300> .
+
+ex:interstitial_lung_disease rdf:type ex:Disease ;
+        rdfs:label "interstitial lung disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1153419> .
+
+ex:metagonimiasis rdf:type ex:Disease ;
+        rdfs:label "metagonimiasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11542703> .
+
+ex:spinal_leak_of_cerebrospinal_fluid rdf:type ex:Disease ;
+        rdfs:label "spinal leak of cerebrospinal fluid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q115743091> .
+
+ex:cranial_leak_of_cerebrospinal_fluid rdf:type ex:Disease ;
+        rdfs:label "cranial leak of cerebrospinal fluid"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q115744557> .
+
+ex:granulomatosis_with_polyangiitis rdf:type ex:Disease ;
+        rdfs:label "granulomatosis with polyangiitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1161568> .
+
+ex:feline_obesity rdf:type ex:Disease ;
+        rdfs:label "feline obesity"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q116167729> .
+
+ex:feline_obesity rdf:type ex:Disease ;
+        rdfs:label "feline obesity"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q116167729> .
+
+ex:west_nile_fever rdf:type ex:Disease ;
+        rdfs:label "West Nile fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11627066> .
+
+ex:knee_bursitis rdf:type ex:Disease ;
+        rdfs:label "knee bursitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q116585753> .
+
+ex:hinamizawa_syndrome rdf:type ex:Disease ;
+        rdfs:label "Hinamizawa Syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11659461> .
+
+ex:ancylostomiasis rdf:type ex:Disease ;
+        rdfs:label "ancylostomiasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11679861> .
+
+ex:wilson_disease rdf:type ex:Disease ;
+        rdfs:label "Wilson disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q117121> .
+
+ex:wilson_disease rdf:type ex:Disease ;
+        rdfs:label "Wilson disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q117121> .
+
+ex:native_american_myopathy rdf:type ex:Disease ;
+        rdfs:label "Native American myopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11781607> .
+
+ex:native_american_myopathy rdf:type ex:Disease ;
+        rdfs:label "Native American myopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11781607> .
+
+ex:native_american_myopathy rdf:type ex:Disease ;
+        rdfs:label "Native American myopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11781607> .
+
+ex:native_american_myopathy rdf:type ex:Disease ;
+        rdfs:label "Native American myopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11781607> .
+
+ex:adult_onset_still_s_disease rdf:type ex:Disease ;
+        rdfs:label "adult-onset Still's disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1187697> .
+
+ex:myoclonic_epilepsy rdf:type ex:Disease ;
+        rdfs:label "myoclonic epilepsy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11883686> .
+
+ex:virulent_newcastle_disease rdf:type ex:Disease ;
+        rdfs:label "virulent Newcastle disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11903425> .
+
+ex:virulent_newcastle_disease rdf:type ex:Disease ;
+        rdfs:label "virulent Newcastle disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11903425> .
+
+ex:virulent_newcastle_disease rdf:type ex:Disease ;
+        rdfs:label "virulent Newcastle disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11903425> .
+
+ex:scrub_typhus rdf:type ex:Disease ;
+        rdfs:label "scrub typhus"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1194496> .
+
+ex:fox_mange rdf:type ex:Disease ;
+        rdfs:label "fox mange"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q11997695> .
+
+ex:delusional_parasitosis rdf:type ex:Disease ;
+        rdfs:label "delusional parasitosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1200256> .
+
+ex:boreout rdf:type ex:Disease ;
+        rdfs:label "boreout"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1208144> .
+
+ex:beck_fahrner_syndrome rdf:type ex:Disease ;
+        rdfs:label "Beckâ€“Fahrner syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q120973015> .
+
+ex:attention_deficit_hyperactivity_disorder_predominantly_hyperactive_impulsive rdf:type ex:Disease ;
+        rdfs:label "attention deficit hyperactivity disorder, predominantly hyperactive-impulsive"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12099023> .
+
+ex:attention_deficit_hyperactivity_disorder_predominantly_hyperactive_impulsive rdf:type ex:Disease ;
+        rdfs:label "attention deficit hyperactivity disorder, predominantly hyperactive-impulsive"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12099023> .
+
+ex:dicrocoeliasis rdf:type ex:Disease ;
+        rdfs:label "dicrocoeliasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1210303> .
+
+ex:appendicitis rdf:type ex:Disease ;
+        rdfs:label "appendicitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q121041> .
+
+ex:chronic_rhinitis rdf:type ex:Disease ;
+        rdfs:label "chronic rhinitis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12167939> .
+
+ex:lamb_dysentery rdf:type ex:Disease ;
+        rdfs:label "lamb dysentery"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q121842380> .
+
+ex:diphyllobothriasis rdf:type ex:Disease ;
+        rdfs:label "diphyllobothriasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1227160> .
+
+ex:lumpy_skin_disease rdf:type ex:Disease ;
+        rdfs:label "lumpy skin disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q122751470> .
+
+ex:microcephaly_facial_dysmorphism_renal_agenesis_and_ambiguous_genitalia_syndrome rdf:type ex:Disease ;
+        rdfs:label "microcephaly, facial dysmorphism, renal agenesis, and ambiguous genitalia syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q122903799> .
+
+ex:paranoia rdf:type ex:Disease ;
+        rdfs:label "paranoia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1229994> .
+
+ex:zoochosis rdf:type ex:Disease ;
+        rdfs:label "zoochosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q123754619> .
+
+ex:vogt_koyanagi_harada_syndrome rdf:type ex:Disease ;
+        rdfs:label "Vogtâ€“Koyanagiâ€“Harada syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1238645> .
+
+ex:central_diabetes_insipidus rdf:type ex:Disease ;
+        rdfs:label "central diabetes insipidus"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12412172> .
+
+ex:type_1_diabetes rdf:type ex:Disease ;
+        rdfs:label "type-1 diabetes"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q124407> .
+
+ex:kufungisisa rdf:type ex:Disease ;
+        rdfs:label "kufungisisa"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q126539679> .
+
+ex:hymenolepiasis rdf:type ex:Disease ;
+        rdfs:label "hymenolepiasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12656487> .
+
+ex:perennial_canker rdf:type ex:Disease ;
+        rdfs:label "perennial canker"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q127417752> .
+
+ex:osteochondritis_dissecans rdf:type ex:Disease ;
+        rdfs:label "osteochondritis dissecans"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q127556> .
+
+ex:konzo rdf:type ex:Disease ;
+        rdfs:label "konzo"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1275814> .
+
+ex:pes rdf:type ex:Disease ;
+        rdfs:label "Pes"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q12829964> .
+
+ex:r_nnsk_r_disease rdf:type ex:Disease ;
+        rdfs:label "RÃ¶nnskÃ¤r disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q128601314> .
+
+ex:neurilemmomatosis rdf:type ex:Disease ;
+        rdfs:label "neurilemmomatosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1286320> .
+
+ex:dust_mite_allergy rdf:type ex:Disease ;
+        rdfs:label "dust mite allergy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1286499> .
+
+ex:epidemic_typhus rdf:type ex:Disease ;
+        rdfs:label "epidemic typhus"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1290616> .
+
+ex:anthrax rdf:type ex:Disease ;
+        rdfs:label "anthrax"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q129104> .
+
+ex:anthrax rdf:type ex:Disease ;
+        rdfs:label "anthrax"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q129104> .
+
+ex:dysentery rdf:type ex:Disease ;
+        rdfs:label "dysentery"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q129279> .
+
+ex:pulmonary_tuberculosis rdf:type ex:Disease ;
+        rdfs:label "pulmonary tuberculosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q13046587> .
+
+ex:white_mold rdf:type ex:Disease ;
+        rdfs:label "white mold"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q131176481> .
+
+ex:werewolf_syndrome rdf:type ex:Disease ;
+        rdfs:label "Werewolf syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q131749782> .
+
+ex:dyslexia rdf:type ex:Disease ;
+        rdfs:label "dyslexia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q132971> .
+
+ex:dyslexia rdf:type ex:Disease ;
+        rdfs:label "dyslexia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q132971> .
+
+ex:alport_syndrome rdf:type ex:Disease ;
+        rdfs:label "Alport syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1331116> .
+
+ex:emery_dreifuss_muscular_dystrophy rdf:type ex:Disease ;
+        rdfs:label "Emery-Dreifuss muscular dystrophy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1335642> .
+
+ex:tension_headache rdf:type ex:Disease ;
+        rdfs:label "tension headache"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1338684> .
+
+ex:goodpasture_syndrome rdf:type ex:Disease ;
+        rdfs:label "Goodpasture syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1345792> .
+
+ex:diphtheria rdf:type ex:Disease ;
+        rdfs:label "diphtheria"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q134649> .
+
+ex:diphtheria rdf:type ex:Disease ;
+        rdfs:label "diphtheria"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q134649> .
+
+ex:woree_syndrome rdf:type ex:Disease ;
+        rdfs:label "WOREE syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q134704545> .
+
+ex:woree_syndrome rdf:type ex:Disease ;
+        rdfs:label "WOREE syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q134704545> .
+
+ex:woree_syndrome rdf:type ex:Disease ;
+        rdfs:label "WOREE syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q134704545> .
+
+ex:grey_leaf_spot_of_tomato rdf:type ex:Disease ;
+        rdfs:label "grey leaf spot of tomato"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q135278407> .
+
+ex:cryptosporidiosis rdf:type ex:Disease ;
+        rdfs:label "cryptosporidiosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1359898> .
+
+ex:hypertrophic_cardiomyopathy rdf:type ex:Disease ;
+        rdfs:label "hypertrophic cardiomyopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1364270> .
+
+ex:hypertrophic_cardiomyopathy rdf:type ex:Disease ;
+        rdfs:label "hypertrophic cardiomyopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1364270> .
+
+ex:diplocoria rdf:type ex:Disease ;
+        rdfs:label "Diplocoria"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q136524882> .
+
+ex:gambling_disorder rdf:type ex:Disease ;
+        rdfs:label "gambling disorder"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q136542288> .
+
+ex:hemophilia_c rdf:type ex:Disease ;
+        rdfs:label "hemophilia C"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1393718> .
+
+ex:felty_s_syndrome rdf:type ex:Disease ;
+        rdfs:label "Felty's syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1404470> .
+
+ex:fibrodysplasia_ossificans_progressiva rdf:type ex:Disease ;
+        rdfs:label "fibrodysplasia ossificans progressiva"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1410831> .
+
+ex:fibrodysplasia_ossificans_progressiva rdf:type ex:Disease ;
+        rdfs:label "fibrodysplasia ossificans progressiva"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1410831> .
+
+ex:non_verbal_learning_disorder rdf:type ex:Disease ;
+        rdfs:label "Non-Verbal Learning Disorder"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1417880> .
+
+ex:mobius_syndrome rdf:type ex:Disease ;
+        rdfs:label "Mobius syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1418152> .
+
+ex:mobius_syndrome rdf:type ex:Disease ;
+        rdfs:label "Mobius syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1418152> .
+
+ex:mobius_syndrome rdf:type ex:Disease ;
+        rdfs:label "Mobius syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1418152> .
+
+ex:opsoclonus_myoclonus_syndrome rdf:type ex:Disease ;
+        rdfs:label "opsoclonus myoclonus syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1424706> .
+
+ex:pallister_killian_syndrome rdf:type ex:Disease ;
+        rdfs:label "Pallisterâ€“Killian syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1425018> .
+
+ex:pallister_killian_syndrome rdf:type ex:Disease ;
+        rdfs:label "Pallisterâ€“Killian syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1425018> .
+
+ex:frey_syndrome rdf:type ex:Disease ;
+        rdfs:label "Frey syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1431371> .
+
+ex:kyasanur_forest_disease rdf:type ex:Disease ;
+        rdfs:label "Kyasanur forest disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1432397> .
+
+ex:catatonic_schizophrenia rdf:type ex:Disease ;
+        rdfs:label "catatonic schizophrenia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1432717> .
+
+ex:catatonic_schizophrenia rdf:type ex:Disease ;
+        rdfs:label "catatonic schizophrenia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1432717> .
+
+ex:folie_deux rdf:type ex:Disease ;
+        rdfs:label "folie Ã  deux"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1435409> .
+
+ex:arteriosclerotic_heart_disease rdf:type ex:Disease ;
+        rdfs:label "arteriosclerotic heart disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1444550> .
+
+ex:multiple_epiphyseal_dysplasia rdf:type ex:Disease ;
+        rdfs:label "multiple epiphyseal dysplasia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1452604> .
+
+ex:multiple_epiphyseal_dysplasia rdf:type ex:Disease ;
+        rdfs:label "multiple epiphyseal dysplasia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1452604> .
+
+ex:multiple_epiphyseal_dysplasia rdf:type ex:Disease ;
+        rdfs:label "multiple epiphyseal dysplasia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1452604> .
+
+ex:paris_syndrome rdf:type ex:Disease ;
+        rdfs:label "Paris syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1462780> .
+
+ex:paris_syndrome rdf:type ex:Disease ;
+        rdfs:label "Paris syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1462780> .
+
+ex:common_variable_immunodeficiency rdf:type ex:Disease ;
+        rdfs:label "common variable immunodeficiency"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1472818> .
+
+ex:ham rdf:type ex:Disease ;
+        rdfs:label "HAM"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1476361> .
+
+ex:ham rdf:type ex:Disease ;
+        rdfs:label "HAM"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1476361> .
+
+ex:spinal_stenosis rdf:type ex:Disease ;
+        rdfs:label "spinal stenosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1478321> .
+
+ex:short_qt_syndrome rdf:type ex:Disease ;
+        rdfs:label "short QT syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1484058> .
+
+ex:short_qt_syndrome rdf:type ex:Disease ;
+        rdfs:label "short QT syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1484058> .
+
+ex:gas_gangrene rdf:type ex:Disease ;
+        rdfs:label "gas gangrene"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1495085> .
+
+ex:eustachian_catarrh rdf:type ex:Disease ;
+        rdfs:label "Eustachian catarrh"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1519971> .
+
+ex:foot_and_mouth_disease rdf:type ex:Disease ;
+        rdfs:label "foot-and-mouth disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q152401> .
+
+ex:foot_and_mouth_disease rdf:type ex:Disease ;
+        rdfs:label "foot-and-mouth disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q152401> .
+
+ex:tularemia rdf:type ex:Disease ;
+        rdfs:label "tularemia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q153861> .
+
+ex:tularemia rdf:type ex:Disease ;
+        rdfs:label "tularemia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q153861> .
+
+ex:pneumocystis_pneumonia rdf:type ex:Disease ;
+        rdfs:label "pneumocystis pneumonia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15401586> .
+
+ex:trousseau_s_syndrome rdf:type ex:Disease ;
+        rdfs:label "Trousseau's syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15401621> .
+
+ex:alagille_syndrome rdf:type ex:Disease ;
+        rdfs:label "Alagille syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1544408> .
+
+ex:alagille_syndrome rdf:type ex:Disease ;
+        rdfs:label "Alagille syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1544408> .
+
+ex:bovine_spongiform_encephalopathy rdf:type ex:Disease ;
+        rdfs:label "bovine spongiform encephalopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154666> .
+
+ex:botulism rdf:type ex:Disease ;
+        rdfs:label "botulism"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154865> .
+
+ex:hepatitis_c rdf:type ex:Disease ;
+        rdfs:label "hepatitis C"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154869> .
+
+ex:yellow_fever rdf:type ex:Disease ;
+        rdfs:label "yellow fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154874> .
+
+ex:yellow_fever rdf:type ex:Disease ;
+        rdfs:label "yellow fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154874> .
+
+ex:toxoplasmosis rdf:type ex:Disease ;
+        rdfs:label "toxoplasmosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154878> .
+
+ex:legionnaires_disease rdf:type ex:Disease ;
+        rdfs:label "legionnaires' disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154882> .
+
+ex:legionnaires_disease rdf:type ex:Disease ;
+        rdfs:label "legionnaires' disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q154882> .
+
+ex:canine_brucellosis rdf:type ex:Disease ;
+        rdfs:label "canine brucellosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1550844> .
+
+ex:leptospirosis rdf:type ex:Disease ;
+        rdfs:label "leptospirosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q155098> .
+
+ex:rubella rdf:type ex:Disease ;
+        rdfs:label "rubella"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q155857> .
+
+ex:rubella rdf:type ex:Disease ;
+        rdfs:label "rubella"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q155857> .
+
+ex:peters_plus_syndrome rdf:type ex:Disease ;
+        rdfs:label "Peters plus syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1559250> .
+
+ex:peters_plus_syndrome rdf:type ex:Disease ;
+        rdfs:label "Peters plus syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1559250> .
+
+ex:brucellosis rdf:type ex:Disease ;
+        rdfs:label "brucellosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q156050> .
+
+ex:equine_atypical_myopathy rdf:type ex:Disease ;
+        rdfs:label "Equine atypical myopathy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15731364> .
+
+ex:hepatitis_a rdf:type ex:Disease ;
+        rdfs:label "hepatitis A"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q157661> .
+
+ex:hepatitis_a rdf:type ex:Disease ;
+        rdfs:label "hepatitis A"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q157661> .
+
+ex:tanganyika_laughter_epidemic rdf:type ex:Disease ;
+        rdfs:label "Tanganyika laughter epidemic"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1582992> .
+
+ex:malignant_hyperthermia rdf:type ex:Disease ;
+        rdfs:label "malignant hyperthermia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1585081> .
+
+ex:urethral_stricture rdf:type ex:Disease ;
+        rdfs:label "urethral stricture"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1585753> .
+
+ex:popliteal_pterygium_syndrome rdf:type ex:Disease ;
+        rdfs:label "popliteal pterygium syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1587881> .
+
+ex:popliteal_pterygium_syndrome rdf:type ex:Disease ;
+        rdfs:label "popliteal pterygium syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1587881> .
+
+ex:popliteal_pterygium_syndrome rdf:type ex:Disease ;
+        rdfs:label "popliteal pterygium syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1587881> .
+
+ex:polyuric_polydipsic_syndrome rdf:type ex:Disease ;
+        rdfs:label "polyuric-polydipsic syndrome"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q15974799> .
+
+ex:supraventricular_tachycardia rdf:type ex:Disease ;
+        rdfs:label "supraventricular tachycardia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1598909> .
+
+ex:supraventricular_tachycardia rdf:type ex:Disease ;
+        rdfs:label "supraventricular tachycardia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1598909> .
+
+ex:listeriosis rdf:type ex:Disease ;
+        rdfs:label "listeriosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q160653> .
+
+ex:feline_hepatic_lipidosis rdf:type ex:Disease ;
+        rdfs:label "Feline hepatic lipidosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1607635> .
+
+ex:delirium rdf:type ex:Disease ;
+        rdfs:label "delirium"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q160796> .
+
+ex:erysipelothrix_rhusiopathiae_infectious_disease rdf:type ex:Disease ;
+        rdfs:label "erysipelothrix rhusiopathiae infectious disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1607983> .
+
+ex:wuchereria_bancrofti_filariasis rdf:type ex:Disease ;
+        rdfs:label "Wuchereria bancrofti filariasis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q16333787> .
+
+ex:lafora_disease rdf:type ex:Disease ;
+        rdfs:label "Lafora disease"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q163905> .
+
+ex:hyperammonemia rdf:type ex:Disease ;
+        rdfs:label "hyperammonemia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1640868> .
+
+ex:abscess rdf:type ex:Disease ;
+        rdfs:label "abscess"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q164655> .
+
+ex:ornithosis rdf:type ex:Disease ;
+        rdfs:label "ornithosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q164727> .
+
+ex:ornithosis rdf:type ex:Disease ;
+        rdfs:label "ornithosis"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q164727> .
+
+ex:q_fever rdf:type ex:Disease ;
+        rdfs:label "Q fever"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q164818> .
+
+ex:duchenne_muscular_dystrophy rdf:type ex:Disease ;
+        rdfs:label "Duchenne muscular dystrophy"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1648484> .
+
+ex:catecholaminergic_polymorphic_ventricular_tachycardia rdf:type ex:Disease ;
+        rdfs:label "catecholaminergic polymorphic ventricular tachycardia"@en ;
+        owl:sameAs <http://www.wikidata.org/entity/Q1649897> .
+

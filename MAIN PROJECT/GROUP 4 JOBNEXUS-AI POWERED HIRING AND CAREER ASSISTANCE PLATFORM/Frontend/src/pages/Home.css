@@ -1,0 +1,227 @@
+/* ================= COLOR VARIABLES ================= */
+
+:root {
+  --clr-deep: #4A70A9;
+  --clr-mid: #4A70A9;
+  --clr-light: #ffffff;
+  --clr-soft: #ffffff;
+  --clr-text: #1E293B;
+  --clr-bg: #ffffff;
+  --clr-btn: #4A70A9;
+  --clr-btn-hover: #4A70A9;
+}
+
+/* ================= GLOBAL STYLES ================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+
+/* ================= HEADER ================= */
+
+header {
+  background: var(--clr-deep) !important; /* forces solid color */
+  background-image: none !important;      /* cancels gradients */
+  background-color: var(--clr-deep) !important;
+  box-shadow: none;
+}
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header > div > div {
+  flex: 1;
+  text-align: left;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  color: var(--clr-light);
+}
+
+header p {
+  font-size: 1.3rem;
+  color: var(--clr-soft);
+  max-width: 650px;
+  margin: 0;
+}
+
+/* Profile icon */
+.profile-icon-top-right {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 1000;
+}
+
+/* Remove nav if present */
+nav {
+  display: none;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+  margin: 3rem auto;
+  padding: 0 2rem;
+  max-width: 1300px;
+}
+
+/* ================= CARDS ================= */
+
+.card-row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--clr-soft);
+  width: 320px;
+  padding: 2.2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-top: 6px solid var(--clr-mid);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: var(--clr-deep);
+}
+
+.card ul {
+  padding-left: 1.3rem;
+  margin-bottom: 1.3rem;
+  color: var(--clr-text);
+  line-height: 1.6;
+}
+
+.card ul li {
+  margin-bottom: 0.6rem;
+}
+
+/* ================= BUTTONS ================= */
+
+.card .btn {
+  padding: 0.9rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--clr-btn);
+  color: white;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.card .btn:hover {
+  background: var(--clr-btn-hover);
+  color: var(--clr-deep);
+}
+
+/* BADGES */
+
+.role-badge {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+  color: white;
+}
+
+.role-badge.candidate { background: var(--clr-mid); }
+.role-badge.recruiter { background: var(--clr-deep); }
+.role-badge.admin { background: var(--clr-deep); color: #ffffff; }
+
+/* ================= LOGIN PROMPT ================= */
+
+.login-prompt {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--clr-light);
+  border-radius: 14px;
+  border: 2px solid var(--clr-mid);
+}
+
+.login-prompt h3 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--clr-deep);
+}
+
+.login-prompt p {
+  margin-bottom: 1.6rem;
+  color: var(--clr-text);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 1.8rem 0;
+  color: var(--clr-text);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--clr-mid);
+  margin-top: 4rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem 3rem;
+  }
+  
+  header > div {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  .card-row {
+    gap: 2rem;
+  }
+
+  .card {
+    width: 85%;
+    padding: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 1.6rem;
+  }
+}

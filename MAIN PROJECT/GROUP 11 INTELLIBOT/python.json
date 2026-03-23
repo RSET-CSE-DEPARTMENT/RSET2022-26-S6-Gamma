@@ -1,0 +1,242 @@
+{
+  "courseName": "PROGRAMMING IN PYTHON",
+  "aliases": ["Python", "Programming in Python", "CS606D"],
+  "courseCode": "101003/CS606D",
+  "modules": [
+
+    {
+      "module_number": 1,
+      "module_title": "Programming Environment and Python Basics",
+      "topics": [
+
+        {
+          "topic_name": "Basic Coding Skills and Data Types",
+          "content": {
+            "question": "Explain numeric data types, strings and operators with programs.",
+            "summary": "Python supports dynamic typing with numeric and string data types.",
+            "key_points": [
+              "int, float, complex",
+              "String indexing and slicing",
+              "Arithmetic operators",
+              "Relational operators"
+            ],
+            "detailed_explanation": "Python automatically assigns type during runtime. Strings are immutable sequences. Operators are used to form expressions.",
+            "programs": [
+
+              {
+                "program_title": "Arithmetic Operations Program",
+                "code": "a = 10\nb = 5\nprint('Addition:', a + b)\nprint('Subtraction:', a - b)\nprint('Multiplication:', a * b)\nprint('Division:', a / b)"
+              },
+
+              {
+                "program_title": "String Manipulation Program",
+                "code": "text = 'Python'\nprint('First character:', text[0])\nprint('Last character:', text[-1])\nprint('Slice:', text[1:4])"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "python data types example"
+          }
+        },
+
+        {
+          "topic_name": "Control Statements",
+          "content": {
+            "question": "Explain selection and iteration statements with programs.",
+            "summary": "Control statements manage program execution flow.",
+            "key_points": [
+              "if-elif-else",
+              "for loop",
+              "while loop",
+              "break and continue"
+            ],
+            "detailed_explanation": "Conditional statements evaluate boolean expressions. Loops execute repeatedly until condition becomes false.",
+            "programs": [
+
+              {
+                "program_title": "Check Even or Odd",
+                "code": "num = int(input('Enter a number: '))\nif num % 2 == 0:\n    print('Even')\nelse:\n    print('Odd')"
+              },
+
+              {
+                "program_title": "Factorial using While Loop",
+                "code": "n = int(input('Enter number: '))\nfact = 1\nwhile n > 0:\n    fact *= n\n    n -= 1\nprint('Factorial:', fact)"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "python loop example"
+          }
+        }
+
+      ]
+    },
+
+    {
+      "module_number": 2,
+      "module_title": "Building Python Programs",
+      "topics": [
+
+        {
+          "topic_name": "Functions and Recursion",
+          "content": {
+            "question": "Explain functions and recursion with programs.",
+            "summary": "Functions modularize programs and recursion allows self-calling functions.",
+            "key_points": [
+              "def keyword",
+              "Return values",
+              "Recursive base case"
+            ],
+            "detailed_explanation": "Functions break programs into reusable components. Recursion solves problems by reducing them to smaller instances.",
+            "programs": [
+
+              {
+                "program_title": "Simple Function Example",
+                "code": "def greet(name):\n    return 'Hello ' + name\n\nprint(greet('Sheba'))"
+              },
+
+              {
+                "program_title": "Recursive Factorial",
+                "code": "def factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n\nprint(factorial(5))"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "python recursion example"
+          }
+        },
+
+        {
+          "topic_name": "Lists and List Comprehension",
+          "content": {
+            "question": "Explain lists and list comprehension with programs.",
+            "summary": "Lists are mutable sequences supporting slicing and comprehension.",
+            "key_points": [
+              "List creation",
+              "append()",
+              "sort()",
+              "List comprehension"
+            ],
+            "detailed_explanation": "Lists allow dynamic storage of elements. List comprehension provides compact syntax for generating lists.",
+            "programs": [
+
+              {
+                "program_title": "List Operations",
+                "code": "nums = [5, 2, 9, 1]\nnums.append(7)\nnums.sort()\nprint(nums)"
+              },
+
+              {
+                "program_title": "List Comprehension",
+                "code": "squares = [x*x for x in range(1,6)]\nprint(squares)"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "python list example"
+          }
+        },
+
+        {
+          "topic_name": "File Handling",
+          "content": {
+            "question": "Explain text file operations with program.",
+            "summary": "Python uses open(), read(), write() for file handling.",
+            "key_points": [
+              "File modes",
+              "Reading files",
+              "Writing files"
+            ],
+            "detailed_explanation": "Files must be opened before reading or writing. Always close files after use.",
+            "programs": [
+
+              {
+                "program_title": "Write and Read File",
+                "code": "file = open('sample.txt','w')\nfile.write('Hello Python')\nfile.close()\n\nfile = open('sample.txt','r')\nprint(file.read())\nfile.close()"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "python file handling example"
+          }
+        }
+
+      ]
+    },
+
+    {
+      "module_number": 4,
+      "module_title": "Object Oriented Programming",
+      "topics": [
+
+        {
+          "topic_name": "Classes and Inheritance",
+          "content": {
+            "question": "Explain OOP concepts with program.",
+            "summary": "Classes define objects and inheritance promotes reuse.",
+            "key_points": [
+              "Class definition",
+              "Constructor",
+              "Inheritance",
+              "Method overriding"
+            ],
+            "detailed_explanation": "OOP supports abstraction, encapsulation, inheritance and polymorphism.",
+            "programs": [
+
+              {
+                "program_title": "Class Example",
+                "code": "class Student:\n    def __init__(self, name, marks):\n        self.name = name\n        self.marks = marks\n    \n    def display(self):\n        print(self.name, self.marks)\n\ns = Student('Sheba', 95)\ns.display()"
+              },
+
+              {
+                "program_title": "Inheritance Example",
+                "code": "class Animal:\n    def speak(self):\n        print('Animal speaks')\n\nclass Dog(Animal):\n    def speak(self):\n        print('Dog barks')\n\nd = Dog()\nd.speak()"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "python inheritance example"
+          }
+        }
+
+      ]
+    },
+
+    {
+      "module_number": 5,
+      "module_title": "Data Processing",
+      "topics": [
+
+        {
+          "topic_name": "NumPy and Matplotlib",
+          "content": {
+            "question": "Explain NumPy arrays and plotting with programs.",
+            "summary": "NumPy supports numerical arrays and Matplotlib enables visualization.",
+            "key_points": [
+              "Array creation",
+              "Matrix operations",
+              "Plotting graphs"
+            ],
+            "detailed_explanation": "NumPy provides efficient numerical computation. Matplotlib generates visual plots.",
+            "programs": [
+
+              {
+                "program_title": "NumPy Array Example",
+                "code": "import numpy as np\narr = np.array([1,2,3,4])\nprint('Array:', arr)\nprint('Mean:', np.mean(arr))"
+              },
+
+              {
+                "program_title": "Matplotlib Plot",
+                "code": "import matplotlib.pyplot as plt\nx = [1,2,3,4]\ny = [2,4,6,8]\nplt.plot(x,y)\nplt.xlabel('X-axis')\nplt.ylabel('Y-axis')\nplt.title('Line Graph')\nplt.show()"
+              }
+
+            ],
+            "static_image_url": null,
+            "image_search_query": "matplotlib line plot example"
+          }
+        }
+
+      ]
+    }
+
+  ]
+}

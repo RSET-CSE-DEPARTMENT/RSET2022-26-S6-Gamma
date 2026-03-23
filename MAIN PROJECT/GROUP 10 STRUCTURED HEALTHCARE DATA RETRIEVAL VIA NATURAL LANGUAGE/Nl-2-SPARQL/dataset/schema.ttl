@@ -1,0 +1,182 @@
+@prefix ex: <http://example.org/health#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:HighRisk_Deterioration a owl:Class ;
+    rdfs:label "Sepsis Deterioration" ;
+    rdfs:subClassOf ex:RiskState .
+
+ex:HighRisk_Fall a owl:Class ;
+    rdfs:label "Fall Risk" ;
+    rdfs:subClassOf ex:RiskState .
+
+ex:HighRisk_Hypertension a owl:Class ;
+    rdfs:label "Hypertension Crisis" ;
+    rdfs:subClassOf ex:RiskState .
+
+ex:HighRisk_Hypoxia a owl:Class ;
+    rdfs:label "Hypoxia" ;
+    rdfs:subClassOf ex:RiskState .
+
+ex:StableState a owl:Class ;
+    rdfs:label "Stable" ;
+    rdfs:subClassOf ex:RiskState .
+
+ex:admissionTime a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range xsd:dateTime .
+
+ex:age a owl:DatatypeProperty ;
+    rdfs:domain ex:Patient ;
+    rdfs:range xsd:integer .
+
+ex:attendingDoctor a owl:ObjectProperty ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range ex:Doctor .
+
+ex:bmi a owl:DatatypeProperty ;
+    rdfs:domain ex:Patient ;
+    rdfs:range xsd:float .
+
+ex:cholesterol a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range xsd:float .
+
+ex:creatinine a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range xsd:float .
+
+ex:department a owl:DatatypeProperty ;
+    rdfs:domain ex:Doctor ;
+    rdfs:range xsd:string .
+
+ex:diagnosis a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range xsd:string .
+
+ex:diastolicBP a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:integer .
+
+ex:dischargeTime a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range xsd:dateTime .
+
+ex:gender a owl:DatatypeProperty ;
+    rdfs:domain ex:Doctor ;
+    rdfs:range xsd:string .
+
+ex:glucose a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range xsd:float .
+
+ex:hasDiabetes a owl:DatatypeProperty ;
+    rdfs:domain ex:Patient ;
+    rdfs:range xsd:boolean .
+
+ex:hasHypertension a owl:DatatypeProperty ;
+    rdfs:domain ex:Patient ;
+    rdfs:range xsd:boolean .
+
+ex:hasStay a owl:ObjectProperty ;
+    rdfs:domain ex:Patient ;
+    rdfs:range ex:HospitalStay .
+
+ex:hasVitalAt a owl:ObjectProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range ex:VitalObservation .
+
+ex:heartRate a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:integer .
+
+ex:leadsTo a owl:ObjectProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range ex:RiskState .
+
+ex:lengthOfStayHours a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalStay ;
+    rdfs:range xsd:integer .
+
+ex:patient a owl:ObjectProperty ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range ex:Patient .
+
+ex:prescribedDrug a owl:DatatypeProperty ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range xsd:string .
+
+ex:respiratoryRate a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:integer .
+
+ex:sex a owl:DatatypeProperty ;
+    rdfs:domain ex:Patient ;
+    rdfs:range xsd:string .
+
+ex:spO2 a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:integer .
+
+ex:stay a owl:ObjectProperty ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range ex:HospitalStay .
+
+ex:systolicBP a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:integer .
+
+ex:temperature a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:float .
+
+ex:timestamp a owl:DatatypeProperty ;
+    rdfs:domain ex:VitalObservation ;
+    rdfs:range xsd:dateTime .
+
+ex:Doctor a owl:Class ;
+    rdfs:label "Doctor" .
+
+ex:HospitalVisit a owl:Class ;
+    rdfs:label "HospitalVisit" .
+
+ex:RiskState a owl:Class ;
+    rdfs:label "RiskState" .
+
+ex:Patient a owl:Class ;
+    rdfs:label "Patient" .
+
+ex:HospitalStay a owl:Class ;
+    rdfs:label "HospitalStay" .
+
+# Hospital Schema
+
+ex:CheckupVisit rdf:type owl:Class ;
+    rdfs:label "Checkup Visit"@en ;
+    rdfs:subClassOf ex:HospitalVisit .
+
+ex:AdmissionVisit rdf:type owl:Class ;
+    rdfs:label "Admission Visit"@en ;
+    rdfs:subClassOf ex:HospitalStay .
+
+ex:visitType rdf:type owl:DatatypeProperty ;
+    rdfs:label "visit type"@en ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range xsd:string .
+
+ex:isCheckup rdf:type owl:DatatypeProperty ;
+    rdfs:label "is checkup visit"@en ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range xsd:boolean .
+
+ex:PreliminaryDiagnosis rdf:type owl:Class ;
+    rdfs:label "Preliminary Diagnosis"@en .
+
+ex:ConfirmedDiagnosis rdf:type owl:Class ;
+    rdfs:label "Confirmed Diagnosis"@en .
+
+ex:diagnosisType rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:HospitalVisit ;
+    rdfs:range rdfs:Class .

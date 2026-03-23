@@ -1,0 +1,268 @@
+{
+  "courseName": "OPERATING SYSTEMS",
+  "courseCode": "101003/CS400D",
+  "modules": [
+    {
+      "module_number": 1,
+      "module_title": "Introduction",
+      "topics": [
+        {
+          "topic_name": "Operating System Overview",
+          "content": {
+            "question": "Can you give me an overview of an Operating System?",
+            "summary": "An Operating System (OS) is the core software that acts as an intermediary between a computer user and the computer hardware. Its primary goals are to execute user programs, make the computer system easy to use, and manage the hardware in an efficient manner.",
+            "key_points": [
+              "An operating system acts as a resource allocator that manages CPU time, memory space, and input and output devices.",
+              "It also functions as a control program that supervises program execution to prevent errors and improper use.",
+              "The key functions of an operating system include process management, memory management, storage management, and input and output management.",
+              "The kernel is the central component of the operating system and runs at all times."
+            ],
+            "detailed_explanation": "A computer system is composed of hardware, the operating system, application programs, and users. The operating system is essential for managing hardware resources. From a user’s viewpoint, it provides a convenient interface. From a system’s viewpoint, it balances the needs of various programs and users to ensure efficient and fair operation. It also prevents system misuse and execution errors.",
+            "example": "When you open a web browser, the operating system allocates memory, schedules CPU time, and manages network hardware. You interact with the browser while the operating system handles all underlying hardware operations.",
+            "static_image_url": "http://your-api-address.com/static/images/fig_1_1_os_components.png",
+            "image_search_query": "computer system components diagram"
+          }
+        },
+        {
+          "topic_name": "Operating System Structure",
+          "content": {
+            "question": "What are the different ways an Operating System can be structured?",
+            "summary": "Operating systems can be designed in several ways depending on simplicity, performance, and reliability. Common structures include monolithic, layered, microkernel, and modular approaches.",
+            "key_points": [
+              "In a monolithic structure, all operating system components are combined into a single block of code, making it fast but difficult to maintain.",
+              "In a layered structure, the operating system is divided into layers, improving modularity and simplifying debugging.",
+              "In a microkernel structure, only essential services run in the kernel while other services run in user space, improving reliability and security.",
+              "In a modular structure, the kernel contains core components and dynamically loads additional modules when required."
+            ],
+            "detailed_explanation": "The structure of an operating system defines how its components are organized and interact. Layered systems improve maintainability but may reduce performance. Microkernel systems improve security and reliability but involve communication overhead between components.",
+            "example": "A layered operating system is like passing through multiple security checkpoints, while a microkernel system is like a central desk connecting different services.",
+            "static_image_url": null,
+            "image_search_query": "layered operating system structure"
+          }
+        }
+      ]
+    },
+    {
+      "module_number": 2,
+      "module_title": "Processes and Process Scheduling",
+      "topics": [
+        {
+          "topic_name": "Process States and PCB",
+          "content": {
+            "question": "What are the different states a process can be in?",
+            "summary": "A process transitions between several states during its lifecycle. These states include New, Ready, Running, Waiting, and Terminated, and they are tracked using a Process Control Block.",
+            "key_points": [
+              "The new state indicates that a process is being created.",
+              "The ready state means the process is waiting to be assigned to the CPU.",
+              "The running state indicates that the process is currently executing.",
+              "The waiting state occurs when the process is waiting for an event such as input or output completion.",
+              "The terminated state indicates that the process has completed execution.",
+              "The Process Control Block stores all relevant information about a process."
+            ],
+            "detailed_explanation": "As a process executes, it moves between states managed by the operating system scheduler. The Process Control Block stores the complete context of the process, including its state, program counter, registers, and memory information, which enables efficient context switching.",
+            "example": "A music app is running while playing a song. It enters the waiting state when buffering data, while other apps remain ready in the background.",
+            "static_image_url": "http://your-api-address.com/static/images/fig_3_2_process_state_diagram.png",
+            "image_search_query": "process state transition diagram"
+          }
+        },
+        {
+          "topic_name": "Inter-Process Communication (IPC)",
+          "content": {
+            "question": "What are the main models of inter-process communication?",
+            "summary": "Inter-process communication allows processes to exchange data and synchronize their actions. The two main models are shared memory and message passing.",
+            "key_points": [
+              "Shared memory allows multiple processes to access a common memory region directly.",
+              "Message passing allows processes to communicate by sending and receiving messages through the operating system.",
+              "Shared memory is faster but requires careful synchronization.",
+              "Message passing is safer and easier to implement."
+            ],
+            "detailed_explanation": "In shared memory systems, processes directly read and write shared regions, requiring synchronization to avoid race conditions. In message passing systems, processes communicate without sharing address space, relying on the operating system to deliver messages.",
+            "example": "Shared memory is like a shared whiteboard, while message passing is similar to sending messages through a postal service.",
+            "static_image_url": null,
+            "image_search_query": "shared memory vs message passing IPC"
+          }
+        },
+        {
+          "topic_name": "CPU Scheduling Algorithms",
+          "content": {
+            "question": "Can you explain some CPU scheduling algorithms?",
+            "summary": "CPU scheduling algorithms determine which process in the ready queue receives CPU time. Common algorithms include First Come First Served, Shortest Job First, Priority Scheduling, and Round Robin.",
+            "key_points": [
+              "First Come First Served schedules processes in the order of arrival.",
+              "Shortest Job First selects the process with the shortest execution time.",
+              "Priority scheduling assigns CPU time based on process priority.",
+              "Round Robin assigns equal time slices to all processes."
+            ],
+            "detailed_explanation": "Scheduling algorithms significantly affect system performance. First Come First Served is simple but inefficient. Shortest Job First minimizes waiting time but requires future knowledge. Round Robin ensures fairness in time-sharing systems.",
+            "example": "First Come First Served is like a queue at a counter, while Round Robin is like a teacher giving equal attention to each student.",
+            "static_image_url": null,
+            "image_search_query": "Round Robin scheduling gantt chart example"
+          }
+        }
+      ]
+    },
+    {
+      "module_number": 3,
+      "module_title": "Process Synchronization and Deadlocks",
+      "topics": [
+        {
+          "topic_name": "The Critical Section Problem",
+          "content": {
+            "question": "What is the critical section problem?",
+            "summary": "The critical section problem involves designing a protocol to prevent race conditions by ensuring only one process accesses shared data at a time.",
+            "key_points": [
+              "Mutual exclusion ensures that only one process can execute its critical section at a time.",
+              "Progress ensures that processes are not indefinitely postponed.",
+              "Bounded waiting ensures a limit on waiting time for processes."
+            ],
+            "detailed_explanation": "Race conditions occur when multiple processes access shared data concurrently. Synchronization mechanisms ensure correctness and consistency of shared data.",
+            "example": "Updating a shared bank account balance must be done by one transaction at a time to avoid errors.",
+            "static_image_url": "http://your-api-address.com/static/images/fig_5_1_critical_section.png",
+            "image_search_query": "critical section problem illustration"
+          }
+        },
+        {
+          "topic_name": "Semaphores and Monitors",
+          "content": {
+            "question": "How do semaphores and monitors help with synchronization?",
+            "summary": "Semaphores and monitors are synchronization tools used to control access to shared resources.",
+            "key_points": [
+              "Semaphores use atomic wait and signal operations.",
+              "Counting semaphores manage multiple instances of a resource.",
+              "Binary semaphores provide mutual exclusion.",
+              "Monitors automatically enforce mutual exclusion within shared code."
+            ],
+            "detailed_explanation": "Semaphores require explicit handling by programmers, while monitors provide safer high-level synchronization mechanisms.",
+            "example": "A semaphore is like a key rack for shared rooms, while a monitor automatically allows only one person to enter a room.",
+            "static_image_url": null,
+            "image_search_query": "semaphore synchronization example"
+          }
+        },
+        {
+          "topic_name": "Deadlocks",
+          "content": {
+            "question": "What is a deadlock and how can it be handled?",
+            "summary": "A deadlock occurs when processes wait indefinitely for resources held by each other.",
+            "key_points": [
+              "Deadlocks require mutual exclusion, hold and wait, no preemption, and circular wait.",
+              "Deadlocks can be prevented, avoided, detected, or ignored."
+            ],
+            "detailed_explanation": "Deadlock handling techniques balance performance and system complexity.",
+            "example": "Two people holding different tools and waiting for each other form a deadlock.",
+            "static_image_url": null,
+            "image_search_query": "deadlock circular wait condition"
+          }
+        }
+      ]
+    },
+    {
+      "module_number": 4,
+      "module_title": "Memory Management",
+      "topics": [
+        {
+          "topic_name": "Paging and Segmentation",
+          "content": {
+            "question": "What is the difference between paging and segmentation?",
+            "summary": "Paging divides memory into fixed-size pages, while segmentation divides memory into variable-size logical segments.",
+            "key_points": [
+              "Paging eliminates external fragmentation but may cause internal fragmentation.",
+              "Segmentation supports logical program structure and protection.",
+              "Paging is transparent to programmers.",
+              "Segmentation allows sharing of memory segments."
+            ],
+            "detailed_explanation": "Paging maps logical pages to physical frames, while segmentation uses segment identifiers and offsets.",
+            "example": "Paging is like fixed-size note cards, while segmentation is like organizing notes in folders.",
+            "static_image_url": "http://your-api-address.com/static/images/fig_8_1_paging_segmentation.png",
+            "image_search_query": "paging vs segmentation memory management"
+          }
+        },
+        {
+          "topic_name": "Virtual Memory",
+          "content": {
+            "question": "What is virtual memory and why is it important?",
+            "summary": "Virtual memory allows processes to execute without being fully loaded into physical memory.",
+            "key_points": [
+              "Logical address space can exceed physical memory.",
+              "Only required pages are loaded into memory.",
+              "Demand paging is commonly used."
+            ],
+            "detailed_explanation": "Virtual memory improves memory utilization and simplifies programming.",
+            "example": "It is like using recipe cards while storing the cookbook on a shelf.",
+            "static_image_url": "http://your-api-address.com/static/images/fig_9_1_virtual_memory.png",
+            "image_search_query": "virtual memory demand paging"
+          }
+        },
+        {
+          "topic_name": "Page Replacement Algorithms",
+          "content": {
+            "question": "How do page replacement algorithms work?",
+            "summary": "Page replacement algorithms select a memory page to remove when a page fault occurs.",
+            "key_points": [
+              "First In First Out replaces the oldest page.",
+              "Optimal replaces the page used farthest in the future.",
+              "Least Recently Used replaces the page not used for the longest time."
+            ],
+            "detailed_explanation": "These algorithms aim to reduce the number of page faults.",
+            "example": "Least Recently Used is like removing the book you have not opened for the longest time.",
+            "static_image_url": null,
+            "image_search_query": "LRU page replacement algorithm example"
+          }
+        }
+      ]
+    },
+    {
+      "module_number": 5,
+      "module_title": "File System and Storage Management",
+      "topics": [
+        {
+          "topic_name": "File System Introduction",
+          "content": {
+            "question": "What is a file system?",
+            "summary": "A file system organizes and manages files and directories on storage devices.",
+            "key_points": [
+              "It provides logical storage abstraction.",
+              "It supports file creation, deletion, and access.",
+              "It manages directories and permissions."
+            ],
+            "detailed_explanation": "The file system provides a structured and user-friendly way to store and retrieve data.",
+            "example": "A file system is like a library catalog.",
+            "static_image_url": null,
+            "image_search_query": "file system directory structure"
+          }
+        },
+        {
+          "topic_name": "File Allocation Methods",
+          "content": {
+            "question": "What are the common file allocation methods?",
+            "summary": "File allocation methods determine how disk space is assigned to files.",
+            "key_points": [
+              "Contiguous allocation stores files in adjacent blocks.",
+              "Linked allocation stores files as linked lists.",
+              "Indexed allocation uses an index block."
+            ],
+            "detailed_explanation": "Each file allocation method has advantages and disadvantages.",
+            "example": "Indexed allocation is like a table of contents listing file locations.",
+            "static_image_url": "http://your-api-address.com/static/images/fig_11_4_file_allocation.png",
+            "image_search_query": "contiguous linked indexed file allocation"
+          }
+        },
+        {
+          "topic_name": "Disk Scheduling Algorithms",
+          "content": {
+            "question": "How does the SCAN disk scheduling algorithm work?",
+            "summary": "The SCAN algorithm moves the disk arm in one direction servicing requests and then reverses direction.",
+            "key_points": [
+              "It minimizes seek time.",
+              "It prevents starvation.",
+              "C-SCAN provides uniform waiting time."
+            ],
+            "detailed_explanation": "The SCAN algorithm behaves like an elevator servicing requests sequentially.",
+            "example": "It works like an elevator stopping at requested floors.",
+            "static_image_url": null,
+            "image_search_query": "SCAN elevator disk scheduling algorithm"
+          }
+        }
+      ]
+    }
+  ]
+}

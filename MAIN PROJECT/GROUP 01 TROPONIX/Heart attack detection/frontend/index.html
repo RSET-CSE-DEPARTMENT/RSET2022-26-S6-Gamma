@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troponix</title>
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #0b1220;
+            --accent: #06b6d4;
+            --accent-dark: #0894ad;
+            --muted: #9aa4b2;
+            --text: #e6eef6;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #041025, #071428);
+            color: var(--text);
+            height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 100%; max-width: 480px;
+            background: rgba(255,255,255,0.02);
+            padding: 40px 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .brand { text-align: center; margin-bottom: 20px; }
+        .logo {
+            background: #06323a; width: 48px; height: 48px; border-radius: 10px;
+            color: var(--accent); font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        h1 { font-size: 24px; font-weight: 700; }
+        .subtitle { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+        .role-selector {
+            display: flex; border-radius: 10px; overflow: hidden;
+            background: rgba(255,255,255,0.03);
+            margin: 22px 0;
+        }
+        .role-option {
+            flex: 1; padding: 12px; text-align: center;
+            cursor: pointer; transition: 0.2s;
+        }
+
+        .role-option.active {
+            background: var(--accent); color: #022;
+            font-weight: 700;
+        }
+
+        .form-group { margin-bottom: 18px; }
+        label { display: block; color: var(--muted); margin-bottom: 6px; }
+
+        .input {
+            width: 100%; padding: 12px; border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            color: var(--text);
+        }
+
+        .btn {
+            width: 100%; padding: 12px; margin-top: 10px;
+            background: var(--accent); border-radius: 8px;
+            font-weight: 700; cursor: pointer;
+        }
+
+        .alert {
+            display: none; padding: 12px; border-radius: 8px;
+            margin-bottom: 16px; font-size: 14px;
+            background: rgba(255,60,60,0.1);
+            border: 1px solid rgba(255,60,60,0.25);
+            color: #ffbaba;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="brand">
+        <div class="logo">TX</div>
+        <h1>Welcome Back</h1>
+        <div class="subtitle">Sign in to your dashboard</div>
+    </div>
+
+    <div id="errorAlert" class="alert">Invalid username or password.</div>
+
+    <div class="role-selector">
+        <div class="role-option active" data-role="patient">Patient</div>
+        <div class="role-option" data-role="clinician">Clinician</div>
+    </div>
+
+    <div class="form-group">
+        <label>Username</label>
+        <input id="username" class="input" placeholder="Enter your username">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input id="password" type="password" class="input" placeholder="Enter your password">
+    </div>
+
+    <button class="btn" id="loginBtn">Sign In</button>
+
+    <a href="signup.html" class="link">Create a new account</a>
+</div>
+
+<script>
+    // -----------------------
+    // ROLE SELECTION
+    // -----------------------
+    let selectedRole = "patient";
+
+    document.querySelectorAll(".role-option").forEach(opt => {
+        opt.addEventListener("click", () => {
+            document.querySelectorAll(".role-option")
+                .forEach(o => o.classList.remove("active"));
+            opt.classList.add("active");
+            selectedRole = opt.dataset.role;
+        });
+    });
+
+    // -----------------------
+    // LOGIN HANDLER
+    // -----------------------
+    document.getElementById("loginBtn").addEventListener("click", async () => {
+        const usernameVal = username.value.trim();
+        const passwordVal = password.value.trim();
+        const alertBox = document.getElementById("errorAlert");
+
+        if (!usernameVal || !passwordVal) {
+            alertBox.textContent = "Please fill all fields.";
+            alertBox.style.display = "block";
+            return;
+        }
+
+        // ⭐ FIXED API ENDPOINT ⭐
+        const res = await fetch("http://localhost:5000/auth/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                username: usernameVal,
+                password: passwordVal,
+                role: selectedRole
+            })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            alertBox.style.display = "block";
+            alertBox.textContent = data.error || "Login failed.";
+            return;
+        }
+
+        // SAVE USER INFO
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        // REDIRECT TO DASHBOARD
+        window.location.href = "dashboard.html";
+    });
+</script>
+
+</body>
+</html>

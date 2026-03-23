@@ -1,0 +1,23 @@
+@prefix ex: <http://example.org/health#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:P001001 ex:hasStay ex:S010000 .
+
+<http://example.org/health#OBS000315_S010000_2026-03-01T00:00:00> a ex:VitalObservation ;
+    ex:diastolicBP 35 ;
+    ex:heartRate 127 ;
+    ex:respiratoryRate 20 ;
+    ex:spO2 93 ;
+    ex:systolicBP 55 ;
+    ex:temperature "38.7"^^xsd:float ;
+    ex:timestamp "2026-03-01T00:00:00"^^xsd:dateTime .
+
+ex:S010000 a ex:HospitalStay ;
+    ex:admissionTime "2026-03-01T22:00:00"^^xsd:dateTime ;
+    ex:cholesterol "23.0"^^xsd:float ;
+    ex:creatinine "34.0"^^xsd:float ;
+    ex:dischargeTime "2026-03-03T22:00:00"^^xsd:dateTime ;
+    ex:glucose "123.0"^^xsd:float ;
+    ex:hasVitalAt <http://example.org/health#OBS000315_S010000_2026-03-01T00:00:00> ;
+    ex:lengthOfStayHours 48 .
+

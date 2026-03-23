@@ -1,0 +1,404 @@
+# =========================
+# Prefixes
+# =========================
+@prefix ex:  <http://example.org/health#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# =========================
+# Ontology scaffold 
+# =========================
+
+ex:Disease    rdf:type rdfs:Class ; rdfs:label "Disease"@en .
+ex:Symptom    rdf:type rdfs:Class ; rdfs:label "Symptom"@en .
+ex:Medication rdf:type rdfs:Class ; rdfs:label "Medication"@en .
+ex:Patient    rdf:type rdfs:Class ; rdfs:label "Patient"@en .
+ex:Visit      rdf:type rdfs:Class ; rdfs:label "Visit"@en .
+ex:Clinic     rdf:type rdfs:Class ; rdfs:label "Clinic"@en .
+
+ex:hasSymptom  rdf:type rdf:Property ; rdfs:domain ex:Disease ; rdfs:range ex:Symptom .
+ex:hasDiagnosis rdf:type rdf:Property ; rdfs:domain ex:Patient ; rdfs:range ex:Disease .
+ex:prescribed  rdf:type rdf:Property ; rdfs:domain ex:Visit ; rdfs:range ex:Medication .
+ex:hasPatient  rdf:type rdf:Property ; rdfs:domain ex:Visit ; rdfs:range ex:Patient .
+ex:seenAt      rdf:type rdf:Property ; rdfs:domain ex:Visit ; rdfs:range ex:Clinic .
+ex:visitDate   rdf:type rdf:Property ; rdfs:domain ex:Visit ; rdfs:range xsd:date .
+ex:hasAge      rdf:type rdf:Property ; rdfs:domain ex:Patient ; rdfs:range xsd:int .
+ex:hasGender      rdf:type rdf:Property ; rdfs:domain ex:Patient ; rdfs:range xsd:string .
+ex:treats      rdf:type rdf:Property ; rdfs:domain ex:Medication ; rdfs:range ex:Symptom .
+
+
+
+# =========================
+# Class Hierarchies
+# =========================
+
+ex:InfectiousDisease rdf:type rdfs:Class ;
+    rdfs:subClassOf ex:Disease .
+
+ex:RespiratoryDisease rdf:type rdfs:Class ;
+    rdfs:subClassOf ex:Disease .
+
+ex:ChronicDisease rdf:type rdfs:Class ;
+    rdfs:subClassOf ex:Disease .
+
+ex:COVID19    rdfs:subClassOf ex:InfectiousDisease .
+ex:Influenza  rdfs:subClassOf ex:InfectiousDisease .
+ex:Tuberculosis rdfs:subClassOf ex:InfectiousDisease .
+ex:Pneumonia  rdfs:subClassOf ex:RespiratoryDisease .
+ex:Asthma     rdfs:subClassOf ex:RespiratoryDisease , ex:ChronicDisease .
+ex:Hypertension rdfs:subClassOf ex:ChronicDisease .
+ex:Type2_Diabetes rdfs:subClassOf ex:ChronicDisease .
+ex:Migraine   rdfs:subClassOf ex:ChronicDisease .
+
+#====================================
+#Linking with external wikidata IRI
+#====================================
+
+#diseases
+
+ex:COVID19 owl:sameAs <https://www.wikidata.org/entity/Q84263196> .
+ex:Asthma owl:sameAs <https://www.wikidata.org/entity/Q35869> .
+ex:Chickenpox owl:sameAs <https://www.wikidata.org/entity/Q44727> .
+ex:Migraine owl:sameAs <https://www.wikidata.org/entity/Q133823> .
+ex:Malaria owl:sameAs <https://www.wikidata.org/entity/Q12156> .
+
+#Symptoms
+ex:Headache owl:sameAs <https://www.wikidata.org/entity/Q86> .
+ex:Cough owl:sameAs <https://www.wikidata.org/entity/Q35805> .
+ex:Fever owl:sameAs <https://www.wikidata.org/entity/Q38933> .
+ex:Nausea owl:sameAs <https://www.wikidata.org/entity/Q186889> .
+
+#Medicine
+
+ex:Paracetamol owl:sameAs <https://www.wikidata.org/entity/Q57055> .
+ex:Naproxen owl:sameAs <https://www.wikidata.org/entity/Q1215575> .
+ex:Aspirin owl:sameAs <https://www.wikidata.org/entity/Q18216> .
+ex:Ibuprofen owl:sameAs <https://www.wikidata.org/entity/Q186969> .
+
+# =========================
+# Diseases and Symptoms 
+# =========================
+# Diseases
+
+ex:Asthma            rdf:type ex:Disease ; rdfs:label "Asthma"@en .
+ex:Type2_Diabetes    rdf:type ex:Disease ; rdfs:label "Type 2 Diabetes"@en .
+ex:COVID19           rdf:type ex:Disease ; rdfs:label "COVID-19"@en .
+ex:Influenza         rdf:type ex:Disease ; rdfs:label "Influenza"@en .
+ex:Hypertension      rdf:type ex:Disease ; rdfs:label "Hypertension"@en .
+ex:Migraine          rdf:type ex:Disease ; rdfs:label "Migraine"@en .
+ex:Tuberculosis      rdf:type ex:Disease ; rdfs:label "Tuberculosis"@en .
+ex:Chickenpox        rdf:type ex:Disease ; rdfs:label "Chickenpox"@en .
+ex:Pneumonia         rdf:type ex:Disease ; rdfs:label "Pneumonia"@en .
+ex:Dengue_Fever      rdf:type ex:Disease ; rdfs:label "Dengue Fever"@en .
+ex:Malaria           rdf:type ex:Disease ; rdfs:label "Malaria"@en .
+
+# Symptoms
+ex:Cough                  rdf:type ex:Symptom ; rdfs:label "Cough"@en .
+ex:Shortness_of_breath    rdf:type ex:Symptom ; rdfs:label "Shortness of breath"@en .
+ex:Wheezing               rdf:type ex:Symptom ; rdfs:label "Wheezing"@en .
+ex:Fatigue                rdf:type ex:Symptom ; rdfs:label "Fatigue"@en .
+ex:Frequent_urination     rdf:type ex:Symptom ; rdfs:label "Frequent urination"@en .
+ex:Blurred_vision         rdf:type ex:Symptom ; rdfs:label "Blurred vision"@en .
+ex:Fever                  rdf:type ex:Symptom ; rdfs:label "Fever"@en .
+ex:Loss_of_taste_or_smell rdf:type ex:Symptom ; rdfs:label "Loss of taste or smell"@en .
+ex:Difficulty_breathing   rdf:type ex:Symptom ; rdfs:label "Difficulty breathing"@en .
+ex:Sore_throat            rdf:type ex:Symptom ; rdfs:label "Sore throat"@en .
+ex:Muscle_aches           rdf:type ex:Symptom ; rdfs:label "Muscle aches"@en .
+ex:Headache               rdf:type ex:Symptom ; rdfs:label "Headache"@en .
+ex:Dizziness              rdf:type ex:Symptom ; rdfs:label "Dizziness"@en .
+ex:Nausea                 rdf:type ex:Symptom ; rdfs:label "Nausea"@en .
+ex:Light_sensitivity      rdf:type ex:Symptom ; rdfs:label "Light sensitivity"@en .
+ex:Weight_loss            rdf:type ex:Symptom ; rdfs:label "Weight loss"@en .
+ex:Night_sweats           rdf:type ex:Symptom ; rdfs:label "Night sweats"@en .
+ex:Chest_pain             rdf:type ex:Symptom ; rdfs:label "Chest pain"@en .
+ex:High_fever             rdf:type ex:Symptom ; rdfs:label "High fever"@en .
+ex:Severe_headache        rdf:type ex:Symptom ; rdfs:label "Severe headache"@en .
+ex:Pain_behind_eyes       rdf:type ex:Symptom ; rdfs:label "Pain behind eyes"@en .
+ex:Chills                 rdf:type ex:Symptom ; rdfs:label "Chills"@en .
+ex:Heartburn              rdf:type ex:Symptom ; rdfs:label "Heartburn"@en .
+ex:Sneezing               rdf:type ex:Symptom ; rdfs:label "Sneezing"@en .
+
+# Disease -> Symptom assertions 
+
+ex:Asthma         ex:hasSymptom ex:Cough ;
+                  ex:hasSymptom ex:Shortness_of_breath ;
+                  ex:hasSymptom ex:Wheezing .
+
+ex:Type2_Diabetes ex:hasSymptom ex:Fatigue ;
+                  ex:hasSymptom ex:Frequent_urination ;
+                  ex:hasSymptom ex:Blurred_vision .
+
+ex:COVID19        ex:hasSymptom ex:Fever ;
+                  ex:hasSymptom ex:Cough ;
+                  ex:hasSymptom ex:Loss_of_taste_or_smell ;
+                  ex:hasSymptom ex:Difficulty_breathing .
+
+ex:Influenza      ex:hasSymptom ex:Fever ;
+                  ex:hasSymptom ex:Cough ;
+                  ex:hasSymptom ex:Sore_throat ;
+                  ex:hasSymptom ex:Muscle_aches .
+
+ex:Hypertension   ex:hasSymptom ex:Headache ;
+                  ex:hasSymptom ex:Dizziness .
+
+ex:Migraine       ex:hasSymptom ex:Headache ;
+                  ex:hasSymptom ex:Nausea ;
+                  ex:hasSymptom ex:Light_sensitivity .
+
+ex:Tuberculosis   ex:hasSymptom ex:Weight_loss ;
+                  ex:hasSymptom ex:Night_sweats ;
+                  ex:hasSymptom ex:Cough .
+
+ex:Chickenpox     ex:hasSymptom ex:Fever ;
+                  ex:hasSymptom ex:Headache .
+
+ex:Pneumonia      ex:hasSymptom ex:Fever ;
+                  ex:hasSymptom ex:Cough ;
+                  ex:hasSymptom ex:Chest_pain .
+
+ex:Dengue_Fever   ex:hasSymptom ex:High_fever ;
+                  ex:hasSymptom ex:Severe_headache ;
+                  ex:hasSymptom ex:Pain_behind_eyes .
+
+ex:Malaria        ex:hasSymptom ex:Fever ;
+                  ex:hasSymptom ex:Chills .
+
+# =========================
+# Medications and treats relations 
+# =========================
+# Medications
+ex:Aspirin           rdf:type ex:Medication ; rdfs:label "Aspirin"@en .
+ex:Codeine           rdf:type ex:Medication ; rdfs:label "Codeine"@en .
+ex:Dextromethorphan  rdf:type ex:Medication ; rdfs:label "Dextromethorphan"@en .
+ex:Domperidone       rdf:type ex:Medication ; rdfs:label "Domperidone"@en .
+ex:Folic_Acid        rdf:type ex:Medication ; rdfs:label "Folic Acid"@en .
+ex:Guaifenesin       rdf:type ex:Medication ; rdfs:label "Guaifenesin"@en .
+ex:Ibuprofen         rdf:type ex:Medication ; rdfs:label "Ibuprofen"@en .
+ex:Iron_Supplements  rdf:type ex:Medication ; rdfs:label "Iron Supplements"@en .
+ex:Metoclopramide    rdf:type ex:Medication ; rdfs:label "Metoclopramide"@en .
+ex:Naproxen          rdf:type ex:Medication ; rdfs:label "Naproxen"@en .
+ex:Ondansetron       rdf:type ex:Medication ; rdfs:label "Ondansetron"@en .
+ex:Paracetamol       rdf:type ex:Medication ; rdfs:label "Paracetamol"@en .
+ex:Vitamin_B12       rdf:type ex:Medication ; rdfs:label "Vitamin B12"@en .
+ex:Salbutamol        rdf:type ex:Medication ; rdfs:label "Salbutamol"@en .
+ex:Acetaminophen     rdf:type ex:Medication ; rdfs:label "Acetaminophen"@en .
+ex:Azithromycin      rdf:type ex:Medication ; rdfs:label "Azithromycin"@en .
+ex:Ranitidine        rdf:type ex:Medication ; rdfs:label "Ranitidine"@en .
+ex:Loratadine        rdf:type ex:Medication ; rdfs:label "Loratadine"@en .
+
+# treats -> Symptom
+
+ex:Aspirin          ex:treats ex:Headache .
+ex:Codeine          ex:treats ex:Cough .
+ex:Dextromethorphan ex:treats ex:Cough .
+ex:Domperidone      ex:treats ex:Nausea .
+ex:Folic_Acid       ex:treats ex:Fatigue .
+ex:Guaifenesin      ex:treats ex:Cough .
+ex:Ibuprofen        ex:treats ex:Fever , ex:Headache .
+ex:Iron_Supplements ex:treats ex:Fatigue .
+ex:Metoclopramide   ex:treats ex:Nausea .
+ex:Naproxen         ex:treats ex:Fever .
+ex:Ondansetron      ex:treats ex:Nausea .
+ex:Paracetamol      ex:treats ex:Fever , ex:Headache .
+ex:Vitamin_B12      ex:treats ex:Fatigue .
+ex:Salbutamol       ex:treats ex:Shortness_of_breath .
+ex:Acetaminophen    ex:treats ex:Muscle_aches .
+ex:Azithromycin     ex:treats ex:Sore_throat .
+ex:Ranitidine       ex:treats ex:Heartburn .
+ex:Loratadine       ex:treats ex:Sneezing .
+
+# =========================
+# Clinics
+# =========================
+ex:CityClinic       rdf:type ex:Clinic ; rdfs:label "CityClinic"@en .
+ex:GeneralHospital  rdf:type ex:Clinic ; rdfs:label "GeneralHospital"@en .
+
+
+# =========================
+# Patients, Diagnoses, Visits, Prescriptions (correlated data)
+# =========================
+
+# Patient 1
+ex:P001 rdf:type ex:Patient ;
+        rdfs:label "P001"@en ;
+        ex:hasAge 34 ;
+        ex:hasGender "F" ;
+        ex:hasDiagnosis ex:Asthma ;
+        ex:hasDiagnosis ex:Migraine .
+
+ex:V001 rdf:type ex:Visit ;  
+        rdfs:label "V001"@en ;
+        ex:hasPatient ex:P001 ;
+        ex:seenAt ex:CityClinic ;
+        ex:visitDate "2025-09-10"^^xsd:date ;
+        ex:prescribed ex:Salbutamol ;      # treats Shortness_of_breath (Asthma)
+        ex:prescribed ex:Paracetamol .     # treats Headache (Migraine)
+
+# Patient 2
+ex:P002 rdf:type ex:Patient ; 
+        rdfs:label "P002"@en ;
+        ex:hasAge 58 ;
+        ex:hasGender "M" ;
+        ex:hasDiagnosis ex:Type2_Diabetes ;
+        ex:hasDiagnosis ex:Hypertension .
+
+ex:V002 rdf:type ex:Visit ;  
+        rdfs:label "V002"@en ;
+        ex:hasPatient ex:P002 ;
+        ex:seenAt ex:GeneralHospital ;
+        ex:visitDate "2025-09-12"^^xsd:date ;
+        ex:prescribed ex:Vitamin_B12 ;     # treats Fatigue (T2D)
+        ex:prescribed ex:Paracetamol .     # treats Headache (Hypertension)
+
+# Patient 3
+ex:P003 rdf:type ex:Patient ; 
+        rdfs:label "P003"@en ;
+        ex:hasAge 26 ;
+        ex:hasGender "F" ;
+        ex:hasDiagnosis ex:Influenza .
+
+ex:V003 rdf:type ex:Visit ;  
+        rdfs:label "V003"@en ;
+        ex:hasPatient ex:P003 ;
+        ex:seenAt ex:CityClinic ;
+        ex:visitDate "2025-09-14"^^xsd:date ;
+        ex:prescribed ex:Guaifenesin ;     # treats Cough
+        ex:prescribed ex:Ibuprofen .       # treats Fever
+
+# Patient 4
+ex:P004 rdf:type ex:Patient ; 
+        rdfs:label "P004"@en ;
+        ex:hasAge 42 ;
+        ex:hasGender "M" ;
+        ex:hasDiagnosis ex:COVID19 .
+
+ex:V004 rdf:type ex:Visit ;  
+        rdfs:label "V004"@en ;
+        ex:hasPatient ex:P004 ;
+        ex:seenAt ex:GeneralHospital ;
+        ex:visitDate "2025-09-15"^^xsd:date ;
+        ex:prescribed ex:Paracetamol ;     # Fever/Headache
+        ex:prescribed ex:Dextromethorphan .# Cough
+
+# Patient 5
+ex:P005 rdf:type ex:Patient ; 
+        rdfs:label "P005"@en ;
+        ex:hasAge 31 ;
+        ex:hasGender "F" ;
+        ex:hasDiagnosis ex:Migraine .
+
+ex:V005 rdf:type ex:Visit ;  
+        rdfs:label "V005"@en ;
+        ex:hasPatient ex:P005 ;
+        ex:seenAt ex:CityClinic ;
+        ex:visitDate "2025-09-15"^^xsd:date ;
+        ex:prescribed ex:Aspirin ;
+        ex:prescribed ex:Domperidone .
+
+# Patient 6
+ex:P006 rdf:type ex:Patient ; 
+        rdfs:label "P006"@en ;
+        ex:hasAge 63 ;
+        ex:hasGender "M" ;
+        ex:hasDiagnosis ex:Hypertension ;
+        ex:hasDiagnosis ex:Type2_Diabetes .
+
+ex:V006 rdf:type ex:Visit ;  
+        rdfs:label "V006"@en ;
+        ex:hasPatient ex:P006 ;
+        ex:seenAt ex:GeneralHospital ;
+        ex:visitDate "2025-09-16"^^xsd:date ;
+        ex:prescribed ex:Paracetamol ;
+        ex:prescribed ex:Vitamin_B12 .
+
+# Patient 7
+ex:P007 rdf:type ex:Patient ; 
+        rdfs:label "P007"@en ;
+        ex:hasAge 45 ;
+        ex:hasGender "F" ;
+        ex:hasDiagnosis ex:Asthma .
+
+ex:V007 rdf:type ex:Visit ;  
+        rdfs:label "V007"@en ;
+        ex:hasPatient ex:P007 ;
+        ex:seenAt ex:CityClinic ;
+        ex:visitDate "2025-09-16"^^xsd:date ;
+        ex:prescribed ex:Salbutamol ;
+        ex:prescribed ex:Paracetamol .
+
+# Patient 8
+ex:P008 rdf:type ex:Patient ; 
+        rdfs:label "P008"@en ;
+        ex:hasAge 29 ;
+        ex:hasGender "M" ;
+        ex:hasDiagnosis ex:Pneumonia .
+
+ex:V008 rdf:type ex:Visit ;  
+        rdfs:label "V008"@en ;
+        ex:hasPatient ex:P008 ;
+        ex:seenAt ex:GeneralHospital ;
+        ex:visitDate "2025-09-17"^^xsd:date ;
+        ex:prescribed ex:Azithromycin ;    # sore throat/resp support
+        ex:prescribed ex:Acetaminophen .   # muscle aches
+
+# Patient 9
+ex:P009 rdf:type ex:Patient ; 
+        rdfs:label "P009"@en ;
+        ex:hasAge 37 ;
+        ex:hasGender "F" ;
+        ex:hasDiagnosis ex:Dengue_Fever .
+
+ex:V009 rdf:type ex:Visit ;  
+        rdfs:label "V009"@en ;
+        ex:hasPatient ex:P009 ;
+        ex:seenAt ex:CityClinic ;
+        ex:visitDate "2025-09-17"^^xsd:date ;
+        ex:prescribed ex:Paracetamol ;     # fever/headache
+        ex:prescribed ex:Ibuprofen .       # fever
+
+# Patient 10
+ex:P010 rdf:type ex:Patient ; 
+        rdfs:label "P010"@en ;
+        ex:hasAge 50 ;
+        ex:hasGender "M" ;
+        ex:hasDiagnosis ex:Type2_Diabetes .
+
+ex:V010 rdf:type ex:Visit ;  
+        rdfs:label "V010"@en ;
+        ex:hasPatient ex:P010 ;
+        ex:seenAt ex:GeneralHospital ;
+        ex:visitDate "2025-09-18"^^xsd:date ;
+        ex:prescribed ex:Folic_Acid ;      # fatigue
+        ex:prescribed ex:Iron_Supplements .# fatigue
+
+# Patient 11
+ex:P011 rdf:type ex:Patient ; 
+        rdfs:label "P011"@en ;
+        ex:hasAge 22 ;
+        ex:hasGender "F" ;
+        ex:hasDiagnosis ex:Chickenpox .
+
+ex:V011 rdf:type ex:Visit ;  
+        rdfs:label "V011"@en ;
+        ex:hasPatient ex:P011 ;
+        ex:seenAt ex:CityClinic ;
+        ex:visitDate "2025-09-18"^^xsd:date ;
+        ex:prescribed ex:Paracetamol ;
+        ex:prescribed ex:Loratadine .      
+
+# Patient 12
+ex:P012 rdf:type ex:Patient ; 
+        rdfs:label "P012"@en ;
+        ex:hasAge 39 ;
+        ex:hasGender "M" ;
+        ex:hasDiagnosis ex:Tuberculosis .
+
+ex:V012 rdf:type ex:Visit ;  
+        rdfs:label "V012"@en ;
+        ex:hasPatient ex:P012 ;
+        ex:seenAt ex:GeneralHospital ;
+        ex:visitDate "2025-09-19"^^xsd:date ;
+        ex:prescribed ex:Paracetamol ;
+        ex:prescribed ex:Guaifenesin .

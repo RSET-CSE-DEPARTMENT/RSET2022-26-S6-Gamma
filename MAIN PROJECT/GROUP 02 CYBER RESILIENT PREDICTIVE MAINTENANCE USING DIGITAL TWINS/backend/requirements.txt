@@ -1,0 +1,11 @@
+fastapi==0.110.1
+uvicorn==0.25.0
+numpy
+pandas
+scipy
+xgboost
+tensorflow
+matplotlib
+shap
+python-dotenv
+pydantic==2.12.4

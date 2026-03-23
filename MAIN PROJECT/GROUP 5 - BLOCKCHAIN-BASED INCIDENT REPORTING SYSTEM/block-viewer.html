@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Block & Incident Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        h1 { color: #4ec9b0; }
+        h2 { color: #569cd6; margin-top: 30px; }
+        .input-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: #252526;
+            border-radius: 5px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+            background: #3c3c3c;
+            color: #d4d4d4;
+            border: 1px solid #555;
+            border-radius: 3px;
+        }
+        input.wide { width: 450px; }
+        button {
+            padding: 10px 20px;
+            background: #0e639c;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #1177bb; }
+        .result {
+            background: #252526;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .key { color: #9cdcfe; }
+        .value { color: #ce9178; }
+        .number { color: #b5cea8; }
+        .error {
+            background: #3c1f1f;
+            border-left-color: #f48771;
+            color: #f48771;
+        }
+        .warning {
+            background: #3c3c1f;
+            border-left-color: #dcdcaa;
+            color: #dcdcaa;
+        }
+        .success {
+            background: #1f3c1f;
+            border-left-color: #4ec9b0;
+        }
+        pre {
+            background: #1e1e1e;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .incident-card {
+            background: #2d2d30;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #4ec9b0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Block & Incident Data Viewer</h1>
+    
+    <div class="input-group">
+        <h2>1. Contract Setup</h2>
+        <input type="text" id="contractAddress" class="wide" placeholder="Paste Contract Address Here">
+        <button onclick="setContract()">Connect to Contract</button>
+        <div id="contractStatus"></div>
+    </div>
+
+    <div class="input-group">
+        <h2>2. Find Which Incident is in Block 14</h2>
+        <input type="number" id="blockNumber" placeholder="Block #" value="14" style="width: 100px;">
+        <button onclick="findIncidentInBlock()">Find Incident in This Block</button>
+        <div id="blockIncidentResult"></div>
+    </div>
+
+    <div class="input-group">
+        <h2>3. View Incident Details</h2>
+        <input type="number" id="incidentId" placeholder="Incident ID" value="1" style="width: 100px;">
+        <button onclick="viewIncident()">Get Incident Data</button>
+        <button onclick="viewAllIncidents()">View All Incidents</button>
+        <div id="incidentResult"></div>
+    </div>
+
+    <script>
+        // Contract ABI
+        const contractABI = [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {"indexed": false, "internalType": "uint256", "name": "id", "type": "uint256"},
+                    {"indexed": false, "internalType": "string", "name": "lat", "type": "string"},
+                    {"indexed": false, "internalType": "string", "name": "lon", "type": "string"},
+                    {"indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256"}
+                ],
+                "name": "IncidentReported",
+                "type": "event"
+            },
+            {
+                "inputs": [],
+                "name": "incidentCount",
+                "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+                "stateMutability": "view",
+                "type": "function",
+                "constant": true
+            },
+            {
+                "inputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+                "name": "incidents",
+                "outputs": [
+                    {"internalType": "uint256", "name": "id", "type": "uint256"},
+                    {"internalType": "string", "name": "lat", "type": "string"},
+                    {"internalType": "string", "name": "lon", "type": "string"},
+                    {"internalType": "uint256", "name": "timestamp", "type": "uint256"}
+                ],
+                "stateMutability": "view",
+                "type": "function",
+                "constant": true
+            },
+            {
+                "inputs": [
+                    {"internalType": "string", "name": "_lat", "type": "string"},
+                    {"internalType": "string", "name": "_lon", "type": "string"}
+                ],
+                "name": "reportIncident",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [{"internalType": "uint256", "name": "_id", "type": "uint256"}],
+                "name": "getIncident",
+                "outputs": [
+                    {"internalType": "uint256", "name": "", "type": "uint256"},
+                    {"internalType": "string", "name": "", "type": "string"},
+                    {"internalType": "string", "name": "", "type": "string"},
+                    {"internalType": "uint256", "name": "", "type": "uint256"}
+                ],
+                "stateMutability": "view",
+                "type": "function",
+                "constant": true
+            }
+        ];
+
+        let web3;
+        let contract;
+        let contractAddr = "";
+
+        async function initWeb3() {
+            if (window.ethereum) {
+                web3 = new Web3(window.ethereum);
+                try {
+                    await ethereum.request({ method: 'eth_requestAccounts' });
+                    return true;
+                } catch (error) {
+                    showResult('contractStatus', `<div class="result error">MetaMask connection denied</div>`);
+                    return false;
+                }
+            } else {
+                showResult('contractStatus', `<div class="result error">MetaMask not found! Please install MetaMask.</div>`);
+                return false;
+            }
+        }
+
+        function showResult(elementId, html) {
+            document.getElementById(elementId).innerHTML = html;
+        }
+
+        async function setContract() {
+            contractAddr = document.getElementById('contractAddress').value.trim();
+            
+            if (!contractAddr) {
+                showResult('contractStatus', '<div class="result error">Please enter a contract address</div>');
+                return;
+            }
+
+            if (!await initWeb3()) return;
+
+            showResult('contractStatus', '<div class="result">Connecting to contract...</div>');
+
+            try {
+                contract = new web3.eth.Contract(contractABI, contractAddr);
+                
+                // Verify contract exists
+                const code = await web3.eth.getCode(contractAddr);
+                if (code === '0x' || code === '0x0') {
+                    showResult('contractStatus', 
+                        `<div class="result error">❌ No contract at this address!<br><br>` +
+                        `Make sure:<br>` +
+                        `1. Contract is deployed<br>` +
+                        `2. Address is correct<br>` +
+                        `3. You're on the right network (Ganache)</div>`
+                    );
+                    return;
+                }
+                
+                // Test reading incident count
+                const count = await contract.methods.incidentCount().call();
+                const accounts = await web3.eth.getAccounts();
+                const networkId = await web3.eth.net.getId();
+                
+                showResult('contractStatus', 
+                    `<div class="result success">✅ Contract Connected!<br><br>` +
+                    `<span class="key">Contract Address:</span> <span class="value">${contractAddr}</span><br>` +
+                    `<span class="key">Total Incidents:</span> <span class="number">${count}</span><br>` +
+                    `<span class="key">Your Account:</span> <span class="value">${accounts[0]}</span><br>` +
+                    `<span class="key">Network ID:</span> <span class="number">${networkId}</span>` +
+                    `</div>`
+                );
+            } catch (error) {
+                showResult('contractStatus', 
+                    `<div class="result error">❌ Error: ${error.message}<br><br>` +
+                    `This usually means:<br>` +
+                    `- Wrong contract address<br>` +
+                    `- Contract not deployed<br>` +
+                    `- Wrong network selected in MetaMask</div>`
+                );
+            }
+        }
+
+        async function findIncidentInBlock() {
+            if (!contract) {
+                showResult('blockIncidentResult', '<div class="result error">Please connect to contract first</div>');
+                return;
+            }
+
+            const blockNum = parseInt(document.getElementById('blockNumber').value);
+            
+            showResult('blockIncidentResult', '<div class="result">Searching block...</div>');
+
+            try {
+                // Get the block with transactions
+                const block = await web3.eth.getBlock(blockNum, true);
+                
+                if (!block) {
+                    showResult('blockIncidentResult', 
+                        `<div class="result error">Block ${blockNum} not found!<br>` +
+                        `Current block might be lower. Check Ganache.</div>`
+                    );
+                    return;
+                }
+
+                let html = `<div class="result">`;
+                html += `<h3>📦 Block ${blockNum} Details</h3>`;
+                html += `<span class="key">Timestamp:</span> <span class="value">${new Date(block.timestamp * 1000).toLocaleString()}</span><br>`;
+                html += `<span class="key">Hash:</span> <span class="value">${block.hash}</span><br>`;
+                html += `<span class="key">Transactions:</span> <span class="number">${block.transactions.length}</span><br><br>`;
+
+                if (block.transactions.length === 0) {
+                    html += `<div class="warning">No transactions in this block.</div>`;
+                    html += `</div>`;
+                    showResult('blockIncidentResult', html);
+                    return;
+                }
+
+                // Check each transaction for incident reports
+                let foundIncident = false;
+                
+                for (let i = 0; i < block.transactions.length; i++) {
+                    const tx = block.transactions[i];
+                    
+                    // Check if transaction is to our contract
+                    if (tx.to && tx.to.toLowerCase() === contractAddr.toLowerCase()) {
+                        html += `<h4>Transaction ${i + 1}:</h4>`;
+                        html += `<span class="key">Hash:</span> <span class="value">${tx.hash}</span><br>`;
+                        html += `<span class="key">From:</span> <span class="value">${tx.from}</span><br><br>`;
+                        
+                        // Get transaction receipt to see events
+                        const receipt = await web3.eth.getTransactionReceipt(tx.hash);
+                        
+                        if (receipt.logs && receipt.logs.length > 0) {
+                            // Try to decode the event
+                            try {
+                                const decoded = web3.eth.abi.decodeLog(
+                                    [
+                                        {type: 'uint256', name: 'id'},
+                                        {type: 'string', name: 'lat'},
+                                        {type: 'string', name: 'lon'},
+                                        {type: 'uint256', name: 'timestamp'}
+                                    ],
+                                    receipt.logs[0].data,
+                                    receipt.logs[0].topics.slice(1)
+                                );
+                                
+                                html += `<div class="success">✅ Found Incident Report!</div><br>`;
+                                html += `<span class="key">Incident ID:</span> <span class="number">${decoded.id}</span><br>`;
+                                html += `<span class="key">Latitude:</span> <span class="value">${decoded.lat}</span><br>`;
+                                html += `<span class="key">Longitude:</span> <span class="value">${decoded.lon}</span><br>`;
+                                html += `<span class="key">Timestamp:</span> <span class="number">${decoded.timestamp}</span><br>`;
+                                html += `<span class="key">Date:</span> <span class="value">${new Date(decoded.timestamp * 1000).toLocaleString()}</span><br>`;
+                                
+                                if (decoded.lat && decoded.lon) {
+                                    html += `<br><a href="https://www.google.com/maps?q=${decoded.lat},${decoded.lon}" target="_blank" style="color: #4ec9b0;">📍 View on Google Maps</a>`;
+                                }
+                                
+                                foundIncident = true;
+                                
+                                // Auto-fill the incident ID field
+                                document.getElementById('incidentId').value = decoded.id;
+                                
+                            } catch (decodeError) {
+                                html += `<div class="warning">Transaction found but couldn't decode event data.</div>`;
+                                console.log('Decode error:', decodeError);
+                            }
+                        }
+                    }
+                }
+                
+                if (!foundIncident) {
+                    html += `<div class="warning">No incident reports found in this block.<br>` +
+                           `The transaction might be for a different contract.</div>`;
+                }
+                
+                html += `</div>`;
+                showResult('blockIncidentResult', html);
+
+            } catch (error) {
+                showResult('blockIncidentResult', 
+                    `<div class="result error">Error: ${error.message}</div>`
+                );
+                console.error('Full error:', error);
+            }
+        }
+
+        async function viewIncident() {
+            if (!contract) {
+                showResult('incidentResult', '<div class="result error">Please connect to contract first</div>');
+                return;
+            }
+
+            const incidentId = parseInt(document.getElementById('incidentId').value);
+            
+            if (incidentId < 1) {
+                showResult('incidentResult', '<div class="result error">Incident ID must be 1 or greater</div>');
+                return;
+            }
+
+            showResult('incidentResult', '<div class="result">Loading incident...</div>');
+
+            try {
+                const incident = await contract.methods.getIncident(incidentId).call();
+                
+                // Check if incident exists
+                if (!incident[0] || incident[0] == 0) {
+                    showResult('incidentResult', 
+                        `<div class="result error">❌ Incident #${incidentId} does not exist!<br><br>` +
+                        `Try clicking "View All Incidents" to see what's available.</div>`
+                    );
+                    return;
+                }
+                
+                const timestamp = parseInt(incident[3]);
+                
+                let html = `<div class="result">`;
+                html += `<h3>📍 Incident #${incident[0]}</h3>`;
+                html += `<span class="key">ID:</span> <span class="number">${incident[0]}</span><br>`;
+                html += `<span class="key">Latitude:</span> <span class="value">${incident[1] || 'N/A'}</span><br>`;
+                html += `<span class="key">Longitude:</span> <span class="value">${incident[2] || 'N/A'}</span><br>`;
+                html += `<span class="key">Timestamp:</span> <span class="number">${timestamp}</span><br>`;
+                html += `<span class="key">Date:</span> <span class="value">${new Date(timestamp * 1000).toLocaleString()}</span><br>`;
+
+                if (incident[1] && incident[2]) {
+                    html += `<br><a href="https://www.google.com/maps?q=${incident[1]},${incident[2]}" target="_blank" style="color: #4ec9b0;">📍 View on Google Maps →</a>`;
+                } else {
+                    html += `<br><div class="warning">⚠️ No coordinates stored for this incident</div>`;
+                }
+
+                html += `</div>`;
+                showResult('incidentResult', html);
+
+            } catch (error) {
+                showResult('incidentResult', 
+                    `<div class="result error">Error: ${error.message}<br><br>` +
+                    `This incident might not exist yet.</div>`
+                );
+                console.error('Full error:', error);
+            }
+        }
+
+        async function viewAllIncidents() {
+            if (!contract) {
+                showResult('incidentResult', '<div class="result error">Please connect to contract first</div>');
+                return;
+            }
+
+            showResult('incidentResult', '<div class="result">Loading all incidents...</div>');
+
+            try {
+                const count = await contract.methods.incidentCount().call();
+                
+                if (count == 0) {
+                    showResult('incidentResult', 
+                        `<div class="result warning">No incidents have been reported yet.<br><br>` +
+                        `Go to report.html to create your first incident!</div>`
+                    );
+                    return;
+                }
+
+                let html = `<div class="result">`;
+                html += `<h3>📊 All Incidents (${count} total)</h3><br>`;
+
+                for (let i = 1; i <= count; i++) {
+                    const incident = await contract.methods.getIncident(i).call();
+                    const timestamp = parseInt(incident[3]);
+                    
+                    html += `<div class="incident-card">`;
+                    html += `<h4>Incident #${incident[0]}</h4>`;
+                    html += `<span class="key">Coordinates:</span> <span class="value">${incident[1] || 'N/A'}, ${incident[2] || 'N/A'}</span><br>`;
+                    html += `<span class="key">Reported:</span> <span class="value">${new Date(timestamp * 1000).toLocaleString()}</span><br>`;
+                    
+                    if (incident[1] && incident[2]) {
+                        html += `<a href="https://www.google.com/maps?q=${incident[1]},${incident[2]}" target="_blank" style="color: #569cd6;">View on Map →</a>`;
+                    }
+                    html += `</div>`;
+                }
+
+                html += `</div>`;
+                showResult('incidentResult', html);
+
+            } catch (error) {
+                showResult('incidentResult', 
+                    `<div class="result error">Error: ${error.message}</div>`
+                );
+                console.error('Full error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

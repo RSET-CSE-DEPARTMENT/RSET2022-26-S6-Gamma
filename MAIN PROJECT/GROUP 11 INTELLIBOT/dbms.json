@@ -1,0 +1,1103 @@
+{
+  "courseName": "DATABASE MANAGEMENT SYSTEMS",
+  "courseCode": "101003/CS400C",
+  "modules": [
+   {
+  "module_number": 1,
+  "module_title": "Introduction & Entity Relationship (ER) Model",
+  "topics": [
+    {
+      "topic_name": "Concept and Overview of Database Management Systems",
+      "content": {
+        "question": "What is a Database Management System (DBMS)?",
+        "summary": "A Database Management System (DBMS) is software that enables users to define, create, maintain, and control access to databases efficiently.",
+        "key_points": [
+          "A database represents a real-world miniworld.",
+          "DBMS supports data definition, construction, manipulation, and sharing.",
+          "Provides abstraction between users and physical data storage."
+        ],
+        "detailed_explanation": "A DBMS is a general-purpose software system that allows users to store and manage data in a structured manner. It provides mechanisms to define the structure of data, store data persistently, retrieve data using queries, and update data while maintaining correctness and security. It acts as an interface between users and stored data.",
+        "example": "A university database storing information about students, courses, and grades.",
+        "static_image_url": null,
+        "image_search_query": "dbms overview diagram"
+      }
+    },
+    {
+      "topic_name": "Characteristics of Database Systems",
+      "content": {
+        "question": "What are the key characteristics of a database system?",
+        "summary": "Database systems possess features that distinguish them from traditional file-based systems.",
+        "key_points": [
+          "Self-describing nature of databases",
+          "Program-data independence",
+          "Support for multiple views",
+          "Multi-user transaction processing"
+        ],
+        "detailed_explanation": "A DBMS stores both data and metadata, allowing applications to be independent of data structure changes. Multiple users can access the database concurrently while maintaining consistency. The system also allows different users to view the same data in different ways.",
+        "example": "Students, teachers, and administrators accessing the same university database differently.",
+        "static_image_url": null,
+        "image_search_query": "characteristics of dbms"
+      }
+    },
+    {
+      "topic_name": "Database Users",
+      "content": {
+        "question": "Who are the different types of database users?",
+        "summary": "Database users are categorized based on how they interact with the database system.",
+        "key_points": [
+          "End users",
+          "Application programmers",
+          "Database administrators (DBA)",
+          "System designers"
+        ],
+        "detailed_explanation": "End users interact with databases through applications or queries. Application programmers write programs that access the database. Database administrators manage security, performance, and maintenance. System designers design the database schema.",
+        "example": "A DBA managing user privileges in a bank database.",
+        "static_image_url": null,
+        "image_search_query": "types of database users"
+      }
+    },
+    {
+      "topic_name": "Structured, Semi-Structured and Unstructured Data",
+      "content": {
+        "question": "What are structured, semi-structured, and unstructured data?",
+        "summary": "Data can be classified based on how strictly it follows a predefined schema.",
+        "key_points": [
+          "Structured data follows fixed schemas",
+          "Semi-structured data has flexible schemas",
+          "Unstructured data has no predefined structure"
+        ],
+        "detailed_explanation": "Structured data is stored in tables with fixed formats. Semi-structured data such as XML or JSON allows flexible attributes. Unstructured data includes text, images, audio, and video without a fixed format.",
+        "example": "Relational tables, JSON documents, and image files respectively.",
+        "static_image_url": null,
+        "image_search_query": "structured vs unstructured data"
+      }
+    },
+    {
+      "topic_name": "Data Models and Database Schema",
+      "content": {
+        "question": "What are data models and schemas in DBMS?",
+        "summary": "Data models define how data is organized, while schemas describe database structure.",
+        "key_points": [
+          "Conceptual, logical, and physical data models",
+          "Schema defines structure, not data",
+          "Instance represents current database state"
+        ],
+        "detailed_explanation": "A data model provides concepts for describing data structure. The schema defines tables, attributes, and constraints, while database instances change over time as data is updated.",
+        "example": "ER schema vs actual student records stored in the database.",
+        "static_image_url": null,
+        "image_search_query": "data model schema dbms"
+      }
+    },
+    {
+      "topic_name": "Three-Schema Architecture",
+      "content": {
+        "question": "What is the three-schema architecture in DBMS?",
+        "summary": "The three-schema architecture separates user views from physical storage.",
+        "key_points": [
+          "External schema",
+          "Conceptual schema",
+          "Internal schema",
+          "Logical and physical data independence"
+        ],
+        "detailed_explanation": "External schema represents user views, conceptual schema defines logical structure, and internal schema describes physical storage. This separation provides data independence.",
+        "example": "Changing storage format without affecting user queries.",
+        "static_image_url": null,
+        "image_search_query": "three schema architecture dbms"
+      }
+    },
+    {
+      "topic_name": "Database Languages",
+      "content": {
+        "question": "What are the different database languages?",
+        "summary": "Database languages allow users to define, manipulate, and control databases.",
+        "key_points": [
+          "Data Definition Language (DDL)",
+          "Data Manipulation Language (DML)",
+          "Data Control Language (DCL)",
+          "Transaction Control Language (TCL)"
+        ],
+        "detailed_explanation": "DDL defines database structure, DML retrieves and modifies data, DCL controls access permissions, and TCL manages transactions.",
+        "example": "CREATE, SELECT, GRANT, COMMIT commands.",
+        "static_image_url": null,
+        "image_search_query": "dbms languages ddl dml"
+      }
+    },
+    {
+      "topic_name": "Database Architecture and Classification",
+      "content": {
+        "question": "How are database systems classified?",
+        "summary": "Database systems can be classified based on architecture and usage.",
+        "key_points": [
+          "Centralized databases",
+          "Client-server databases",
+          "Distributed databases"
+        ],
+        "detailed_explanation": "Centralized systems store data at one location. Client-server systems divide processing between clients and servers. Distributed databases store data across multiple sites.",
+        "example": "Cloud-based distributed databases.",
+        "static_image_url": null,
+        "image_search_query": "database architecture types"
+      }
+    },
+    {
+      "topic_name": "Basic Concepts of ER Model",
+      "content": {
+        "question": "What are the basic concepts of the ER model?",
+        "summary": "ER model uses entities, attributes, and relationships to model data.",
+        "key_points": [
+          "Entity sets",
+          "Attributes",
+          "Relationship sets",
+          "Keys"
+        ],
+        "detailed_explanation": "Entities represent objects, attributes describe properties, and relationships define associations between entities.",
+        "example": "STUDENT entity with attributes like ID and Name.",
+        "static_image_url": null,
+        "image_search_query": "er model basics"
+      }
+    },
+    {
+      "topic_name": "Relationships and Constraints in ER Model",
+      "content": {
+        "question": "What are relationship constraints in ER diagrams?",
+        "summary": "Constraints define how entities participate in relationships.",
+        "key_points": [
+          "Cardinality constraints",
+          "Participation constraints",
+          "Degree of relationships"
+        ],
+        "detailed_explanation": "Cardinality specifies how many entities can participate, participation defines mandatory or optional involvement, and degree indicates the number of entity sets involved.",
+        "example": "One-to-many relationship between DEPARTMENT and STUDENT.",
+        "static_image_url": null,
+        "image_search_query": "er relationship constraints"
+      }
+    },
+    {
+      "topic_name": "Weak Entities and Higher Degree Relationships",
+      "content": {
+        "question": "What are weak entities and higher-degree relationships?",
+        "summary": "Weak entities depend on strong entities and higher-degree relationships involve more than two entity sets.",
+        "key_points": [
+          "Weak entities lack primary keys",
+          "Identifying relationships",
+          "Ternary relationships"
+        ],
+        "detailed_explanation": "Weak entities are identified using partial keys and identifying relationships. Relationships of degree three or more model complex associations.",
+        "example": "DEPENDENT entity related to EMPLOYEE.",
+        "static_image_url": null,
+        "image_search_query": "weak entity er diagram"
+      }
+    }
+  ]
+},
+{
+  "module_number": 2,
+  "module_title": "Relational Model",
+  "topics": [
+    {
+      "topic_name": "Structure of Relational Databases",
+      "content": {
+        "question": "What is the structure of a relational database?",
+        "summary": "A relational database stores data in the form of relations, which are tables consisting of rows and columns.",
+        "key_points": [
+          "Relation represents a table",
+          "Tuple represents a row",
+          "Attribute represents a column",
+          "Domain defines allowable values"
+        ],
+        "detailed_explanation": "In the relational model, data is organized into relations. Each relation has a schema that defines its attributes and domains. Each row in a relation is called a tuple, and each column is an attribute. The relational model provides a simple and intuitive way to represent data.",
+        "example": "A STUDENT relation with attributes StudentID, Name, and Department.",
+        "static_image_url": null,
+        "image_search_query": "relational database table structure"
+      }
+    },
+    {
+      "topic_name": "Integrity Constraints in Relational Databases",
+      "content": {
+        "question": "What are integrity constraints in the relational model?",
+        "summary": "Integrity constraints ensure the accuracy and consistency of data stored in a relational database.",
+        "key_points": [
+          "Domain constraints",
+          "Key constraints",
+          "Entity integrity constraint",
+          "Referential integrity constraint"
+        ],
+        "detailed_explanation": "Domain constraints restrict attribute values to a valid set. Key constraints ensure uniqueness of tuples. Entity integrity requires that primary key values cannot be null. Referential integrity ensures that foreign keys correctly reference existing tuples in related relations.",
+        "example": "Foreign key StudentID in ENROLLMENT referencing STUDENT table.",
+        "static_image_url": null,
+        "image_search_query": "referential integrity example"
+      }
+    },
+    {
+      "topic_name": "Mapping ER Diagrams to Relational Schema",
+      "content": {
+        "question": "How are ER diagrams converted into relational schemas?",
+        "summary": "ER-to-relational mapping transforms conceptual designs into relational database schemas.",
+        "key_points": [
+          "Mapping of strong entities",
+          "Mapping of weak entities",
+          "Mapping of relationships",
+          "Mapping of multivalued attributes"
+        ],
+        "detailed_explanation": "Strong entities are mapped to relations with primary keys. Weak entities include foreign keys from identifying relationships. Binary relationships are mapped using foreign keys or separate relations depending on cardinality. Multivalued attributes require separate relations.",
+        "example": "Mapping STUDENT and COURSE entities into relational tables.",
+        "static_image_url": null,
+        "image_search_query": "er to relational mapping example"
+      }
+    },
+    {
+      "topic_name": "Introduction to Relational Algebra",
+      "content": {
+        "question": "What is relational algebra?",
+        "summary": "Relational algebra is a procedural query language that defines a set of operations on relations.",
+        "key_points": [
+          "Foundation of relational query processing",
+          "Closed set of operations",
+          "Operates on relations"
+        ],
+        "detailed_explanation": "Relational algebra provides a formal framework for querying relational databases. Each operation takes one or more relations as input and produces a relation as output, making it closed under relational operations.",
+        "example": "Selecting rows from a relation using a condition.",
+        "static_image_url": null,
+        "image_search_query": "relational algebra concept"
+      }
+    },
+    {
+      "topic_name": "Selection and Projection Operations",
+      "content": {
+        "question": "What are selection and projection operations in relational algebra?",
+        "summary": "Selection and projection are basic unary operations used to filter rows and columns.",
+        "key_points": [
+          "Selection filters tuples",
+          "Projection filters attributes",
+          "Does not modify original relation"
+        ],
+        "detailed_explanation": "Selection operation retrieves tuples that satisfy a given predicate. Projection operation retrieves specified attributes and removes duplicate tuples from the result.",
+        "example": "Selecting CS students and projecting their names.",
+        "static_image_url": null,
+        "image_search_query": "selection projection relational algebra"
+      }
+    },
+    {
+      "topic_name": "Cartesian Product Operation",
+      "content": {
+        "question": "What is the cartesian product operation?",
+        "summary": "Cartesian product combines tuples from two relations into a single relation.",
+        "key_points": [
+          "Combines all tuples from both relations",
+          "Results in large relations",
+          "Used as basis for join operations"
+        ],
+        "detailed_explanation": "The cartesian product pairs every tuple of one relation with every tuple of another relation. It is rarely used directly due to its size but forms the basis for join operations.",
+        "example": "Combining STUDENT and COURSE relations.",
+        "static_image_url": null,
+        "image_search_query": "cartesian product relational algebra"
+      }
+    },
+    {
+      "topic_name": "Join Operations",
+      "content": {
+        "question": "What are join operations in relational algebra?",
+        "summary": "Join operations combine related tuples from two relations based on a condition.",
+        "key_points": [
+          "Equi-join uses equality condition",
+          "Natural join removes duplicate attributes",
+          "Derived from selection and cartesian product"
+        ],
+        "detailed_explanation": "Joins retrieve meaningful combinations of tuples from multiple relations. Natural join automatically matches attributes with the same name and eliminates duplicate columns in the result.",
+        "example": "Joining STUDENT and ENROLLMENT relations.",
+        "static_image_url": null,
+        "image_search_query": "natural join equi join example"
+      }
+    },
+    {
+      "topic_name": "Introduction to SQL",
+      "content": {
+        "question": "What is SQL and why is it used?",
+        "summary": "SQL is a standard language for interacting with relational databases.",
+        "key_points": [
+          "Declarative query language",
+          "Used for data definition and manipulation",
+          "Industry standard"
+        ],
+        "detailed_explanation": "SQL allows users to specify what data is needed rather than how to retrieve it. It is supported by all major relational database systems.",
+        "example": "SELECT * FROM STUDENT;",
+        "static_image_url": null,
+        "image_search_query": "sql query example"
+      }
+    },
+    {
+      "topic_name": "SQL Data Definition Language (DDL)",
+      "content": {
+        "question": "What is SQL DDL?",
+        "summary": "DDL is used to define and modify database schemas.",
+        "key_points": [
+          "CREATE statement",
+          "DROP statement",
+          "ALTER statement"
+        ],
+        "detailed_explanation": "DDL commands define database objects such as tables and constraints. They are used to create new structures, modify existing ones, or remove them.",
+        "example": "CREATE TABLE STUDENT (...);",
+        "static_image_url": null,
+        "image_search_query": "sql ddl commands"
+      }
+    },
+    {
+      "topic_name": "SQL Table Operations and Data Manipulation",
+      "content": {
+        "question": "What are basic SQL table operations?",
+        "summary": "SQL supports inserting, deleting, and updating table data.",
+        "key_points": [
+          "INSERT statement",
+          "DELETE statement",
+          "UPDATE statement"
+        ],
+        "detailed_explanation": "INSERT adds new tuples, DELETE removes existing tuples, and UPDATE modifies attribute values in existing tuples. These operations must satisfy integrity constraints.",
+        "example": "INSERT INTO STUDENT VALUES (101, 'Anu', 'CS');",
+        "static_image_url": null,
+        "image_search_query": "sql insert delete update"
+      }
+    }
+  ]
+},
+{
+  "module_number": 3,
+  "module_title": "SQL DML and Physical Data Organization",
+  "topics": [
+    {
+      "topic_name": "SQL Data Manipulation Language (DML)",
+      "content": {
+        "question": "What is SQL Data Manipulation Language (DML)?",
+        "summary": "SQL DML is used to retrieve and manipulate data stored in relational database tables.",
+        "key_points": [
+          "Used for querying and modifying data",
+          "Includes SELECT, INSERT, UPDATE, DELETE",
+          "Works on existing database tables"
+        ],
+        "detailed_explanation": "Data Manipulation Language allows users to access and modify the contents of database tables. Unlike DDL, which defines structure, DML focuses on data itself. These operations must satisfy integrity constraints defined in the schema.",
+        "example": "SELECT * FROM STUDENT;",
+        "static_image_url": null,
+        "image_search_query": "sql dml commands"
+      }
+    },
+    {
+      "topic_name": "SQL Queries on Single Table",
+      "content": {
+        "question": "How are SQL queries executed on a single table?",
+        "summary": "Single-table queries retrieve data from one table using selection, projection, and conditions.",
+        "key_points": [
+          "SELECT clause specifies attributes",
+          "WHERE clause specifies conditions",
+          "ORDER BY sorts results"
+        ],
+        "detailed_explanation": "Single-table queries form the basis of SQL. Conditions can use comparison operators, logical operators, and pattern matching. Results can be sorted or filtered as required.",
+        "example": "SELECT Name FROM STUDENT WHERE Department = 'CS';",
+        "static_image_url": null,
+        "image_search_query": "sql single table query"
+      }
+    },
+    {
+      "topic_name": "SQL Queries on Multiple Tables",
+      "content": {
+        "question": "How are SQL queries written on multiple tables?",
+        "summary": "Multi-table queries retrieve data by combining rows from related tables.",
+        "key_points": [
+          "Uses JOIN conditions",
+          "Relies on foreign key relationships",
+          "Supports inner joins"
+        ],
+        "detailed_explanation": "Multiple tables are combined using join conditions specified in the WHERE clause or JOIN syntax. These queries retrieve related data spread across multiple relations.",
+        "example": "SELECT Student.Name, Course.Course_name FROM STUDENT, COURSE WHERE STUDENT.CourseID = COURSE.CourseID;",
+        "static_image_url": null,
+        "image_search_query": "sql join multiple tables"
+      }
+    },
+    {
+      "topic_name": "Nested Queries",
+      "content": {
+        "question": "What are nested queries in SQL?",
+        "summary": "Nested queries are SQL queries written inside another query.",
+        "key_points": [
+          "Inner query executes first",
+          "Can be correlated or non-correlated",
+          "Used in WHERE or FROM clause"
+        ],
+        "detailed_explanation": "A nested query returns a result that is used by the outer query. Non-correlated subqueries are executed once, while correlated subqueries are executed repeatedly for each row processed by the outer query.",
+        "example": "SELECT Name FROM STUDENT WHERE Dept IN (SELECT Dept FROM COURSE);",
+        "static_image_url": null,
+        "image_search_query": "sql nested query example"
+      }
+    },
+    {
+      "topic_name": "Aggregation and Grouping",
+      "content": {
+        "question": "How does SQL perform aggregation and grouping?",
+        "summary": "Aggregation functions compute summary values over a set of tuples.",
+        "key_points": [
+          "COUNT, SUM, AVG, MIN, MAX",
+          "GROUP BY groups tuples",
+          "HAVING filters groups"
+        ],
+        "detailed_explanation": "Aggregate functions operate on groups of rows rather than individual rows. GROUP BY groups tuples based on attributes, and HAVING applies conditions on aggregated results.",
+        "example": "SELECT Dept, COUNT(*) FROM STUDENT GROUP BY Dept;",
+        "static_image_url": null,
+        "image_search_query": "sql group by having example"
+      }
+    },
+    {
+      "topic_name": "Views",
+      "content": {
+        "question": "What are views in SQL?",
+        "summary": "A view is a virtual table derived from one or more base tables.",
+        "key_points": [
+          "Does not store data physically",
+          "Simplifies complex queries",
+          "Enhances security"
+        ],
+        "detailed_explanation": "Views are defined using SELECT queries and present customized data to users. They help hide sensitive information and provide abstraction.",
+        "example": "CREATE VIEW CS_STUDENTS AS SELECT * FROM STUDENT WHERE Dept='CS';",
+        "static_image_url": null,
+        "image_search_query": "sql views example"
+      }
+    },
+    {
+      "topic_name": "Assertions and Triggers",
+      "content": {
+        "question": "What are assertions and triggers in SQL?",
+        "summary": "Assertions and triggers enforce database constraints and automatic actions.",
+        "key_points": [
+          "Assertions define global constraints",
+          "Triggers execute automatically",
+          "Used for maintaining integrity"
+        ],
+        "detailed_explanation": "Assertions specify conditions that must always be true in the database. Triggers are procedural code executed automatically in response to INSERT, UPDATE, or DELETE operations.",
+        "example": "Trigger to prevent negative account balance.",
+        "static_image_url": null,
+        "image_search_query": "sql trigger example"
+      }
+    },
+    {
+      "topic_name": "SQL Data Types",
+      "content": {
+        "question": "What are SQL data types?",
+        "summary": "SQL data types define the type and range of values an attribute can store.",
+        "key_points": [
+          "Numeric data types",
+          "Character data types",
+          "Date and time data types"
+        ],
+        "detailed_explanation": "SQL supports various data types such as INTEGER, FLOAT, CHAR, VARCHAR, DATE, and TIME. Choosing appropriate data types improves storage efficiency and data integrity.",
+        "example": "StudentID INTEGER, Name VARCHAR(30).",
+        "static_image_url": null,
+        "image_search_query": "sql data types"
+      }
+    },
+    {
+      "topic_name": "Physical and Logical Records",
+      "content": {
+        "question": "What are physical and logical records?",
+        "summary": "Logical records represent data as seen by users, while physical records represent stored data on disk.",
+        "key_points": [
+          "Logical records define schema-level data",
+          "Physical records define storage-level data",
+          "Mapped by DBMS"
+        ],
+        "detailed_explanation": "Logical records correspond to tuples in relations, whereas physical records are stored in disk blocks. DBMS maps logical records to physical storage structures.",
+        "example": "Student tuple stored across disk blocks.",
+        "static_image_url": null,
+        "image_search_query": "logical vs physical record dbms"
+      }
+    },
+    {
+      "topic_name": "Blocking Factor and Record Organization",
+      "content": {
+        "question": "What is blocking factor in physical data organization?",
+        "summary": "Blocking factor determines how many records can be stored in a disk block.",
+        "key_points": [
+          "Depends on block size",
+          "Affects disk I/O efficiency",
+          "Used in performance analysis"
+        ],
+        "detailed_explanation": "Blocking factor is the number of records that fit into one disk block. Higher blocking factor reduces disk access time and improves efficiency.",
+        "example": "Four records stored per disk block.",
+        "static_image_url": null,
+        "image_search_query": "blocking factor dbms"
+      }
+    },
+    {
+      "topic_name": "Pinned and Unpinned Organization",
+      "content": {
+        "question": "What are pinned and unpinned record organizations?",
+        "summary": "Pinned organization fixes records to blocks, while unpinned allows record movement.",
+        "key_points": [
+          "Pinned records do not move",
+          "Unpinned records improve flexibility",
+          "Used in storage optimization"
+        ],
+        "detailed_explanation": "Pinned records maintain fixed addresses, simplifying access but limiting flexibility. Unpinned records allow relocation for better space utilization.",
+        "example": "Unpinned records during file reorganization.",
+        "static_image_url": null,
+        "image_search_query": "pinned unpinned record organization"
+      }
+    },
+    {
+      "topic_name": "Heap Files",
+      "content": {
+        "question": "What are heap files in DBMS?",
+        "summary": "Heap files store records in an unordered manner.",
+        "key_points": [
+          "Fast insertion",
+          "Slow search",
+          "No ordering maintained"
+        ],
+        "detailed_explanation": "Heap files allow records to be placed anywhere with available space. They are simple to implement but inefficient for searching without indexing.",
+        "example": "Unordered student records stored in heap file.",
+        "static_image_url": null,
+        "image_search_query": "heap file organization"
+      }
+    },
+    {
+      "topic_name": "Indexing and Single-Level Indices",
+      "content": {
+        "question": "What is indexing and how do single-level indices work?",
+        "summary": "Indexing improves data retrieval performance by maintaining auxiliary access structures.",
+        "key_points": [
+          "Index stores search key and pointers",
+          "Primary and secondary indices",
+          "Reduces disk access time"
+        ],
+        "detailed_explanation": "Single-level indices maintain a single index structure pointing to data blocks. They significantly reduce search time compared to sequential scanning.",
+        "example": "Index on StudentID for fast lookup.",
+        "static_image_url": null,
+        "image_search_query": "single level index dbms"
+      }
+    },
+    {
+      "topic_name": "Multi-Level Indices",
+      "content": {
+        "question": "What are multi-level indices?",
+        "summary": "Multi-level indices organize indices hierarchically to improve search efficiency.",
+        "key_points": [
+          "Index on index",
+          "Reduces index size",
+          "Improves performance"
+        ],
+        "detailed_explanation": "Multi-level indexing builds an index hierarchy where higher levels index lower-level indices. This approach reduces the number of disk accesses needed for search.",
+        "example": "Two-level index structure.",
+        "static_image_url": null,
+        "image_search_query": "multi level index dbms"
+      }
+    },
+    {
+      "topic_name": "B-Trees and B+ Trees",
+      "content": {
+        "question": "What are B-Trees and B+ Trees?",
+        "summary": "B-Trees and B+ Trees are balanced tree structures used for indexing.",
+        "key_points": [
+          "Balanced search trees",
+          "Efficient insertion and deletion",
+          "B+ Tree stores data pointers at leaf level"
+        ],
+        "detailed_explanation": "B-Trees store keys and pointers in internal nodes, while B+ Trees store all data pointers at leaf nodes. B+ Trees are widely used due to efficient range queries.",
+        "example": "Index structure in commercial DBMS.",
+        "static_image_url": null,
+        "image_search_query": "b tree b plus tree structure"
+      }
+    },
+    {
+      "topic_name": "Extendible Hashing",
+      "content": {
+        "question": "What is extendible hashing?",
+        "summary": "Extendible hashing is a dynamic hashing technique that grows and shrinks with data.",
+        "key_points": [
+          "Uses directory structure",
+          "Avoids overflow chains",
+          "Supports dynamic growth"
+        ],
+        "detailed_explanation": "Extendible hashing uses a directory indexed by hash values to dynamically allocate buckets. It handles insertions efficiently without frequent reorganization.",
+        "example": "Directory doubling in extendible hashing.",
+        "static_image_url": null,
+        "image_search_query": "extendible hashing example"
+      }
+    },
+    {
+      "topic_name": "Indexing on Multiple Keys – Grid Files",
+      "content": {
+        "question": "What are grid files in DBMS?",
+        "summary": "Grid files support indexing on multiple attributes simultaneously.",
+        "key_points": [
+          "Multidimensional indexing",
+          "Uses grid directory",
+          "Efficient multi-key access"
+        ],
+        "detailed_explanation": "Grid files divide data space into regions based on attribute values. They allow efficient access when queries involve multiple search attributes.",
+        "example": "Indexing student records by Department and Year.",
+        "static_image_url": null,
+        "image_search_query": "grid file indexing dbms"
+      }
+    }
+  ]
+},
+{
+  "module_number": 4,
+  "module_title": "Normalization",
+  "topics": [
+    {
+      "topic_name": "Anomalies in Database Design",
+      "content": {
+        "question": "What are anomalies in database design?",
+        "summary": "Anomalies are undesirable effects that occur in poorly designed databases due to redundancy.",
+        "key_points": [
+          "Insertion anomaly",
+          "Deletion anomaly",
+          "Update anomaly"
+        ],
+        "detailed_explanation": "Insertion anomaly occurs when certain data cannot be inserted without the presence of other data. Deletion anomaly occurs when deletion of data unintentionally removes additional information. Update anomaly occurs when changes to data must be applied in multiple places, leading to inconsistency.",
+        "example": "Deleting a course record removes information about enrolled students.",
+        "static_image_url": null,
+        "image_search_query": "database anomalies example"
+      }
+    },
+    {
+      "topic_name": "Concept of Normalization",
+      "content": {
+        "question": "What is normalization in DBMS?",
+        "summary": "Normalization is the process of organizing database relations to reduce redundancy and improve data integrity.",
+        "key_points": [
+          "Eliminates redundancy",
+          "Prevents anomalies",
+          "Improves data consistency"
+        ],
+        "detailed_explanation": "Normalization systematically decomposes relations based on functional dependencies. It ensures that each fact is stored in one place, leading to efficient and reliable database designs.",
+        "example": "Separating STUDENT and COURSE details into different tables.",
+        "static_image_url": null,
+        "image_search_query": "database normalization process"
+      }
+    },
+    {
+      "topic_name": "Functional Dependency",
+      "content": {
+        "question": "What is a functional dependency?",
+        "summary": "A functional dependency describes a relationship between attributes in a relation.",
+        "key_points": [
+          "Denoted as X → Y",
+          "X determines Y",
+          "Used to identify redundancy"
+        ],
+        "detailed_explanation": "A functional dependency X → Y holds if for any two tuples with the same X value, they must have the same Y value. Functional dependencies are central to normalization.",
+        "example": "StudentID → StudentName.",
+        "static_image_url": null,
+        "image_search_query": "functional dependency dbms"
+      }
+    },
+    {
+      "topic_name": "Armstrong’s Axioms",
+      "content": {
+        "question": "What are Armstrong’s axioms?",
+        "summary": "Armstrong’s axioms are inference rules used to derive functional dependencies.",
+        "key_points": [
+          "Reflexivity",
+          "Augmentation",
+          "Transitivity"
+        ],
+        "detailed_explanation": "These axioms provide a sound and complete set of rules to infer all functional dependencies from a given set. Proofs are not required as per syllabus.",
+        "example": "If A → B and B → C, then A → C.",
+        "static_image_url": null,
+        "image_search_query": "armstrong axioms functional dependency"
+      }
+    },
+    {
+      "topic_name": "Closure of Functional Dependencies",
+      "content": {
+        "question": "What is closure in functional dependency?",
+        "summary": "Closure is the set of attributes functionally determined by a given attribute set.",
+        "key_points": [
+          "Attribute closure",
+          "FD closure",
+          "Used in normalization"
+        ],
+        "detailed_explanation": "Attribute closure determines all attributes that can be functionally determined from a given set of attributes. It is useful for finding candidate keys and checking dependencies.",
+        "example": "Computing closure of StudentID.",
+        "static_image_url": null,
+        "image_search_query": "attribute closure dbms"
+      }
+    },
+    {
+      "topic_name": "Equivalence of Functional Dependencies",
+      "content": {
+        "question": "When are two sets of functional dependencies equivalent?",
+        "summary": "Two sets of functional dependencies are equivalent if they imply the same constraints.",
+        "key_points": [
+          "F+ equivalence",
+          "Same closures",
+          "Same constraints"
+        ],
+        "detailed_explanation": "Two sets of functional dependencies are equivalent if the closure of each set implies the other. Proofs are not required as per syllabus.",
+        "example": "Two different FD sets producing same closure.",
+        "static_image_url": null,
+        "image_search_query": "equivalence of functional dependencies"
+      }
+    },
+    {
+      "topic_name": "Minimal Cover",
+      "content": {
+        "question": "What is a minimal cover?",
+        "summary": "A minimal cover is a simplified set of functional dependencies with no redundancy.",
+        "key_points": [
+          "Single attribute on RHS",
+          "No redundant dependencies",
+          "No redundant attributes"
+        ],
+        "detailed_explanation": "Minimal cover ensures that the set of functional dependencies is as small as possible without losing information. Proofs are not required.",
+        "example": "Reducing redundant dependencies.",
+        "static_image_url": null,
+        "image_search_query": "minimal cover functional dependency"
+      }
+    },
+    {
+      "topic_name": "First Normal Form (1NF)",
+      "content": {
+        "question": "What is First Normal Form (1NF)?",
+        "summary": "A relation is in 1NF if all attribute values are atomic.",
+        "key_points": [
+          "No multivalued attributes",
+          "No repeating groups",
+          "Atomic values"
+        ],
+        "detailed_explanation": "1NF eliminates repeating groups by ensuring that each field contains only indivisible values.",
+        "example": "Splitting multiple phone numbers into separate rows.",
+        "static_image_url": null,
+        "image_search_query": "first normal form example"
+      }
+    },
+    {
+      "topic_name": "Second Normal Form (2NF)",
+      "content": {
+        "question": "What is Second Normal Form (2NF)?",
+        "summary": "A relation is in 2NF if it is in 1NF and has no partial dependency.",
+        "key_points": [
+          "Eliminates partial dependency",
+          "Applies to composite keys",
+          "Depends on full key"
+        ],
+        "detailed_explanation": "Partial dependency occurs when a non-key attribute depends on part of a composite key. 2NF removes such dependencies.",
+        "example": "Separating course details from enrollment table.",
+        "static_image_url": null,
+        "image_search_query": "second normal form example"
+      }
+    },
+    {
+      "topic_name": "Third Normal Form (3NF)",
+      "content": {
+        "question": "What is Third Normal Form (3NF)?",
+        "summary": "A relation is in 3NF if it is in 2NF and has no transitive dependency.",
+        "key_points": [
+          "Eliminates transitive dependency",
+          "Non-key depends only on key",
+          "Improves integrity"
+        ],
+        "detailed_explanation": "Transitive dependency occurs when a non-key attribute depends on another non-key attribute. 3NF removes this dependency.",
+        "example": "Separating department details from student table.",
+        "static_image_url": null,
+        "image_search_query": "third normal form example"
+      }
+    },
+    {
+      "topic_name": "Boyce-Codd Normal Form (BCNF)",
+      "content": {
+        "question": "What is Boyce-Codd Normal Form (BCNF)?",
+        "summary": "BCNF is a stricter version of 3NF that removes remaining anomalies.",
+        "key_points": [
+          "Every determinant is a candidate key",
+          "Stronger than 3NF",
+          "May lose dependency preservation"
+        ],
+        "detailed_explanation": "BCNF ensures that for every functional dependency X → Y, X is a superkey. It eliminates certain anomalies not handled by 3NF.",
+        "example": "Course-Instructor relationship anomalies.",
+        "static_image_url": null,
+        "image_search_query": "bcnf example"
+      }
+    },
+    {
+      "topic_name": "Lossless Join Decomposition",
+      "content": {
+        "question": "What is lossless join decomposition?",
+        "summary": "Lossless join ensures original relation can be reconstructed from decomposed relations.",
+        "key_points": [
+          "No information loss",
+          "Uses common attributes",
+          "Based on functional dependencies"
+        ],
+        "detailed_explanation": "A decomposition is lossless if joining the decomposed relations results in the original relation without spurious tuples.",
+        "example": "Decomposing STUDENT table safely.",
+        "static_image_url": null,
+        "image_search_query": "lossless join decomposition"
+      }
+    },
+    {
+      "topic_name": "Dependency Preserving Decomposition",
+      "content": {
+        "question": "What is dependency preserving decomposition?",
+        "summary": "Dependency preserving decomposition ensures all functional dependencies are preserved.",
+        "key_points": [
+          "Constraints enforceable locally",
+          "Avoids joins for constraint checking",
+          "Improves efficiency"
+        ],
+        "detailed_explanation": "A decomposition is dependency preserving if all functional dependencies can be enforced without joining relations.",
+        "example": "Preserving StudentID → Name dependency.",
+        "static_image_url": null,
+        "image_search_query": "dependency preserving decomposition"
+      }
+    },
+    {
+      "topic_name": "Algorithms for Lossless Join and Dependency Preservation",
+      "content": {
+        "question": "How are lossless join and dependency preserving properties checked?",
+        "summary": "Algorithms are used to verify correctness of decomposition.",
+        "key_points": [
+          "Lossless join test",
+          "Dependency preservation test",
+          "Based on functional dependencies"
+        ],
+        "detailed_explanation": "Lossless join is checked using common attributes and functional dependencies. Dependency preservation is verified by checking if dependencies can be inferred from decomposed schemas.",
+        "example": "Testing a decomposition for correctness.",
+        "static_image_url": null,
+        "image_search_query": "lossless join dependency preservation algorithm"
+      }
+    }
+  ]
+},
+{
+  "module_number": 5,
+  "module_title": "Transactions, Concurrency, Recovery and Recent Topics",
+  "topics": [
+    {
+      "topic_name": "Transaction Processing Concepts",
+      "content": {
+        "question": "What is a transaction in DBMS?",
+        "summary": "A transaction is a sequence of database operations treated as a single logical unit of work.",
+        "key_points": [
+          "Transaction is atomic",
+          "Executes completely or not at all",
+          "Maintains database consistency"
+        ],
+        "detailed_explanation": "A transaction consists of read and write operations on the database. It transforms the database from one consistent state to another. Transactions are essential in multi-user environments to maintain correctness.",
+        "example": "Transferring money from one bank account to another.",
+        "static_image_url": null,
+        "image_search_query": "dbms transaction concept"
+      }
+    },
+    {
+      "topic_name": "ACID Properties of Transactions",
+      "content": {
+        "question": "What are the ACID properties of a transaction?",
+        "summary": "ACID properties guarantee reliable transaction processing.",
+        "key_points": [
+          "Atomicity",
+          "Consistency",
+          "Isolation",
+          "Durability"
+        ],
+        "detailed_explanation": "Atomicity ensures all-or-nothing execution. Consistency ensures database constraints are preserved. Isolation ensures concurrent transactions do not interfere. Durability ensures committed changes persist even after failures.",
+        "example": "Committed bank transaction remaining after system crash.",
+        "static_image_url": null,
+        "image_search_query": "acid properties dbms"
+      }
+    },
+    {
+      "topic_name": "Transaction States",
+      "content": {
+        "question": "What are the different states of a transaction?",
+        "summary": "A transaction passes through several states during its execution.",
+        "key_points": [
+          "Active",
+          "Partially committed",
+          "Committed",
+          "Failed",
+          "Aborted"
+        ],
+        "detailed_explanation": "A transaction begins in the active state. After executing final operation, it enters partially committed state. It may then commit or fail and get aborted. Aborted transactions may be restarted.",
+        "example": "Transaction rollback after failure.",
+        "static_image_url": null,
+        "image_search_query": "transaction states diagram dbms"
+      }
+    },
+    {
+      "topic_name": "System Log and Recovery Concepts",
+      "content": {
+        "question": "What is a system log and why is it used?",
+        "summary": "A system log records all database modifications for recovery purposes.",
+        "key_points": [
+          "Log records before and after images",
+          "Stored on stable storage",
+          "Used for undo and redo operations"
+        ],
+        "detailed_explanation": "The system log maintains a chronological record of transaction activities. During failure recovery, the log helps restore the database to a consistent state.",
+        "example": "Undoing incomplete transactions after crash.",
+        "static_image_url": null,
+        "image_search_query": "dbms system log recovery"
+      }
+    },
+    {
+      "topic_name": "Serial and Concurrent Schedules",
+      "content": {
+        "question": "What are serial and concurrent schedules?",
+        "summary": "Schedules define the order of execution of operations from multiple transactions.",
+        "key_points": [
+          "Serial schedule executes one transaction at a time",
+          "Concurrent schedule interleaves transactions",
+          "Concurrency improves performance"
+        ],
+        "detailed_explanation": "Serial schedules are simple but inefficient. Concurrent schedules improve resource utilization but must be controlled to avoid inconsistencies.",
+        "example": "Interleaved execution of banking transactions.",
+        "static_image_url": null,
+        "image_search_query": "serial vs concurrent schedule dbms"
+      }
+    },
+    {
+      "topic_name": "Conflict Equivalence and Conflict Serializability",
+      "content": {
+        "question": "What is conflict serializability?",
+        "summary": "Conflict serializability ensures a concurrent schedule is equivalent to some serial schedule.",
+        "key_points": [
+          "Conflicting operations access same data item",
+          "Order of conflicting operations matters",
+          "Uses precedence graph"
+        ],
+        "detailed_explanation": "Two schedules are conflict equivalent if conflicting operations occur in the same order. A schedule is conflict serializable if its precedence graph has no cycles.",
+        "example": "Checking serializability using precedence graph.",
+        "static_image_url": null,
+        "image_search_query": "conflict serializability precedence graph"
+      }
+    },
+    {
+      "topic_name": "Recoverable and Cascadeless Schedules",
+      "content": {
+        "question": "What are recoverable and cascadeless schedules?",
+        "summary": "These schedules ensure safe recovery during transaction failures.",
+        "key_points": [
+          "Recoverable schedule allows commit after dependent commits",
+          "Cascadeless avoids cascading rollbacks",
+          "Preferred in DBMS"
+        ],
+        "detailed_explanation": "Recoverable schedules prevent committed transactions from depending on uncommitted ones. Cascadeless schedules further restrict reads to committed data only.",
+        "example": "Avoiding cascading aborts.",
+        "static_image_url": null,
+        "image_search_query": "recoverable cascadeless schedule dbms"
+      }
+    },
+    {
+      "topic_name": "Locking and Two-Phase Locking Protocol",
+      "content": {
+        "question": "What is two-phase locking (2PL)?",
+        "summary": "Two-phase locking ensures serializability using lock-based concurrency control.",
+        "key_points": [
+          "Growing phase acquires locks",
+          "Shrinking phase releases locks",
+          "Ensures conflict serializability"
+        ],
+        "detailed_explanation": "In 2PL, transactions acquire all required locks before releasing any. Variations include strict and rigorous two-phase locking.",
+        "example": "Locking data items during transaction execution.",
+        "static_image_url": null,
+        "image_search_query": "two phase locking protocol"
+      }
+    },
+    {
+      "topic_name": "Log-Based Recovery Techniques",
+      "content": {
+        "question": "What are log-based recovery techniques?",
+        "summary": "Log-based recovery restores database consistency after failures.",
+        "key_points": [
+          "Deferred database modification",
+          "Immediate database modification",
+          "Checkpointing"
+        ],
+        "detailed_explanation": "Deferred modification applies updates only after commit, while immediate modification applies updates before commit with logging. Checkpointing reduces recovery time by limiting log scanning.",
+        "example": "Using checkpoints during crash recovery.",
+        "static_image_url": null,
+        "image_search_query": "log based recovery dbms"
+      }
+    },
+    {
+      "topic_name": "Introduction to NoSQL Databases",
+      "content": {
+        "question": "What are NoSQL databases?",
+        "summary": "NoSQL databases are non-relational systems designed for scalability and flexibility.",
+        "key_points": [
+          "Schema-less design",
+          "High scalability",
+          "Distributed architecture"
+        ],
+        "detailed_explanation": "NoSQL databases relax relational constraints to handle large-scale and unstructured data efficiently. They are widely used in big data and web applications.",
+        "example": "Using NoSQL for social media data storage.",
+        "static_image_url": null,
+        "image_search_query": "nosql database overview"
+      }
+    },
+    {
+      "topic_name": "Key-Value Databases",
+      "content": {
+        "question": "What are key-value databases?",
+        "summary": "Key-value databases store data as simple key-value pairs.",
+        "key_points": [
+          "Simple data model",
+          "High performance",
+          "Example: Redis"
+        ],
+        "detailed_explanation": "Each key uniquely identifies a value. These databases are highly efficient for lookup operations.",
+        "example": "Redis storing session data.",
+        "static_image_url": null,
+        "image_search_query": "key value database redis"
+      }
+    },
+    {
+      "topic_name": "Document Databases",
+      "content": {
+        "question": "What are document databases?",
+        "summary": "Document databases store data as documents with flexible schemas.",
+        "key_points": [
+          "JSON-like documents",
+          "Schema flexibility",
+          "Example: MongoDB"
+        ],
+        "detailed_explanation": "Documents contain nested structures and fields, making them suitable for semi-structured data.",
+        "example": "MongoDB storing user profiles.",
+        "static_image_url": null,
+        "image_search_query": "document database mongodb"
+      }
+    },
+    {
+      "topic_name": "Column-Family Databases",
+      "content": {
+        "question": "What are column-family databases?",
+        "summary": "Column-family databases store data in columns rather than rows.",
+        "key_points": [
+          "Column-oriented storage",
+          "High scalability",
+          "Example: Cassandra"
+        ],
+        "detailed_explanation": "Data is grouped into column families, allowing efficient access to large datasets.",
+        "example": "Cassandra storing time-series data.",
+        "static_image_url": null,
+        "image_search_query": "column family database cassandra"
+      }
+    },
+    {
+      "topic_name": "Graph Databases",
+      "content": {
+        "question": "What are graph databases?",
+        "summary": "Graph databases store data as nodes and relationships.",
+        "key_points": [
+          "Nodes and edges",
+          "Relationship-focused queries",
+          "Example: ArangoDB"
+        ],
+        "detailed_explanation": "Graph databases are ideal for applications with complex relationships such as social networks.",
+        "example": "Modeling friendships in a social network.",
+        "static_image_url": null,
+        "image_search_query": "graph database arangodb"
+      }
+    }
+  ]
+}
+]
+}

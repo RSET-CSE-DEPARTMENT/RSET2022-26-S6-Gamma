@@ -1,0 +1,18 @@
+# Python
+backend/ml/venv/
+__pycache__/
+*.pyc
+
+# Environment files
+backend/.env
+.env
+
+# Node
+backend/node_modules/
+
+# Generated reports
+backend/ml/reports/
+
+# OS
+.DS_Store
+Thumbs.db

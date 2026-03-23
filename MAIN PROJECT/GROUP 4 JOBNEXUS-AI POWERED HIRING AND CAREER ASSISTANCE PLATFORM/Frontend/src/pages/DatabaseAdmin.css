@@ -1,0 +1,178 @@
+.dbadmin-page {
+  width: min(1680px, 98vw);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dbadmin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.dbadmin-card {
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.dbadmin-loading {
+  margin-top: 12px;
+}
+
+.dbadmin-nav {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dbadmin-tab {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1f2937;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dbadmin-tab-active {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #312e81;
+  font-weight: 600;
+}
+
+.dbadmin-users-wrap {
+  margin-top: 10px;
+}
+
+.dbadmin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.dbadmin-users-table th,
+.dbadmin-users-table td {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.dbadmin-wrap-cell {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.dbadmin-actions-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dbadmin-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.dbadmin-pk {
+  color: #374151;
+}
+
+.dbadmin-columns {
+  margin-top: 12px;
+  color: #374151;
+  overflow-wrap: anywhere;
+}
+
+.dbadmin-records-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.dbadmin-record-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  background: #f9fafb;
+}
+
+.dbadmin-record-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.dbadmin-record-key {
+  font-weight: 600;
+  color: #111827;
+  overflow-wrap: anywhere;
+}
+
+.dbadmin-record-value {
+  color: #374151;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.dbadmin-ops-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.dbadmin-op-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  background: #ffffff;
+  display: grid;
+  gap: 10px;
+}
+
+.dbadmin-op-card textarea,
+.dbadmin-op-card input,
+.dbadmin-toolbar select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.dbadmin-btn {
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #312e81;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dbadmin-btn-danger {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+@media (max-width: 900px) {
+  .dbadmin-page {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .dbadmin-record-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

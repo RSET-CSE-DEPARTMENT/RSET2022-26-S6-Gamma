@@ -1,0 +1,7004 @@
+@prefix ex:   <http://example.org/health#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:P002046 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007537 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 18.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007488 rdf:type ex:Patient ;
+        ex:age 29 ;
+        ex:sex "Male" ;
+        ex:bmi 28.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003118 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Female" ;
+        ex:bmi 30.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007581 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 35.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010083 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 30.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009039 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 18.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002282 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 21.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009196 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004358 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Female" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003800 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005508 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Female" ;
+        ex:bmi 36.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006202 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008043 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 32.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007808 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006912 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Male" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010849 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009893 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 34.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007950 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009444 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Male" ;
+        ex:bmi 16.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005220 rdf:type ex:Patient ;
+        ex:age 22 ;
+        ex:sex "Female" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010506 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002971 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 34.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002585 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008687 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 30.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005679 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005149 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001477 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006278 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008065 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Female" ;
+        ex:bmi 34.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008851 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003554 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 34.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003022 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 36.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010385 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 33.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007170 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 21.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008787 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006206 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007572 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 33.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003529 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004306 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 19.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006955 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 25.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007300 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006423 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 32.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010526 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 31.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P009987 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010917 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Female" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006863 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 16.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004552 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Female" ;
+        ex:bmi 25.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010478 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Male" ;
+        ex:bmi 32.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008726 rdf:type ex:Patient ;
+        ex:age 29 ;
+        ex:sex "Female" ;
+        ex:bmi 19.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002066 rdf:type ex:Patient ;
+        ex:age 34 ;
+        ex:sex "Female" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005383 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 21.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008854 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 35.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001093 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 31.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005366 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 25.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002953 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 32.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006948 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Female" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010928 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 26.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010986 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 28.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010987 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007687 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 30.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005597 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Female" ;
+        ex:bmi 26.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002649 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 21.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008636 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 32.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007923 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 22.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008510 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 22.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001715 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 31.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002163 rdf:type ex:Patient ;
+        ex:age 29 ;
+        ex:sex "Male" ;
+        ex:bmi 22.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007122 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 20.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002261 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 34.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008776 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 29.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007253 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 22.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009195 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001312 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010234 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 21.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003199 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 30.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001103 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010403 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Male" ;
+        ex:bmi 31.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006919 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P010287 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 24.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010732 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Female" ;
+        ex:bmi 22.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002562 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 26.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004403 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 21.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009138 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 19.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006696 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 36.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006835 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 32.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007033 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003821 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 34.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009757 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 32.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001953 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 20.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004353 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 34.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008021 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008156 rdf:type ex:Patient ;
+        ex:age 17 ;
+        ex:sex "Female" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009530 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 23.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001294 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 20.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008569 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 30.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009157 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 27.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004155 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002892 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010810 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 22.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003331 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 20.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004279 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 34.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006289 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 21.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008799 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 33.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006133 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 17.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010501 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001450 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Female" ;
+        ex:bmi 23.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007120 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007071 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003204 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Male" ;
+        ex:bmi 37.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P002811 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 17.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P003693 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003078 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004515 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 37.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004922 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007675 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 37.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002893 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 28.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004834 rdf:type ex:Patient ;
+        ex:age 29 ;
+        ex:sex "Female" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009450 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 23.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008101 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 30.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004476 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007187 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 35.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009034 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 29.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010417 rdf:type ex:Patient ;
+        ex:age 86 ;
+        ex:sex "Male" ;
+        ex:bmi 33.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006828 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 28.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003571 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008130 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 28.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004264 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007821 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010126 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 24.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010927 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Female" ;
+        ex:bmi 26.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006188 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Other" ;
+        ex:bmi 32.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002397 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Female" ;
+        ex:bmi 18.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005935 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001463 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 19.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002348 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 22.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009648 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 25.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002431 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 21.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008772 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 32.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008793 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 20.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009287 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P005240 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Male" ;
+        ex:bmi 16.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002113 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Other" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P003777 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008106 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 16.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002486 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001335 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004843 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 26.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008563 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 32.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009087 rdf:type ex:Patient ;
+        ex:age 19 ;
+        ex:sex "Female" ;
+        ex:bmi 23.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006014 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Female" ;
+        ex:bmi 37.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003620 rdf:type ex:Patient ;
+        ex:age 81 ;
+        ex:sex "Female" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010634 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010361 rdf:type ex:Patient ;
+        ex:age 80 ;
+        ex:sex "Female" ;
+        ex:bmi 31.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P005607 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 37.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003894 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004183 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 28.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008945 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008617 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003629 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 19.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009816 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 31.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001603 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 44.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002737 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Female" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010346 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 23.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006864 rdf:type ex:Patient ;
+        ex:age 22 ;
+        ex:sex "Male" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001133 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Female" ;
+        ex:bmi 22.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004204 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007889 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P008368 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 29.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009339 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 35.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003453 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 22.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002885 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P003572 rdf:type ex:Patient ;
+        ex:age 28 ;
+        ex:sex "Male" ;
+        ex:bmi 23.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010639 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004775 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Male" ;
+        ex:bmi 28.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P003186 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Male" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009942 rdf:type ex:Patient ;
+        ex:age 88 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008321 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 35.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008681 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 27.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002296 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Male" ;
+        ex:bmi 32.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009286 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 26.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009590 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004995 rdf:type ex:Patient ;
+        ex:age 17 ;
+        ex:sex "Female" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009110 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 17.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010323 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 17.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007681 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010106 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007473 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 29.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008533 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 19.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008516 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 30.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003628 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 18.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002920 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 18.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008041 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006982 rdf:type ex:Patient ;
+        ex:age 84 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001819 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006806 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 29.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002929 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 26.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010284 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004198 rdf:type ex:Patient ;
+        ex:age 21 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002755 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006903 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003806 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Male" ;
+        ex:bmi 38.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001127 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004305 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 33.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004668 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002994 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008760 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Male" ;
+        ex:bmi 38.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006276 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 32.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002972 rdf:type ex:Patient ;
+        ex:age 2 ;
+        ex:sex "Female" ;
+        ex:bmi 18.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005619 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004929 rdf:type ex:Patient ;
+        ex:age 33 ;
+        ex:sex "Male" ;
+        ex:bmi 21.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005079 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 17.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009999 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006042 rdf:type ex:Patient ;
+        ex:age 24 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006387 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Male" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005377 rdf:type ex:Patient ;
+        ex:age 12 ;
+        ex:sex "Male" ;
+        ex:bmi 28.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002232 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Male" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001142 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005946 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Male" ;
+        ex:bmi 20.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005202 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007119 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001001 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007090 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008195 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Male" ;
+        ex:bmi 23.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005967 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Male" ;
+        ex:bmi 33.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009348 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008741 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 26.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010942 rdf:type ex:Patient ;
+        ex:age 87 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007801 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 26.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002631 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 23.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002869 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Female" ;
+        ex:bmi 18.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006023 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 43.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007546 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 24.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001575 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P001541 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 36.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008339 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 21.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010112 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002126 rdf:type ex:Patient ;
+        ex:age 34 ;
+        ex:sex "Female" ;
+        ex:bmi 24.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003585 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 23.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010201 rdf:type ex:Patient ;
+        ex:age 84 ;
+        ex:sex "Male" ;
+        ex:bmi 31.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010867 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002158 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 23.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005242 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 19.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P008341 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 15.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004012 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005402 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006361 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006447 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Male" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007244 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009713 rdf:type ex:Patient ;
+        ex:age 33 ;
+        ex:sex "Male" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008005 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002730 rdf:type ex:Patient ;
+        ex:age 88 ;
+        ex:sex "Male" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007361 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 36.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008566 rdf:type ex:Patient ;
+        ex:age 24 ;
+        ex:sex "Female" ;
+        ex:bmi 30.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005853 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008926 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 19.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001128 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 35.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002157 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 27.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007395 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 22.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002114 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 21.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008081 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008123 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 33.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010275 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 23.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004256 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 41.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009977 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 38.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010975 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Male" ;
+        ex:bmi 43.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007282 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 35.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007505 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 20.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010590 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 26.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005824 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 34.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010943 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 29.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P006578 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 26.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004674 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 17.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008770 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Female" ;
+        ex:bmi 25.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001854 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005683 rdf:type ex:Patient ;
+        ex:age 81 ;
+        ex:sex "Female" ;
+        ex:bmi 26.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003169 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008633 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 17.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005129 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008560 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 28.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009505 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Male" ;
+        ex:bmi 40.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002974 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006915 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 24.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008669 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007472 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 15.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002237 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Female" ;
+        ex:bmi 26.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008309 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Male" ;
+        ex:bmi 34.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P001341 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004542 rdf:type ex:Patient ;
+        ex:age 81 ;
+        ex:sex "Male" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008794 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 29.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002526 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 19.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008488 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 31.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004040 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 23.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009568 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 16.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004002 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 32.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004125 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 29.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002640 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P007810 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Male" ;
+        ex:bmi 30.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007689 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Female" ;
+        ex:bmi 42.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004872 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005586 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006615 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 34.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001389 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006384 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Female" ;
+        ex:bmi 21.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003575 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 26.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009237 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 23.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006355 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 34.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004632 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009498 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007804 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Female" ;
+        ex:bmi 35.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001887 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 20.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005530 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 37.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008546 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 26.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002462 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 21.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009993 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 15.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010793 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 29.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001589 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008885 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 29.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002395 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 28.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009004 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 19.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006646 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Male" ;
+        ex:bmi 24.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002924 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Other" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003018 rdf:type ex:Patient ;
+        ex:age 18 ;
+        ex:sex "Male" ;
+        ex:bmi 25.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006312 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Female" ;
+        ex:bmi 19.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003551 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Male" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004580 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Female" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010771 rdf:type ex:Patient ;
+        ex:age 0 ;
+        ex:sex "Male" ;
+        ex:bmi 28.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001673 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001401 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Female" ;
+        ex:bmi 20.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001551 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P004389 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 22.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001161 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 39.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006028 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 31.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001403 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 26.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P009701 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Female" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004455 rdf:type ex:Patient ;
+        ex:age 2 ;
+        ex:sex "Male" ;
+        ex:bmi 32.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005376 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 26.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005347 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 33.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P004505 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006508 rdf:type ex:Patient ;
+        ex:age 9 ;
+        ex:sex "Female" ;
+        ex:bmi 32.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009158 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Male" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009113 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Female" ;
+        ex:bmi 34.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002718 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 25.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007221 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Female" ;
+        ex:bmi 19.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010229 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Male" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002392 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 24.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003750 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007042 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 34.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006790 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 32.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003502 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 34.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001795 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 23.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P007553 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 17.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002396 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 29.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008771 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 36.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002452 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Male" ;
+        ex:bmi 20.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004583 rdf:type ex:Patient ;
+        ex:age 89 ;
+        ex:sex "Male" ;
+        ex:bmi 40.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009112 rdf:type ex:Patient ;
+        ex:age 20 ;
+        ex:sex "Female" ;
+        ex:bmi 35.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002600 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001624 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Male" ;
+        ex:bmi 33.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P001996 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010068 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 18.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002416 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 23.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009881 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Female" ;
+        ex:bmi 21.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P008024 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 36.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005189 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 32.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002848 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008109 rdf:type ex:Patient ;
+        ex:age 12 ;
+        ex:sex "Male" ;
+        ex:bmi 26.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001796 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 19.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009459 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 19.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009207 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 34.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001599 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 24.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004085 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004540 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007621 rdf:type ex:Patient ;
+        ex:age 12 ;
+        ex:sex "Female" ;
+        ex:bmi 24.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003621 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 23.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004560 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003726 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009504 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Female" ;
+        ex:bmi 31.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004798 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 30.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005016 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002466 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 33.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005325 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Female" ;
+        ex:bmi 21.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001475 rdf:type ex:Patient ;
+        ex:age 84 ;
+        ex:sex "Male" ;
+        ex:bmi 30.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007192 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005594 rdf:type ex:Patient ;
+        ex:age 15 ;
+        ex:sex "Male" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002104 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 21.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002353 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 28.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001299 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 31.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002012 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010979 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Female" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009884 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 31.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007567 rdf:type ex:Patient ;
+        ex:age 81 ;
+        ex:sex "Female" ;
+        ex:bmi 22.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010373 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 33.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P003688 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Female" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010381 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006933 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 31.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003493 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 24.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001257 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Male" ;
+        ex:bmi 29.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003038 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 23.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003933 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Male" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009545 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008831 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002663 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Male" ;
+        ex:bmi 25.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001865 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006326 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004290 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 31.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010747 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 25.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004369 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 34.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005652 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 25.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009613 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 23.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008676 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 39.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004809 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 23.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009706 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 28.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008849 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 15.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008168 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 23.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010219 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 20.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001315 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 24.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007359 rdf:type ex:Patient ;
+        ex:age 19 ;
+        ex:sex "Male" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002148 rdf:type ex:Patient ;
+        ex:age 29 ;
+        ex:sex "Male" ;
+        ex:bmi 16.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006130 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 34.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008858 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 30.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007728 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Female" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010066 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 20.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009920 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002016 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008346 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Male" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003120 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 19.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001047 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 22.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005609 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008523 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001610 rdf:type ex:Patient ;
+        ex:age 81 ;
+        ex:sex "Female" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003355 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 28.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010096 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 18.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003590 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Male" ;
+        ex:bmi 20.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004988 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 33.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006523 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Male" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001031 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 23.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002500 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 26.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002064 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Male" ;
+        ex:bmi 18.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001936 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 26.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004786 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 22.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001764 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 26.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001328 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005720 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 39.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001022 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010443 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 35.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005850 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 36.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001987 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Female" ;
+        ex:bmi 19.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006308 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005184 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 29.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010788 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Female" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005959 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008940 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 18.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010777 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 33.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009041 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007117 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 29.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P005825 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007824 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 26.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001283 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Male" ;
+        ex:bmi 23.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004118 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 35.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002463 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 22.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P001062 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P009911 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Female" ;
+        ex:bmi 31.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002327 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001417 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Male" ;
+        ex:bmi 20.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003773 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 34.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010554 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Female" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010555 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 23.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005480 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Male" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009242 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P005442 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Female" ;
+        ex:bmi 34.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004445 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 20.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007683 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 20.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008872 rdf:type ex:Patient ;
+        ex:age 89 ;
+        ex:sex "Female" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004282 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 35.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008419 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007091 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Female" ;
+        ex:bmi 19.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007798 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Male" ;
+        ex:bmi 32.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002290 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Male" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007764 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Male" ;
+        ex:bmi 31.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007264 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 36.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007685 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001139 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 24.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003138 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Female" ;
+        ex:bmi 23.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005268 rdf:type ex:Patient ;
+        ex:age 19 ;
+        ex:sex "Male" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009318 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007438 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 28.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010724 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 38.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003837 rdf:type ex:Patient ;
+        ex:age 89 ;
+        ex:sex "Female" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001852 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 31.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002411 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005272 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 20.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010207 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Male" ;
+        ex:bmi 33.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010093 rdf:type ex:Patient ;
+        ex:age 34 ;
+        ex:sex "Female" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010656 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Female" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007007 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 20.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004143 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Male" ;
+        ex:bmi 22.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001564 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 35.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002636 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 29.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002059 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Other" ;
+        ex:bmi 31.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007328 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 34.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002252 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 32.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010711 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Female" ;
+        ex:bmi 34.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001649 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 35.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007290 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001821 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 29.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006424 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 36.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007922 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010775 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 22.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003495 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 17.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003002 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004289 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 38.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004944 rdf:type ex:Patient ;
+        ex:age 11 ;
+        ex:sex "Female" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005331 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 35.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008434 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Male" ;
+        ex:bmi 26.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P003915 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009502 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002442 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 23.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005893 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 26.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002634 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 26.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003668 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Female" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009593 rdf:type ex:Patient ;
+        ex:age 89 ;
+        ex:sex "Male" ;
+        ex:bmi 22.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005464 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Male" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003049 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 34.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001191 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 16.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005846 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006680 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 22.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001300 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003214 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 24.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007886 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 19.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001719 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 26.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006949 rdf:type ex:Patient ;
+        ex:age 24 ;
+        ex:sex "Female" ;
+        ex:bmi 20.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004346 rdf:type ex:Patient ;
+        ex:age 84 ;
+        ex:sex "Female" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005673 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003814 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005282 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002983 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 31.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008307 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 32.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002794 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 21.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002092 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 17.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007944 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P002270 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Female" ;
+        ex:bmi 33.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010830 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 30.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006697 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004422 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010970 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 35.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P010569 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 18.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008806 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001597 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Female" ;
+        ex:bmi 33.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008314 rdf:type ex:Patient ;
+        ex:age 19 ;
+        ex:sex "Male" ;
+        ex:bmi 33.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P010045 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 21.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009822 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004103 rdf:type ex:Patient ;
+        ex:age 84 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006317 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Female" ;
+        ex:bmi 15.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002705 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009859 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009437 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 36.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002490 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Female" ;
+        ex:bmi 29.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001711 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 17.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003482 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Male" ;
+        ex:bmi 39.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005412 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P010222 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 35.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007217 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004964 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005281 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010251 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Female" ;
+        ex:bmi 36.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004741 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004100 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 21.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003583 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 36.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006174 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 22.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P007970 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010652 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 19.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005447 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Female" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002073 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003041 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001978 rdf:type ex:Patient ;
+        ex:age 11 ;
+        ex:sex "Female" ;
+        ex:bmi 32.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009181 rdf:type ex:Patient ;
+        ex:age 0 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006623 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 38.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009198 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P003816 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 24.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004550 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 25.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003131 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 25.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P005138 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005292 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 17.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006187 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007948 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 32.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007749 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010588 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P009495 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Female" ;
+        ex:bmi 24.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006492 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 38.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004545 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Female" ;
+        ex:bmi 15.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005135 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002084 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003056 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006745 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Female" ;
+        ex:bmi 19.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008750 rdf:type ex:Patient ;
+        ex:age 80 ;
+        ex:sex "Female" ;
+        ex:bmi 37.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001170 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 33.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002957 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Male" ;
+        ex:bmi 18.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010817 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002757 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 29.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002991 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P005506 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Male" ;
+        ex:bmi 34.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010688 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Male" ;
+        ex:bmi 34.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P005352 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 38.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007842 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002090 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 23.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004951 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002210 rdf:type ex:Patient ;
+        ex:age 86 ;
+        ex:sex "Male" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003045 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Female" ;
+        ex:bmi 33.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008363 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 30.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004876 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Female" ;
+        ex:bmi 32.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003405 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Female" ;
+        ex:bmi 35.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003510 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Male" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003970 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 23.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008995 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 34.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004453 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 34.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003447 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 31.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005793 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 22.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002223 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006353 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 30.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009512 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 26.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009634 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Female" ;
+        ex:bmi 20.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008458 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Male" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007732 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004802 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Male" ;
+        ex:bmi 33.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P005889 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 35.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004438 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009979 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 28.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004720 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 16.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009136 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 27.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001270 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 25.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003153 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 34.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003645 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006752 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Female" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009688 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Male" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001871 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008632 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 41.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007435 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P009472 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Male" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004475 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 20.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006334 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 35.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008258 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007446 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Male" ;
+        ex:bmi 33.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005365 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 19.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007650 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005209 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 18.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008155 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 23.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004342 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 23.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004181 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 35.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008246 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001147 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 19.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010572 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008203 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 32.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010628 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006556 rdf:type ex:Patient ;
+        ex:age 28 ;
+        ex:sex "Female" ;
+        ex:bmi 24.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010852 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007835 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 26.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001120 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Female" ;
+        ex:bmi 21.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006307 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 26.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003977 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Male" ;
+        ex:bmi 30.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008206 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006159 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 35.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006994 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Female" ;
+        ex:bmi 26.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003747 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Female" ;
+        ex:bmi 30.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P003176 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 24.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002768 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 32.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008436 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 28.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005470 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 30.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001918 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008300 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Male" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006737 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 16.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003390 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 32.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006967 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010686 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 35.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008133 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 37.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002545 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 32.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003815 rdf:type ex:Patient ;
+        ex:age 87 ;
+        ex:sex "Female" ;
+        ex:bmi 35.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009499 rdf:type ex:Patient ;
+        ex:age 22 ;
+        ex:sex "Male" ;
+        ex:bmi 37.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002665 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 16.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008783 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 19.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006480 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 18.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008029 rdf:type ex:Patient ;
+        ex:age 34 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004137 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 22.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006154 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002248 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Female" ;
+        ex:bmi 22.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010382 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 33.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005158 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 28.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006296 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 38.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004764 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 26.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008260 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002400 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 24.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006571 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007881 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 32.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008429 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 27.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002672 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005046 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 33.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002199 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Female" ;
+        ex:bmi 18.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010660 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 18.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003462 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Male" ;
+        ex:bmi 23.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008223 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 32.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003479 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009901 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004961 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Female" ;
+        ex:bmi 19.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010912 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007040 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 37.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009235 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 31.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P004419 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010274 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 19.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006692 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Male" ;
+        ex:bmi 37.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002930 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010141 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 19.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006908 rdf:type ex:Patient ;
+        ex:age 2 ;
+        ex:sex "Female" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010706 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Female" ;
+        ex:bmi 29.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006572 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 20.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007833 rdf:type ex:Patient ;
+        ex:age 34 ;
+        ex:sex "Male" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006380 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004395 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 20.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010009 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 24.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002267 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 29.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008330 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006301 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008728 rdf:type ex:Patient ;
+        ex:age 25 ;
+        ex:sex "Male" ;
+        ex:bmi 38.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P009012 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 19.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010374 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 38.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004498 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 22.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008494 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 18.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007201 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 25.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010322 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008919 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002007 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 39.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001238 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 29.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010291 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 26.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002666 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 25.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006706 rdf:type ex:Patient ;
+        ex:age 17 ;
+        ex:sex "Female" ;
+        ex:bmi 24.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007461 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 21.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001355 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004609 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Male" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002648 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 30.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008439 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001420 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 37.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009037 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Female" ;
+        ex:bmi 23.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010972 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 24.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010875 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 29.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002758 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 29.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006945 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 19.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P005914 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 18.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006627 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 32.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002841 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 23.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001356 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Female" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001521 rdf:type ex:Patient ;
+        ex:age 24 ;
+        ex:sex "Female" ;
+        ex:bmi 22.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007027 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 35.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008577 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Female" ;
+        ex:bmi 40.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005105 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008912 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 26.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001902 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008254 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 36.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006060 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 34.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002668 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 23.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002772 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Male" ;
+        ex:bmi 22.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004104 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 23.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008554 rdf:type ex:Patient ;
+        ex:age 34 ;
+        ex:sex "Female" ;
+        ex:bmi 19.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009890 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 22.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002978 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003581 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 41.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003469 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 40.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006008 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 31.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004576 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 34.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P003240 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 32.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005598 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 21.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009044 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 20.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008374 rdf:type ex:Patient ;
+        ex:age 20 ;
+        ex:sex "Female" ;
+        ex:bmi 27.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007206 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Male" ;
+        ex:bmi 22.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006896 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Male" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002597 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Female" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001172 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005257 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Male" ;
+        ex:bmi 35.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004466 rdf:type ex:Patient ;
+        ex:age 30 ;
+        ex:sex "Male" ;
+        ex:bmi 31.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P004233 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 20.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P007212 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 22.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008034 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008977 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 27.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004300 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Male" ;
+        ex:bmi 15.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007459 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 32.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P010413 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 16.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004624 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 23.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002910 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 18.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001973 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Female" ;
+        ex:bmi 34.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006875 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Female" ;
+        ex:bmi 20.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002777 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 36.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004781 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010281 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Female" ;
+        ex:bmi 40.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010402 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009092 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Female" ;
+        ex:bmi 23.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009571 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 29.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001584 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 32.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005023 rdf:type ex:Patient ;
+        ex:age 21 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005849 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 18.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003326 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005852 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 30.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004209 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Male" ;
+        ex:bmi 20.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P009536 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004142 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Male" ;
+        ex:bmi 36.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006936 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Female" ;
+        ex:bmi 19.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002365 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Female" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001317 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 43.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008988 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007584 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Male" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004569 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 28.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009176 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Other" ;
+        ex:bmi 22.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008946 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 24.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003517 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 21.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006975 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 20.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008248 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005827 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001618 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Female" ;
+        ex:bmi 22.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009532 rdf:type ex:Patient ;
+        ex:age 29 ;
+        ex:sex "Male" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001974 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 21.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001485 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001018 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 19.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004465 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 29.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010271 rdf:type ex:Patient ;
+        ex:age 81 ;
+        ex:sex "Female" ;
+        ex:bmi 22.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002028 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 28.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004993 rdf:type ex:Patient ;
+        ex:age 19 ;
+        ex:sex "Female" ;
+        ex:bmi 16.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003054 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 23.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003735 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 26.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003203 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 21.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007304 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Male" ;
+        ex:bmi 31.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005478 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Female" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004109 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 30.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003949 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006346 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Female" ;
+        ex:bmi 23.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009914 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 21.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P004810 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Male" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010288 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 33.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004823 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005170 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Female" ;
+        ex:bmi 34.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010450 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Male" ;
+        ex:bmi 37.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005488 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 32.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004905 rdf:type ex:Patient ;
+        ex:age 84 ;
+        ex:sex "Female" ;
+        ex:bmi 24.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009510 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Female" ;
+        ex:bmi 26.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009945 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 24.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001184 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 33.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006551 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Male" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003813 rdf:type ex:Patient ;
+        ex:age 86 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P009733 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 17.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010521 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 24.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005140 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 19.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005554 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Female" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008420 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P010028 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Female" ;
+        ex:bmi 17.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009370 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 26.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006357 rdf:type ex:Patient ;
+        ex:age 25 ;
+        ex:sex "Female" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007171 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010680 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 18.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008876 rdf:type ex:Patient ;
+        ex:age 48 ;
+        ex:sex "Male" ;
+        ex:bmi 37.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008487 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Male" ;
+        ex:bmi 19.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009825 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Female" ;
+        ex:bmi 32.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001696 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 31.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009553 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 29.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010376 rdf:type ex:Patient ;
+        ex:age 36 ;
+        ex:sex "Male" ;
+        ex:bmi 26.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008596 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008888 rdf:type ex:Patient ;
+        ex:age 25 ;
+        ex:sex "Female" ;
+        ex:bmi 24.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009873 rdf:type ex:Patient ;
+        ex:age 23 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006923 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 17.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001393 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 25.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007834 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 20.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002382 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Male" ;
+        ex:bmi 41.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003444 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 30.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004900 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 27.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009360 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Female" ;
+        ex:bmi 18.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006769 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Male" ;
+        ex:bmi 31.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010644 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004546 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 23.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004936 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 24.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008827 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 21.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004854 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Female" ;
+        ex:bmi 23.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004259 rdf:type ex:Patient ;
+        ex:age 76 ;
+        ex:sex "Male" ;
+        ex:bmi 36.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P004225 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 26.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009797 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P008499 rdf:type ex:Patient ;
+        ex:age 5 ;
+        ex:sex "Male" ;
+        ex:bmi 34.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005742 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010037 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 40.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001709 rdf:type ex:Patient ;
+        ex:age 17 ;
+        ex:sex "Female" ;
+        ex:bmi 30.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001423 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 24.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P003659 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 31.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007177 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 33.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002141 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Male" ;
+        ex:bmi 28.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008619 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 26.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007153 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Female" ;
+        ex:bmi 22.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004404 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005361 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Female" ;
+        ex:bmi 18.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002447 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Male" ;
+        ex:bmi 25.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004010 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 26.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001643 rdf:type ex:Patient ;
+        ex:age 50 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002298 rdf:type ex:Patient ;
+        ex:age 49 ;
+        ex:sex "Female" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002206 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 28.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006972 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010919 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 23.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009294 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 34.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P002733 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Male" ;
+        ex:bmi 17.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002847 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Male" ;
+        ex:bmi 28.4 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P009588 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Male" ;
+        ex:bmi 30.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001377 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003542 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Male" ;
+        ex:bmi 39.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001581 rdf:type ex:Patient ;
+        ex:age 61 ;
+        ex:sex "Female" ;
+        ex:bmi 31.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007963 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 24.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009346 rdf:type ex:Patient ;
+        ex:age 60 ;
+        ex:sex "Male" ;
+        ex:bmi 21.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003107 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 16.3 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P005760 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 38.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006865 rdf:type ex:Patient ;
+        ex:age 44 ;
+        ex:sex "Male" ;
+        ex:bmi 36.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009529 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 27.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P008059 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 24.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003935 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Female" ;
+        ex:bmi 33.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005444 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 20.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005204 rdf:type ex:Patient ;
+        ex:age 37 ;
+        ex:sex "Female" ;
+        ex:bmi 27.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007130 rdf:type ex:Patient ;
+        ex:age 28 ;
+        ex:sex "Female" ;
+        ex:bmi 17.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002286 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P005584 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003925 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 16.9 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P006733 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002616 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 27.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006985 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Female" ;
+        ex:bmi 25.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007167 rdf:type ex:Patient ;
+        ex:age 75 ;
+        ex:sex "Female" ;
+        ex:bmi 20.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P007369 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Female" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008478 rdf:type ex:Patient ;
+        ex:age 58 ;
+        ex:sex "Female" ;
+        ex:bmi 37.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003274 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Male" ;
+        ex:bmi 33.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006425 rdf:type ex:Patient ;
+        ex:age 51 ;
+        ex:sex "Male" ;
+        ex:bmi 20.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008007 rdf:type ex:Patient ;
+        ex:age 83 ;
+        ex:sex "Male" ;
+        ex:bmi 28.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005794 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 33.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009149 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Male" ;
+        ex:bmi 32.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010447 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Female" ;
+        ex:bmi 20.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P007969 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Male" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009064 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 34.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004350 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 19.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008550 rdf:type ex:Patient ;
+        ex:age 85 ;
+        ex:sex "Male" ;
+        ex:bmi 29.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008228 rdf:type ex:Patient ;
+        ex:age 54 ;
+        ex:sex "Female" ;
+        ex:bmi 24.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001324 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Female" ;
+        ex:bmi 36.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001426 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Male" ;
+        ex:bmi 22.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002134 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 28.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P006656 rdf:type ex:Patient ;
+        ex:age 40 ;
+        ex:sex "Male" ;
+        ex:bmi 36.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007357 rdf:type ex:Patient ;
+        ex:age 90 ;
+        ex:sex "Male" ;
+        ex:bmi 20.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009013 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Male" ;
+        ex:bmi 21.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004653 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 28.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001524 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 24.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P009390 rdf:type ex:Patient ;
+        ex:age 32 ;
+        ex:sex "Female" ;
+        ex:bmi 34.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001917 rdf:type ex:Patient ;
+        ex:age 65 ;
+        ex:sex "Male" ;
+        ex:bmi 20.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002229 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Female" ;
+        ex:bmi 27.6 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P003540 rdf:type ex:Patient ;
+        ex:age 55 ;
+        ex:sex "Female" ;
+        ex:bmi 16.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004709 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 19.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006675 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 26.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P009996 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 18.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010244 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 24.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004620 rdf:type ex:Patient ;
+        ex:age 71 ;
+        ex:sex "Female" ;
+        ex:bmi 34.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002402 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001153 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010760 rdf:type ex:Patient ;
+        ex:age 45 ;
+        ex:sex "Female" ;
+        ex:bmi 29.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P006782 rdf:type ex:Patient ;
+        ex:age 42 ;
+        ex:sex "Male" ;
+        ex:bmi 25.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002276 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 24.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003616 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Male" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003330 rdf:type ex:Patient ;
+        ex:age 70 ;
+        ex:sex "Male" ;
+        ex:bmi 35.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003011 rdf:type ex:Patient ;
+        ex:age 26 ;
+        ex:sex "Male" ;
+        ex:bmi 19.8 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P002271 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 27.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003292 rdf:type ex:Patient ;
+        ex:age 72 ;
+        ex:sex "Male" ;
+        ex:bmi 30.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003942 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 26.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003379 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Male" ;
+        ex:bmi 37.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010783 rdf:type ex:Patient ;
+        ex:age 35 ;
+        ex:sex "Male" ;
+        ex:bmi 30.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P004283 rdf:type ex:Patient ;
+        ex:age 16 ;
+        ex:sex "Female" ;
+        ex:bmi 17.5 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension false .
+
+ex:P001668 rdf:type ex:Patient ;
+        ex:age 82 ;
+        ex:sex "Female" ;
+        ex:bmi 35.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005122 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 28.2 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P001399 rdf:type ex:Patient ;
+        ex:age 52 ;
+        ex:sex "Female" ;
+        ex:bmi 15.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007455 rdf:type ex:Patient ;
+        ex:age 27 ;
+        ex:sex "Male" ;
+        ex:bmi 26.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010173 rdf:type ex:Patient ;
+        ex:age 66 ;
+        ex:sex "Male" ;
+        ex:bmi 26.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010862 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P008490 rdf:type ex:Patient ;
+        ex:age 69 ;
+        ex:sex "Female" ;
+        ex:bmi 25.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010615 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 19.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003350 rdf:type ex:Patient ;
+        ex:age 47 ;
+        ex:sex "Female" ;
+        ex:bmi 22.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007243 rdf:type ex:Patient ;
+        ex:age 78 ;
+        ex:sex "Male" ;
+        ex:bmi 28.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P003196 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Female" ;
+        ex:bmi 29.7 ;
+        ex:hasDiabetes true ;
+        ex:hasHypertension true .
+
+ex:P002796 rdf:type ex:Patient ;
+        ex:age 41 ;
+        ex:sex "Male" ;
+        ex:bmi 28.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004302 rdf:type ex:Patient ;
+        ex:age 38 ;
+        ex:sex "Female" ;
+        ex:bmi 41.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P001786 rdf:type ex:Patient ;
+        ex:age 74 ;
+        ex:sex "Male" ;
+        ex:bmi 24.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001636 rdf:type ex:Patient ;
+        ex:age 25 ;
+        ex:sex "Female" ;
+        ex:bmi 31.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P010613 rdf:type ex:Patient ;
+        ex:age 46 ;
+        ex:sex "Female" ;
+        ex:bmi 31.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004441 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Male" ;
+        ex:bmi 27.4 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P002553 rdf:type ex:Patient ;
+        ex:age 39 ;
+        ex:sex "Female" ;
+        ex:bmi 37.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005899 rdf:type ex:Patient ;
+        ex:age 67 ;
+        ex:sex "Female" ;
+        ex:bmi 25.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008848 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Male" ;
+        ex:bmi 25.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P002189 rdf:type ex:Patient ;
+        ex:age 64 ;
+        ex:sex "Male" ;
+        ex:bmi 38.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension true .
+
+ex:P001736 rdf:type ex:Patient ;
+        ex:age 63 ;
+        ex:sex "Male" ;
+        ex:bmi 26.9 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007477 rdf:type ex:Patient ;
+        ex:age 73 ;
+        ex:sex "Male" ;
+        ex:bmi 30.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005363 rdf:type ex:Patient ;
+        ex:age 59 ;
+        ex:sex "Female" ;
+        ex:bmi 26.7 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007208 rdf:type ex:Patient ;
+        ex:age 57 ;
+        ex:sex "Female" ;
+        ex:bmi 30.8 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005008 rdf:type ex:Patient ;
+        ex:age 43 ;
+        ex:sex "Male" ;
+        ex:bmi 27.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P005744 rdf:type ex:Patient ;
+        ex:age 62 ;
+        ex:sex "Male" ;
+        ex:bmi 25.2 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003184 rdf:type ex:Patient ;
+        ex:age 79 ;
+        ex:sex "Female" ;
+        ex:bmi 17.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P008712 rdf:type ex:Patient ;
+        ex:age 31 ;
+        ex:sex "Female" ;
+        ex:bmi 18.1 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P003115 rdf:type ex:Patient ;
+        ex:age 68 ;
+        ex:sex "Female" ;
+        ex:bmi 23.0 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P007280 rdf:type ex:Patient ;
+        ex:age 56 ;
+        ex:sex "Female" ;
+        ex:bmi 29.3 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P010666 rdf:type ex:Patient ;
+        ex:age 77 ;
+        ex:sex "Female" ;
+        ex:bmi 25.6 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+
+ex:P004149 rdf:type ex:Patient ;
+        ex:age 53 ;
+        ex:sex "Female" ;
+        ex:bmi 32.5 ;
+        ex:hasDiabetes false ;
+        ex:hasHypertension false .
+

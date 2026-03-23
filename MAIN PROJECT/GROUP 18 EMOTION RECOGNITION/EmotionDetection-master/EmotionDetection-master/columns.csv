@@ -1,0 +1,36 @@
+emotion,intensity,statement,actor,gender,video_filepath,audio_filepath,spectrogram,equivalentSoundLevel_dBp,loudness_sma3_amean
+surprise,strong,song,15,male,/kaggle/input/datasets/orvile/ravdess-dataset/Video_Speech_Actor_15/Actor_15/01-01-08-02-02-01-15.mp4,/kaggle/input/datasets/orvile/ravdess-dataset/Audio_Speech_Actors_01-24/Actor_15/03-01-08-02-02-01-15.wav,"[[-53.090893 -50.529156 -49.767952 ...   0.         0.         0.      ]
+ [-51.406223 -47.076694 -46.136044 ...   0.         0.         0.      ]
+ [-54.233944 -51.05707  -50.67301  ...   0.         0.         0.      ]
+ ...
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]]",-39.674965,0.24405907
+angry,normal,speech,15,male,/kaggle/input/datasets/orvile/ravdess-dataset/Video_Speech_Actor_15/Actor_15/01-01-05-01-01-02-15.mp4,/kaggle/input/datasets/orvile/ravdess-dataset/Audio_Speech_Actors_01-24/Actor_15/03-01-05-01-01-02-15.wav,"[[-80.      -80.      -74.97235 ...   0.        0.        0.     ]
+ [-80.      -80.      -75.8147  ...   0.        0.        0.     ]
+ [-80.      -80.      -80.      ...   0.        0.        0.     ]
+ ...
+ [-80.      -80.      -80.      ...   0.        0.        0.     ]
+ [-80.      -80.      -80.      ...   0.        0.        0.     ]
+ [-80.      -80.      -80.      ...   0.        0.        0.     ]]",-32.199062,0.41576594
+happy,strong,song,15,male,/kaggle/input/datasets/orvile/ravdess-dataset/Video_Speech_Actor_15/Actor_15/01-01-03-02-02-01-15.mp4,/kaggle/input/datasets/orvile/ravdess-dataset/Audio_Speech_Actors_01-24/Actor_15/03-01-03-02-02-01-15.wav,"[[-72.08158  -70.37362  -73.16671  ...   0.         0.         0.      ]
+ [-69.46773  -65.98015  -68.159096 ...   0.         0.         0.      ]
+ [-75.694176 -69.212585 -70.08464  ...   0.         0.         0.      ]
+ ...
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]]",-33.413807,0.4268126
+surprise,normal,speech,15,male,/kaggle/input/datasets/orvile/ravdess-dataset/Video_Speech_Actor_15/Actor_15/01-01-08-01-01-01-15.mp4,/kaggle/input/datasets/orvile/ravdess-dataset/Audio_Speech_Actors_01-24/Actor_15/03-01-08-01-01-01-15.wav,"[[-63.031403 -60.776306 -61.98722  ...   0.         0.         0.      ]
+ [-61.946625 -58.3488   -56.49711  ...   0.         0.         0.      ]
+ [-61.74813  -60.985954 -61.758415 ...   0.         0.         0.      ]
+ ...
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]]",-39.859573,0.25180462
+disgust,normal,speech,15,male,/kaggle/input/datasets/orvile/ravdess-dataset/Video_Speech_Actor_15/Actor_15/01-01-07-01-01-02-15.mp4,/kaggle/input/datasets/orvile/ravdess-dataset/Audio_Speech_Actors_01-24/Actor_15/03-01-07-01-01-02-15.wav,"[[-71.24923  -63.158134 -61.769325 ...   0.         0.         0.      ]
+ [-71.53869  -63.753685 -62.33922  ...   0.         0.         0.      ]
+ [-73.452965 -71.190674 -70.08307  ...   0.         0.         0.      ]
+ ...
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]
+ [-80.       -80.       -80.       ...   0.         0.         0.      ]]",-43.508953,0.19520204

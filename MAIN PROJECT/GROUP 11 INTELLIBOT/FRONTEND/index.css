@@ -1,0 +1,59 @@
+/* ---------- Global Reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7fc;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---------- Headings ---------- */
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h1,h2,h3{
+  color: #1a1a1a;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Inputs ---------- */
+input,
+textarea,
+select {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}

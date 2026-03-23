@@ -1,0 +1,17 @@
+SPARQLWrapper
+spacy
+requests
+dotenv
+langchain 
+langchain-google-genai
+scikit-learn
+tensorflow
+seaborn
+matplotlib
+rdflib
+flask
+streamlit
+fastapi
+uvicorn
+keras
+pydantic

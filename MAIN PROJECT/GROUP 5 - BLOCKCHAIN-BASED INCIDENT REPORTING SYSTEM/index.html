@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Reporting System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1B3C53;
+      --secondary: #234C6A;
+      --accent: #456882;
+      --light: #ffffff;
+      --success: #2ecc71;
+      --warning: #f39c12;
+      --radius: 8px;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--light) 0%, #dbe6ea 100%);
+      color: var(--primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 1rem 0;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo i {
+      color: var(--success);
+    }
+    
+    .account-info {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--light);
+    }
+    
+    .status-light {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .light-off {
+      background-color: #95a5a6;
+    }
+    
+    .light-on {
+      background-color: var(--success);
+      animation: blink 2s infinite;
+    }
+    
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    
+    main {
+      padding: 2rem 0;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .login-card {
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .login-card h1 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .btn {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 1.2rem 2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.5s;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      background-color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-metamask {
+      background: linear-gradient(135deg, #456882, #234C6A);
+    }
+    
+    .btn-metamask:hover {
+      background: linear-gradient(135deg, #234C6A, #456882);
+    }
+    
+    .status {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+    }
+    
+    .status-success {
+      background-color: rgba(46, 204, 113, 0.2);
+      color: #27ae60;
+      border-left: 4px solid var(--success);
+    }
+    
+    .status-error {
+      background-color: rgba(231, 76, 60, 0.2);
+      color: #c0392b;
+      border-left: 4px solid #e74c3c;
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    .modal h2 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .modal p {
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .modal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .btn-secondary {
+      background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    }
+    
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .logo {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      
+      .account-info {
+        position: static;
+        margin-top: 1rem;
+      }
+      
+      .login-card {
+        padding: 1.5rem;
+      }
+      
+      .btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <i class="fas fa-shield-alt"></i>
+        Incident Reporting System
+      </div>
+      <div class="account-info" id="accountInfo">
+        <div class="status-light light-off" id="statusLight"></div>
+        <span id="connectionText">Not connected</span>
+      </div>
+    </div>
+  </header>
+  
+  <main class="container">
+    <div class="login-card">
+      <h1>Login with MetaMask</h1>
+      <button id="loginBtn" class="btn btn-metamask">
+        <i class="fab fa-ethereum"></i>
+        Login with MetaMask
+      </button>
+      <div id="statusMessage" class="status"></div>
+    </div>
+  </main>
+  
+  <div id="errorModal" class="modal">
+    <div class="modal-content">
+      <h2>Authentication Error</h2>
+      <p id="errorMessage">This account is not registered as user or verifier.</p>
+      <div class="modal-buttons">
+        <button id="closeModal" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const verifierAddress = "0xB5132c59CAd35b400C23A09DAE5953cF4D793E07";
+
+    const loginBtn = document.getElementById('loginBtn');
+    const connectionText = document.getElementById('connectionText');
+    const statusLight = document.getElementById('statusLight');
+    const statusMessage = document.getElementById('statusMessage');
+    const errorModal = document.getElementById('errorModal');
+    const errorMessage = document.getElementById('errorMessage');
+    const closeModal = document.getElementById('closeModal');
+
+    window.addEventListener('load', function() {
+      if (typeof window.ethereum === "undefined") {
+        loginBtn.innerHTML = '<i class="fab fa-ethereum"></i> MetaMask Not Found';
+        loginBtn.disabled = true;
+        loginBtn.style.background = "linear-gradient(135deg, #95a5a6, #7f8c8d)";
+        statusMessage.textContent = "Please install MetaMask to continue";
+        statusMessage.className = "status status-error";
+        statusLight.className = "status-light light-off";
+      } else {
+        statusMessage.textContent = "MetaMask detected. Click to login.";
+        statusMessage.className = "status status-success";
+        statusLight.className = "status-light light-on";
+        
+        ethereum.request({ method: 'eth_accounts' })
+          .then(accounts => {
+            if (accounts.length > 0) {
+              updateAccountInfo(accounts[0]);
+            }
+          })
+          .catch(err => {
+            console.error(err);
+          });
+      }
+    });
+
+    async function loginWithMetaMask() {
+      if (typeof window.ethereum === "undefined") {
+        showError("MetaMask not found. Please install it.");
+        return;
+      }
+
+      try {
+        const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+        const account = accounts[0].toLowerCase();
+        updateAccountInfo(account);
+        
+        // If account is verifier -> verifier page, else -> user page
+        if (account === verifierAddress.toLowerCase()) {
+          window.location.href = "verifier.html";
+        } else {
+          window.location.href = "user.html";
+        }
+
+      } catch (error) {
+        console.error(error);
+        if (error.code === 4001) {
+          showError("Login rejected. Please connect your MetaMask account.");
+        } else {
+          showError("Login failed. Please try again.");
+        }
+      }
+    }
+
+    function updateAccountInfo(account) {
+      const shortAddress = `${account.substring(0, 6)}...${account.substring(account.length - 4)}`;
+      connectionText.textContent = `Connected: ${shortAddress}`;
+      statusLight.className = "status-light light-on";
+    }
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorModal.style.display = "flex";
+    }
+
+    loginBtn.addEventListener("click", loginWithMetaMask);
+    closeModal.addEventListener("click", () => {
+      errorModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === errorModal) {
+        errorModal.style.display = "none";
+      }
+    });
+
+    if (typeof window.ethereum !== "undefined") {
+      ethereum.on('accountsChanged', (accounts) => {
+        if (accounts.length === 0) {
+          connectionText.textContent = "Not connected";
+          statusLight.className = "status-light light-off";
+        } else {
+          updateAccountInfo(accounts[0]);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

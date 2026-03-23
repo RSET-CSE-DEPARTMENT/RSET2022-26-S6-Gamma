@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion AI — Multimodal Emotion Recognition</title>
+  <meta name="description" content="AI-powered multimodal emotion recognition from video, audio, and facial features.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <!-- ───── Header ───── -->
+  <header class="header">
+    <h1>Emotion Detection</h1>
+    <p>Multimodal Emotion Recognition — Video · Audio · Facial · Prosody · LLM</p>
+    <span class="badge" id="status-badge">● Model Loading...</span>
+  </header>
+
+  <!-- ───── Main Layout ───── -->
+  <main class="main">
+
+    <!-- ── Left Column: Video Preview ── -->
+    <div class="left-col">
+
+      <!-- Video Preview Panel -->
+      <div class="video-panel" id="video-panel">
+        <video id="video-preview" style="display:none;" muted></video>
+        <div class="placeholder" id="video-placeholder">
+          <div class="icon">🎬</div>
+          <div>Upload a video or record from webcam</div>
+        </div>
+        <div class="video-overlay">
+          <div class="emotion-badge" id="emotion-badge" style="display:none;">
+            <span class="emoji" id="emo-emoji">🙂</span>
+            <div>
+              <div class="label" id="emo-label">—</div>
+              <div class="conf" id="emo-conf"></div>
+            </div>
+          </div>
+          <div class="status-pill" id="status-pill">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="status-text">Idle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload / Webcam Tabs -->
+      <div class="card">
+        <div class="tabs">
+          <button class="tab active" id="tab-upload" data-tab="upload">📁 Upload Video</button>
+          <button class="tab" id="tab-webcam" data-tab="webcam">📸 Webcam</button>
+        </div>
+
+        <!-- Upload Tab -->
+        <div class="tab-content active" id="content-upload">
+          <div class="upload-zone" id="upload-zone">
+            <div class="icon">📤</div>
+            <div class="text">Drag & drop or <strong>browse</strong></div>
+            <div class="text" style="margin-top:2px; font-size:11px;">.mp4 .avi .mov .webm</div>
+            <input type="file" id="file-input" accept="video/*">
+            <div class="file-name" id="file-name"></div>
+          </div>
+        </div>
+
+        <!-- Webcam Tab -->
+        <div class="tab-content" id="content-webcam">
+          <p style="font-size:12px; color:var(--text2); margin-bottom:12px;">Record from your camera. Audio will be
+            captured too.</p>
+          <div class="webcam-controls">
+            <button class="btn btn-secondary" id="btn-start-cam">▶ Start Camera</button>
+            <button class="btn btn-secondary" id="btn-record" disabled>⏺ Record</button>
+            <button class="btn btn-danger" id="btn-stop-rec" disabled>⏹ Stop</button>
+          </div>
+          <div class="rec-indicator" id="rec-indicator">
+            <span class="rec-dot"></span> Recording...
+          </div>
+        </div>
+      </div>
+
+      <!-- Questionnaire -->
+      <div class="card">
+        <div class="card-title">Context Questionnaire</div>
+        <label class="input-label" for="q-visual">What are you doing?</label>
+        <input class="text-input" id="q-visual" type="text" placeholder="Type your answer...">
+        <div style="height:10px;"></div>
+        <label class="input-label" for="q-audio">How is your day?</label>
+        <input class="text-input" id="q-audio" type="text" placeholder="Type your answer...">
+      </div>
+
+      <!-- Prediction Mode Toggle -->
+      <div class="card">
+        <div class="card-title">Prediction Mode</div>
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="mode-fast" data-mode="fast">⚡ Fast</button>
+          <button class="mode-btn" id="mode-stable" data-mode="stable">🛡️ Stable</button>
+        </div>
+        <p class="mode-desc" id="mode-desc">Single pass — fastest inference</p>
+      </div>
+
+      <!-- Analyze Button -->
+      <button class="btn btn-primary" id="btn-analyze" disabled>
+        <span class="btn-text">⚡ Analyze Emotion</span>
+        <span class="spinner"></span>
+      </button>
+    </div>
+
+    <!-- ── Right Column: Results ── -->
+    <div class="right-col">
+
+      <!-- Probabilities -->
+      <div class="card">
+        <div class="card-title">Emotion Probabilities</div>
+        <div id="prob-container">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Ensemble Stats -->
+      <div class="card" id="ensemble-stats-card" style="display:none;">
+        <div class="card-title">Ensemble Diagnostics</div>
+        <div class="stats-grid" id="stats-grid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Activity Log -->
+      <div class="card">
+        <div class="card-title">Activity Log</div>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+
+</html>

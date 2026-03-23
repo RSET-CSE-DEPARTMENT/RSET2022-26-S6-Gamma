@@ -1,0 +1,41 @@
+{
+  "final_label": "No",
+  "final_probability": 0.355,
+  "final_confidence": 1.0,
+  "explanation": {
+    "risk_level": "low",
+    "summary": "Your results indicate a low cardiovascular risk at this time. Most values are within acceptable ranges.",
+    "details": [
+      "No individual biomarker is severely abnormal, but overall risk is based on combined factors."
+    ]
+  },
+  "inputs": {
+    "Age": 44.0,
+    "Gender": 1,
+    "BMI": 0.0,
+    "Cholesterol": 0.0,
+    "Triglyceride": 0.0,
+    "CRP": 0.0,
+    "Homocysteine": 0.0,
+    "Troponin": 0.003,
+    "CK_MB": 0.3
+  },
+  "details": {
+    "MI": {
+      "ran": true,
+      "missing": [],
+      "imputed": [],
+      "prob": 0.03,
+      "label": 0,
+      "conf": 1.0
+    },
+    "Heart": {
+      "ran": true,
+      "missing": [],
+      "imputed": [],
+      "prob": 0.355,
+      "label": 0,
+      "conf": 1.0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@prefix ex:   <http://example.org/health#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:D0001 rdf:type ex:Doctor ;
+        rdfs:label "Dr Aishwarya Rajesh Kulkarni"@en ;
+        ex:age 38 ;
+        ex:gender "M" ;
+        ex:department "General Medicine" .
+
+ex:D0002 rdf:type ex:Doctor ;
+        rdfs:label "Dr Andrew Paul Thompson"@en ;
+        ex:age 45 ;
+        ex:gender "M" ;
+        ex:department "Critical Care" .
+
+ex:D0003 rdf:type ex:Doctor ;
+        rdfs:label "Dr Matthew Thomas Wilson"@en ;
+        ex:age 53 ;
+        ex:gender "M" ;
+        ex:department "Cardiology" .
+
+ex:D0004 rdf:type ex:Doctor ;
+        rdfs:label "Dr Priya Natarajan"@en ;
+        ex:age 43 ;
+        ex:gender "F" ;
+        ex:department "Internal Medicine" .
+
+ex:D0005 rdf:type ex:Doctor ;
+        rdfs:label "Dr Pooja Sharma"@en ;
+        ex:age 52 ;
+        ex:gender "F" ;
+        ex:department "Pulmonology" .
+
+ex:D0006 rdf:type ex:Doctor ;
+        rdfs:label "Dr Arjun Krishnan Menon"@en ;
+        ex:age 47 ;
+        ex:gender "M" ;
+        ex:department "General Medicine" .
+
+ex:D0007 rdf:type ex:Doctor ;
+        rdfs:label "Dr Daniel Joseph Rodriguez"@en ;
+        ex:age 37 ;
+        ex:gender "F" ;
+        ex:department "General Medicine" .
+
+ex:D0008 rdf:type ex:Doctor ;
+        rdfs:label "Dr Shalini Gupta"@en ;
+        ex:age 36 ;
+        ex:gender "M" ;
+        ex:department "Cardiology" .
+
+ex:D0009 rdf:type ex:Doctor ;
+        rdfs:label "Dr Jonathan William Harris"@en ;
+        ex:age 53 ;
+        ex:gender "M" ;
+        ex:department "Cardiology" .
+
+ex:D0010 rdf:type ex:Doctor ;
+        rdfs:label "Dr Benjamin Scott Turner"@en ;
+        ex:age 36 ;
+        ex:gender "F" ;
+        ex:department "General Medicine" .
+

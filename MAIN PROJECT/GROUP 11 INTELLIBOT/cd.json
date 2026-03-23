@@ -1,0 +1,328 @@
+{
+  "courseName": "COMPILER DESIGN",
+  "courseCode": "101003/CS600A",
+  "modules": [
+    {
+      "module_number": 1,
+      "module_title": "Introduction to Compilers and Lexical Analysis",
+      "topics": [
+        {
+          "topic_name": "Compilers",
+          "content": {
+            "question": "Define a compiler.",
+            "summary": "A compiler is a system software that translates a program written in a high-level source language into an equivalent program in a target language, usually machine code.",
+            "key_points": [
+              "Translates entire program at once",
+              "Reports errors during translation",
+              "Produces efficient executable code"
+            ],
+            "detailed_explanation": "A compiler reads the complete source program and performs lexical, syntactic, and semantic analysis before generating target code. Unlike interpreters, compilers generate a separate executable which runs faster.",
+            "example": "GCC translating a C program into machine code.",
+            "static_image_url": null,
+            "image_search_query": "compiler translation process"
+          }
+        },
+        {
+          "topic_name": "Compiler vs Interpreter",
+          "content": {
+            "question": "Differentiate between compiler and interpreter.",
+            "summary": "A compiler translates the entire program before execution, while an interpreter executes the program line by line.",
+            "key_points": [
+              "Compiler produces object code",
+              "Interpreter does not produce object code",
+              "Compiled programs execute faster"
+            ],
+            "detailed_explanation": "In compilation, errors are reported after full analysis, whereas interpreters stop at the first error. Interpreters are slower but easier to debug.",
+            "example": "C uses compiler, Python uses interpreter.",
+            "static_image_url": null,
+            "image_search_query": "compiler vs interpreter table"
+          }
+        },
+        {
+          "topic_name": "Phases of a Compiler",
+          "content": {
+            "question": "Explain the phases of a compiler with a diagram.",
+            "summary": "Compiler phases include lexical analysis, syntax analysis, semantic analysis, intermediate code generation, optimization, and code generation.",
+            "key_points": [
+              "Lexical analysis generates tokens",
+              "Syntax analysis generates parse tree",
+              "Semantic analysis performs type checking",
+              "Code optimization improves performance"
+            ],
+            "detailed_explanation": "Each phase transforms the program representation. Symbol table management and error handling support all phases.",
+            "example": "Token stream → parse tree → intermediate code → target code",
+            "static_image_url": null,
+            "image_search_query": "phases of compiler diagram"
+          }
+        },
+        {
+          "topic_name": "Bootstrapping",
+          "content": {
+            "question": "What is bootstrapping in compiler design?",
+            "summary": "Bootstrapping is the technique of developing a compiler using the language that it compiles.",
+            "key_points": [
+              "Self-hosting compiler",
+              "Improves portability",
+              "Used in modern compilers"
+            ],
+            "detailed_explanation": "Initially, a simple compiler is written in another language. Later versions are written in the target language itself.",
+            "example": "C compiler written in C.",
+            "static_image_url": null,
+            "image_search_query": "compiler bootstrapping process"
+          }
+        },
+        {
+          "topic_name": "Lexical Analyzer",
+          "content": {
+            "question": "What are the functions of a lexical analyzer?",
+            "summary": "Lexical analyzer converts input characters into tokens and removes irrelevant characters.",
+            "key_points": [
+              "Token generation",
+              "Symbol table entry creation",
+              "Error detection"
+            ],
+            "detailed_explanation": "It scans the source program and identifies identifiers, keywords, operators, and constants.",
+            "example": "Converting 'int a=10;' into tokens.",
+            "static_image_url": null,
+            "image_search_query": "lexical analyzer tokens"
+          }
+        },
+        {
+          "topic_name": "Tokens, Lexemes and Patterns",
+          "content": {
+            "question": "Explain tokens, lexemes, and patterns with examples.",
+            "summary": "Tokens represent categories of lexemes, and patterns describe rules for forming tokens.",
+            "key_points": [
+              "Token is a syntactic category",
+              "Lexeme is actual character sequence",
+              "Pattern defines structure"
+            ],
+            "detailed_explanation": "For example, identifier is a token, 'count' is a lexeme, and letter(letter|digit)* is its pattern.",
+            "example": "Token: ID, Lexeme: total, Pattern: [a-zA-Z][a-zA-Z0-9]*",
+            "static_image_url": null,
+            "image_search_query": "token lexeme pattern example"
+          }
+        },
+        {
+          "topic_name": "Input Buffering",
+          "content": {
+            "question": "Why is input buffering required in lexical analysis?",
+            "summary": "Input buffering improves efficiency by reducing I/O operations during scanning.",
+            "key_points": [
+              "Uses two-buffer scheme",
+              "Sentinel characters",
+              "Improves performance"
+            ],
+            "detailed_explanation": "The two-buffer scheme allows smooth scanning and lookahead without frequent disk access.",
+            "example": "Sentinel-based buffer management.",
+            "static_image_url": null,
+            "image_search_query": "two buffer scheme lexical analysis"
+          }
+        }
+      ]
+    },
+
+    {
+      "module_number": 2,
+      "module_title": "Syntax Analysis – Top Down Parsing",
+      "topics": [
+        {
+          "topic_name": "Syntax Analyzer",
+          "content": {
+            "question": "What is the role of a syntax analyzer in a compiler?",
+            "summary": "The syntax analyzer checks whether the sequence of tokens generated by the lexical analyzer follows the grammar rules of the programming language.",
+            "key_points": [
+              "Uses context-free grammar",
+              "Builds parse tree",
+              "Detects syntax errors"
+            ],
+            "detailed_explanation": "Syntax analysis determines the hierarchical structure of the source program.",
+            "example": "Detecting missing semicolon or mismatched parentheses.",
+            "static_image_url": null,
+            "image_search_query": "syntax analyzer parse tree"
+          }
+        },
+        {
+          "topic_name": "Context-Free Grammar",
+          "content": {
+            "question": "Define Context-Free Grammar (CFG).",
+            "summary": "A CFG consists of terminals, non-terminals, a start symbol, and production rules.",
+            "key_points": [
+              "Used in syntax analysis",
+              "Supports recursion",
+              "Describes programming constructs"
+            ],
+            "detailed_explanation": "CFGs are powerful enough to represent most programming language structures.",
+            "example": "E → E + T | T",
+            "static_image_url": null,
+            "image_search_query": "context free grammar example"
+          }
+        },
+        {
+          "topic_name": "Ambiguity in Grammar",
+          "content": {
+            "question": "What is ambiguity in grammar?",
+            "summary": "A grammar is ambiguous if a string has more than one parse tree.",
+            "key_points": [
+              "Causes parsing conflicts",
+              "Resolved by grammar rewriting",
+              "Operator precedence helps"
+            ],
+            "detailed_explanation": "Ambiguity must be removed for correct parsing.",
+            "example": "if–else ambiguity.",
+            "static_image_url": null,
+            "image_search_query": "ambiguous grammar example"
+          }
+        },
+        {
+          "topic_name": "Left Recursion and Left Factoring",
+          "content": {
+            "question": "Explain left recursion and left factoring.",
+            "summary": "Left recursion causes infinite recursion in top-down parsers and must be eliminated.",
+            "key_points": [
+              "Left recursion elimination",
+              "Left factoring improves predictability"
+            ],
+            "detailed_explanation": "These transformations make grammar suitable for LL parsing.",
+            "example": "A → Aα | β",
+            "static_image_url": null,
+            "image_search_query": "left recursion elimination"
+          }
+        },
+        {
+          "topic_name": "LL(1) Parsing",
+          "content": {
+            "question": "Explain LL(1) parsing.",
+            "summary": "LL(1) parsing is a predictive parsing technique using one lookahead symbol.",
+            "key_points": [
+              "No backtracking",
+              "Uses FIRST and FOLLOW",
+              "Efficient parsing"
+            ],
+            "detailed_explanation": "Parsing table decides production selection.",
+            "example": "LL(1) table construction.",
+            "static_image_url": null,
+            "image_search_query": "LL1 parsing table"
+          }
+        }
+      ]
+    },
+
+    {
+      "module_number": 3,
+      "module_title": "Bottom-Up Parsing",
+      "topics": [
+        {
+          "topic_name": "Shift Reduce Parsing",
+          "content": {
+            "question": "Explain shift-reduce parsing.",
+            "summary": "Shift-reduce parsing uses stack-based operations to reduce input to the start symbol.",
+            "key_points": [
+              "Shift and reduce actions",
+              "Uses parsing table",
+              "Handles wider grammar class"
+            ],
+            "detailed_explanation": "Conflicts may arise and must be resolved.",
+            "example": "Expression parsing.",
+            "static_image_url": null,
+            "image_search_query": "shift reduce parsing"
+          }
+        },
+        {
+          "topic_name": "LR Parsing",
+          "content": {
+            "question": "Explain SLR, LALR, and Canonical LR parsing.",
+            "summary": "LR parsers differ in power and complexity.",
+            "key_points": [
+              "SLR: simple",
+              "LALR: commonly used",
+              "CLR: most powerful"
+            ],
+            "detailed_explanation": "LALR parsers are widely used in compiler tools.",
+            "example": "YACC uses LALR parsing.",
+            "static_image_url": null,
+            "image_search_query": "LR parsing table"
+          }
+        }
+      ]
+    },
+
+    {
+      "module_number": 4,
+      "module_title": "Syntax Directed Translation and Intermediate Code Generation",
+      "topics": [
+        {
+          "topic_name": "Syntax Directed Definitions",
+          "content": {
+            "question": "What is syntax-directed translation?",
+            "summary": "Syntax-directed translation associates semantic rules with grammar productions.",
+            "key_points": [
+              "Uses attributes",
+              "Defines semantics",
+              "Supports translation"
+            ],
+            "detailed_explanation": "Attributes are evaluated using parse trees.",
+            "example": "Expression evaluation.",
+            "static_image_url": null,
+            "image_search_query": "syntax directed translation"
+          }
+        },
+        {
+          "topic_name": "Intermediate Code",
+          "content": {
+            "question": "Explain intermediate code representations.",
+            "summary": "Intermediate code is machine-independent and simplifies optimization.",
+            "key_points": [
+              "Three-address code",
+              "Quadruples",
+              "Triples"
+            ],
+            "detailed_explanation": "Intermediate code bridges analysis and target code generation.",
+            "example": "t1 = a + b",
+            "static_image_url": null,
+            "image_search_query": "three address code"
+          }
+        }
+      ]
+    },
+
+    {
+      "module_number": 5,
+      "module_title": "Code Optimization and Code Generation",
+      "topics": [
+        {
+          "topic_name": "Code Optimization",
+          "content": {
+            "question": "What are the principal sources of optimization?",
+            "summary": "Optimization improves efficiency without changing semantics.",
+            "key_points": [
+              "Local optimization",
+              "Global optimization",
+              "Loop optimization"
+            ],
+            "detailed_explanation": "Optimizations reduce execution time and memory usage.",
+            "example": "Dead code elimination.",
+            "static_image_url": null,
+            "image_search_query": "code optimization techniques"
+          }
+        },
+        {
+          "topic_name": "Code Generation",
+          "content": {
+            "question": "Explain issues in code generation.",
+            "summary": "Code generation maps intermediate code to target instructions.",
+            "key_points": [
+              "Instruction selection",
+              "Register allocation",
+              "Target architecture"
+            ],
+            "detailed_explanation": "Efficient register usage is critical.",
+            "example": "Assembly generation.",
+            "static_image_url": null,
+            "image_search_query": "compiler code generation"
+          }
+        }
+      ]
+    }
+  ]
+}

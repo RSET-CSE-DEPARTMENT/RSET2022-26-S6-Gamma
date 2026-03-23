@@ -1,0 +1,6 @@
+/* trimmed core styles - you can replace with full CSS from dashboard if desired */
+:root{--bg:#0f172a;--card:#0b1220;--accent:#06b6d4;--muted:#9aa4b2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,Arial;background:linear-gradient(135deg,#041025,#071428);color:#e6eef6;min-height:100vh}
+.login-container{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.login-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:30px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.2);width:100%;max-width:420px}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reset Password</title>
+
+<style>
+    :root {
+        --bg:#0f172a;
+        --accent:#06b6d4;
+        --muted:#9aa4b2;
+        --text:#e6eef6;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui;}
+    body{
+        background:linear-gradient(135deg,#041025,#071428);
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:var(--text);
+        padding:20px;
+    }
+    .card{
+        width:100%;
+        max-width:480px;
+        background:rgba(255,255,255,0.02);
+        padding:40px 32px;
+        border-radius:16px;
+        border:1px solid rgba(255,255,255,0.05);
+        text-align:center;
+    }
+    .logo{
+        background:#06323a;
+        width:48px;
+        height:48px;
+        border-radius:10px;
+        color:var(--accent);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-weight:800;
+        margin:0 auto 10px;
+    }
+    .input{
+        width:100%;
+        padding:12px;
+        margin-top:12px;
+        border-radius:8px;
+        border:1px solid rgba(255,255,255,0.07);
+        background:rgba(255,255,255,0.03);
+        color:var(--text);
+    }
+    .btn{
+        width:100%;
+        padding:12px;
+        background:var(--accent);
+        border:none;
+        border-radius:8px;
+        margin-top:16px;
+        font-weight:700;
+        cursor:pointer;
+    }
+    .link{
+        color:var(--accent);
+        display:block;
+        margin-top:16px;
+        text-decoration:none;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="logo">HB</div>
+    <h2>Password Reset</h2>
+    <p style="color:var(--muted);margin-top:6px">Enter your email or username to reset your password</p>
+
+    <input id="identifier" class="input" placeholder="Email or Username" />
+
+    <button class="btn">Send Reset Link</button>
+
+    <a href="index.html" class="link">Back to Login</a>
+</div>
+
+</body>
+</html>

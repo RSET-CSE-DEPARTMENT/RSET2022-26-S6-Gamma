@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Incident List</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+
+    <style>
+    :root {
+        --primary: #1B3C53;
+        --secondary: #234C6A;
+        --accent: #456882;
+        --bg: #eef3f7;
+        --card: #ffffff;
+        --radius: 10px;
+        --shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(135deg, #eef3f7, #dbe6ea);
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    /* Blue top line */
+    body::before {
+        content: "";
+        display: block;
+        height: 6px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 0 0 6px 6px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: var(--primary);
+        margin: 20px;
+        text-align: center;
+    }
+
+    .incident {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 16px;
+        margin: 0 20px 16px;
+        cursor: pointer;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        box-shadow: var(--shadow);
+        transition: 0.3s ease;
+    }
+
+    .incident:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .incident img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        flex-shrink: 0;
+        background: #f0f0f0;
+    }
+
+    .incident-content {
+        flex: 1;
+    }
+
+    .time {
+        color: #666;
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .desc {
+        font-style: italic;
+        margin: 6px 0;
+        color: #444;
+    }
+</style>
+
+</head>
+
+<body>
+
+<h1>Reported Incidents</h1>
+<div id="incidentList">Loading incidents...</div>
+
+<script>
+    const contractABI = [
+    {
+        "anonymous": false,
+        "inputs": [
+            { "indexed": false, "internalType": "uint256", "name": "id", "type": "uint256" },
+            { "indexed": false, "internalType": "string", "name": "lat", "type": "string" },
+            { "indexed": false, "internalType": "string", "name": "lon", "type": "string" },
+            { "indexed": false, "internalType": "string", "name": "ipfsHash", "type": "string" },
+            { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+        ],
+        "name": "IncidentReported",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            { "indexed": false, "internalType": "uint256", "name": "id", "type": "uint256" },
+            { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+        ],
+        "name": "IncidentVerified",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "incidentCount",
+        "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "incidents",
+        "outputs": [
+            { "internalType": "uint256", "name": "id", "type": "uint256" },
+            { "internalType": "string", "name": "lat", "type": "string" },
+            { "internalType": "string", "name": "lon", "type": "string" },
+            { "internalType": "string", "name": "ipfsHash", "type": "string" },
+            { "internalType": "uint256", "name": "timestamp", "type": "uint256" },
+            { "internalType": "bool", "name": "verified", "type": "bool" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "string", "name": "_lat", "type": "string" },
+            { "internalType": "string", "name": "_lon", "type": "string" },
+            { "internalType": "string", "name": "_ipfsHash", "type": "string" }
+        ],
+        "name": "reportIncident",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "uint256", "name": "_id", "type": "uint256" }
+        ],
+        "name": "verifyIncident",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            { "internalType": "uint256", "name": "_id", "type": "uint256" }
+        ],
+        "name": "getIncident",
+        "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "string", "name": "", "type": "string" },
+            { "internalType": "string", "name": "", "type": "string" },
+            { "internalType": "string", "name": "", "type": "string" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bool", "name": "", "type": "bool" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+];
+
+
+    const contractAddress = "0x25Ef3FE515C6B0a9D2282A5D6e8A1ec99c1cFfDC";
+    let web3, contract;
+
+    
+
+    // Fetch description using txHash
+    // ✅ Fetch BOTH description + location from DB
+async function getIncidentFromDB(txHash) {
+    try {
+        const res = await fetch(`http://localhost:8000/incident/by-tx/${txHash}`);
+        const data = await res.json();
+
+        return {
+            description: data.description || "No description available",
+            location: data.location || "Location not available"
+        };
+
+    } catch (err) {
+        return {
+            description: "No description available",
+            location: "Location not available"
+        };
+    }
+}
+
+    async function loadIncidents() {
+        if (!window.ethereum) {
+            alert("MetaMask not found");
+            return;
+        }
+
+        web3 = new Web3(window.ethereum);
+        await ethereum.request({ method: "eth_requestAccounts" });
+
+        contract = new web3.eth.Contract(contractABI, contractAddress);
+
+        const listDiv = document.getElementById("incidentList");
+        listDiv.innerHTML = "";
+
+        const events = await contract.getPastEvents("IncidentReported", {
+            fromBlock: 0,
+            toBlock: "latest"
+        });
+
+        if (events.length === 0) {
+            listDiv.innerHTML = "No incidents reported yet.";
+            return;
+        }
+
+        events.reverse(); // newest first
+
+        for (const ev of events) {
+            const { id, lat, lon, timestamp, ipfsHash } = ev.returnValues;
+            const txHash = ev.transactionHash;
+
+            const date = new Date(timestamp * 1000).toLocaleString();
+            const dbData = await getIncidentFromDB(txHash);
+            const description = dbData.description;
+            const locationName = dbData.location;   
+
+            const imageURL = ipfsHash
+                ? `https://gateway.pinata.cloud/ipfs/${ipfsHash}`
+                : "";
+
+            const div = document.createElement("div");
+            div.className = "incident";
+
+            div.innerHTML = `
+                <img src="${imageURL}"
+                     alt="Incident Image"
+                     onerror="this.style.display='none'">
+
+                <div class="incident-content">
+                    <strong>Incident #${id}</strong>
+                    <div class="desc">${description}</div>
+                    Location: ${locationName}<br>
+                    <span class="time">Reported: ${date}</span>
+                </div>
+            `;
+
+            div.onclick = () => {
+                window.location.href = `incident_detail.html?tx=${txHash}`;
+            };
+
+            listDiv.appendChild(div);
+        }
+    }
+
+    loadIncidents();
+</script>
+
+</body>
+</html>

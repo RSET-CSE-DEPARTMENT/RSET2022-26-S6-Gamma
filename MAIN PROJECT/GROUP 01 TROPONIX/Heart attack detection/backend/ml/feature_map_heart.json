@@ -1,0 +1,11 @@
+{
+  "feature_names_in_order": [
+    "Age",
+    "Gender",
+    "BMI",
+    "Cholesterol Level",
+    "Triglyceride Level",
+    "CRP Level",
+    "Homocysteine Level"
+  ]
+}

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Troponix</title>
+  <link rel="icon" type="image/png" href="assets/heart2.png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="brand">
+        <img src="assets/heart2.png" alt="Troponix Logo" class="logo-img">
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <div id="dashboardSubtitle" class="muted">
+            Cardiovascular Risk Assessment
+          </div>
+        </div>
+      </div>
+
+      <div class="user-info">
+        <div>
+          <div>Welcome, <strong id="userName">User</strong></div>
+          <div class="muted" id="userRole">Account</div>
+        </div>
+        <div class="user-avatar" id="userAvatar">U</div>
+        <button id="logoutBtn" class="btn ghost">Logout</button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="main-grid">
+
+        <!-- ================= LEFT COLUMN ================= -->
+        <aside class="side card">
+
+          <div class="action-buttons">
+            <button id="newPatientBtn" class="btn btn-small" style="display:none">
+              New Patient
+            </button>
+          </div>
+
+          <!-- Risk Meter -->
+          <div style="margin-top:20px;">
+            <div class="section-title">Health Status</div>
+            <div class="risk-meter">
+              <div class="risk-meter-inner">
+                <div class="risk-value" id="riskValue">--%</div>
+                <div class="risk-level" id="riskLevel">Not Calculated</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PubMed Search -->
+          <div style="margin-top:20px;">
+            <div class="section-title">Medical Literature Search</div>
+            <div class="muted">Search PubMed research</div>
+
+            <input id="pubmedSearch" class="input" placeholder="Search medical research...">
+            <button id="pubmedBtn" class="btn ghost" style="margin-top:6px;">
+              Search
+            </button>
+
+            <div id="pubmedResults" style="margin-top:12px;">
+              <div class="muted">Enter a medical term to search PubMed</div>
+            </div>
+          </div>
+
+
+        </aside>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+        <section class="card main-area">
+
+          <!-- ================= TABS ================= -->
+          <div class="tab-nav" id="tabNav">
+            <div class="tab active" data-tab="dashboard">Dashboard</div>
+            <div class="tab" data-tab="risk-assessment">Risk Assessment</div>
+            <div class="tab" data-tab="cceam">CCEAM Troponin Risk</div>
+            <div class="tab" data-tab="nearby-hospitals">Nearby Hospitals</div>
+          </div>
+
+          <!-- ================= DASHBOARD TAB ================= -->
+          <div class="tab-content active" id="dashboard-tab">
+            <div class="section-title">Health Overview</div>
+            <div class="muted">Your personalized health monitoring dashboard</div>
+
+            <div class="analytics-grid" id="patientAnalytics" style="display:none"></div>
+            <div class="analytics-grid" id="clinicianAnalytics" style="display:none"></div>
+
+            <div id="patientManagementView" style="display:none; margin-top:20px;">
+              <div class="section-title">Patient Management</div>
+              <div class="patient-grid" id="patientGrid"></div>
+            </div>
+          </div>
+
+          <!-- ================= RISK ASSESSMENT TAB ================= -->
+          <div class="tab-content" id="risk-assessment-tab">
+
+            <div class="section-title">Cardiovascular Risk Assessment</div>
+            <div class="muted" style="margin-bottom:12px">
+              Enter biomarker and patient details
+            </div>
+
+            <div class="prediction-form grid">
+
+              <div class="form-group">
+                <label>Troponin (ng/mL)</label>
+                <input id="inp_troponin" class="input" type="number" step="0.01">
+              </div>
+
+              <div class="form-group">
+                <label>CK-MB (U/L)</label>
+                <input id="inp_ckmb" class="input" type="number" step="0.1">
+              </div>
+
+              <div class="form-group">
+                <label>CRP (mg/L)</label>
+                <input id="inp_crp" class="input" type="number" step="0.1">
+              </div>
+
+              <div class="form-group">
+                <label>Total Cholesterol (mg/dL)</label>
+                <input id="inp_cholesterol" class="input" type="number">
+              </div>
+
+              <div class="form-group">
+                <label>Triglycerides (mg/dL)</label>
+                <input id="inp_triglyceride" class="input" type="number">
+              </div>
+
+              <div class="form-group">
+                <label>Homocysteine (µmol/L)</label>
+                <input id="inp_homocysteine" class="input" type="number" step="0.1">
+              </div>
+
+              <div class="form-group">
+                <label>BMI (kg/m²)</label>
+                <input id="inp_bmi" class="input" type="number" step="0.1">
+              </div>
+
+              <div class="form-group">
+                <label>Age</label>
+                <input id="inp_age" class="input" type="number">
+              </div>
+
+              <div class="form-group">
+                <label>Gender</label>
+                <select id="inp_gender" class="input">
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="form-actions">
+              <button id="predBtn" class="btn">Calculate Risk</button>
+              <button id="clearBtn" class="btn ghost">Clear</button>
+            </div>
+
+            <div id="predResult" class="prediction-result"></div>
+            <div id="shapArea" class="muted" style="margin-top:12px">
+              Enter values to see analysis
+            </div>
+
+            
+
+            <!-- ===== RECOMMENDED MEDICAL LITERATURE ===== -->
+            <div id="litSection" style="display:none; margin-top:24px;">
+              <div class="lit-header">
+                <span class="lit-icon">📚</span>
+                <div>
+                  <div class="section-title" style="margin-bottom:2px">Recommended Medical Literature</div>
+                  <div class="muted" style="font-size:13px">Articles curated based on your risk assessment</div>
+                </div>
+              </div>
+
+              <!-- Why these articles accordion -->
+              <div class="lit-why-box" id="litWhyBox">
+                <button class="lit-why-toggle" id="litWhyToggle" onclick="toggleWhyBox()">
+                  <span>📖 Why these articles?</span>
+                  <span id="litWhyChevron">▾</span>
+                </button>
+                <div id="litWhyText" class="lit-why-text"></div>
+              </div>
+
+              <!-- Article cards -->
+              <div id="litResults" class="lit-results"></div>
+            </div>
+
+          </div>
+
+          <!-- ================= CCEAM TAB ================= -->
+          <div class="tab-content" id="cceam-tab">
+
+            <div class="section-title">CCEAM Acute MI Risk</div>
+            <div class="muted">Temporal troponin prediction</div>
+
+            <div class="cceam-form">
+
+              <div class="form-group">
+                <label>Age</label>
+                <input id="cceam_age" class="input" type="number">
+              </div>
+
+              <div class="form-group">
+                <label>Gender</label>
+                <select id="cceam_gender" class="input">
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Troponin 0h (ng/mL)</label>
+                <input id="cceam_trop0" class="input" type="number" step="0.01">
+              </div>
+
+              <div class="form-group">
+                <label>CK-MB (U/L)</label>
+                <input id="cceam_ckmb" class="input" type="number" step="0.1">
+              </div>
+
+            </div>
+
+            <button id="cceamBtn" class="btn" style="margin-top:12px">
+              Predict Risk
+            </button>
+            <button id="downloadCCEAMReportBtn" class="btn ghost">
+                Download CCEAM Report (PDF)
+            </button>
+            <div id="cceamResult" style="margin-top:16px"></div>
+
+          </div>
+
+          <!-- ================= NEARBY HOSPITALS TAB ================= -->
+          <div class="tab-content" id="nearby-hospitals-tab">
+            <div class="section-title">Nearby Heart Hospitals</div>
+            <div class="muted">Find cardiology hospitals near your location.</div>
+
+            <button onclick="getLocation()" class="btn" style="margin-top:10px;">
+              Find Hospitals Near Me
+            </button>
+
+            <div id="hospitalResults" style="margin-top:20px;"></div>
+          </div>
+
+        </section>
+      </div>
+
+      <footer style="text-align:center;margin-top:20px;color:#888;font-size:13px;">
+        Blood Biomarker ML Dashboard • Secure Health Analytics
+      </footer>
+
+    </main>
+  </div>
+
+  <script type="module" src="dashboard.js"></script>
+  <script type="module" src="api.js"></script>
+
+</body>
+
+</html>

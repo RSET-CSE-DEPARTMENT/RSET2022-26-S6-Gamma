@@ -1,0 +1,13 @@
+@prefix ex:   <http://example.org/health#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:F002500 rdf:type ex:AdmissionVisit ;
+        ex:isCheckup false ;
+        ex:attendingDoctor ex:D0004 ;
+        ex:patient ex:P007923 ;
+        ex:stay ex:S006923 ;
+        ex:diagnosis "Sepsis" ;
+        ex:diagnosisType ex:ConfirmedDiagnosis ;
+        ex:prescribedDrug "Vancomycin" .
+
