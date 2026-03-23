@@ -1,0 +1,15 @@
+generalization of the binomial distribution for more than two possible outcomes.
+describes the probability of obtaining a certain number of occurrences for each category in a fixed number of trials, where each trial has multiple possible outcomes.
+A multinomial distribution models the probability of counts for multiple categories when each trial has exactly one of the possible outcomes.
+
+
+Example
+If you roll a 6-sided die 10 times and count how often each face appears, the outcomes follow a multinomial distribution with 
+𝑘=6 and 𝑛=10, assuming each face has an equal probability of 𝑝=1/6.
+
+Relation to Binomial Distribution
+If k=2 (i.e., only two possible outcomes), the multinomial distribution reduces to a binomial distribution.
+
+Usage in Machine Learning & Statistics
+Text Classification: The frequency of different words in a document follows a multinomial distribution.
+Reinforcement Learning: Choosing actions from a set of discrete choices.

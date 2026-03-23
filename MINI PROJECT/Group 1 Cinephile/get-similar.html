@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Similar Movies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: #87CEEB;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #87CEEB;
+        }
+
+        .content {
+            padding: 100px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .search-section h2 {
+            font-size: 2rem;
+            color: #87CEEB;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 12px;
+            width: 100%;
+            max-width: 500px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .search-btn {
+            background: #87CEEB;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: #5F9EA0;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .movie-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 15px;
+        }
+
+        .movie-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #87CEEB;
+        }
+
+        .movie-rating {
+            color: #ffd700;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #87CEEB;
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: #ff4444;
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #1f1f1f;
+            border-radius: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .search-result-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(135, 206, 235, 0.1);
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .movies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .movie-poster {
+                height: 225px;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinephile</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="recommendations.html">Recommendations</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="search-section">
+            <h2>Find Similar Movies</h2>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input type="text" id="movieSearch" class="search-input" placeholder="Enter a movie title...">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                <button onclick="searchSimilarMovies()" class="search-btn">Find Similar Movies</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Loading similar movies...</div>
+        <div id="error" class="error"></div>
+        <div id="moviesGrid" class="movies-grid"></div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwLRRKIwsSPmvFXnDn5UcweXli12w1Qr0",
+            authDomain: "cinephile-250fc.firebaseapp.com",
+            databaseURL: "https://cinephile-250fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "cinephile-250fc",
+            storageBucket: "cinephile-250fc.firebasestorage.app",
+            messagingSenderId: "995080104071",
+            appId: "1:995080104071:web:150cd3e9f3d8a905097022",
+            measurementId: "G-QX66DDM9ZD"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // TMDb API configuration
+        const TMDB_API_KEY = 'e7dab9ac70474bbfe363ad906dd566d5';
+        let selectedMovieId = null;
+
+        // Search for movies as user types
+        const searchInput = document.getElementById('movieSearch');
+        const searchResults = document.getElementById('searchResults');
+        let searchTimeout;
+
+        searchInput.addEventListener('input', () => {
+            clearTimeout(searchTimeout);
+            const query = searchInput.value.trim();
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const response = await fetch(
+                        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}`
+                    );
+                    const data = await response.json();
+                    
+                    if (data.results && data.results.length > 0) {
+                        displaySearchResults(data.results.slice(0, 5));
+                    }
+                } catch (error) {
+                    console.error('Error searching movies:', error);
+                }
+            }, 500);
+        });
+
+        // Display search results
+        function displaySearchResults(movies) {
+            searchResults.innerHTML = '';
+            searchResults.style.display = 'block';
+            
+            movies.forEach(movie => {
+                const div = document.createElement('div');
+                div.className = 'search-result-item';
+                div.textContent = `${movie.title} (${movie.release_date?.split('-')[0] || 'N/A'})`;
+                div.onclick = () => selectMovie(movie);
+                searchResults.appendChild(div);
+            });
+        }
+
+        // Select a movie from search results
+        function selectMovie(movie) {
+            searchInput.value = movie.title;
+            selectedMovieId = movie.id;
+            searchResults.style.display = 'none';
+        }
+
+        // Search for similar movies
+        async function searchSimilarMovies() {
+            if (!selectedMovieId) {
+                document.getElementById('error').textContent = 'Please select a movie from the search results';
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+
+            const loadingElement = document.getElementById('loading');
+            const errorElement = document.getElementById('error');
+            const moviesGrid = document.getElementById('moviesGrid');
+
+            loadingElement.style.display = 'block';
+            errorElement.style.display = 'none';
+            moviesGrid.innerHTML = '';
+
+            try {
+                // Get current port from window location
+                const currentPort = window.location.port || '8000';
+                const response = await fetch(`http://localhost:${currentPort}/api/similar-movies?movieId=${selectedMovieId}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                displaySimilarMovies(data.recommendations);
+            } catch (error) {
+                console.error('Error getting similar movies:', error);
+                errorElement.textContent = 'Failed to load similar movies. Please try again.';
+                errorElement.style.display = 'block';
+            } finally {
+                loadingElement.style.display = 'none';
+            }
+        }
+
+        // Display similar movies
+        function displaySimilarMovies(movies) {
+            const moviesGrid = document.getElementById('moviesGrid');
+            moviesGrid.innerHTML = '';
+
+            if (!movies || movies.length === 0) {
+                document.getElementById('error').textContent = 'No similar movies found.';
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+
+            movies.forEach(async (movieTitle) => {
+                try {
+                    const response = await fetch(
+                        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(movieTitle)}`
+                    );
+                    const data = await response.json();
+                    
+                    if (data.results && data.results.length > 0) {
+                        const movie = data.results[0];
+                        const movieCard = document.createElement('div');
+                        movieCard.className = 'movie-card';
+                        movieCard.onclick = () => window.location.href = `movie-details.html?id=${movie.id}`;
+                        
+                        const posterPath = movie.poster_path
+                            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                            : 'placeholder-image.jpg';
+                        
+                        movieCard.innerHTML = `
+                            <img src="${posterPath}" alt="${movie.title}" class="movie-poster">
+                            <div class="movie-info">
+                                <div class="movie-title">${movie.title}</div>
+                                <div class="movie-rating">★ ${movie.vote_average.toFixed(1)}</div>
+                            </div>
+                        `;
+                        
+                        moviesGrid.appendChild(movieCard);
+                    }
+                } catch (error) {
+                    console.error('Error fetching movie details:', error);
+                }
+            });
+        }
+
+        // Check authentication
+        auth.onAuthStateChanged((user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchResults.contains(e.target) && e.target !== searchInput) {
+                searchResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 

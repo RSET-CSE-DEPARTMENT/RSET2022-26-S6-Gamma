@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    
+    <style>
+        /* Logo Styles */
+    .site-logo {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+      width: 175px;
+      height: auto;
+    }
+
+    .site-logo img {
+      width: 100%;
+      height: auto;
+    }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFECEA;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .header-bar {
+            height: 60px;
+            background-color: #C2CDFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .calendar-container {
+            width: 100%;
+            height: calc(100% - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            align-self: center;
+            padding-right: 25%;
+        }
+        .calendar-controls {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            align-self: center;
+            padding-left: 20%;
+        }
+        .calendar-controls button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #month-year {
+            font-size: 20px;
+            font-weight: bold;
+            min-width: 200px;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            width: 200%;
+            max-width: 1200px;
+            height: 100%;
+            background: #C2CDFF;
+            border-radius: 10px;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        .weekday {
+            font-weight: bold;
+            background: #FF9874;
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .day {
+            background: #7695FF;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 80px;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .day:hover {
+            transform: scale(1.03);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .day.has-events {
+            background: #4a6cff;
+        }
+        .day-event {
+            font-size: 12px;
+            background: #FF9874;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin: 3px 0;
+            width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #event-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #30356D;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            display: none;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        #event-container h3 {
+            margin-top: 0;
+            color: #FF9874;
+        }
+        #event-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        #event-container button {
+            background: #7695FF;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #event-container button:hover {
+            background: #5a7eff;
+        }
+        .event-list {
+            margin-top: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .event {
+            background: #FF9874;
+            padding: 8px;
+            border-radius: 5px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+        #loading-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+  <div class="site-logo">
+    <img src="title1.png" alt="Site Logo">
+  </div>
+    <div class="header-bar"></div>
+    <div class="calendar-container">
+        <div class="calendar-controls">
+            <button onclick="prevMonth()">◀ Previous</button>
+            <span id="month-year">Loading...</span>
+            <button onclick="nextMonth()">Next ▶</button>
+        </div>
+        <div id="calendar">
+            <p id="loading-message">Loading calendar...</p>
+        </div>
+    </div>
+
+    <div id="overlay" onclick="closeEventPopup()"></div>
+    <div id="event-container" onclick="event.stopPropagation()">
+        <h3 id="selected-date">Select a Date</h3>
+        <input type="text" id="event-input" placeholder="Enter event description">
+        <button onclick="addEvent()">Add Event</button>
+        <div id="event-list" class="event-list"></div>
+    </div>
+
+    <script>
+        // Global variables
+        let db, auth, currentUser;
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedDate = "";
+
+        // DOM Elements
+        const calendar = document.getElementById("calendar");
+        const eventContainer = document.getElementById("event-container");
+        const overlay = document.getElementById("overlay");
+        const selectedDateElem = document.getElementById("selected-date");
+        const eventInput = document.getElementById("event-input");
+        const eventList = document.getElementById("event-list");
+        const monthYearElem = document.getElementById("month-year");
+        const loadingMessage = document.getElementById("loading-message");
+
+        // Initialize Firebase
+        function initializeFirebase() {
+            const firebaseConfig = {
+                apiKey: "AIzaSyCQb9t3Jo-GI0laq4cJ7Z1u0ItFPo7WPH8",
+                authDomain: "planprep-26eeb.firebaseapp.com",
+                projectId: "planprep-26eeb",
+                storageBucket: "planprep-26eeb.appspot.com",
+                messagingSenderId: "617715018229",
+                appId: "1:617715018229:web:dd709a9a8d40df640798bc"
+            };
+
+            if (!firebase.apps.length) {
+                firebase.initializeApp(firebaseConfig);
+            }
+            auth = firebase.auth();
+            db = firebase.firestore();
+            console.log("Firebase initialized successfully");
+        }
+
+        // Handle keyboard events
+        function handleKeyDown(e) {
+            if (e.key === 'Escape') {
+                closeEventPopup();
+            }
+        }
+
+        // Calendar functions
+        function generateCalendar() {
+            console.log("Generating calendar for user:", currentUser?.uid);
+            
+            // Clear existing calendar
+            calendar.innerHTML = '';
+            
+            // Create new calendar grid
+            const calendarGrid = document.createElement("div");
+            calendarGrid.className = "calendar";
+            calendar.appendChild(calendarGrid);
+
+            // Set month/year display
+            monthYearElem.textContent = new Date(currentYear, currentMonth).toLocaleString('default', { 
+                month: 'long', 
+                year: 'numeric' 
+            });
+
+            // Add weekday headers
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            weekdays.forEach(day => {
+                const dayElem = document.createElement("div");
+                dayElem.classList.add("weekday");
+                dayElem.textContent = day;
+                calendarGrid.appendChild(dayElem);
+            });
+
+            // Calculate days in month and starting day
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            console.log(`Generating calendar for ${currentMonth+1}/${currentYear} - ${daysInMonth} days, starts on ${weekdays[firstDay]}`);
+
+            // Add empty cells for days before the first day of the month
+            for (let i = 0; i < firstDay; i++) {
+                calendarGrid.appendChild(document.createElement("div"));
+            }
+
+            // Add day cells
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElem = document.createElement("div");
+                dayElem.classList.add("day");
+                
+                const dateNumber = document.createElement("div");
+                dateNumber.textContent = day;
+                dayElem.appendChild(dateNumber);
+
+                const dateKey = `${day}/${currentMonth + 1}/${currentYear}`;
+                dayElem.onclick = (e) => { 
+                    e.stopPropagation(); 
+                    openEventPopup(day); 
+                };
+
+                // Get events for this day
+                getEventsForDate(dateKey).then(events => {
+                    if (events.length > 0) {
+                        dayElem.classList.add("has-events");
+                        events.forEach(event => {
+                            const eventBadge = document.createElement("div");
+                            eventBadge.classList.add("day-event");
+                            eventBadge.textContent = event.title;
+                            dayElem.appendChild(eventBadge);
+                        });
+                    }
+                });
+
+                calendarGrid.appendChild(dayElem);
+            }
+        }
+
+        async function getEventsForDate(date) {
+            if (!currentUser) {
+                console.log("No user - can't get events");
+                return [];
+            }
+            
+            try {
+                console.log(`Fetching events for ${date}`);
+                const snapshot = await db.collection("user_events")
+                    .doc(currentUser.uid)
+                    .collection("events")
+                    .where("date", "==", date)
+                    .get();
+                
+                if (snapshot.empty) {
+                    console.log("No events found for date:", date);
+                    return [];
+                }
+                
+                const events = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                console.log(`Found ${events.length} events for ${date}`);
+                return events;
+            } catch (error) {
+                console.error("Error getting events:", error);
+                alert("Error loading events: " + error.message);
+                return [];
+            }
+        }
+
+        function openEventPopup(day) {
+            if (!currentUser) return;
+            
+            selectedDate = `${day}/${currentMonth + 1}/${currentYear}`;
+            selectedDateElem.textContent = selectedDate;
+            eventInput.value = "";
+            eventList.innerHTML = "";
+
+            console.log(`Opening event popup for ${selectedDate}`);
+
+            // Get events for this date
+            db.collection("user_events")
+                .doc(currentUser.uid)
+                .collection("events")
+                .where("date", "==", selectedDate)
+                .get()
+                .then(snapshot => {
+                    snapshot.forEach(doc => {
+                        addEventToPopup(doc.id, doc.data().title);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading events:", error);
+                });
+
+            eventContainer.style.display = "block";
+            overlay.style.display = "block";
+            eventInput.focus();
+            
+            // Add keyboard listener
+            document.addEventListener('keydown', handleKeyDown);
+        }
+
+        function addEventToPopup(id, title) {
+            const eventElem = document.createElement("div");
+            eventElem.classList.add("event");
+            eventElem.innerHTML = `
+                ${title} 
+                <button class='delete-btn' onclick='deleteEvent("${id}")'>X</button>
+            `;
+            eventList.appendChild(eventElem);
+        }
+
+        function addEvent() {
+            const eventText = eventInput.value.trim();
+            if (!eventText || !currentUser) {
+                alert("Please enter an event description");
+                return;
+            }
+
+            console.log(`Adding event to Firestore: user_events/${currentUser.uid}/events`);
+            console.log("Event data:", { 
+                date: selectedDate, 
+                title: eventText,
+                createdAt: new Date().toISOString() 
+            });
+
+            const addButton = eventContainer.querySelector("button");
+            const originalText = addButton.textContent;
+            addButton.textContent = "Adding...";
+            addButton.disabled = true;
+
+            // Add to Firestore
+            db.collection("user_events")
+                .doc(currentUser.uid)
+                .collection("events")
+                .add({
+                    date: selectedDate,
+                    title: eventText,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                .then((docRef) => {
+                    console.log("Event added successfully with ID:", docRef.id);
+                    
+                    // Add to UI immediately
+                    addEventToPopup(docRef.id, eventText);
+                    
+                    // Update calendar view
+                    const dayNumber = selectedDate.split('/')[0];
+                    const dayElements = document.querySelectorAll('.day');
+                    dayElements.forEach(day => {
+                        const dayText = day.querySelector('div:first-child')?.textContent;
+                        if (dayText === dayNumber) {
+                            const eventBadge = document.createElement("div");
+                            eventBadge.classList.add("day-event");
+                            eventBadge.textContent = eventText;
+                            day.appendChild(eventBadge);
+                            day.classList.add("has-events");
+                        }
+                    });
+
+                    eventInput.value = "";
+                    eventInput.focus();
+                })
+                .catch(error => {
+                    console.error("Error adding event:", error);
+                    alert("Failed to add event: " + error.message);
+                })
+                .finally(() => {
+                    addButton.textContent = originalText;
+                    addButton.disabled = false;
+                });
+        }
+
+        function deleteEvent(eventId) {
+            if (!currentUser || !confirm("Are you sure you want to delete this event?")) return;
+            
+            console.log(`Deleting event ${eventId}`);
+
+            db.collection("user_events")
+                .doc(currentUser.uid)
+                .collection("events")
+                .doc(eventId)
+                .delete()
+                .then(() => {
+                    console.log("Event deleted successfully");
+                    // Remove from popup
+                    const eventElems = eventList.querySelectorAll(".event");
+                    eventElems.forEach(elem => {
+                        if (elem.querySelector(".delete-btn").getAttribute("onclick").includes(eventId)) {
+                            elem.remove();
+                        }
+                    });
+                    // Refresh calendar
+                    generateCalendar();
+                })
+                .catch(error => {
+                    console.error("Error deleting event:", error);
+                    alert("Failed to delete event: " + error.message);
+                });
+        }
+
+        function closeEventPopup() {
+            console.log("Closing event popup");
+            eventContainer.style.display = "none";
+            overlay.style.display = "none";
+            document.removeEventListener('keydown', handleKeyDown);
+        }
+
+        function prevMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar();
+        }
+
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar();
+        }
+
+        // Initialize the app
+        function initApp() {
+            initializeFirebase();
+            
+            // Check authentication state
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    console.log("User signed in:", user.uid);
+                    currentUser = user;
+                    generateCalendar();
+                } else {
+                    console.log("No user signed in");
+                    loadingMessage.textContent = "Please login to access the calendar";
+                    // Redirect to login page after delay
+                    setTimeout(() => {
+                        window.location.href = "/login.html";
+                    }, 2000);
+                }
+            });
+        }
+
+        // Start the app when DOM is ready
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>

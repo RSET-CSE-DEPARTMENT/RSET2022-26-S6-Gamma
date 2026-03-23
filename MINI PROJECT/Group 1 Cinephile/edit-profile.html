@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: #e50914;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e50914;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e50914;
+        }
+
+        .content {
+            padding: 100px 20px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .edit-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #e50914;
+        }
+
+        .avatar-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .avatar-option {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .avatar-option.selected {
+            background: #e50914;
+        }
+
+        .avatar-option img {
+            width: 100%;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+        }
+
+        .avatar-option.selected img {
+            border-color: white;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .save-btn {
+            background: #e50914;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .save-btn:hover {
+            background: #f40612;
+        }
+
+        .cancel-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cancel-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .success-message {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 80px 15px 15px;
+            }
+
+            .edit-form {
+                padding: 20px;
+            }
+
+            .avatar-options {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 10px;
+            }
+
+            .avatar-option img {
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Movie Dashboard</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="watchlist.html">My Watchlist</a>
+            <a href="profile.html">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="success-message" id="successMessage">Profile updated successfully!</div>
+        <div class="edit-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label>Profile Icon</label>
+                <div class="avatar-options" id="avatarOptions">
+                    <!-- Avatar options will be inserted here -->
+                </div>
+                <input type="hidden" id="selectedAvatar" value="">
+            </div>
+            <div class="button-group">
+                <button class="save-btn" onclick="saveProfile()">Save Changes</button>
+                <button class="cancel-btn" onclick="window.location.href='profile.html'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwLRRKIwsSPmvFXnDn5UcweXli12w1Qr0",
+            authDomain: "cinephile-250fc.firebaseapp.com",
+            databaseURL: "https://cinephile-250fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "cinephile-250fc",
+            storageBucket: "cinephile-250fc.firebasestorage.app",
+            messagingSenderId: "995080104071",
+            appId: "1:995080104071:web:150cd3e9f3d8a905097022",
+            measurementId: "G-QX66DDM9ZD"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.database();
+
+        // Function to handle logout
+        function logout() {
+            auth.signOut().then(() => {
+                window.location.href = 'login.html';
+            }).catch((error) => {
+                console.error('Error signing out:', error);
+                alert('Failed to logout. Please try again.');
+            });
+        }
+
+        // Function to select avatar
+        function selectAvatar(seed) {
+            const avatarOptions = document.querySelectorAll('.avatar-option');
+            avatarOptions.forEach(option => option.classList.remove('selected'));
+            
+            const selectedOption = document.querySelector(`.avatar-option[data-seed="${seed}"]`);
+            if (selectedOption) {
+                selectedOption.classList.add('selected');
+                document.getElementById('selectedAvatar').value = `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}`;
+            }
+        }
+
+        // Function to save profile changes
+        async function saveProfile() {
+            const user = auth.currentUser;
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const username = document.getElementById('username').value.trim();
+            const avatar = document.getElementById('selectedAvatar').value;
+
+            if (!username) {
+                alert('Please enter a username');
+                return;
+            }
+
+            try {
+                // Update user data in Firebase
+                await db.ref(`users/${user.uid}`).update({
+                    username: username,
+                    avatar: avatar
+                });
+
+                // Show success message
+                alert('Profile updated successfully!');
+                // Redirect back to profile page
+                window.location.href = 'profile.html';
+            } catch (error) {
+                console.error('Error updating profile:', error);
+                alert('Failed to update profile. Please try again.');
+            }
+        }
+
+        // Function to generate avatar options
+        function generateAvatarOptions() {
+            const avatarOptions = document.getElementById('avatarOptions');
+            const seeds = ['Felix', 'John', 'Jane', 'Mike', 'Sarah', 'David', 'Emma', 'Alex'];
+            
+            avatarOptions.innerHTML = seeds.map(seed => `
+                <div class="avatar-option" data-seed="${seed}" onclick="selectAvatar('${seed}')">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}" alt="Avatar ${seed}">
+                </div>
+            `).join('');
+        }
+
+        // Initialize the page
+        function initializePage() {
+            // Generate avatar options
+            generateAvatarOptions();
+
+            // Check authentication state
+            auth.onAuthStateChanged((user) => {
+                if (user) {
+                    // Get user data from Firebase
+                    const userRef = db.ref(`users/${user.uid}`);
+                    userRef.once('value')
+                        .then((snapshot) => {
+                            const userData = snapshot.val();
+                            if (userData) {
+                                // Populate form with existing data
+                                document.getElementById('username').value = userData.username || user.email.split('@')[0];
+                                
+                                // Set avatar
+                                if (userData.avatar) {
+                                    const seed = userData.avatar.split('seed=')[1];
+                                    selectAvatar(seed);
+                                } else {
+                                    const defaultUsername = user.email.split('@')[0];
+                                    selectAvatar(defaultUsername);
+                                }
+                            } else {
+                                // Set default values
+                                const defaultUsername = user.email.split('@')[0];
+                                document.getElementById('username').value = defaultUsername;
+                                selectAvatar(defaultUsername);
+                            }
+                        })
+                        .catch((error) => {
+                            console.error('Error loading user data:', error);
+                            alert('Error loading profile data. Please try again.');
+                        });
+                } else {
+                    // Redirect to login if not authenticated
+                    window.location.href = 'login.html';
+                }
+            });
+        }
+
+        // Start initialization when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Stats</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: #87CEEB;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #87CEEB;
+        }
+
+        .content {
+            padding: 100px 20px 20px;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stats-title {
+            font-size: 2.5rem;
+            color: #87CEEB;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .stats-container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 0 auto;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #87CEEB;
+        }
+
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: #ff4444;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .stats-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .stats-container {
+                padding: 20px;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinephile</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="stats-title">YOUR MOVIE STATS</h2>
+        <div class="stats-container">
+            <div class="loading">Loading your movie statistics...</div>
+            <div class="error"></div>
+            <div class="no-data">No movie data available. Start watching movies to see your statistics!</div>
+            <div class="chart-container">
+                <canvas id="genresChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html> 

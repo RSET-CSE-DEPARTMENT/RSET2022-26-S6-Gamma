@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reviews</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: #e50914;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e50914;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e50914;
+        }
+
+        .content {
+            padding: 100px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .reviews-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #e50914;
+        }
+
+        .reviews-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .reviews-header p {
+            color: #aaa;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-movie {
+            position: relative;
+            height: 200px;
+        }
+
+        .review-movie img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-movie-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+
+        .review-movie-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .review-content {
+            padding: 15px;
+        }
+
+        .review-rating {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .review-date {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #ff4444;
+        }
+
+        .no-reviews {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .reviews-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinephile</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="watchlist.html">My Watchlist</a>
+            <a href="profile.html">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="loading">Loading reviews...</div>
+        <div class="error"></div>
+        <div class="no-reviews">You haven't written any reviews yet.</div>
+        <div class="reviews-grid" id="reviewsGrid">
+            <!-- Reviews will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwLRRKIwsSPmvFXnDn5UcweXli12w1Qr0",
+            authDomain: "cinephile-250fc.firebaseapp.com",
+            databaseURL: "https://cinephile-250fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "cinephile-250fc",
+            storageBucket: "cinephile-250fc.firebasestorage.app",
+            messagingSenderId: "995080104071",
+            appId: "1:995080104071:web:150cd3e9f3d8a905097022",
+            measurementId: "G-QX66DDM9ZD"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        const auth = firebase.auth();
+
+        const API_KEY = "e7dab9ac70474bbfe363ad906dd566d5";
+        const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+
+        // Get user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user')) || {
+            username: 'John Doe',
+            avatarSeed: 'Felix'
+        };
+
+        // Function to format date
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString(undefined, options);
+        }
+
+        // Function to create review card
+        function createReviewCard(review) {
+            return `
+                <div class="review-card">
+                    <div class="review-movie">
+                        <img src="${IMAGE_URL}${review.poster_path}" alt="${review.movieTitle}">
+                        <div class="review-movie-overlay">
+                            <div class="review-movie-title">${review.movieTitle}</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-rating">${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</div>
+                        <div class="review-text">${review.text}</div>
+                        <div class="review-date">${formatDate(review.date)}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to load user's reviews
+        function loadUserReviews() {
+            const loadingElement = document.querySelector('.loading');
+            const errorElement = document.querySelector('.error');
+            const noReviewsElement = document.querySelector('.no-reviews');
+            const reviewsGrid = document.getElementById('reviewsGrid');
+
+            loadingElement.style.display = 'block';
+            errorElement.style.display = 'none';
+            noReviewsElement.style.display = 'none';
+            reviewsGrid.innerHTML = '';
+
+            // Get current user
+            const currentUser = auth.currentUser;
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Get all reviews
+            const reviewsRef = db.ref('reviews');
+            reviewsRef.on('value', (snapshot) => {
+                const reviews = [];
+                snapshot.forEach((movieSnapshot) => {
+                    movieSnapshot.forEach((reviewSnapshot) => {
+                        const review = reviewSnapshot.val();
+                        if (review.userId === currentUser.uid) {
+                            reviews.push({
+                                ...review,
+                                movieId: movieSnapshot.key,
+                                reviewId: reviewSnapshot.key
+                            });
+                        }
+                    });
+                });
+
+                // Sort reviews by date (newest first)
+                reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                loadingElement.style.display = 'none';
+
+                if (reviews.length === 0) {
+                    noReviewsElement.style.display = 'block';
+                } else {
+                    reviewsGrid.innerHTML = reviews.map(review => createReviewCard(review)).join('');
+                }
+            }, (error) => {
+                console.error('Error loading reviews:', error);
+                loadingElement.style.display = 'none';
+                errorElement.textContent = 'Failed to load reviews. Please try again.';
+                errorElement.style.display = 'block';
+            });
+        }
+
+        // Check authentication state
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                loadUserReviews();
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html> 

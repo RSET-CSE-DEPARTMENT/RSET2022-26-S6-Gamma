@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinephile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: skyblue;
+        }
+
+        .search-container {
+            position: relative;
+            width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(135, 206, 235, 0.95);
+            border-radius: 10px;
+            margin-top: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .search-results.active {
+            display: block;
+        }
+
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(95, 158, 160, 0.8);
+        }
+
+        .search-result-item img {
+            width: 50px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .search-result-info {
+            flex: 1;
+        }
+
+        .search-result-title {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .search-result-year {
+            font-size: 0.9rem;
+            color: #000;
+        }
+
+        .content {
+            padding-top: 80px;
+        }
+
+        .movie-row {
+            padding: 20px 40px;
+        }
+
+        .row-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .movie-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 8px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        .movie-slider::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .movie-card {
+            flex: 0 0 200px;
+            position: relative;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .movie-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(135, 206, 235, 0.9);
+            border-radius: 0 0 4px 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .movie-card:hover .movie-info {
+            opacity: 1;
+        }
+
+        .movie-title {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #000;
+        }
+
+        .movie-rating {
+            font-size: 0.9rem;
+            color: #000;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #ff4444;
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 20px 10px;
+            cursor: pointer;
+            z-index: 3;
+            transition: background 0.3s ease;
+        }
+
+        .scroll-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+
+        .movie-row-container {
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                width: 200px;
+            }
+            
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e50914;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title {
+            color: #87CEEB;
+            margin: 20px 0;
+            font-size: 1.5rem;
+        }
+
+        .movie-card:hover .movie-info {
+            background: rgba(135, 206, 235, 0.9);
+        }
+
+        .movie-card:hover .movie-title {
+            color: #000;
+        }
+
+        .movie-card:hover .movie-rating {
+            color: #000;
+        }
+
+        .search-result-item:hover {
+            background: rgba(95, 158, 160, 0.8);
+        }
+
+        .search-result-item .movie-title {
+            color: #000;
+        }
+
+        .search-result-item .movie-year {
+            color: #000;
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        .header-links a:hover {
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinephile</h1>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for movies..." id="searchInput">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+        <div class="nav-links">
+            <a href="profile.html">
+                <img id="headerProfileIcon" src="https://api.dicebear.com/7.x/avataaars/svg?seed=default" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="loading">Loading movies...</div>
+        <div class="error"></div>
+
+        <!-- Popular Movies -->
+        <div class="movie-row-container">
+            <h2 class="row-title">Popular Movies</h2>
+            <div class="movie-slider" id="popularMovies">
+                <!-- Movies will be inserted here -->
+            </div>
+            <button class="scroll-button scroll-left" onclick="scrollRow('popularMovies', -400)">❮</button>
+            <button class="scroll-button scroll-right" onclick="scrollRow('popularMovies', 400)">❯</button>
+        </div>
+
+        <!-- Top Rated Movies -->
+        <div class="movie-row-container">
+            <h2 class="row-title">Top Rated Movies</h2>
+            <div class="movie-slider" id="topRatedMovies">
+                <!-- Movies will be inserted here -->
+            </div>
+            <button class="scroll-button scroll-left" onclick="scrollRow('topRatedMovies', -400)">❮</button>
+            <button class="scroll-button scroll-right" onclick="scrollRow('topRatedMovies', 400)">❯</button>
+        </div>
+
+        <!-- Upcoming Movies -->
+        <div class="movie-row-container">
+            <h2 class="row-title">Upcoming Movies</h2>
+            <div class="movie-slider" id="upcomingMovies">
+                <!-- Movies will be inserted here -->
+            </div>
+            <button class="scroll-button scroll-left" onclick="scrollRow('upcomingMovies', -400)">❮</button>
+            <button class="scroll-button scroll-right" onclick="scrollRow('upcomingMovies', 400)">❯</button>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = "e7dab9ac70474bbfe363ad906dd566d5";
+        const BASE_URL = "https://api.themoviedb.org/3";
+        const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+        const MAX_RETRIES = 3;
+        const RETRY_DELAY = 2000; // 2 seconds
+        let searchTimeout;
+
+        // Get user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user')) || {
+            username: 'John Doe',
+            avatarSeed: 'Felix'
+        };
+
+        // Function to delay execution
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Function to scroll movie rows
+        function scrollRow(rowId, scrollAmount) {
+            const row = document.getElementById(rowId);
+            row.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Function to create movie card
+        function createMovieCard(movie) {
+            return `
+                <div class="movie-card" onclick="window.location.href='movie-details.html?id=${movie.id}'">
+                    <img src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}">
+                    <div class="movie-info">
+                        <div class="movie-title">${movie.title}</div>
+                        <div class="movie-rating">⭐ ${movie.vote_average.toFixed(1)}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to create search result item
+        function createSearchResultItem(movie) {
+            const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
+            return `
+                <div class="search-result-item" onclick="window.location.href='movie-details.html?id=${movie.id}'">
+                    <img src="${IMAGE_URL}${movie.poster_path}" alt="${movie.title}">
+                    <div class="search-result-info">
+                        <div class="search-result-title">${movie.title}</div>
+                        <div class="search-result-year">${releaseYear}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to search movies
+        async function searchMovies(query) {
+            if (!query.trim()) {
+                document.getElementById('searchResults').classList.remove('active');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}&language=en-US&page=1`);
+                if (!response.ok) throw new Error('Search failed');
+                
+                const data = await response.json();
+                const searchResults = document.getElementById('searchResults');
+                
+                if (data.results.length > 0) {
+                    searchResults.innerHTML = data.results.map(movie => createSearchResultItem(movie)).join('');
+                    searchResults.classList.add('active');
+                } else {
+                    searchResults.innerHTML = '<div class="search-result-item">No movies found</div>';
+                    searchResults.classList.add('active');
+                }
+            } catch (error) {
+                console.error('Search error:', error);
+                document.getElementById('searchResults').innerHTML = '<div class="search-result-item">Error searching movies</div>';
+                document.getElementById('searchResults').classList.add('active');
+            }
+        }
+
+        // Function to fetch with retry
+        async function fetchWithRetry(url, retries = MAX_RETRIES) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                        mode: 'cors'
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    return response;
+                } catch (error) {
+                    console.log(`Attempt ${i + 1} failed:`, error);
+                    if (i === retries - 1) throw error;
+                    await delay(RETRY_DELAY * (i + 1)); // Exponential backoff
+                }
+            }
+        }
+
+        // Function to fetch and display movies
+        async function fetchAndDisplayMovies(endpoint, containerId) {
+            try {
+                console.log(`Fetching ${endpoint} movies...`);
+                const url = `${BASE_URL}/movie/${endpoint}?api_key=${API_KEY}&language=en-US&page=1`;
+                console.log('Request URL:', url);
+                
+                const response = await fetchWithRetry(url);
+                const data = await response.json();
+                
+                if (!data.results || !Array.isArray(data.results)) {
+                    throw new Error('Invalid response format from API');
+                }
+                
+                console.log(`Received ${data.results.length} movies for ${endpoint}`);
+                
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    throw new Error(`Container ${containerId} not found`);
+                }
+                
+                container.innerHTML = data.results.map(movie => createMovieCard(movie)).join('');
+            } catch (error) {
+                console.error(`Error fetching ${endpoint} movies:`, error);
+                const errorElement = document.querySelector('.error');
+                errorElement.textContent = `Failed to load ${endpoint} movies. Please check your internet connection and try again.`;
+                errorElement.style.display = 'block';
+            }
+        }
+
+        // Initialize the dashboard
+        async function initializeDashboard() {
+            const loadingElement = document.querySelector('.loading');
+            const errorElement = document.querySelector('.error');
+            
+            loadingElement.style.display = 'block';
+            errorElement.style.display = 'none';
+            
+            try {
+                console.log('Starting dashboard initialization...');
+                
+                // Fetch movies sequentially instead of parallel to avoid overwhelming the API
+                await fetchAndDisplayMovies('popular', 'popularMovies');
+                await delay(1000); // Add delay between requests
+                await fetchAndDisplayMovies('top_rated', 'topRatedMovies');
+                await delay(1000);
+                await fetchAndDisplayMovies('upcoming', 'upcomingMovies');
+                
+                loadingElement.style.display = 'none';
+                console.log('Dashboard initialization completed successfully');
+            } catch (error) {
+                console.error('Error initializing dashboard:', error);
+                loadingElement.style.display = 'none';
+                errorElement.textContent = 'Failed to load dashboard. Please check your internet connection and try again.';
+                errorElement.style.display = 'block';
+            }
+        }
+
+        // Search input event listener
+        const searchInput = document.querySelector('.search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    searchMovies(e.target.value);
+                }, 500);
+            });
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            const searchContainer = document.querySelector('.search-container');
+            const searchResults = document.querySelector('.search-results');
+            
+            if (searchContainer && searchResults && !searchContainer.contains(e.target)) {
+                searchResults.classList.remove('active');
+            }
+        });
+
+        // Start the dashboard
+        console.log('Starting dashboard...');
+        initializeDashboard();
+    </script>
+</body>
+</html>

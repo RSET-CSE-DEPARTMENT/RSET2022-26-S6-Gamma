@@ -1,0 +1,9 @@
+inside of pytorch to generate tensors randomly by, lets say
+
+randint = torch.randint(-100, 100, (6,))
+creates tensors of 1 row and 6 columns that contains integers anywhere between -100 and 100
+
+randint = torch.randint(-100, 100, (2,3))
+
+now, the third (2, 3) indicates the shape as 2D tensors that is 2 by 3 in dimension
+It can be extended to 3D by defining the shape as: (x , y, z)

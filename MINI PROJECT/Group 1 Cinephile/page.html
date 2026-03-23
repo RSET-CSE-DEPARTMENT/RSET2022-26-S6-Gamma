@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Movie Review & Rating</title>
+</head>
+<body>
+    <h2>Submit Your Review & Rating</h2>
+
+    <label for="movieID">Movie ID:</label>
+    <input type="text" id="movieID" placeholder="Enter TMDb Movie ID"><br>
+
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" id="rating" min="1" max="5"><br>
+
+    <label for="review">Review:</label>
+    <textarea id="review" placeholder="Write your review here..."></textarea><br>
+
+    <button onclick="submitReview()">Submit</button>
+
+    <!-- Firebase SDK (Make sure to replace with the latest versions) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+
+    <script>
+        // 🔹 Replace with your actual Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwLRRKIwsSPmvFXnDn5UcweXli12w1Qr0",
+            authDomain: "cinephile-250fc.firebaseapp.com",
+            databaseURL: "https://cinephile-250fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "cinephile-250fc",
+            storageBucket: "cinephile-250fc.firebasestorage.app",
+            messagingSenderId: "995080104071",
+            appId: "1:995080104071:web:150cd3e9f3d8a905097022",
+            measurementId: "G-QX66DDM9ZD"
+          };
+
+        // 🔥 Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        function submitReview() {
+            // ✅ Get user input values
+            const movieID = document.getElementById("movieID").value;
+            const rating = document.getElementById("rating").value;
+            const review = document.getElementById("review").value;
+
+            // 🔹 Replace with actual user ID if using Firebase Authentication
+            const userID = "laGKjK31PLRUhGFClif9Xh0b1rX2"; // Change this if using real auth
+
+            if (movieID === "" || rating === "" || review === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // ✅ Save rating & review to Firestore
+            db.collection("users").doc(userID).collection("ratings").doc(movieID).set({
+                rating: parseInt(rating)
+            }).then(() => {
+                console.log("Rating saved successfully!");
+            }).catch(error => {
+                console.error("Error saving rating:", error);
+            });
+
+            db.collection("users").doc(userID).collection("reviews").doc(movieID).set({
+                review: review
+            }).then(() => {
+                console.log("Review saved successfully!");
+                alert("Review & Rating Submitted!");
+            }).catch(error => {
+                console.error("Error saving review:", error);
+            });
+        }
+    </script>
+</body>
+</html>
+
+

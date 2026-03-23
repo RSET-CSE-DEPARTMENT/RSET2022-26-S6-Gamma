@@ -1,0 +1,56 @@
+name: democalls
+description: "A new Flutter project."
+
+# Prevents accidental publishing to pub.dev
+publish_to: 'none'
+
+# Version information
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"  # ✅ Fixed SDK version to support null safety
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Icons and UI enhancements
+  cupertino_icons: ^1.0.8
+  flutter_styled_toast: ^2.2.1
+  google_fonts: ^6.2.1
+
+  # Storage and caching
+  shared_preferences: ^2.5.2
+  cached_network_image: ^3.4.1
+
+  # Device information
+  device_info_plus: ^11.3.3
+
+  # Security and encryption
+  crypto: ^3.0.3  # ✅ Fixed indentation
+
+  # ZegoCloud dependencies for calling functionality
+  zego_uikit: ^2.28.10
+  zego_uikit_signaling_plugin: ^2.8.11
+  zego_uikit_prebuilt_call: ^4.16.24
+  logger: ^2.5.0
+  flutter_spinkit: ^5.1.0 
+  font_awesome_flutter: ^10.8.0
+  image_picker: ^1.1.2
+  speech_to_text: ^7.0.0
+  flutter_sound: ^9.28.0
+  camera: ^0.11.1
+  permission_handler: ^11.4.0
+  path_provider: ^2.1.5
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/image.png  # ✅ Fixed assets syntax

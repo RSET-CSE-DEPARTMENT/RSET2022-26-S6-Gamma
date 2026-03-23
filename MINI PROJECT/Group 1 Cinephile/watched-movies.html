@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watched Movies - Cinephile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .main-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .movie-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .watched-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+            display: none;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: #ff4444;
+            display: none;
+        }
+
+        .no-movies {
+            text-align: center;
+            padding: 50px;
+            color: #aaa;
+            display: none;
+        }
+
+        .sort-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .sort-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .sort-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .sort-btn.active {
+            background: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinephile</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="page-title">
+            <h2>Watched Movies</h2>
+            <div class="sort-options">
+                <button class="sort-btn active" data-sort="date">Recently Watched</button>
+                <button class="sort-btn" data-sort="rating">Highest Rated</button>
+                <button class="sort-btn" data-sort="title">Alphabetical</button>
+            </div>
+        </div>
+
+        <div class="loading">Loading your watched movies...</div>
+        <div class="error"></div>
+        <div class="no-movies">
+            <p>You haven't watched any movies yet.</p>
+            <a href="dashboard.html" class="browse-btn">Browse Movies</a>
+        </div>
+
+        <div class="movies-grid" id="watchedMoviesGrid">
+            <!-- Watched movies will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="watched-movies.js"></script>
+</body>
+</html> 

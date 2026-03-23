@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Signup</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form id="signup-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Signup</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwLRRKIwsSPmvFXnDn5UcweXli12w1Qr0",
+            authDomain: "cinephile-250fc.firebaseapp.com",
+            databaseURL: "https://cinephile-250fc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "cinephile-250fc",
+            storageBucket: "cinephile-250fc.firebasestorage.app",
+            messagingSenderId: "995080104071",
+            appId: "1:995080104071:web:150cd3e9f3d8a905097022",
+            measurementId: "G-QX66DDM9ZD"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Strict email validation
+        function isValidEmail(email) {
+            // Must start with a letter, followed by any combination of letters, numbers, or valid email characters
+            const emailPattern = /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+        
+
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (!isValidEmail(email)) {
+                errorMessage.textContent = "❌ Invalid email format. Please enter a valid email.";
+                return; // 🚨 PREVENTS Firebase from running
+            }
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    alert("✅ Signup successful! Redirecting to login...");
+                    window.location.href = "login.html";
+                })
+                .catch((error) => {
+                    errorMessage.textContent = "❌ " + error.message;
+                });
+        });
+    </script>
+</body>
+</html>

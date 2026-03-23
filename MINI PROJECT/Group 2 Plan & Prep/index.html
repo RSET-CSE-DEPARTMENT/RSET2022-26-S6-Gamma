@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF QA Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <i class="fas fa-book-open"></i> PDF Q&A Generator
+    </div>
+
+    <div class="container">
+        <!-- Left Panel (Upload Section) -->
+        <div class="left-panel">
+            <div class="upload-container">
+                <div class="uploader">
+                    <h2>Upload Your PDF</h2>
+                    <p>Select a PDF document to generate questions and answers</p>
+                    
+                    <label for="pdfUpload" class="file-input-label">
+                        <i class="fas fa-file-pdf"></i> Choose PDF
+                    </label>
+                    <input type="file" id="pdfUpload" accept="application/pdf">
+                    
+                    <div class="file-name" id="fileName">No file selected</div>
+                </div>
+                
+                <div class="options-container">
+                    <div class="form-group">
+                        <label for="questionCount">Number of Questions:</label>
+                        <input type="number" id="questionCount" min="1" max="20" value="5">
+                    </div>
+                    
+                    <button id="generateBtn" class="generate-btn" disabled>
+                        <i class="fas fa-magic"></i> Generate Questions
+                    </button>
+                    
+                    <div class="loader" id="loader"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel (White Q&A Box) -->
+        <div class="right-panel" id="rightPanel">
+            <button class="close-results" id="closeResults">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="qa-box" id="qaBox">
+                <div class="qa-header">
+                    <h2>Generated Q&A</h2>
+                    <span class="qa-count" id="qaCount">0 Questions</span>
+                </div>
+                
+                <div id="questionList">
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <p>Your questions and answers will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Recommendations - Cinephile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .recommendations-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .recommendations-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .recommendations-title {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .refresh-btn {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .refresh-btn:hover {
+            background-color: #e68a00;
+        }
+
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #fff;
+            display: none;
+        }
+
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #ff4444;
+            display: none;
+        }
+
+        .no-recommendations {
+            text-align: center;
+            padding: 40px;
+            color: #fff;
+            display: none;
+        }
+
+        .recommendation-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cinephile</h1>
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="watchlist.html">My Watchlist</a>
+            <a href="profile.html">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" class="profile-icon">
+            </a>
+        </div>
+    </div>
+
+    <div class="recommendations-container">
+        <div class="recommendations-header">
+            <h2 class="recommendations-title">Personalized Recommendations</h2>
+            <button class="refresh-btn" onclick="refreshRecommendations()">Refresh Recommendations</button>
+        </div>
+
+        <div class="loading">Loading recommendations...</div>
+        <div class="error"></div>
+        <div class="no-recommendations">
+            <p>No recommendations available yet. Add some movies to your watchlist to get personalized recommendations!</p>
+            <a href="dashboard.html" class="browse-btn">Browse Movies</a>
+        </div>
+
+        <div class="recommendation-section">
+            <h3 class="section-title">Based on Your Watchlist</h3>
+            <div class="recommendations-grid" id="watchlistRecommendations">
+                <!-- Watchlist-based recommendations will be inserted here -->
+            </div>
+        </div>
+
+        <div class="recommendation-section">
+            <h3 class="section-title">Based on Your Watched Movies</h3>
+            <div class="recommendations-grid" id="watchedRecommendations">
+                <!-- Watched movies-based recommendations will be inserted here -->
+            </div>
+        </div>
+
+        <div class="recommendation-section">
+            <h3 class="section-title">Based on Your Reviews</h3>
+            <div class="recommendations-grid" id="reviewRecommendations">
+                <!-- Review-based recommendations will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="sentiment-analysis.js"></script>
+    <script src="recommendation-system.js"></script>
+    <script src="personalized-recommendations.js"></script>
+</body>
+</html> 
