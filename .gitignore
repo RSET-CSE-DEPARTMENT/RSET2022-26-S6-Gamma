@@ -25,3 +25,20 @@ build/
 node_modules/
 *.apk
 *.zip
+
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Build
+build/
+
+# Dataset
+*.ttl
+dataset/
+
+# Misc
+node_modules/
